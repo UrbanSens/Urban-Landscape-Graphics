@@ -1,8 +1,8 @@
 """Display list shared by all backends.
 
 Generators emit these few primitives in *map coordinates* (the CRS units of the
-data, y up). Sizes that belong to the drawing rather than to the ground — line
-widths, dot radii, dash lengths — are in *millimetres on paper*. The SVG and
+data, y up). Sizes that belong to the drawing rather than to the ground (line
+widths, dot radii, dash lengths) are in *millimetres on paper*. The SVG and
 Matplotlib backends draw exactly the same list, so both outputs match.
 """
 

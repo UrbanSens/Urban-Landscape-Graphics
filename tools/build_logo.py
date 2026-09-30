@@ -344,14 +344,14 @@ def main() -> None:
 def brand_badge() -> None:
     """The UrbanSens logo on a rounded paper-white plate, for dark pages (the README on GitHub in dark mode).
 
-    The logo itself (docs/img/brand/urbansens-logo.png) is supplied by UrbanSens and stays as it is; its dark wordmark
+    The logo itself (src/ulg/data/brand/urbansens-logo.png) is supplied by UrbanSens and stays as it is; its dark wordmark
     needs a light ground, so on dark pages it is shown on this plate.
     """
     from PIL import Image, ImageDraw
 
-    src = ROOT / "docs" / "img" / "brand" / "urbansens-logo.png"
+    src = ROOT / "src" / "ulg" / "data" / "brand" / "urbansens-logo.png"
     if not src.exists():
-        print("   (docs/img/brand/urbansens-logo.png not found, no badge)")
+        print("   (src/ulg/data/brand/urbansens-logo.png not found, no badge)")
         return
     logo = Image.open(src).convert("RGBA")
     pad, k = 26, 4                                             # drawn 4x larger, then reduced: smooth corners
@@ -360,7 +360,7 @@ def brand_badge() -> None:
     ImageDraw.Draw(plate).rounded_rectangle((0, 0, w * k - 1, h * k - 1), radius=22 * k, fill=(253, 253, 251, 255))
     plate = plate.resize((w, h), Image.LANCZOS)
     plate.alpha_composite(logo, (pad, pad))
-    target = ROOT / "docs" / "img" / "brand" / "urbansens-logo-on-white.png"
+    target = ROOT / "src" / "ulg" / "data" / "brand" / "urbansens-logo-on-white.png"
     plate.save(target, optimize=True)
     print("  ", target.relative_to(ROOT))
 

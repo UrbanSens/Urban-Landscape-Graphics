@@ -1,0 +1,29 @@
+# Machine-readable reference for this software (https://citation-file-format.github.io/).
+# GitHub turns it into the "Cite this repository" button with APA and BibTeX.
+cff-version: 1.2.0
+message: >-
+  If you use ulg or the UrbanSens Ecological Vector Style for a map, a plan, a report, a tender or a
+  paper, please cite it as below and mention UrbanSens (https://urbansens.de/).
+type: software
+title: "Urban Landscape Graphics (ulg): the UrbanSens Ecological Vector Style as a library"
+abstract: >-
+  One catalog of colours, lightly hand-drawn textures and symbols for urban landscape maps - lawns and
+  meadows, trees, water, pavings, land use, planning status - tied to German and European standards, with
+  renderers for Python and exporters for QGIS, GeoServer, MapLibre and design tools.
+authors:
+  - name: "UrbanSens"
+    website: "https://urbansens.de/"
+repository-code: "https://github.com/UrbanSens/Urban-Landscape-Graphics"
+url: "https://urbansens.github.io/Urban-Landscape-Graphics/"
+license: MIT
+version: "0.1.0"
+date-released: "2026-09-30"
+keywords:
+  - GIS
+  - cartography
+  - landscape architecture
+  - urban ecology
+  - map style
+  - symbology
+  - QGIS
+  - MapLibre

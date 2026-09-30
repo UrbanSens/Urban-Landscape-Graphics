@@ -130,7 +130,7 @@ def cmd_sheet(a) -> int:
     from .sheet import catalog_sheet, style_sheet
 
     fn = catalog_sheet if a.catalog else style_sheet
-    fn(a.output, lang=a.lang, catalog=load(a.theme))
+    fn(a.output, lang=a.lang, catalog=load(a.theme), credit=not a.no_credit)
     print(a.output)
     if a.png:
         print(rasterize(a.output, dpi=a.dpi))
@@ -310,6 +310,7 @@ def build_parser() -> argparse.ArgumentParser:
     sp = add("sheet", cmd_sheet, "generate the style sheet (or the full catalog sheet) as SVG")
     sp.add_argument("-o", "--output", default="ulg-style-sheet.svg")
     sp.add_argument("--catalog", action="store_true", help="all elements instead of the overview")
+    sp.add_argument("--no-credit", action="store_true", help="leave the small UrbanSens mark off the sheet")
     sp.add_argument("--theme", default="mellow")
     sp.add_argument("--png", action="store_true")
     sp.add_argument("--dpi", type=int, default=150)

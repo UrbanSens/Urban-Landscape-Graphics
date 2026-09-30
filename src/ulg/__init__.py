@@ -16,6 +16,7 @@ German and European classification standards, plus renderers and exporters.
 from __future__ import annotations
 
 from .analysis import flatten, indicators, root_protection_zone
+from .brand import credit_line
 from .catalog import Catalog, CatalogError, Element, Palette, load, themes
 from .crosswalk import classify, codes_for, explain, official_colors, resolve, scheme, schemes
 from .legend import legend_handles, legend_svg
@@ -29,7 +30,7 @@ __all__ = [
     "color", "fills", "ramp", "categories", "category_of", "style_function", "classify", "codes_for", "explain", "official_colors",
     "resolve", "scheme", "schemes", "flatten", "indicators", "root_protection_zone",
     "legend_handles", "legend_svg", "plot", "render_svg", "lod_for_scale", "lod_for_zoom", "style_sheet",
-    "catalog_sheet", "__version__",
+    "catalog_sheet", "credit_line", "__version__",
 ]
 
 

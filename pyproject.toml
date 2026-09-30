@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]      # 77 reads the SPDX licence expression below
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,6 +8,8 @@ version = "0.1.0"
 description = "UrbanSens Ecological Vector Style: a standards-aware catalog of colours, textures and symbols for urban landscape maps, with renderers and GIS/web exporters."
 readme = "README.md"
 requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [{ name = "UrbanSens" }]
 keywords = ["gis", "cartography", "landscape", "urban ecology", "symbology", "qgis", "design tokens"]
 classifiers = [
@@ -35,6 +37,7 @@ Documentation = "https://urbansens.github.io/Urban-Landscape-Graphics/"
 Repository = "https://github.com/UrbanSens/Urban-Landscape-Graphics"
 Issues = "https://github.com/UrbanSens/Urban-Landscape-Graphics/issues"
 Changelog = "https://github.com/UrbanSens/Urban-Landscape-Graphics/blob/main/CHANGELOG.md"
+UrbanSens = "https://urbansens.de/"
 
 [project.scripts]
 ulg = "ulg.cli:main"
@@ -43,7 +46,7 @@ ulg = "ulg.cli:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-ulg = ["data/*.json", "data/**/*.json", "data/*.md", "data/**/*.md"]
+ulg = ["data/*.json", "data/**/*.json", "data/*.md", "data/**/*.md", "data/brand/*.png"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

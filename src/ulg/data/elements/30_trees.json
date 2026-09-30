@@ -364,8 +364,8 @@
         "de": "Baum (Fällung)"
       },
       "description": {
-        "en": "Tree to be felled: pale yellow crown, dashed outline, crossed out – the removal cross and the yellow of the Bavarian Bauvorlagenverordnung, the dashed line of ISO 11091.",
-        "de": "Zu fällender Baum: hellgelbe Krone, gestrichelte Kontur, durchkreuzt – Kreuz und Gelb für Beseitigung nach BauVorlV Bayern, gestrichelte Linie nach ISO 11091."
+        "en": "Tree to be felled: pale yellow crown, dashed outline, crossed out (the removal cross and the yellow of the Bavarian Bauvorlagenverordnung, the dashed line of ISO 11091).",
+        "de": "Zu fällender Baum: hellgelbe Krone, gestrichelte Kontur, durchkreuzt (Kreuz und Gelb für Beseitigung nach BauVorlV Bayern, gestrichelte Linie nach ISO 11091)."
       },
       "fill": "signal.remove-soft",
       "symbol": {

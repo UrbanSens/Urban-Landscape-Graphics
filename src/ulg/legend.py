@@ -95,15 +95,24 @@ def draw_legend(svg: Svg, elements: Iterable[str | Element] | None, x: float, y:
 
 def legend_svg(elements: Iterable[str | Element] | None = None, *, lang: str = "en", title: str | None = None,
                columns: int = 1, lod: int = 2, catalog: Catalog | None = None, background: str | None = None,
-               col_width: float = 52.0) -> Svg:
-    """A stand-alone legend as SVG."""
+               col_width: float = 52.0, credit: bool = False) -> Svg:
+    """A stand-alone legend as SVG.
+
+    Legends go into your layouts, so they carry nothing extra by default; ``credit=True`` adds the small UrbanSens
+    mark below the legend (see :mod:`ulg.brand`).
+    """
     catalog = catalog or load()
     els = _pick(catalog, elements)
     per_col = -(-len(els) // columns)
     h = per_col * 7.4 + (9.0 if title else 2.0) + 2
-    svg = Svg(columns * col_width + 4, h, background=background)
+    width = columns * col_width + 4
+    svg = Svg(width, h + (11.0 if credit else 0.0), background=background)
     draw_legend(svg, els, 2, 2, lang=lang, title=title, columns=columns, col_width=col_width, lod=lod,
                 catalog=catalog)
+    if credit:
+        from .brand import draw_credit
+
+        draw_credit(svg, width - 2, h + 9.5, height=7.5, lang=lang, text=width >= 90, ink=catalog.palette.resolve("ink.400"))
     return svg
 
 

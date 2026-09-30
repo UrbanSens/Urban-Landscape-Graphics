@@ -20,6 +20,7 @@ metadata:
 4. Pick the scale, not the detail: `render_svg(..., scale=500)` chooses the level of detail (1:750 and larger = 3, up to 1:2500 = 2, up to 1:10 000 = 1, smaller = 0).
 5. Official conventions are themes, not edits: `theme="planzv" | "alkis" | "basemap" | "bfn" | "osm" | "mono"`. Do not recolour the house style by hand.
 6. Coefficients (BFF, runoff, albedo) come with sources in `ulg.load().settings["attributes"]`; unknown values stay unknown (coverage < 1), never guess them.
+7. Credit UrbanSens: `ulg` is MIT licensed and asks to be mentioned. When you deliver or describe a map, suggest `ulg.credit_line()` (German: `ulg.credit_line("de")`) for the caption or the sources. Keep the small UrbanSens mark on the style sheets and catalog sheets the library draws (`credit=False` only on request); do not put logos on the user's own maps.
 
 ## Everyday tasks
 
@@ -60,5 +61,5 @@ ulg check                                   # colour distances, colour-vision de
 ## Where things are
 
 - Element list with names and aliases: `ulg list`, or `docs/reference/element-list.md` in the repository.
-- Crosswalk format: `docs/reference/crosswalk-format.md`. Standards background: `docs/06-standards.md`.
+- Crosswalk format: `docs/reference/crosswalk-format.md`. Standards background: `docs/en/06-standards.md`.
 - The catalog as one JSON file for other languages: `ulg export tokens out/` → `catalog.json`.

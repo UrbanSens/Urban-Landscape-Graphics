@@ -104,6 +104,7 @@ class Svg:
         self._defs: list[str] = []
         self._body: list[str] = []
         self._clip = 0
+        self._xlink = False          # set by image(): the root element then declares the xlink namespace
 
     # -- low level ---------------------------------------------------------
     def raw(self, fragment: str) -> None:
@@ -154,6 +155,13 @@ class Svg:
         r = f' transform="rotate({_n(-rotate)} {_n(x)} {_n(y)})"' if rotate else ""
         self._body.append(f'<text x="{_n(x)}" y="{_n(y)}" font-size="{_n(size)}" fill="{fill}"{a}{w}{i}{sp}{f}{h}{r}>'
                           f"{html.escape(str(text))}</text>")
+
+    def image(self, x, y, w, h, href, opacity=1.0) -> None:
+        """A raster picture (a ``data:`` URI or a path) in the box at (x, y), w x h mm, scaled to fit."""
+        self._xlink = True
+        o = f' opacity="{_n(opacity)}"' if opacity < 1 else ""
+        self._body.append(f'<image x="{_n(x)}" y="{_n(y)}" width="{_n(w)}" height="{_n(h)}" '
+                          f'xlink:href="{html.escape(str(href), quote=True)}" preserveAspectRatio="xMidYMid meet"{o}/>')
 
     def polygon(self, points, fill="#293941", stroke=None, width=0.2, opacity=1.0) -> None:
         """A closed polygon through ``points`` (mm)."""
@@ -256,7 +264,8 @@ class Svg:
 
     # -- output ------------------------------------------------------------
     def tostring(self) -> str:
-        head = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{_n(self.width)}mm" height="{_n(self.height)}mm" '
+        xlink = ' xmlns:xlink="http://www.w3.org/1999/xlink"' if self._xlink else ""
+        head = (f'<svg xmlns="http://www.w3.org/2000/svg"{xlink} width="{_n(self.width)}mm" height="{_n(self.height)}mm" '
                 f'viewBox="0 0 {_n(self.width)} {_n(self.height)}" font-family="{FONT}">')
         parts = [head]
         if self.title:

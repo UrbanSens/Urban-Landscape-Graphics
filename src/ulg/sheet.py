@@ -4,7 +4,8 @@
 ``catalog_sheet()`` every element of the catalog with id and names, grouped.
 
 Both are drawn with the library itself, so they are documentation and a visual
-regression test at the same time.
+regression test at the same time. They carry a small UrbanSens mark (see :mod:`ulg.brand`);
+``credit=False`` leaves it out.
 """
 
 from __future__ import annotations
@@ -15,6 +16,7 @@ from pathlib import Path
 from shapely.geometry import Point
 
 from . import __version__
+from .brand import draw_credit
 from .catalog import Catalog, Element, load
 from .datasets import demo_park, demo_park_places
 from .legend import draw_legend, draw_swatch, used_elements
@@ -32,10 +34,10 @@ EXAMPLE_LEGEND = ["lawn", "meadow", "wildflower_meadow", "orchard_meadow", "wood
 
 TEXT = {
     "en": {
-        "title": "UrbanSens – Ecological Vector Style",
+        "title": "UrbanSens Ecological Vector Style",
         "subtitle": "Habitat types and surface materials, designed for GIS.",
         "intro": "A clean, consistent and scalable visual language to represent nature, surfaces and "
-                 "biodiversity in a professional, architectural style – using simple vector patterns and symbols.",
+                 "biodiversity in a professional, architectural style, using simple vector patterns and symbols.",
         "principles": "Design principles",
         "p": ["Vector-based (polygonizable, GIS compatible)", "Subtle, natural colour palette",
               "Consistent iconography and line weights", "Minimal, non-photorealistic, architectural style",
@@ -43,22 +45,22 @@ TEXT = {
         "palette": "Colour palette",
         "pal": ["Vegetation & nature", "Surfaces & materials", "Water & special", "Analysis / highlight"],
         "habitats": "Habitat types", "surfaces": "Surfaces",
-        "lod": "Detail levels", "lod_sub": "(same habitat type – different scales)",
+        "lod": "Detail levels", "lod_sub": "(same habitat type, different scales)",
         "lods": [("1.  Zoomed out (mass)", "Clear, recognisable shape and texture. Focus on overall character."),
                  ("2.  Medium detail (structure)", "More visible grass and flower elements. Still abstract, not botanical."),
                  ("3.  Zoomed in (elements)", "Individual grass blades and flowers become visible. Still stylised.")],
         "symbols": "Symbol library", "symbols_sub": "(excerpt)",
         "example": "Example: parcel with multiple habitats & surfaces", "legend": "Legend",
         "context": "Different habitats in context", "context_sub": "(example: urban park)",
-        "ctx": ["Urban park – overview", "Meadow & tree detail", "Water body with reed"],
+        "ctx": ["Urban park: overview", "Meadow & tree detail", "Water body with reed"],
         "sizes": ["large", "medium", "small"],
-        "catalog": "Element catalog",
+        "catalog": "Element catalog", "generated": "generated from the catalog", "n_elements": "{n} elements",
     },
     "de": {
-        "title": "UrbanSens – Ökologischer Vektorstil",
+        "title": "UrbanSens Ökologischer Vektorstil",
         "subtitle": "Biotoptypen und Oberflächenmaterialien, entworfen für GIS.",
         "intro": "Eine klare, einheitliche und skalierbare Bildsprache für Natur, Oberflächen und Biodiversität "
-                 "in einem professionellen, architektonischen Stil – mit einfachen Vektormustern und Symbolen.",
+                 "in einem professionellen, architektonischen Stil, mit einfachen Vektormustern und Symbolen.",
         "principles": "Gestaltungsprinzipien",
         "p": ["Vektorbasiert (flächenscharf, GIS-kompatibel)", "Zurückhaltende, natürliche Farbpalette",
               "Einheitliche Symbolik und Strichstärken", "Reduziert, nicht fotorealistisch, architektonisch",
@@ -66,18 +68,41 @@ TEXT = {
         "palette": "Farbpalette",
         "pal": ["Vegetation & Natur", "Oberflächen & Materialien", "Wasser & Sonstiges", "Analyse / Hervorhebung"],
         "habitats": "Biotoptypen", "surfaces": "Oberflächen",
-        "lod": "Detailstufen", "lod_sub": "(gleicher Biotoptyp – verschiedene Maßstäbe)",
+        "lod": "Detailstufen", "lod_sub": "(gleicher Biotoptyp, verschiedene Maßstäbe)",
         "lods": [("1.  Übersicht (Masse)", "Klare, erkennbare Form und Textur. Gesamtcharakter im Vordergrund."),
                  ("2.  Mittlerer Detailgrad (Struktur)", "Gräser und Blüten werden sichtbar. Abstrakt, nicht botanisch."),
                  ("3.  Nahansicht (Elemente)", "Einzelne Halme und Blüten erkennbar. Weiterhin stilisiert.")],
         "symbols": "Symbolbibliothek", "symbols_sub": "(Auszug)",
         "example": "Beispiel: Grundstück mit mehreren Biotoptypen & Oberflächen", "legend": "Legende",
         "context": "Biotoptypen im Zusammenhang", "context_sub": "(Beispiel: Stadtpark)",
-        "ctx": ["Stadtpark – Übersicht", "Wiese & Bäume im Detail", "Gewässer mit Röhricht"],
+        "ctx": ["Stadtpark: Übersicht", "Wiese & Bäume im Detail", "Gewässer mit Röhricht"],
         "sizes": ["groß", "mittel", "klein"],
-        "catalog": "Elementkatalog",
+        "catalog": "Elementkatalog", "generated": "aus dem Katalog erzeugt", "n_elements": "{n} Elemente",
     },
 }
+
+
+#: German headings of the catalog groups on the catalog sheet (English: the group id, for example "surface · paved")
+GROUPS_DE = {
+    "vegetation.grass": "Vegetation · Rasen und Wiesen", "vegetation.planting": "Vegetation · Pflanzungen",
+    "vegetation.greenspace": "Vegetation · Grünflächen und Gärten", "vegetation.woody": "Vegetation · Gehölze",
+    "vegetation.agri": "Vegetation · Landwirtschaft", "vegetation.wetland": "Vegetation · Feuchtgebiete",
+    "vegetation.roof": "Vegetation · Dach- und Fassadenbegrünung", "blue_green": "Blau-grüne Infrastruktur",
+    "trees": "Bäume", "water": "Gewässer", "ground": "Offener Boden",
+    "surface.sealed": "Oberflächen · versiegelt", "surface.paved": "Oberflächen · gepflastert",
+    "surface.permeable": "Oberflächen · durchlässig", "surface.loose": "Oberflächen · lose",
+    "surface.sport": "Oberflächen · Sport", "surface.rail": "Oberflächen · Gleise",
+    "surface.function": "Oberflächen · Verkehrsflächen", "landuse": "Flächennutzung", "built": "Gebäude und Bauwerke",
+    "furniture": "Ausstattung", "ecology": "Ökologische Strukturen", "analysis": "Analyse",
+    "boundary": "Grenzen", "relief": "Relief", "planning": "Planung", "other": "Sonstiges", "context": "Umgebung",
+}
+
+
+def group_title(group: str, lang: str = "en") -> str:
+    """Heading of a catalog group on the catalog sheet."""
+    if lang == "de" and group in GROUPS_DE:
+        return GROUPS_DE[group]
+    return group.replace(".", " · ").replace("_", " ")
 
 
 class _Page:
@@ -142,8 +167,11 @@ def _map(svg: Svg, feats, catalog, x, y, w, h, *, center=None, scale=None, lod=N
     return scale
 
 
-def style_sheet(path=None, *, lang: str = "en", catalog: Catalog | None = None) -> Svg:
-    """The one-page overview of the style (A3 landscape, 420 x 297 mm)."""
+def style_sheet(path=None, *, lang: str = "en", catalog: Catalog | None = None, credit: bool = True) -> Svg:
+    """The one-page overview of the style (A3 landscape, 420 x 297 mm).
+
+    ``credit`` adds the small UrbanSens mark in the lower right corner (``credit=False`` leaves it out).
+    """
     catalog = catalog or load()
     T = TEXT.get(lang, TEXT["en"])
     pal = catalog.palette
@@ -248,17 +276,22 @@ def style_sheet(path=None, *, lang: str = "en", catalog: Catalog | None = None) 
         _map(svg, feats, catalog, x, 217, 50, 50, center=center, scale=scale, lod=lod)
         svg.text(x, 272.5, T["ctx"][k], size=2.5, fill=pg.ink7)
 
-    svg.text(W - M, H - 6.5, f"ulg {__version__} · generated from the catalog", size=2.0, fill=pg.ink4, anchor="end")
+    note = f"ulg {__version__} · {T['generated']}"
+    if credit:
+        draw_credit(svg, W - M, H - 5.0, height=9.5, lang=lang, note=note, ink=pg.ink4)
+    else:
+        svg.text(W - M, H - 6.5, note, size=2.0, fill=pg.ink4, anchor="end")
     if path:
         svg.save(path)
     return svg
 
 
 def catalog_sheet(path=None, *, lang: str = "en", catalog: Catalog | None = None, columns: int = 8,
-                  lod: int = 2, groups: list[str] | None = None, title: str | None = None) -> Svg:
-    """All elements with swatch, id and name, grouped – the visual index of the catalog.
+                  lod: int = 2, groups: list[str] | None = None, title: str | None = None, credit: bool = True) -> Svg:
+    """All elements with swatch, id and name, grouped: the visual index of the catalog.
 
-    ``groups`` limits the sheet to groups starting with one of the given prefixes.
+    ``groups`` limits the sheet to groups starting with one of the given prefixes; ``credit`` adds the small
+    UrbanSens mark below the last group (``credit=False`` leaves it out).
     """
     catalog = catalog or load()
     T = TEXT.get(lang, TEXT["en"])
@@ -268,16 +301,16 @@ def catalog_sheet(path=None, *, lang: str = "en", catalog: Catalog | None = None
               if not groups or any(g == p or g.startswith(p + ".") for p in groups)}
     n_rows = sum(-(-len(v) // columns) for v in groups.values())
     W = 2 * M + columns * cw
-    H = 34 + n_rows * ch + len(groups) * 11 + M
+    H = 34 + n_rows * ch + len(groups) * 11 + M + (6.5 if credit else 0.0)
     svg = Svg(W, H, background=pal.resolve("paper.base"), title=T["catalog"])
     pg = _Page(svg, catalog)
     n = sum(len(v) for v in groups.values())
     svg.text(M, 21, title or f"{T['title']} · {T['catalog']}", size=7.0, fill=pg.ink9, weight="500")
-    svg.text(W - M, 21, f"{n} elements · ulg {__version__}", size=2.8, fill=pg.ink5, anchor="end")
+    svg.text(W - M, 21, f"{T['n_elements'].format(n=n)} · ulg {__version__}", size=2.8, fill=pg.ink5, anchor="end")
     y = 32.0
     for group, els in groups.items():
         pg.hrule(M, W - M, y - 3)
-        pg.heading(M, y + 3, group.replace(".", " · ").replace("_", " "))
+        pg.heading(M, y + 3, group_title(group, lang))
         y += 8
         for k, el in enumerate(els):
             r, c = divmod(k, columns)
@@ -289,6 +322,9 @@ def catalog_sheet(path=None, *, lang: str = "en", catalog: Catalog | None = None
             if other != el.name(lang):
                 svg.text(x, yy + 27.6, other[:30], size=2.0, fill=pg.ink4, italic=True)
         y += -(-len(els) // columns) * ch + 3
+    if credit:
+        pg.hrule(M, W - M, y - 3)
+        draw_credit(svg, W - M, y + 12.5, height=9.5, lang=lang, note=f"ulg {__version__} · {T['generated']}", ink=pg.ink4)
     if path:
         svg.save(path)
     return svg
