@@ -1,7 +1,10 @@
 """Regenerate every image of the documentation from the library itself.
 
-    python tools/build_docs.py            # all images
+    python tools/build_docs.py            # all images, in both languages
     python tools/build_docs.py hero lod    # selected images
+
+Figures that contain text are drawn twice: ``name.png`` in English and ``name-de.png`` in German (the German
+pages of the documentation use the latter). Figures without text exist once.
 
 Needs Matplotlib and an SVG rasteriser (rsvg-convert, CairoSVG or Inkscape).
 The QGIS screenshot additionally needs a local QGIS installation and is skipped
@@ -26,6 +29,7 @@ import numpy as np  # noqa: E402
 
 import ulg  # noqa: E402
 from ulg import colormath as C  # noqa: E402
+from ulg.brand import STYLE_NAME, WEBSITE_SHORT, draw_credit, logo_png  # noqa: E402
 from ulg.datasets import ORIGIN, WINDOW, demo_park, demo_park_places  # noqa: E402
 from ulg.legend import draw_swatch  # noqa: E402
 from ulg.render import Ctx, Options, Svg, build, rasterize  # noqa: E402
@@ -34,6 +38,31 @@ from ulg.render.scene import Feature, bounds_of  # noqa: E402
 
 IMG = ROOT / "docs" / "img"
 INK, INK5, RULE = "#112D36", "#505B61", "#C6CACA"
+PAPER = "#F5F5F1"
+LANGS = ("en", "de")
+FONT_FILE = ROOT / "tools" / "html" / "fonts" / "RethinkSans-VariableFont_wght.ttf"
+
+
+def sfx(lang: str) -> str:
+    """File name suffix of a figure with text: ``hero.png`` in English, ``hero-de.png`` in German."""
+    return "" if lang == "en" else f"-{lang}"
+
+
+def pick(lang: str, en, de):
+    """The English or the German version of a text."""
+    return en if lang == "en" else de
+
+
+def ui_font(size: int, weight: int = 400):
+    """Rethink Sans (the font of the documentation) at a pixel size, for figures drawn with PIL."""
+    from PIL import ImageFont
+
+    f = ImageFont.truetype(str(FONT_FILE), size)
+    try:
+        f.set_variation_by_axes([weight])
+    except Exception:                                    # FreeType without variation support: regular weight
+        pass
+    return f
 
 
 def out(name: str) -> Path:
@@ -41,7 +70,62 @@ def out(name: str) -> Path:
     return IMG / name
 
 
-def png(svg: Svg, name: str, dpi: int = 150, keep_svg: bool = False) -> Path:
+def add_credit(page: Svg, mode: str = "plate") -> None:
+    """The small UrbanSens mark in the lower right corner of an image of the documentation.
+
+    ``plate``: for maps, the logo on a small paper plate inside the picture. ``band``: for diagrams, a strip of its own
+    below the picture with the logo and the credit text. Sheets and legends made by the library carry theirs already.
+    """
+    if mode == "band":
+        h = max(4.2, min(8.5, 0.032 * page.width, 0.10 * page.height))
+        page.line(0, page.height, page.width, page.height, stroke=RULE, width=0.2)
+        page.height += h + 3.6
+        draw_credit(page, page.width - 3.0, page.height - 1.8, height=h, text=h >= 6.0, ink=INK5)
+    else:
+        h = max(5.0, min(12.0, 0.04 * page.width, 0.08 * page.height))
+        draw_credit(page, page.width - 2.4, page.height - 2.4, height=h, text=False, plate=PAPER)
+
+
+def raster_credit(path: Path, mode: str = "plate", paper: str = PAPER) -> None:
+    """The same mark on a finished PNG: images made with PIL, Matplotlib or QGIS."""
+    from io import BytesIO
+
+    from PIL import Image, ImageDraw
+
+    im = Image.open(path).convert("RGB")
+    w, h = im.size
+    logo = Image.open(BytesIO(logo_png())).convert("RGBA")
+    lh = round(max(34, min(0.032 * w, 0.10 * h) if mode == "band" else min(0.036 * w, 0.08 * h)))
+    logo = logo.resize((round(logo.width * lh / logo.height), lh), Image.LANCZOS)
+    pad = round(lh * 0.22)
+    colour = tuple(int(paper[i:i + 2], 16) for i in (1, 3, 5))
+    if mode == "band":
+        strip = lh + 2 * pad
+        canvas = Image.new("RGB", (w, h + strip), colour)
+        canvas.paste(im, (0, 0))
+        d = ImageDraw.Draw(canvas)
+        d.line([(0, h), (w, h)], fill=(198, 202, 202), width=max(1, round(lh / 40)))
+        canvas.paste(logo, (w - logo.width - 2 * pad, h + pad), logo)
+        size = max(12, round(lh * 0.27))
+        x = w - logo.width - 2 * pad - round(lh * 0.3)
+        y0 = h + pad + lh // 2 - size
+        for k, (text, weight) in enumerate(((f"{STYLE_NAME} · ulg {ulg.__version__}", 400), (WEBSITE_SHORT, 650))):
+            f = ui_font(size, weight)
+            d.text((x - d.textlength(text, font=f), y0 + k * round(size * 1.42)), text, font=f, fill=(80, 91, 97))
+        canvas.save(path, optimize=True)
+        return
+    plate = Image.new("RGBA", (logo.width + 2 * pad, lh + 2 * pad), (0, 0, 0, 0))
+    ImageDraw.Draw(plate).rounded_rectangle((0, 0, plate.width - 1, plate.height - 1), radius=round(lh * 0.2),
+                                            fill=colour + (237,), outline=(198, 202, 202, 255), width=max(1, round(lh / 40)))
+    plate.alpha_composite(logo, (pad, pad))
+    base = im.convert("RGBA")
+    base.alpha_composite(plate, (w - plate.width - round(lh * 0.25), h - plate.height - round(lh * 0.25)))
+    base.convert("RGB").save(path, optimize=True)
+
+
+def png(svg: Svg, name: str, dpi: int = 150, keep_svg: bool = False, credit: str | None = None) -> Path:
+    if credit:
+        add_credit(svg, credit)
     with tempfile.TemporaryDirectory() as tmp:
         src = Path(tmp) / "page.svg"
         svg.save(src)
@@ -117,7 +201,7 @@ def plate(page: Svg, x, y, w, h) -> None:
     page.rect(x, y, w, h, fill=_paper(), stroke=RULE, width=0.2, rx=1.6, opacity=0.93)
 
 
-#: (place, English, German, dx, dy in metres, rotation in degrees) – the labels of the hero map
+#: (place, English, German, dx, dy in metres, rotation in degrees): the labels of the hero map
 HERO_LABELS = [
     ("pond", "Pond", "Teich", 3, 0, 0),
     ("pavilion", "Pavilion", "Pavillon", -6, -13, 0),
@@ -135,50 +219,62 @@ HERO_LABELS = [
 ]
 
 
-def hero_labels(page: Svg, extent, u: float, x0: float = 0.0, y0: float = 0.0, size: float = 4.3) -> None:
+def hero_labels(page: Svg, extent, u: float, x0: float = 0.0, y0: float = 0.0, size: float = 4.3,
+                lang: str = "en") -> None:
     minx, miny, maxx, maxy = extent
     paper = ulg.load().palette.resolve("paper.base")
     for place, en, de, dx, dy, rot in HERO_LABELS:
+        first, second = (en, de) if lang == "en" else (de, en)
         X, Y = at(place, dx, dy)
         px, py = x0 + (X - minx) / u, y0 + (maxy - Y) / u
-        page.text(px, py, en, size=size, fill=INK, anchor="middle", weight="600", halo=paper, rotate=rot, spacing=0.05)
-        # the German name sits underneath, along the same baseline direction
+        page.text(px, py, first, size=size, fill=INK, anchor="middle", weight="600", halo=paper, rotate=rot, spacing=0.05)
+        # the other language sits underneath, along the same baseline direction
         ox, oy = size * 0.95 * math.sin(math.radians(rot)), size * 0.95 * math.cos(math.radians(rot))
-        page.text(px + ox, py + oy, de, size=size * 0.72, fill=INK5, anchor="middle", italic=True, halo=paper, rotate=rot)
+        page.text(px + ox, py + oy, second, size=size * 0.72, fill=INK5, anchor="middle", italic=True, halo=paper,
+                  rotate=rot)
 
 
-def img_hero():
+def img_hero(lang: str = "en"):
     feats = park()
     scale = 1500
     W, H = WINDOW[0] / (scale / 1000), WINDOW[1] / (scale / 1000)
-    page = Svg(W, H, background="#F5F5F1", title="Angerpark, the demo quarter of ulg, 1:1500")
+    page = Svg(W, H, background="#F5F5F1",
+               title=pick(lang, "Angerpark, the demo quarter of ulg, 1:1500", "Angerpark, das Demoquartier von ulg, 1:1500"))
     draw_map(page, feats, 0, 0, W, H, scale=scale, center=CENTRE, frame=False)
     u = scale / 1000.0
     extent = (CENTRE[0] - W * u / 2, CENTRE[1] - H * u / 2, CENTRE[0] + W * u / 2, CENTRE[1] + H * u / 2)
-    hero_labels(page, extent, u)
+    hero_labels(page, extent, u, lang=lang)
     plate(page, 5, H - 28, 62, 23)
     north_arrow(page, 13, H - 9.5, size=12.0)
     scale_bar(page, 24, H - 10, scale, 50, parts=2)
     page.text(24, H - 20.6, "1 : 1500", size=3.0, fill=INK, weight="600")
-    png(page, "hero.png", dpi=130)
+    png(page, f"hero{sfx(lang)}.png", dpi=130, credit="plate")
+    if lang != "en":                                     # the close-up has no text: drawn once
+        return
     # the same quarter close up: pavilion, boardwalk and reed belt at 1:500
     page = Svg(160, 100, background="#F5F5F1", title="Pavilion, boardwalk and reed belt at 1:500")
     draw_map(page, feats, 0, 0, 160, 100, scale=500, center=at("pavilion", 27, 2), frame=False)
     scale_bar(page, 6, 95, 500, 20, parts=4, size=2.5)
-    png(page, "hero-detail.png", dpi=170)
+    png(page, "hero-detail.png", dpi=170, credit="plate")
 
 
-def img_conventions():
+#: titles of the themes in the German figures (the theme files carry the English ones)
+THEME_TITLES_DE = {"mellow": "UrbanSens Mellow (Hausstil)", "bfn": "BfN Landschaftsplanung", "mono": "Mono (Zeichnung)"}
+
+
+def img_conventions(lang: str = "en"):
     feats = park()
     scale = 2200
     u = scale / 1000
     w, h = 176.0 / u, 160.0 / u                     # 176 x 160 m: pond, plaza, street, avenue with tram, blocks
     center = (ORIGIN[0] + 338.0, ORIGIN[1] + 188.0)
     cols, gap = 4, 7.0
-    names = [("mellow", "2026 · UrbanSens house style"), ("planzv", "1965 / 1990 · PlanZV, Bauleitplan"),
-             ("alkis", "ALKIS · Liegenschaftskarte"), ("basemap", "basemap.de · web basemap"),
-             ("bfn", "2017 · BfN landscape planning"), ("osm", "2004– · OpenStreetMap Carto"),
-             ("mono", "ISO 11091 · black-and-white drawing")]
+    names = [("mellow", pick(lang, "2026 · UrbanSens house style", "2026 · UrbanSens Hausstil")),
+             ("planzv", "1965 / 1990 · PlanZV, Bauleitplan"), ("alkis", "ALKIS · Liegenschaftskarte"),
+             ("basemap", pick(lang, "basemap.de · web basemap", "basemap.de · Web-Basiskarte")),
+             ("bfn", pick(lang, "2017 · BfN landscape planning", "2017 · BfN Landschaftsplanung")),
+             ("osm", pick(lang, "since 2004 · OpenStreetMap Carto", "seit 2004 · OpenStreetMap Carto")),
+             ("mono", pick(lang, "ISO 11091 · black-and-white drawing", "ISO 11091 · Schwarz-Weiß-Zeichnung"))]
     W = cols * (w + gap) + gap
     H = 2 * (h + 13) + gap
     page = Svg(W, H, background="#FFFFFF")
@@ -187,46 +283,58 @@ def img_conventions():
         x0 = gap + (k % cols) * (w + gap)
         y0 = gap + (k // cols) * (h + 13)
         draw_map(page, feats, x0, y0, w, h, scale=scale, center=center, catalog=cat)
-        page.text(x0, y0 + h + 5.0, cat.theme.get("title", name), size=3.1, fill=INK, weight="600")
+        title = THEME_TITLES_DE.get(name) if lang == "de" else None
+        page.text(x0, y0 + h + 5.0, title or cat.theme.get("title", name), size=3.1, fill=INK, weight="600")
         page.text(x0, y0 + h + 9.2, caption, size=2.5, fill=INK5)
     x0, y0 = gap + 3 * (w + gap), gap + (h + 13)
-    lines = ["One quarter, seven conventions.", "", "The same data drawn with", "ulg.render_svg(gdf, theme=...):",
-             "the house style and six official", "or familiar conventions, each", "with the colour values of its",
-             "published source."]
+    lines = pick(lang, ["One quarter, seven conventions.", "", "The same data drawn with", "ulg.render_svg(gdf, theme=...):",
+                        "the house style and six official", "or familiar conventions, each", "with the colour values of its",
+                        "published source."],
+                 ["Ein Quartier, sieben Konventionen.", "", "Dieselben Daten, gezeichnet mit", "ulg.render_svg(gdf, theme=...):",
+                  "dem Hausstil und sechs amtlichen", "oder vertrauten Konventionen, jede", "mit den Farbwerten ihrer",
+                  "veröffentlichten Quelle."])
     for i, t in enumerate(lines):
         page.text(x0 + 2, y0 + 10 + i * 5.2, t, size=3.0 if i == 0 else 2.7, fill=INK if i == 0 else INK5,
                   weight="600" if i == 0 else "normal")
-    png(page, "conventions.png", dpi=120)
+    png(page, f"conventions{sfx(lang)}.png", dpi=120, credit="plate")
 
 
-def img_sheets():
-    ulg.style_sheet(out("style-sheet.svg"))
-    rasterize(out("style-sheet.svg"), out("style-sheet.png"), dpi=110)
-    print("   docs/img/style-sheet.png")
-    ulg.style_sheet(out("style-sheet-de.svg"), lang="de")
-    rasterize(out("style-sheet-de.svg"), out("style-sheet-de.png"), dpi=110)
-    out("style-sheet-de.svg").unlink()
+def img_sheets(lang: str = "en"):
+    s = sfx(lang)
+    ulg.style_sheet(out(f"style-sheet{s}.svg"), lang=lang)
+    rasterize(out(f"style-sheet{s}.svg"), out(f"style-sheet{s}.png"), dpi=110)
+    print(f"   docs/img/style-sheet{s}.png")
+    if lang != "en":                                     # the vector file of the style sheet is kept in English only
+        out(f"style-sheet{s}.svg").unlink()
     parts = {
-        "vegetation": (["vegetation", "blue_green"], "Vegetation and blue-green infrastructure"),
-        "trees-water-ground": (["trees", "water", "ground"], "Trees, water and open ground"),
-        "surfaces": (["surface"], "Surfaces and pavings"),
-        "built-landuse": (["landuse", "built", "furniture", "ecology"], "Land use, buildings, furniture, ecological structures"),
-        "lines-overlays": (["boundary", "relief", "planning", "analysis", "context", "other"], "Lines, planning and analysis overlays, context"),
+        "vegetation": (["vegetation", "blue_green"], ("Vegetation and blue-green infrastructure",
+                                                      "Vegetation und blau-grüne Infrastruktur")),
+        "trees-water-ground": (["trees", "water", "ground"], ("Trees, water and open ground",
+                                                              "Bäume, Gewässer und offener Boden")),
+        "surfaces": (["surface"], ("Surfaces and pavings", "Oberflächen und Beläge")),
+        "built-landuse": (["landuse", "built", "furniture", "ecology"],
+                          ("Land use, buildings, furniture, ecological structures",
+                           "Flächennutzung, Gebäude, Ausstattung, ökologische Strukturen")),
+        "lines-overlays": (["boundary", "relief", "planning", "analysis", "context", "other"],
+                           ("Lines, planning and analysis overlays, context",
+                            "Linien, Planungs- und Analyse-Overlays, Kontext")),
     }
-    for key, (groups, title) in parts.items():
-        svg = ulg.catalog_sheet(groups=groups, title=title)
-        png(svg, f"catalog-{key}.png", dpi=110)
-    ulg.catalog_sheet(out("catalog-sheet.svg"))
-    rasterize(out("catalog-sheet.svg"), out("catalog-sheet.png"), dpi=110)
+    for key, (groups, titles) in parts.items():
+        svg = ulg.catalog_sheet(groups=groups, title=pick(lang, *titles), lang=lang)
+        png(svg, f"catalog-{key}{s}.png", dpi=110)
+    ulg.catalog_sheet(out(f"catalog-sheet{s}.svg"), lang=lang)       # the whole catalog: linked from the pages as SVG
+    if lang == "en":
+        rasterize(out("catalog-sheet.svg"), out("catalog-sheet.png"), dpi=110)
 
 
-def img_palette():
+def img_palette(lang: str = "en"):
     cat = ulg.load()
     fams = cat.palette.families
     rows = [f for f in fams]
-    W, rh = 250.0, 11.5
+    W, rh = 264.0, 11.5                                    # the longest rows (stone, signal) have ten steps
     page = Svg(W, 16 + len(rows) * rh, background="#F5F5F1")
-    page.text(10, 10, "Palette · primitive colour tokens (family.step)", size=4, fill=INK, weight="600")
+    page.text(10, 10, pick(lang, "Palette · primitive colour tokens (family.step)",
+                            "Palette · Basisfarben als Tokens (family.step)"), size=4, fill=INK, weight="600")
     for r, fam in enumerate(rows):
         y = 16 + r * rh
         page.text(10, y + 6.2, fam, size=2.8, fill=INK, weight="600")
@@ -234,33 +342,34 @@ def img_palette():
             x = 38 + c * 21.5
             page.rect(x, y, 20, 6.5, fill=hexc, stroke=C.darken(hexc, 0.08), width=0.15, rx=0.6)
             page.text(x, y + 9.3, f"{step}  {hexc}", size=1.9, fill=INK5)
-    png(page, "palette.png", dpi=140)
+    png(page, f"palette{sfx(lang)}.png", dpi=140, credit="band")
 
 
-def img_lod():
+def img_lod(lang: str = "en"):
     feats = park()
     center = at("reed", -4, 2)
     page = Svg(3 * 64 + 4 * 5, 70, background="#FFFFFF")
-    for k, (scale, text) in enumerate([(5000, "1 : 5000 · LOD 1 – mass"), (1500, "1 : 1500 · LOD 2 – structure"),
-                                       (400, "1 : 400 · LOD 3 – elements")]):
+    for k, (scale, text) in enumerate([(5000, pick(lang, "1 : 5000 · LOD 1: mass", "1 : 5000 · LOD 1: Masse")),
+                                       (1500, pick(lang, "1 : 1500 · LOD 2: structure", "1 : 1500 · LOD 2: Struktur")),
+                                       (400, pick(lang, "1 : 400 · LOD 3: elements", "1 : 400 · LOD 3: Elemente"))]):
         x = 5 + k * 69
         draw_map(page, feats, x, 5, 64, 52, scale=scale, center=center)
         page.text(x, 63, text, size=2.8, fill=INK, weight="600")
-    png(page, "lod.png", dpi=170)
+    png(page, f"lod{sfx(lang)}.png", dpi=170, credit="plate")
 
 
-def img_tree_symbols():
+def img_tree_symbols(lang: str = "en"):
     from shapely.geometry import Point
 
     cat = ulg.load()
-    specs = [("tree", {"crown_diameter": 9, "stammumfang": 190}, "existing, stem to scale"),
-             ("tree_conifer", {"crown_diameter": 7}, "conifer"),
-             ("tree_fruit", {"crown_diameter": 7}, "fruit tree"),
-             ("tree_street", {"crown_diameter": 8}, "street tree with pit"),
-             ("tree_veteran", {"crown_diameter": 12}, "veteran / habitat tree"),
-             ("tree_planned", {"crown_diameter": 7}, "to plant (ISO 11091, PlanZV)"),
-             ("tree_protected", {"crown_diameter": 8}, "to keep (chain-line frame)"),
-             ("tree_remove", {"crown_diameter": 8}, "to fell (ISO 7518, yellow)")]
+    specs = [("tree", {"crown_diameter": 9, "stammumfang": 190}, pick(lang, "existing, stem to scale", "Bestand, Stamm maßstäblich")),
+             ("tree_conifer", {"crown_diameter": 7}, pick(lang, "conifer", "gezackter Kronenumriss")),
+             ("tree_fruit", {"crown_diameter": 7}, pick(lang, "fruit tree", "Blütenpunkte in der Krone")),
+             ("tree_street", {"crown_diameter": 8}, pick(lang, "street tree with pit", "mit Baumscheibe")),
+             ("tree_veteran", {"crown_diameter": 12}, pick(lang, "veteran / habitat tree", "Höhlen, Totholz")),
+             ("tree_planned", {"crown_diameter": 7}, pick(lang, "to plant (ISO 11091, PlanZV)", "ISO 11091, PlanZV")),
+             ("tree_protected", {"crown_diameter": 8}, pick(lang, "to keep (chain-line frame)", "strichpunktiertes Quadrat")),
+             ("tree_remove", {"crown_diameter": 8}, pick(lang, "to fell (ISO 7518, yellow)", "ISO 7518, gelb, durchkreuzt"))]
     scale, cell = 400, 34.0
     u = scale / 1000
     page = Svg(len(specs) * cell + 8, 52, background="#F5F5F1")
@@ -274,12 +383,12 @@ def img_tree_symbols():
         items = build(feats, cat, Ctx(u=u, lod=3), Options())
         h = 0.5 * cell * u
         page.frame(items, (-h, -h, h, h), u, x=x0, y=4, clip=False)
-        page.text(x0 + cell / 2, cell + 9, cat[eid].name("en"), size=2.5, fill=INK, weight="600", anchor="middle")
+        page.text(x0 + cell / 2, cell + 9, cat[eid].name(lang), size=2.5, fill=INK, weight="600", anchor="middle")
         page.text(x0 + cell / 2, cell + 13, text, size=2.1, fill=INK5, anchor="middle")
-    png(page, "tree-symbols.png", dpi=170)
+    png(page, f"tree-symbols{sfx(lang)}.png", dpi=170, credit="band")
 
 
-def img_textures():
+def img_textures(lang: str = "en"):
     cat = ulg.load()
     ids = ["lawn", "meadow", "wildflower_meadow", "dry_grassland", "meadow_wet", "ruderal", "perennials", "shrubs",
            "woodland", "woodland_coniferous", "reed", "water", "bare_soil", "sand", "gravel", "waterbound",
@@ -296,17 +405,19 @@ def img_textures():
         for i in range(2):
             for j in range(2):
                 page.frame(items, (0, 0, size / 2, size / 2), 1.0, x=x0 + i * size / 2, y=y0 + j * size / 2)
-        page.text(x0, y0 + size + 4.2, el.name("en"), size=2.3, fill=INK)
-    png(page, "textures.png", dpi=150)
+        name = el.name(lang)
+        page.text(x0, y0 + size + 4.2, name, size=2.3 * min(1.0, 22.0 / max(len(name), 1)), fill=INK)
+    png(page, f"textures{sfx(lang)}.png", dpi=150, credit="band")
 
 
-def img_legend():
+def img_legend(lang: str = "en"):
     ids = ["lawn", "meadow", "wildflower_meadow", "shrubs", "woodland", "tree", "tree_planned", "reed", "water",
            "gravel", "paving_light", "wood_deck", "building", "site_boundary"]
-    png(ulg.legend_svg(ids, lang="de", title="Legende", columns=2, background="#F5F5F1"), "legend-de.png", dpi=200)
+    svg = ulg.legend_svg(ids, lang=lang, title=pick(lang, "Legend", "Legende"), columns=2, background="#F5F5F1", credit=True)
+    png(svg, f"legend{sfx(lang)}.png", dpi=200)
 
 
-def img_analysis():
+def img_analysis(lang: str = "en"):
     import geopandas as gpd
     import matplotlib
 
@@ -342,15 +453,22 @@ def img_analysis():
         spine.set_linewidth(0.8)
     tx = fig.add_axes([0.64, 0.05, 0.34, 0.9])
     tx.set_axis_off()
-    tx.text(0, 0.97, "Coefficients travel with the style", fontsize=12, color=INK, weight="bold", va="top")
-    tx.text(0, 0.9, "Mean runoff coefficient Cm per surface\n(DIN 1986-100:2016-12), drawn over the\nblack-and-white theme; blank = no coefficient.",
+    tx.text(0, 0.97, pick(lang, "Coefficients travel with the style", "Kennwerte sind Teil des Stils"), fontsize=12,
+            color=INK, weight="bold", va="top")
+    tx.text(0, 0.9, pick(lang, "Mean runoff coefficient Cm per surface\n(DIN 1986-100:2016-12), drawn over the\nblack-and-white theme; blank = no coefficient.",
+                         "Mittlerer Abflussbeiwert Cm je Fläche\n(DIN 1986-100:2016-12), über das\nSchwarz-Weiß-Theme gezeichnet; leer = kein Beiwert."),
             fontsize=8.5, color=INK5, va="top")
-    rows = [("Plot area", f"{res['plot_area_m2']:,.0f} m²"), ("Sealed", f"{res['sealed_share']:.0%}"),
-            ("Partly sealed", f"{res['partly_share']:.0%}"), ("Built", f"{res['built_share']:.0%}"),
-            ("Biotope area factor (Berlin)", f"{res['bff']:.2f}"),
-            ("Runoff coefficient Cm", f"{res['runoff_cm']:.2f}" if res["runoff_cm"] is not None else "–"),
-            ("Mean albedo", f"{res['albedo']:.2f}" if res["albedo"] is not None else "–"),
-            ("Urban green (NRR)", f"{res['nrr_green_share']:.0%}"), ("Tree canopy", f"{res['canopy_share']:.0%}")]
+    num = (lambda v, nd=2: f"{v:.{nd}f}") if lang == "en" else (lambda v, nd=2: f"{v:.{nd}f}".replace(".", ","))
+    area = f"{res['plot_area_m2']:,.0f}" if lang == "en" else f"{res['plot_area_m2']:,.0f}".replace(",", ".")
+    rows = [(pick(lang, "Plot area", "Grundstücksfläche"), f"{area} m²"),
+            (pick(lang, "Sealed", "Versiegelt"), f"{res['sealed_share']:.0%}"),
+            (pick(lang, "Partly sealed", "Teilversiegelt"), f"{res['partly_share']:.0%}"),
+            (pick(lang, "Built", "Bebaut"), f"{res['built_share']:.0%}"),
+            (pick(lang, "Biotope area factor (Berlin)", "Biotopflächenfaktor (Berlin)"), num(res["bff"])),
+            (pick(lang, "Runoff coefficient Cm", "Abflussbeiwert Cm"), num(res["runoff_cm"]) if res["runoff_cm"] is not None else "–"),
+            (pick(lang, "Mean albedo", "Mittlere Albedo"), num(res["albedo"]) if res["albedo"] is not None else "–"),
+            (pick(lang, "Urban green (NRR)", "Urbanes Grün (NRR)"), f"{res['nrr_green_share']:.0%}"),
+            (pick(lang, "Tree canopy", "Baumkronenanteil"), f"{res['canopy_share']:.0%}")]
     for i, (k, v) in enumerate(rows):
         y = 0.72 - i * 0.058
         tx.text(0, y, k, fontsize=9.5, color=INK)
@@ -360,12 +478,14 @@ def img_analysis():
     tx.text(0, 0.07, "Cm 0", fontsize=8, color=INK5)
     tx.text(0.96, 0.07, "1", fontsize=8, color=INK5, ha="right")
     tx.text(0, 0.0, "ulg.indicators(gdf)", fontsize=9, color=INK, family="monospace")
-    fig.savefig(out("analysis.png"), dpi=150, facecolor=fig.get_facecolor())
+    name = f"analysis{sfx(lang)}.png"
+    fig.savefig(out(name), dpi=150, facecolor=fig.get_facecolor())
     plt.close(fig)
-    print("   docs/img/analysis.png")
+    raster_credit(out(name), "band", paper=cat.palette.resolve("paper.base"))
+    print(f"   docs/img/{name}")
 
 
-def img_cvd():
+def img_cvd(lang: str = "en"):
     from PIL import Image
 
     ids = ["lawn", "meadow", "wildflower_meadow", "shrubs", "woodland", "reed", "water", "bare_soil", "sand",
@@ -388,12 +508,16 @@ def img_cvd():
         v = np.clip(v, 0, 1)
         return np.where(v <= 0.0031308, 12.92 * v, 1.055 * v ** (1 / 2.4) - 0.055)
 
-    rows = [("normal vision", base)]
+    names = pick(lang, {"normal": "normal vision", "protanopia": "protanopia (red-blind)",
+                        "deuteranopia": "deuteranopia (green-blind)", "tritanopia": "tritanopia (blue-blind)"},
+                 {"normal": "normales Sehen", "protanopia": "Protanopie (Rotblindheit)",
+                  "deuteranopia": "Deuteranopie (Grünblindheit)", "tritanopia": "Tritanopie (Blaublindheit)"})
+    rows = [(names["normal"], base)]
     for kind in C.CVD_KINDS:
         m = np.array(C._CVD[kind])
-        rows.append((kind, gam(lin(base) @ m.T)))
+        rows.append((names[kind], gam(lin(base) @ m.T)))
     h, w, _ = base.shape
-    label_h = 34
+    label_h = 38
     canvas = np.ones((len(rows) * (h + label_h), w, 3))
     for i, (_, img) in enumerate(rows):
         canvas[i * (h + label_h) + label_h: (i + 1) * (h + label_h)] = img
@@ -401,16 +525,19 @@ def img_cvd():
     from PIL import ImageDraw
 
     d = ImageDraw.Draw(im)
+    label_font = ui_font(24, 560)
     for i, (name, _) in enumerate(rows):
-        d.text((12, i * (h + label_h) + 10), name, fill=(17, 45, 54))
-    im.save(out("cvd.png"))
-    print("   docs/img/cvd.png")
+        d.text((12, i * (h + label_h) + 6), name, font=label_font, fill=(17, 45, 54))
+    target = out(f"cvd{sfx(lang)}.png")
+    im.save(target)
+    raster_credit(target, "band", paper="#FFFFFF")
+    print(f"   docs/img/{target.name}")
 
 
-def img_timeline():
+def img_timeline(lang: str = "en"):
     import textwrap
 
-    events = [
+    events = pick(lang, [
         (1789, "Englischer Garten", "Sckell's landscape park in Munich, plans drawn and washed by hand"),
         (1808, "Bavarian cadastral survey", "1:5000 (1:1250 in parts of Franconia), printed from Solnhofen limestone"),
         (1965, "Planzeichenverordnung", "first federal plan symbols for land-use plans; restated 1990"),
@@ -420,11 +547,23 @@ def img_timeline():
         (2017, "BfN plan symbols", "federal catalogue for landscape plans with a pastel series"),
         (2024, "Nature Restoration Regulation", "urban green space and tree canopy become EU targets"),
         (2026, "ulg", "one catalog: hand-drawn look, standard codes, every platform"),
-    ]
+    ], [
+        (1789, "Englischer Garten", "Sckells Landschaftspark in München, Pläne von Hand gezeichnet und laviert"),
+        (1808, "Bayerische Katastervermessung", "1:5000 (in Teilen Frankens 1:1250), gedruckt vom Solnhofener Kalkstein"),
+        (1965, "Planzeichenverordnung", "erste bundeseinheitliche Planzeichen für Flächennutzungspläne; 1990 neu gefasst"),
+        (1969, "Design with Nature", "Ian McHargs Kartenüberlagerungen nehmen die Ebenen des GIS vorweg"),
+        (1994, "ISO 11091", "Zeichenregeln für Landschaftspläne: Bestand dünn, Planung dick"),
+        (2004, "OpenStreetMap", "offene, tagbasierte Daten über jede Oberfläche"),
+        (2017, "BfN-Planzeichen", "Bundeskatalog für Landschaftspläne mit einer Pastellserie"),
+        (2024, "Wiederherstellungsverordnung", "urbane Grünflächen und Baumkronenanteil werden EU-Ziele"),
+        (2026, "ulg", "ein Katalog: handgezeichnete Anmutung, Normcodes, jede Plattform"),
+    ])
     n = len(events)
-    W, H = 270.0, 70.0
+    tall = max(len(textwrap.wrap(text, 30)) for k, (_, _, text) in enumerate(events) if k % 2 == 0)
+    extra = 3.4 * max(0, tall - 3)                       # room for a fourth line above the axis
+    W, H = 270.0, 70.0 + extra
     page = Svg(W, H, background="#F5F5F1")
-    x0, x1, y = 16.0, W - 16.0, 34.0
+    x0, x1, y = 16.0, W - 16.0, 34.0 + extra
     page.line(x0 - 6, y, x1 + 6, y, stroke=INK5, width=0.35)
     step = (x1 - x0) / (n - 1)
     for k, (year, title, text) in enumerate(events):
@@ -443,8 +582,8 @@ def img_timeline():
         page.text(x, top + 4.0, title, size=2.5, fill=INK, anchor="middle", weight="600" if last else "normal")
         for i, line in enumerate(lines):
             page.text(x, top + 7.6 + i * 3.1, line, size=2.05, fill=INK5, anchor="middle")
-    page.text(W - 4, H - 3, "not to scale", size=1.8, fill=INK5, anchor="end")
-    png(page, "timeline.png", dpi=170)
+    page.text(W - 4, H - 3, pick(lang, "not to scale", "nicht maßstäblich"), size=1.8, fill=INK5, anchor="end")
+    png(page, f"timeline{sfx(lang)}.png", dpi=170, credit="band")
 
 
 def img_qgis():
@@ -475,6 +614,8 @@ def img_qgis():
             r = subprocess.run([qpy, str(script), str(tmp), str(out(name)), *args], env=env,
                                capture_output=True, text=True)
             print("  ", r.stdout.strip().splitlines()[-1] if r.stdout.strip() else r.stderr[-400:])
+            if out(name).exists():
+                raster_credit(out(name), "plate")
 
 
 def img_osm():
@@ -485,12 +626,12 @@ def img_osm():
     minx, miny, maxx, maxy = osm.total_bounds
     pad = 26.0
     svg = ulg.render_svg(osm, scale=900, extent=(minx + pad, miny + pad, maxx - pad, maxy - pad))
-    png(svg, "osm-block.png", dpi=150)
+    png(svg, "osm-block.png", dpi=150, credit="plate")
 
 
 
 #: The documentation's banners are black-and-white drawings with three accents taken from the UrbanSens logo
-#: (docs/img/brand/urbansens-logo.png): water in its blue, paths and decks in its peach, sport and cycling
+#: (src/ulg/data/brand/urbansens-logo.png): water in its blue, paths and decks in its peach, sport and cycling
 #: surfaces in its salmon. The drawing is the ``mono`` theme in soft grey on the paper colour of the pages, so
 #: the pictures fade into the page instead of sitting on it like photographs.
 UB_BLUE, UB_BLUE_INK, UB_PEACH, UB_SALMON = "#A9C5D5", "#6E9BB8", "#E7C0B1", "#E89484"
@@ -581,9 +722,12 @@ def img_banners(only: list[str] | None = None):
         save(page, "catalog")
 
 
-def img_social():
-    """The 1280 x 640 preview of the GitHub repository (Settings > Social preview): logo, tagline, a drawing of the park."""
-    from PIL import Image, ImageDraw, ImageFont
+def img_social(lang: str = "en"):
+    """The 1280 x 640 preview of the GitHub repository (Settings > Social preview): logo, tagline, a drawing of the park.
+
+    ``social-preview.png`` is the German one (the default language of the repository), ``social-preview-en.png`` the English one.
+    """
+    from PIL import Image, ImageDraw
 
     W, H, PX = 1280, 640, 1280
     feats = park()
@@ -602,15 +746,7 @@ def img_social():
     ramp.putdata(column)
     canvas.paste(drawing, (0, 0), ramp.resize((W, H)))
     d = ImageDraw.Draw(canvas)
-    font_file = ROOT / "tools" / "html" / "fonts" / "RethinkSans-VariableFont_wght.ttf"
-
-    def font(size: int, weight: int):
-        f = ImageFont.truetype(str(font_file), size)
-        try:
-            f.set_variation_by_axes([weight])
-        except Exception:                                # FreeType without variation support: regular weight
-            pass
-        return f
+    font = ui_font
 
     lockup = Image.open(IMG / "logo" / "ulg-logo.png").convert("RGBA")
     lw = 600
@@ -619,22 +755,32 @@ def img_social():
     x, y = 76, 92 + lockup.height + 34
     for i, colour in enumerate(("#6E9BB8", "#A9C5D5", "#E7C0B1", "#E48878", "#C65F60", "#A35459", "#6F8C9D")):   # logo stripes
         d.rectangle((x + i * 18, y, x + i * 18 + 17, y + 6), fill=colour)
-    y += 34
-    d.text((x, y), "The UrbanSens Ecological Vector Style", font=font(33, 700), fill="#1F2426")
-    d.text((x, y + 42), "as a library.", font=font(33, 700), fill="#1F2426")
-    d.text((x, y + 100), "Colours, textures and symbols for urban landscape maps,", font=font(23, 500), fill="#596164")
-    d.text((x, y + 134), "tied to German and European standards.", font=font(23, 500), fill="#596164")
-    ub = Image.open(IMG / "brand" / "urbansens-logo.png").convert("RGBA")
-    ub = ub.resize((round(ub.width * 96 / ub.height), 96), Image.LANCZOS)
+    three = lang == "de"                                 # the German tagline needs a third line: tighter spacing, smaller logo below
+    y += 26 if three else 34
+    head = pick(lang, ["The UrbanSens Ecological Vector Style", "as a library."],
+                ["Der UrbanSens Ecological Vector Style", "als Bibliothek."])
+    body = pick(lang, ["Colours, textures and symbols for urban landscape maps,", "tied to German and European standards."],
+                ["Farben, Texturen und Symbole für Karten der", "Stadtlandschaft, nach deutschen und europäischen", "Standards."])
+    d.text((x, y), head[0], font=font(33, 700), fill="#1F2426")
+    d.text((x, y + 42), head[1], font=font(33, 700), fill="#1F2426")
+    for i, line in enumerate(body):
+        d.text((x, y + (90 if three else 100) + i * (32 if three else 34)), line, font=font(23, 500), fill="#596164")
+    ub = Image.open(ROOT / "src" / "ulg" / "data" / "brand" / "urbansens-logo.png").convert("RGBA")
+    ub_h = 78 if three else 96
+    ub = ub.resize((round(ub.width * ub_h / ub.height), ub_h), Image.LANCZOS)
     canvas.paste(ub, (70, H - ub.height - 38), ub)
-    target = IMG / "social-preview.png"
+    d.text((70 + ub.width + 18, H - 38 - ub.height // 2 - 14), WEBSITE_SHORT, font=font(26, 650), fill="#596164")
+    target = IMG / ("social-preview.png" if lang == "de" else "social-preview-en.png")
     canvas.save(target, optimize=True)
     print("  ", target.relative_to(ROOT))
 
 
-IMAGES = {"hero": img_hero, "osm": img_osm, "conventions": img_conventions, "sheets": img_sheets, "palette": img_palette,
-          "lod": img_lod, "trees": img_tree_symbols, "textures": img_textures, "legend": img_legend,
-          "analysis": img_analysis, "cvd": img_cvd, "timeline": img_timeline, "qgis": img_qgis, "banners": img_banners, "social": img_social}
+#: name -> (function, has text): figures with text are drawn once per language, the others once
+IMAGES = {"hero": (img_hero, True), "osm": (img_osm, False), "conventions": (img_conventions, True),
+          "sheets": (img_sheets, True), "palette": (img_palette, True), "lod": (img_lod, True),
+          "trees": (img_tree_symbols, True), "textures": (img_textures, True), "legend": (img_legend, True),
+          "analysis": (img_analysis, True), "cvd": (img_cvd, True), "timeline": (img_timeline, True),
+          "qgis": (img_qgis, False), "banners": (img_banners, False), "social": (img_social, True)}
 
 
 def main() -> None:
@@ -646,7 +792,12 @@ def main() -> None:
         ap.error(f"unknown image(s): {', '.join(unknown)}")
     for name in args.names or IMAGES:
         print(name)
-        IMAGES[name]()
+        draw, has_text = IMAGES[name]
+        if has_text:
+            for lang in LANGS:
+                draw(lang)
+        else:
+            draw()
 
 
 if __name__ == "__main__":
