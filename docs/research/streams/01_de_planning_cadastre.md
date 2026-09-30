@@ -1,4 +1,4 @@
-# Stream 01 — German planning-law symbology and official cadastral/topographic catalogs
+# Stream 01: German planning-law symbology and official cadastral/topographic catalogs
 
 Research date: 2026-09-30. Scope: PlanZV, XPlanung/XPlanGML, ALKIS/ATKIS (AAA model, GeoInfoDok 7.1), official German map colours (ALKIS-/ATKIS-Signaturenkatalog, basemap.de), BKG LBM-DE.
 
@@ -26,11 +26,11 @@ How the primary sources were read: legal text and images at gesetze-im-internet.
 | Earlier additions visible in the Anlage | 1.2.2 "Dörfliche Wohngebiete (§ 5a BauNVO)" (images in folder bgbl1_2021); 1.2.4 "Urbane Gebiete (§ 6a BauNVO)"; no. 7 pictograms "Erneuerbare Energien", "Kraft-Wärme-Kopplung" (images in folder bgbl1_2011) | V | same |
 | Fundstelle of the Anlage | "(Fundstelle: BGBl. I 1991, 58 [Anlagenband]; bzgl. der einzelnen Änderungen vgl. Fußnote)" | V | same |
 
-### 1.2 § 2 Planzeichen — wording and legal force
+### 1.2 § 2 Planzeichen: wording and legal force
 
 Text as retrieved from https://www.gesetze-im-internet.de/planzv_90/__2.html (V unless noted; the statute is an official work, § 5 UrhG):
 
-(Full text of § 2 re-read verbatim in the browser on 2026-09-30 — all five Absätze V.)
+(Full text of § 2 re-read verbatim in the browser on 2026-09-30, all five Absätze V.)
 
 - **(1)** "Als Planzeichen in den Bauleitplänen sollen die in der Anlage zu dieser Verordnung enthaltenen Planzeichen verwendet werden. Dies gilt auch insbesondere für Kennzeichnungen, nachrichtliche Übernahmen und Vermerke. Die Darstellungsarten können miteinander verbunden werden. Linien können auch in Farbe ausgeführt werden. Kennzeichnungen, nachrichtliche Übernahmen und Vermerke sollen zusätzlich zu den Planzeichen als solche bezeichnet werden."
 - **(2)** "Die in der Anlage enthaltenen Planzeichen können ergänzt werden, soweit dies zur eindeutigen Darstellung des Planinhalts erforderlich ist. Soweit Darstellungen des Planinhalts erforderlich sind, für die in der Anlage keine oder keine ausreichenden Planzeichen enthalten sind, können Planzeichen verwendet werden, die sinngemäß aus den angegebenen Planzeichen entwickelt worden sind."
@@ -49,17 +49,17 @@ Assessment (my reading of the verified text):
 | Colour vs. black-and-white? | The Anlage has two columns, "schwarz/weiß" and "farbig"; both are equally admissible. "Die Darstellungsarten können miteinander verbunden werden. Linien können auch in Farbe ausgeführt werden." | § 2 Abs. 1; Anlage column heads |
 | Legend duty | Used Planzeichen "sollen im Bauleitplan erklärt werden". | § 2 Abs. 4 |
 | Numeric colour values? | None. Colours are given only as names ("Grün mittel", "Blau mittel", "Goldocker" ...) plus a printed sample. "Farbton" is explicitly adaptable (Abs. 3). | Anlage text |
-| Consequence for an "official" theme | A strict theme can reproduce hue family + symbol geometry of the Anlage; exact RGB is a convention, not law. Outside Bauleitpläne (e.g. inventory/ecology maps) PlanZV does not apply at all. | — |
+| Consequence for an "official" theme | A strict theme can reproduce hue family + symbol geometry of the Anlage; exact RGB is a convention, not law. Outside Bauleitpläne (e.g. inventory/ecology maps) PlanZV does not apply at all. | n/a |
 
 ### 1.3 Structure of the Anlage ("Planzeichen für Bauleitpläne")
 
-Numbers, sub-numbers and all 15 group titles verified verbatim at https://www.gesetze-im-internet.de/planzv_90/anlage.html (titles re-read in the browser on 2026-09-30; the "title R" marks in the last column below are therefore superseded — every title in this table is V). Footnote of the Anlage: "frühere Nr. 1.5. jetzt Nr. 1.6. gem. Art. 6 Nr. 2 G v. 12.8.2025 I Nr. 189 mWv 15.8.2025" (V).
+Numbers, sub-numbers and all 15 group titles verified verbatim at https://www.gesetze-im-internet.de/planzv_90/anlage.html (titles re-read in the browser on 2026-09-30; the "title R" marks in the last column below are therefore superseded, every title in this table is V). Footnote of the Anlage: "frühere Nr. 1.5. jetzt Nr. 1.6. gem. Art. 6 Nr. 2 G v. 12.8.2025 I Nr. 189 mWv 15.8.2025" (V).
 
 | No. | Title | Legal basis quoted in the Anlage | St. |
 |---|---|---|---|
 | 1 | Art der baulichen Nutzung (1.1 Wohnbauflächen; 1.2 Gemischte Bauflächen; 1.3 Gewerbliche Bauflächen; 1.4 Sonderbauflächen; 1.5 Beschleunigungsgebiete für die Windenergie an Land; 1.6 Beschränkung der Zahl der Wohnungen) | § 5 Abs. 2 Nr. 1, § 9 Abs. 1 Nr. 1 BauGB, §§ 1 bis 11 BauNVO | V |
-| 2 | Maß der baulichen Nutzung (2.1 Geschoßflächenzahl ... 2.8 Höhe baulicher Anlagen) | — | V |
-| 3 | Bauweise, Baulinien, Baugrenzen (3.1 Offene Bauweise, 3.2 Geschlossene, 3.3 Abweichende, 3.4 Baulinie, 3.5 Baugrenze) | — | V |
+| 2 | Maß der baulichen Nutzung (2.1 Geschoßflächenzahl ... 2.8 Höhe baulicher Anlagen) | n/a | V |
+| 3 | Bauweise, Baulinien, Baugrenzen (3.1 Offene Bauweise, 3.2 Geschlossene, 3.3 Abweichende, 3.4 Baulinie, 3.5 Baugrenze) | n/a | V |
 | 4 | Einrichtungen und Anlagen zur Versorgung mit Gütern und Dienstleistungen des öffentlichen und privaten Bereichs, Flächen für den Gemeinbedarf, Flächen für Sport- und Spielanlagen (4.1 Flächen für den Gemeinbedarf; 4.2 Flächen für Sport- und Spielanlagen) | § 5 Abs. 2 Nr. 2 Buchst. a, § 9 Abs. 1 Nr. 5 BauGB | V |
 | 5 | Flächen für den überörtlichen Verkehr und für die örtlichen Hauptverkehrszüge (5.1 Straßenverkehr; 5.2 Bahnen; 5.3 Überörtliche Wege und örtliche Hauptwege; 5.4 Umgrenzung der Flächen für den Luftverkehr) | § 5 Abs. 2 Nr. 3, Abs. 4 BauGB | V |
 | 6 | Verkehrsflächen (6.1 Straßenverkehrsflächen; 6.2 Straßenbegrenzungslinie; 6.3 Verkehrsflächen besonderer Zweckbestimmung; 6.4 Ein- bzw. Ausfahrten ...; 6.5 Bahnen; 6.6 Luftverkehr) | § 9 Abs. 1 Nr. 11, Abs. 6 BauGB | V |
@@ -77,23 +77,23 @@ Numbers, sub-numbers and all 15 group titles verified verbatim at https://www.ge
 
 Symbol descriptions are my own descriptions of the images as depicted at gesetze-im-internet.de (image files `normengrafiken/bgbl1_1991_ab/jNNNN_NNNN.jpg`), viewed 2026-09-30 (V "as depicted"). Colour names are verbatim from the Anlage (V). "Sampled RGB" = median of the dominant colour bin of the official JPEG reproduction (non-normative, scan/JPEG artefacts; see 1.5).
 
-#### Group 6 — Verkehrsflächen (Bebauungsplan)
+#### Group 6: Verkehrsflächen (Bebauungsplan)
 
 | No. | Planzeichen | Colour name (Anlage) | b/w depiction | colour depiction | Sampled RGB | St. |
 |---|---|---|---|---|---|---|
 | 6.1 | Straßenverkehrsflächen | Goldocker | two alternatives: blank (white) area with outline, or fine dot raster | flat yellow-ochre fill | #FEE223 (254,226,35) | V |
 | 6.2 | Straßenbegrenzungslinie auch gegenüber Verkehrsflächen besonderer Zweckbestimmung | Permanentgrün hell | solid black line | black line accompanied by a light-green band | #5AE458 (90,228,88) | V |
 | 6.3 | Verkehrsflächen besonderer Zweckbestimmung | Goldocker | blank, or diagonal stripes of dot raster | diagonal yellow-ochre stripes on white | #FDE333 (253,227,51) | V |
-| 6.3 Zweckbestimmung | Öffentliche Parkfläche | — | white "P" on dark square | — | — | V |
-| 6.3 Zweckbestimmung | Fußgängerbereich | — | white pedestrian figure on dark square | — | — | V |
-| 6.3 Zweckbestimmung | Verkehrsberuhigter Bereich | — | white "V" on dark square | — | — | V |
-| 6.4 | Einfahrt / Einfahrtbereich / Bereich ohne Ein- und Ausfahrt | — | solid triangle; dashed line between two triangles; row of filled semicircles | — | — | V |
-| 5.1.1 / 5.1.2 (FNP) | Autobahnen ...; Sonstige überörtliche und örtliche Hauptverkehrsstraßen | Goldocker | — | yellow-ochre bands | #FEE333 (254,227,51) | V |
-| 5.2.1 | Bahnanlagen | Violett mittel | — | violet fill | #D18CD3 (209,140,211) | V |
-| 5.2.2 / 5.2.3 / 5.4 | Straßenbahnen; Seilbahnen; Umgrenzung der Flächen für den Luftverkehr | Violett dunkel | — | violet line / band | ≈ #BD5AC2 (189,90,194) (from 5.4) | V |
-| 5.3 | Überörtliche Wege und örtliche Hauptwege, e.g. Hauptwanderweg | — | line of large dots with a diamond containing "W" | — | — | V |
+| 6.3 Zweckbestimmung | Öffentliche Parkfläche | n/a | white "P" on dark square | n/a | n/a | V |
+| 6.3 Zweckbestimmung | Fußgängerbereich | n/a | white pedestrian figure on dark square | n/a | n/a | V |
+| 6.3 Zweckbestimmung | Verkehrsberuhigter Bereich | n/a | white "V" on dark square | n/a | n/a | V |
+| 6.4 | Einfahrt / Einfahrtbereich / Bereich ohne Ein- und Ausfahrt | n/a | solid triangle; dashed line between two triangles; row of filled semicircles | n/a | n/a | V |
+| 5.1.1 / 5.1.2 (FNP) | Autobahnen ...; Sonstige überörtliche und örtliche Hauptverkehrsstraßen | Goldocker | n/a | yellow-ochre bands | #FEE333 (254,227,51) | V |
+| 5.2.1 | Bahnanlagen | Violett mittel | n/a | violet fill | #D18CD3 (209,140,211) | V |
+| 5.2.2 / 5.2.3 / 5.4 | Straßenbahnen; Seilbahnen; Umgrenzung der Flächen für den Luftverkehr | Violett dunkel | n/a | violet line / band | ≈ #BD5AC2 (189,90,194) (from 5.4) | V |
+| 5.3 | Überörtliche Wege und örtliche Hauptwege, e.g. Hauptwanderweg | n/a | line of large dots with a diamond containing "W" | n/a | n/a | V |
 
-#### Group 9 — Grünflächen
+#### Group 9: Grünflächen
 
 | Item | Content | St. |
 |---|---|---|
@@ -113,20 +113,20 @@ Zweckbestimmung pictograms (each drawn in a rectangular frame, black on white; n
 | Badeplatz, Freibad (bathing place) | six horizontal wavy lines | j0011_0060 | 2000 | V |
 | Friedhof (cemetery) | three upright crosses | j0011_0080 | 2600 | V |
 
-#### Group 10 — Wasserflächen und Flächen für die Wasserwirtschaft
+#### Group 10: Wasserflächen und Flächen für die Wasserwirtschaft
 
 | No. | Planzeichen | Colour name | b/w depiction | colour depiction | Sampled RGB | St. |
 |---|---|---|---|---|---|---|
 | 10.1 | Wasserflächen | Blau mittel | horizontal wavy lines | flat light blue | #C4E3EC (196,227,236) | V |
 | 10.1 | Zweckbestimmung Hafen | Blau mittel | "H" in circle on wave pattern | "H" in circle on light blue | #C5E3ED | V |
 | 10.2 | Umgrenzung von Flächen für die Wasserwirtschaft, den Hochwasserschutz und die Regelung des Wasserabflusses | Blau dunkel | border line with wavy inner line | blue band with wavy inner edge | #44ABD4 (68,171,212) | V |
-| 10.2 | Hochwasserrückhaltebecken / Überschwemmungsgebiet | Blau dunkel | "R" / "Ü" in circle inside the 10.2 border | same, blue band | — | V |
+| 10.2 | Hochwasserrückhaltebecken / Überschwemmungsgebiet | Blau dunkel | "R" / "Ü" in circle inside the 10.2 border | same, blue band | n/a | V |
 | 10.3 | Umgrenzung der Flächen mit wasserrechtlichen Festsetzungen | Blau dunkel | border with looped ("comb"/meander) inner line | plain blue band | #3BA4CD (59,164,205) | V |
-| 10.3 | Schutzgebiet für Grund- und Quellwassergewinnung / Schutzgebiet für Oberflächengewässer | Blau dunkel | "GW" / "OW" in circle | same, blue band | — | V |
+| 10.3 | Schutzgebiet für Grund- und Quellwassergewinnung / Schutzgebiet für Oberflächengewässer | Blau dunkel | "GW" / "OW" in circle | same, blue band | n/a | V |
 
 Note (verbatim, 10.1): "Die Flächensignatur kann auch als Randsignatur verwendet werden." (V)
 
-#### Group 11 — Aufschüttungen, Abgrabungen
+#### Group 11: Aufschüttungen, Abgrabungen
 
 | No. | Planzeichen | Depiction (b/w only) | St. |
 |---|---|---|---|
@@ -135,17 +135,17 @@ Note (verbatim, 10.1): "Die Flächensignatur kann auch als Randsignatur verwende
 | note | "Bei kleinen Flächen kann die Randsignatur im Flächennutzungsplan entfallen." | V |
 | 15.9 | Flächen für Aufschüttungen, Abgrabungen und Stützmauern, soweit sie zur Herstellung des Straßenkörpers erforderlich sind (§ 9 Abs. 1 Nr. 26) | slope hachures (thick top-edge line, alternating long/short hachures to a dashed foot line; for Abgrabung the short hachures rise from the foot line); Stützmauer = double line with oblique hatching | V |
 
-#### Group 12 — Landwirtschaft und Wald
+#### Group 12: Landwirtschaft und Wald
 
 | No. | Planzeichen | Colour name | b/w depiction | colour depiction | Sampled RGB | St. |
 |---|---|---|---|---|---|---|
 | 12.1 | Flächen für die Landwirtschaft | Gelbgrün | sparse regular grid of small dots | flat light yellow-green | #BCFC9C (188,252,156) | V |
 | 12.2 | Flächen für Wald | Blaugrün | regular grid of larger filled dots | flat blue-green (teal) | #15ADAA (21,173,170) | V |
-| 12.2 | Zweckbestimmung Erholungswald | — | "E" in circle | — | — | V |
+| 12.2 | Zweckbestimmung Erholungswald | n/a | "E" in circle | n/a | n/a | V |
 
 Note (verbatim): "Die Flächensignaturen können auch als Randsignaturen verwendet werden." (V)
 
-#### Group 13 — Natur und Landschaft
+#### Group 13: Natur und Landschaft
 
 | No. | Planzeichen | Colour name | b/w depiction | colour depiction | Sampled RGB | St. |
 |---|---|---|---|---|---|---|
@@ -156,30 +156,30 @@ Note (verbatim): "Die Flächensignaturen können auch als Randsignaturen verwend
 | 13.2 Erhaltung: Bäume | tree to be preserved | Grün dunkel | circle with FILLED centre dot | green-filled circle with filled dot | #32E34D | V |
 | 13.2 Erhaltung: Sträucher | shrubs to be preserved | Grün dunkel | cloud outline with filled dot | green-filled cloud with filled dot | same | V |
 | 13.2 Erhaltung: Sonstige Bepflanzungen | other planting to be preserved | Grün dunkel | cloud with rectangle and filled dot | green-filled | same | V |
-| 13.2.1 | Umgrenzung von Flächen zum Anpflanzen von Bäumen, Sträuchern und sonstigen Bepflanzungen (§ 9 Abs. 1 Nr. 25 Buchst. a) | — | border line with a row of small OPEN circles along the inside | — | — | V |
-| 13.2.2 | Umgrenzung von Flächen mit Bindungen für Bepflanzungen und für die Erhaltung von Bäumen, Sträuchern und sonstigen Bepflanzungen sowie von Gewässern (§ 9 Abs. 1 Nr. 25 Buchst. b) | — | border line with a row of FILLED dots along the inside | — | — | V |
+| 13.2.1 | Umgrenzung von Flächen zum Anpflanzen von Bäumen, Sträuchern und sonstigen Bepflanzungen (§ 9 Abs. 1 Nr. 25 Buchst. a) | n/a | border line with a row of small OPEN circles along the inside | n/a | n/a | V |
+| 13.2.2 | Umgrenzung von Flächen mit Bindungen für Bepflanzungen und für die Erhaltung von Bäumen, Sträuchern und sonstigen Bepflanzungen sowie von Gewässern (§ 9 Abs. 1 Nr. 25 Buchst. b) | n/a | border line with a row of FILLED dots along the inside | n/a | n/a | V |
 | 13.3 | Umgrenzung von Schutzgebieten und Schutzobjekten im Sinne des Naturschutzrechts | Grün dunkel | border line with groups of short perpendicular strokes (blocks of 4) | green band with the stroke groups | #48E658 | V |
-| 13.3 letters | N = Naturschutzgebiet, NLP = Nationalpark, L = Landschaftsschutzgebiet, NP = Naturpark, ND = Naturdenkmal, LB = Geschützter Landschaftsbestandteil (each in a circle) | — | — | — | — | V |
+| 13.3 letters | N = Naturschutzgebiet, NLP = Nationalpark, L = Landschaftsschutzgebiet, NP = Naturpark, ND = Naturdenkmal, LB = Geschützter Landschaftsbestandteil (each in a circle) | n/a | n/a | n/a | n/a | V |
 
 Notes (verbatim): "Im Bebauungsplan sind die Maßnahmen näher zu bestimmen." (13.1); "Festsetzungen für Teile baulicher Anlagen sind im Bebauungsplan näher zu bestimmen." (13.2); "Bei Bedarf sind zur weiteren Unterscheidung der Schutzgebiete und Schutzobjekte Differenzierungen in der Umgrenzungssignatur zulässig." (13.3) (V)
 
 The principle "open centre = new planting (Anpflanzen), filled centre = existing/preserve (Erhaltung)" is the single most reusable PlanZV motif for point vegetation symbols.
 
-#### Group 15 — Sonstige Planzeichen (selection)
+#### Group 15: Sonstige Planzeichen (selection)
 
 | No. | Planzeichen | Colour name | Depiction | Sampled RGB | St. |
 |---|---|---|---|---|---|
 | 15.3 | Umgrenzung von Flächen für Nebenanlagen, Stellplätze, Garagen und Gemeinschaftsanlagen; abbreviations St, GSt, Ga, GGa; Spielplatz pictogram (bucket) | Rot | b/w dashed line; colour: red dashed line | thin line, unreliable | V |
-| 15.5 | Mit Geh-, Fahr- und Leitungsrechten zu belastende Flächen | — | line with a row of open boxes; "bei schmalen Flächen": double dashed line | — | V |
-| 15.8 | Umgrenzung der Flächen, die von der Bebauung freizuhalten sind | — | border with zigzag inner line | — | V |
-| 15.11 | Umgrenzung der Flächen, bei deren Bebauung besondere bauliche Vorkehrungen gegen äußere Einwirkungen erforderlich sind / Bergbau | Grau dunkel | — | #787B77 (120,123,119) | V |
+| 15.5 | Mit Geh-, Fahr- und Leitungsrechten zu belastende Flächen | n/a | line with a row of open boxes; "bei schmalen Flächen": double dashed line | n/a | V |
+| 15.8 | Umgrenzung der Flächen, die von der Bebauung freizuhalten sind | n/a | border with zigzag inner line | n/a | V |
+| 15.11 | Umgrenzung der Flächen, bei deren Bebauung besondere bauliche Vorkehrungen gegen äußere Einwirkungen erforderlich sind / Bergbau | Grau dunkel | n/a | #787B77 (120,123,119) | V |
 | 15.13 | Grenze des räumlichen Geltungsbereichs des Bebauungsplans (§ 9 Abs. 7 BauGB) | Grau dunkel | b/w: thick broken black band (long thick dashes with gaps); colour: continuous dark-grey band | #767A76 (118,122,118) | V |
-| 15.14 | Abgrenzung unterschiedlicher Nutzung ... (z. B. § 1 Abs. 4, § 16 Abs. 5 BauNVO) | — | thin line with filled dots ("Perlschnur") | — | V |
-| 4.2 | Flächen für Sport- und Spielanlagen | — | border of small dots; Sportanlagen = white stadium oval on dark; Spielanlagen = white bucket on dark | — | V |
+| 15.14 | Abgrenzung unterschiedlicher Nutzung ... (z. B. § 1 Abs. 4, § 16 Abs. 5 BauNVO) | n/a | thin line with filled dots ("Perlschnur") | n/a | V |
+| 4.2 | Flächen für Sport- und Spielanlagen | n/a | border of small dots; Sportanlagen = white stadium oval on dark; Spielanlagen = white bucket on dark | n/a | V |
 
 ### 1.5 Colour names of the whole Anlage with sampled values (non-normative)
 
-Sampling method: dominant colour bin of the image in the "farbig" column on gesetze-im-internet.de (JPEG scans of the BGBl. Anlagenband 1991; later amendments are separate scans with visibly different colour rendering — e.g. "Braun mittel" ranges from #DDD292 to #B49151 across sub-items). Use only as an indication of hue family.
+Sampling method: dominant colour bin of the image in the "farbig" column on gesetze-im-internet.de (JPEG scans of the BGBl. Anlagenband 1991; later amendments are separate scans with visibly different colour rendering, e.g. "Braun mittel" ranges from #DDD292 to #B49151 across sub-items). Use only as an indication of hue family.
 
 | Colour name (Anlage) | Used for | Sampled hex (RGB) | St. |
 |---|---|---|---|
@@ -208,9 +208,9 @@ Sampling method: dominant colour bin of the image in the "farbig" column on gese
 | Source | What it gives | Binding? | St. | URL |
 |---|---|---|---|---|
 | PlanZV itself | colour names + printed samples only, no numbers | law (Soll) | V | https://www.gesetze-im-internet.de/planzv_90/anlage.html |
-| xPlanBox default WMS styles ("xplansyn/default", SE/SLD) — open-source reference implementation for XPlanung visualisation (Freie und Hansestadt Hamburg / lat/lon; DiPlanung) | hex colours per XPlanung class, see 2.6 | de-facto convention, not law; code is AGPL v3 | V | https://gitlab.opencode.de/diplanung/ozgxplanung (tags xplanbox-7.0 and xplanbox-9.3 checked; identical colours) |
+| xPlanBox default WMS styles ("xplansyn/default", SE/SLD), open-source reference implementation for XPlanung visualisation (Freie und Hansestadt Hamburg / lat/lon; DiPlanung) | hex colours per XPlanung class, see 2.6 | de-facto convention, not law; code is AGPL v3 | V | https://gitlab.opencode.de/diplanung/ozgxplanung (tags xplanbox-7.0 and xplanbox-9.3 checked; identical colours) |
 | BfN-Schriften 461/2 "Planzeichen für die Landschaftsplanung – Planzeichenkatalog" (Hoheisel, Mengel, Heiland, Mertelmeyer, Meurer, Rittel 2017; DOI 10.19217/skr4612) | RAL/RGB values, line widths for landscape-planning symbols (not PlanZV) | recommendation | S (abstract only; catalogue not opened) | https://www.bfn.de/publikationen/bfn-schriften/bfn-schriften-4612-planzeichen-fuer-die-landschaftsplanung |
-| Länder / municipal drafting guides with RGB/CMYK/RAL tables for PlanZV colours | not found in this session | — | n.v. | — |
+| Länder / municipal drafting guides with RGB/CMYK/RAL tables for PlanZV colours | not found in this session | n/a | n.v. | n/a |
 
 ---
 
@@ -255,7 +255,7 @@ No change entries exist for XP_ZweckbestimmungGruen, XP_ZweckbestimmungLandwirts
 
 All rows V. Codes and documentation from `XPlanGML_Basisschema.xsd` / `XPlanGML_SonstigePlanwerke.xsd` / `XPlanGML_LPlan_Kernmodell.xsd` (6.1); names from the GML dictionaries `Enumerationen/<Name>.xml` (same registry folder): https://registry.gdi-de.org/schemas/de.xleitstelle.xplanung/6.1/
 
-#### XP_ZweckbestimmungGruen (35 values) — used by BP_GruenFlaeche / FP_Gruen via `zweckbestimmung.allgemein`
+#### XP_ZweckbestimmungGruen (35 values): used by BP_GruenFlaeche / FP_Gruen via `zweckbestimmung.allgemein`
 
 In 6.x the former "besondere Zweckbestimmung" (5-digit) codes are merged into this one enumeration; the first 2 digits show the parent.
 
@@ -299,9 +299,9 @@ In 6.x the former "besondere Zweckbestimmung" (5-digit) codes are merged into th
 
 (There is no code 24002 in 6.1.)
 
-Related: `nutzungsform` (XP_Nutzungsform): 1000 Privat, 2000 Oeffentlich (V) — this is the machine form of the PlanZV duty to mark Grünflächen as "öffentlich" or "privat".
+Related: `nutzungsform` (XP_Nutzungsform): 1000 Privat, 2000 Oeffentlich (V), this is the machine form of the PlanZV duty to mark Grünflächen as "öffentlich" or "privat".
 
-#### Detaillierte Zweckbestimmung Grün — external code lists (attribute `zweckbestimmung.detail`, gml:CodeType)
+#### Detaillierte Zweckbestimmung Grün: external code lists (attribute `zweckbestimmung.detail`, gml:CodeType)
 
 Register entries, governance level "national-legal", status "Gültig"; code = `<parent>_<n>` (V). Sources: https://registry.gdi-de.org/codelist/de.xleitstelle.xplanung/BP_DetailZweckbestGruenFlaeche and .../FP_DetailZweckbestGruen
 
@@ -326,7 +326,7 @@ Register entries, governance level "national-legal", status "Gültig"; code = `<
 | 2400_10 | Gehoelzflaeche | Steilufer |
 | 2400_11 | Gruenland/Weideland | Strand |
 | 2400_12 | Windschutzpflanzungen | Grünverbindung Entwicklung: Grünverbindungen - Planung |
-| 2400_13 | — | Grünverbindung Sicherung: Grünverbindungen |
+| 2400_13 | n/a | Grünverbindung Sicherung: Grünverbindungen |
 | 2400_14 | Lärmschutzanlage | same |
 | 2400_15 | Ortsrandeingrünung | same |
 | 2400_16 | Eigentümergärten | same |
@@ -340,20 +340,20 @@ Register entries, governance level "national-legal", status "Gültig"; code = `<
 | 9999_5 | Gastronomie | same |
 | 9999_6 | Grünverbindung | same |
 | 9999_7 | Pferdebezogene Anlagen und Nutzungen | same |
-| 9999_10 | Eigentümergarten | — |
+| 9999_10 | Eigentümergarten | n/a |
 
 Caution: identical codes 2400_10/_11/_12 mean different things in the BP and the FP list (V).
 
 Other relevant external code lists (V): BP_VegetationsobjektTypen (1 value: 2050_1 Einheimische Gehölze); BP_DetailZweckbestLandwirtschaft (1000_1 Landwirtschaftliche Fläche ökologisch wertvoll; 1000_2 Gewächshausanlagen); BP_DetailZweckbestWaldFlaeche (1000_1 Sukzessionswald; 1800_1 Aufforstung; 9999_1 Begräbniswald, Bestattungswald; 9999_02 Sport-Freizeitbezogene Waldnutzung); SO_DetailZweckbestStrassenverkehr (14004_1 Radschnellweg; 14004_2 Radwandern; 14004_3 Fernradweg; 14008_1 Autohof; 1400_14 Fähre; 1600_0_1 Wohnmobilstellplatz).
 
-#### Gewässer — no "XP_ZweckbestimmungGewaesser" in 6.x
+#### Gewässer: no "XP_ZweckbestimmungGewaesser" in 6.x
 
-In XPlanGML 6.0/6.1 water bodies are modelled by the plan-type-independent class **SO_Gewaesser** (attribute `artDerFestlegung.allgemein` : SO_KlassifizGewaesser); the schema folder contains no XP_ZweckbestimmungGewaesser (V). The enumeration of that name belongs to the 5.x line (values there not verified this session; recalled: 1000 Hafen, 1100 Wasserflaeche, 1200 Fliessgewaesser, 9999 Sonstiges — **R**).
+In XPlanGML 6.0/6.1 water bodies are modelled by the plan-type-independent class **SO_Gewaesser** (attribute `artDerFestlegung.allgemein` : SO_KlassifizGewaesser); the schema folder contains no XP_ZweckbestimmungGewaesser (V). The enumeration of that name belongs to the 5.x line (values there not verified this session; recalled: 1000 Hafen, 1100 Wasserflaeche, 1200 Fliessgewaesser, 9999 Sonstiges, **R**).
 
 | SO_KlassifizGewaesser | Name | Lesbarer Name / documentation |
 |---|---|---|
-| 1000 | Gewaesser | Gewässer — Allgemeines, bestehendes Gewässer |
-| 2000 | FliessGewaesser | Fließgewässer — Allgemeines Fließgewässer |
+| 1000 | Gewaesser | Gewässer, Allgemeines, bestehendes Gewässer |
+| 2000 | FliessGewaesser | Fließgewässer, Allgemeines Fließgewässer |
 | 20000 | Gewaesser1Ordnung | Gewässer 1. Ordnung |
 | 20001 | Gewaesser2Ordnung | Gewässer 2. Ordnung |
 | 20002 | Gewaesser3Ordnung | Gewässer 3. Ordnung |
@@ -415,7 +415,7 @@ SO_KlassifizSchutzgebietWasserrecht: 1000 Wasserschutzgebiet; 10000 QuellGrundwa
 
 XP_EigentumsartWald: 1000 Öffentlicher Wald allgemein; 1100 Staatswald; 1200 Körperschaftswald; 12000 Kommunalwald; 12001 Stiftungswald; 2000 Privatwald allgemein; 20000 Gemeinschaftswald; 20001 Genossenschaftswald; 3000 Kirchenwald; 9999 Sonstiger Wald. XP_WaldbetretungTyp: 1000 Radfahren; 2000 Reiten; 3000 Fahren; 4000 Hundesport (V).
 
-#### XP_SPEMassnahmenTypen (16) — "Aufzählung der Typen von Ausgleichs- und Ersatzmaßnahmen" (the closest thing XPlanung has to a habitat-type list)
+#### XP_SPEMassnahmenTypen (16): "Aufzählung der Typen von Ausgleichs- und Ersatzmaßnahmen" (the closest thing XPlanung has to a habitat-type list)
 
 | Code | Name | Lesbarer Name | Documentation (abridged) |
 |---|---|---|---|
@@ -434,7 +434,7 @@ XP_EigentumsartWald: 1000 Öffentlicher Wald allgemein; 1100 Staatswald; 1200 K�
 | 2200 | Trockenrasen | Trockenrasen | zeitweise extreme Trockenheit, Nährstoffarmut |
 | 2300 | Heide | Heide | Zwergstrauchgesellschaften (Calluna / Erica) |
 | 2400 | Moor | Moor | "Moore, Sümpfe, Röhrichte, Großseggenrieder, seggen- und binsenreiche Nasswiesen, Quellbereiche, Binnenlandsalzstellen" gem. § 30 Abs. 2 Nr. 2 BNatSchG |
-| 9999 | Sonstiges | Sonstiges | — |
+| 9999 | Sonstiges | Sonstiges | n/a |
 
 #### XP_SPEZiele (5), XP_ABEMassnahmenTypen (3), XP_AnpflanzungBindungErhaltungsGegenstand (13), XP_ERFlaechenArt (5)
 
@@ -469,7 +469,7 @@ XP_EigentumsartWald: 1000 Öffentlicher Wald allgemein; 1100 Staatswald; 1200 K�
 
 XP_HandlungsfeldNatuerlicherKlimaschutz (new 6.1): 1000 Schutz intakter Moore und Wiedervernässung; 2000 Naturnaher Wasserhaushalt mit lebendigen Flüssen, Seen und Auen; 3000 Meere und Küsten; 4000 Wildnis und Schutzgebiete; 5000 Waldökosysteme; 6000 Böden als Kohlenstoffspeicher; 7000 Natürlicher Klimaschutz auf Siedlungs- und Verkehrsflächen (V). XP_ZweckbestimmungSpielSportanlage: 1000 Sportanlage; 2000 Spielanlage; 3000 SpielSportanlage; 9999 Sonstiges (V).
 
-#### SO_ZweckbestimmungStrassenverkehr (30) — traffic surfaces incl. paths, squares, traffic green
+#### SO_ZweckbestimmungStrassenverkehr (30): traffic surfaces incl. paths, squares, traffic green
 
 1000 AutobahnUndAehnlich; 1200 Hauptverkehrsstrasse; 1400 SonstigerVerkehrswegAnlage; 14000 VerkehrsberuhigterBereich; 14001 Platz; 140010 UeberfuehrenderVerkehrsweg; 140011 UnterfuehrenderVerkehrsweg; 140012 Wirtschaftsweg; 140013 LandwirtschaftlicherVerkehr; 14002 Fussgaengerbereich; 14003 RadGehweg; 14004 Radweg; 14005 Gehweg; 14006 Wanderweg; 14007 ReitKutschweg; 14008 Rastanlage; 14009 Busbahnhof; 14014 Anschlussflaeche; 14015 Verkehrsgruen; 1600 RuhenderVerkehr; 16000 Parkplatz; 16001 FahrradAbstellplatz; 16002 P_RAnlage; 16003 B_RAnlage; 16004 Parkhaus; 16005 CarSharing; 16006 BikeSharing; 3400 Mischverkehrsflaeche; 3500 Ladestation; 9999 Sonstiges (V).
 
@@ -497,10 +497,10 @@ Others (V): SO_KlassifizGelaendemorphologie 1000 Terassenkante, 1100 Rinne, 1200
 | BP_FreiFlaeche | "Umgrenzung der Flächen, die von der Bebauung freizuhalten sind ... Dies entspricht dem Planzeichen PlanZV 15.8 (Satz 1)." | nutzung | 15.8 |
 | BP_Wegerecht | § 9 Abs. 1 Nr. 21 | typ, zugunstenVon, breite, istSchmal | 15.5 |
 | BP_NebenanlagenFlaeche | § 9 Abs. 1 Nr. 4 | zweckbestimmung | 15.3 |
-| BP_KleintierhaltungFlaeche | § 9 Abs. 1 Nr. 19 | — | — |
-| BP_EingriffsBereich | Bereich, in dem ein Eingriff nach dem Naturschutzrecht zugelassen wird | — | — |
-| SO_Gelaendemorphologie | "Das Landschaftsbild prägende Geländestruktur" | artDerFestlegung | — |
-| SO_Forstrecht; SO_Bodenschutzrecht; SO_Grenze | nachrichtliche Übernahmen | see enumerations | — |
+| BP_KleintierhaltungFlaeche | § 9 Abs. 1 Nr. 19 | n/a | n/a |
+| BP_EingriffsBereich | Bereich, in dem ein Eingriff nach dem Naturschutzrecht zugelassen wird | n/a | n/a |
+| SO_Gelaendemorphologie | "Das Landschaftsbild prägende Geländestruktur" | artDerFestlegung | n/a |
+| SO_Forstrecht; SO_Bodenschutzrecht; SO_Grenze | nachrichtliche Übernahmen | see enumerations | n/a |
 | FP_AnpassungKlimawandel | § 5 Abs. 2 Nr. 2c BauGB | massnahme (FP_MassnahmeKlimawandelTypen), detailMassnahme | 7 |
 
 Open point: whether "§ 9 Abs. 1 Nr. 15a / § 5 Abs. 2 Nr. 5a BauGB" quoted by the 6.1 schema are already in force was not checked.
@@ -512,7 +512,7 @@ The LP model was rebuilt in 6.0 ("neues Datenmodell Landschaftsplanung", https:/
 | Class (FeatureType) | Definition | Key attributes |
 |---|---|---|
 | LP_Plan | Planwerk mit landschaftsplanerischen gutachterlichen Aussagen, Darstellungen bzw. Festsetzungen | planArt (LP_PlanArt: 1000 Landschaftsprogramm, 2000 Landschaftsrahmenplan, 3000 Landschaftsplan, 4000 Gruenordnungsplan, 9999 Sonstiges), bundesland, rechtsstand, rechtlicheAussenwirkung ... |
-| LP_Bereich | Planbereich (Kartenblatt, Teilplan ...) | — |
+| LP_Bereich | Planbereich (Kartenblatt, Teilplan ...) | n/a |
 | LP_Objekt (abstract) / LP_Geometrieobjekt (abstract) | Basisklassen; point, line or area geometry | raumkonkretisierung (LP_Raumkonkretisierung: 1000 Scharf, 2000 Suchraum, 3000 Unscharf, 4000 Position, 5000 Raumunkonkret, 9998 Unbekannt), vorschlagIntegrationBLP / RO |
 | **LP_ZieleErfordernisseMassnahmen** | Ziele, Erfordernisse und Maßnahmen für Naturschutz und Landschaftspflege gem. Kapitel 2 BNatSchG | zieleErfordernisseMassnahmen (LP_ZEMTyp 1000 Ziel, 2000 Erfordernis, 3000 Massnahme); schutzgut; zielDimNatSchLaPfl; adressat; schutzPflegeEntwicklung; biologischeVielfalt; boden; wasser; klima; luft; landschaftsbild; erholung; freiraeume; foerdermoeglichkeit; nutzungseinschraenkung |
 | **LP_BiotopverbundBiotopvernetzung** | Flächen und Elemente für Biotopverbund und Biotopvernetzung | planungsEbene (1000 Biotopverbund, 2000 Biotopvernetzung); typBioVerbund (LP_FlaechenTypBV 1000 Kernflaeche, 2000 Verbindungsfläche, 3000 Verbindungselement; LP_FlaechenTypBVSpeziell 1000 Verbindungsraeume, 2000 Verbundachse, 3000 Wildtierkorridor, 4000 Entwicklungsflaeche, 5000 Entwicklungsmassnahme, 6000 Vernetzungselement, 7000 Trittsteinbiotop, 9999); bioVerbundsystemArt (1000 Allgemein, 2000 OffenlandHalboffenland, 3000 Wald, 4000 Gewaesser); bioVStandortFeuchte (1000 Feucht, 2000 Mittel, 3000 Trocken); rechtlicheSicherung |
@@ -542,7 +542,7 @@ LP enumerations (all V):
 
 ### 2.6 De-facto visualisation colours: xPlanBox default styles (V)
 
-Source: `xplan-workspaces/src/main/workspace/styles/xplansyn/default/{bp,fp,so,lp}/*.xml` at tag xplanbox-7.0 and `xplan-webservices/xplan-webservices-workspaces/src/main/workspace/styles/xplansyn/default/...` at tag xplanbox-9.3 (2026-07-03) of https://gitlab.opencode.de/diplanung/ozgxplanung — colours identical in both. File header: "Copyright (C) 2008 - 2023 Freie und Hansestadt Hamburg, developed by lat/lon ..."; licence GNU Affero GPL v3 (relevant if SVG symbols were copied; hex values are facts).
+Source: `xplan-workspaces/src/main/workspace/styles/xplansyn/default/{bp,fp,so,lp}/*.xml` at tag xplanbox-7.0 and `xplan-webservices/xplan-webservices-workspaces/src/main/workspace/styles/xplansyn/default/...` at tag xplanbox-9.3 (2026-07-03) of https://gitlab.opencode.de/diplanung/ozgxplanung, colours identical in both. File header: "Copyright (C) 2008 - 2023 Freie und Hansestadt Hamburg, developed by lat/lon ..."; licence GNU Affero GPL v3 (relevant if SVG symbols were copied; hex values are facts).
 
 | XPlanung class / rule | Style | PlanZV colour name it implements |
 |---|---|---|
@@ -559,7 +559,7 @@ Source: `xplan-workspaces/src/main/workspace/styles/xplansyn/default/{bp,fp,so,l
 | BP_WasserwirtschaftsFlaeche, SO_Wasserrecht, SO_SchutzgebietWasserrecht | band stroke **#007BCE** width 3 + black 0.2 | Blau dunkel |
 | **BP_LandwirtschaftsFlaeche / FP_Landwirtschaft** | fill **#CCE968** | Gelbgrün |
 | **BP_WaldFlaeche / FP_WaldFlaeche** | fill **#34AB8F** | Blaugrün |
-| SO_Forstrecht | fill #1AA600, dashed outline | — |
+| SO_Forstrecht | fill #1AA600, dashed outline | n/a |
 | BP_StrassenVerkehrsFlaeche | fill **#FFD92F** | Goldocker |
 | FP_Strassenverkehr | fill #FDDF1B; ruhender Verkehr #FFEC8B | Goldocker |
 | BP_VerkehrsflaecheBesondererZweckbestimmung | bitmap pattern verksflbeszwb_neu.png (striped) | Goldocker stripes |
@@ -570,8 +570,8 @@ Source: `xplan-workspaces/src/main/workspace/styles/xplansyn/default/{bp,fp,so,l
 | BP_Plan (Geltungsbereich) | stroke **#80847A** width 3 (opacity 0.8) | Grau dunkel |
 | BP_NebenanlagenFlaeche | #FD341F dashed (2 2) | Rot |
 | BP_BauLinie / BP_BauGrenze | #FD341F / #1763AA width 0.8 + black dash-dot | Rot / Blau |
-| BP_EingriffsBereich | band #CCD4C7 | — |
-| LP_ZieleErfordernisseMassnahmen, LP_BiotopverbundBiotopvernetzung, LP_Eingriffsregelung | black outline only (no thematic colours) | — |
+| BP_EingriffsBereich | band #CCD4C7 | n/a |
+| LP_ZieleErfordernisseMassnahmen, LP_BiotopverbundBiotopvernetzung, LP_Eingriffsregelung | black outline only (no thematic colours) | n/a |
 
 ---
 
@@ -588,7 +588,7 @@ Source: `xplan-workspaces/src/main/workspace/styles/xplansyn/default/{bp,fp,so,l
 | All enumerations with labels and definitions, machine-readable (405 lists incl. AX_*, LB_*, LN_*) | register "GeoInfoDok (AdV)", owner AdV, control body AAA-Revisionsausschuss | V | https://registry.gdi-de.org/codelist/de.adv-online.gid |
 | Catalogue generator (HTML/DOCX/XML/CSV per schema and Modellart) | GeoInfoDok Objektartenkatalog App (form-based download; not used in this session) | V (exists) | https://www.gid-katalog-app.org/ |
 
-### 3.2 Objektartenbereich "Tatsächliche Nutzung" (TN) — object types
+### 3.2 Objektartenbereich "Tatsächliche Nutzung" (TN): object types
 
 Kennung + name: ALKIS-OK DLKM 7.1.2 (Profil Hessen) group lists, "vollständig und unabhängig von der gewählten Modellart" (pp. 158, 181, 196, 209), cross-checked against `featureTypeNumber` in the ALKIS-Signaturenkatalog 2.1.0 XML. Nutzungsartkennung (8-digit destatis key) and attributes: NAS `AAA-Fachschema.xsd` 7.1.2. All V.
 
@@ -606,7 +606,7 @@ The abstract superclass is AX_TatsaechlicheNutzung (Kennung 40001) with `datumDe
 | 41007 | AX_FlaecheBesondererFunktionalerPraegung | Fläche besonderer funktionaler Prägung | 17000000 | funktion, artDerBebauung, name, zustand |
 | 41008 | AX_SportFreizeitUndErholungsflaeche | Sport-, Freizeit- und Erholungsfläche | 18000000 | **funktion (FKT)**, name, zustand, bezeichnung |
 | 41009 | AX_Friedhof | Friedhof | 19000000 | funktion, name, zustand |
-| 41010 | AX_Siedlungsflaeche | Siedlungsfläche | — | artDerBebauung, funktion, name, regionalsprache |
+| 41010 | AX_Siedlungsflaeche | Siedlungsfläche | n/a | artDerBebauung, funktion, name, regionalsprache |
 | **42000 Verkehr** | | | 20000000 | |
 | 42001 | AX_Strassenverkehr | Straßenverkehr | 21010000 | funktion (AX_Funktion_Strasse), name, zweitname, zustand |
 | 42006 | AX_Weg | Weg | 21020000 | funktion, name, bezeichnung |
@@ -614,7 +614,7 @@ The abstract superclass is AX_TatsaechlicheNutzung (Kennung 40001) with `datumDe
 | 42010 | AX_Bahnverkehr | Bahnverkehr | 22000000 | funktion, bahnkategorie, bezeichnung, nummerDerBahnstrecke, zustand |
 | 42015 | AX_Flugverkehr | Flugverkehr | 23000000 | funktion, art, name, nutzung, zustand |
 | 42016 | AX_Schiffsverkehr | Schiffsverkehr | 24000000 | funktion, name, zustand |
-| (42002, 42003, 42005, 42008, 42014) | Straße, Straßenachse, Fahrbahnachse, Fahrwegachse, Bahnstrecke | line/ZUSO objects of the group | — | — |
+| (42002, 42003, 42005, 42008, 42014) | Straße, Straßenachse, Fahrbahnachse, Fahrwegachse, Bahnstrecke | line/ZUSO objects of the group | n/a | n/a |
 | **43000 Vegetation** | | | 30000000 | |
 | 43001 | AX_Landwirtschaft | Landwirtschaft | 31000000 | **vegetationsmerkmal (VEG)**, name |
 | 43002 | AX_Wald | Wald | 32000000 | vegetationsmerkmal, name, bezeichnung, zustand, nutzung, regionalsprache |
@@ -628,13 +628,13 @@ The abstract superclass is AX_TatsaechlicheNutzung (Kennung 40001) with `datumDe
 | 44005 | AX_Hafenbecken | Hafenbecken | 42000000 | funktion, name, nutzung, seekennzahl |
 | 44006 | AX_StehendesGewaesser | Stehendes Gewässer | 43000000 | funktion, name, seekennzahl, hydrologischesMerkmal, widmung, schifffahrtskategorie, bezeichnung, wasserspiegelhoeheInStehendemGewaesser, nutzung, zustand |
 | 44007 | AX_Meer | Meer | 44000000 | funktion, name, bezeichnung, tidemerkmal |
-| (44002, 44003, 44004) | Wasserlauf, Kanal, Gewässerachse | line/ZUSO objects | — | — |
+| (44002, 44003, 44004) | Wasserlauf, Kanal, Gewässerachse | line/ZUSO objects | n/a | n/a |
 
 Definitions (verbatim, ALKIS-OK 7.1.2, V): Sport-, Freizeit- und Erholungsfläche "ist eine bebaute oder unbebaute Fläche, die dem Sport, der Freizeitgestaltung oder der Erholung dient."; Friedhof "ist eine Landfläche, die zur Bestattung dient oder gedient hat, sofern die Zuordnung zu Grünanlage nicht zutreffender ist. Waldbestattungsflächen werden der Nutzungsart Wald zugeordnet."; Gehölz "ist eine Fläche, die mit einzelnen Bäumen, Baumgruppen, Büschen, Hecken und Sträuchern bestockt ist."; Heide "ist eine Fläche mit typischen Sträuchern, Gräsern und geringwertigem Baumbestand."; Moor "ist eine unkultivierte Fläche, deren obere Schicht aus vertorften oder zersetzten Pflanzenresten besteht."; Sumpf "ist ein wassergesättigtes, zeitweise unter Wasser stehendes Gelände."; Unland/Vegetationslose Fläche "ist eine Fläche, die nicht dauerhaft landwirtschaftlich genutzt wird, wie z. B. Fels-, Sand- oder Eisflächen, Uferstreifen längs von Gewässern und Sukzessionsflächen."
 
 ### 3.3 Coded values (Wertearten)
 
-Codes: NAS 7.1.2 XSD (complete code sets). Labels/definitions: GDI-DE register de.adv-online.gid (same code sets — cross-checked for all lists below). All V. NAK = Nutzungsartkennung where seen in the OK/XSD; "(G)" = Grunddatenbestand, "(LN)" = value qualifying for the automatic derivation of Landnutzung, as printed in the ALKIS-OK Profil Hessen (only seen for the values shown there).
+Codes: NAS 7.1.2 XSD (complete code sets). Labels/definitions: GDI-DE register de.adv-online.gid (same code sets, cross-checked for all lists below). All V. NAK = Nutzungsartkennung where seen in the OK/XSD; "(G)" = Grunddatenbestand, "(LN)" = value qualifying for the automatic derivation of Landnutzung, as printed in the ALKIS-OK Profil Hessen (only seen for the values shown there).
 
 #### AX_Funktion_SportFreizeitUndErholungsflaeche (FKT of 41008; 42 values)
 
@@ -672,14 +672,14 @@ Codes: NAS 7.1.2 XSD (complete code sets). Labels/definitions: GDI-DE register d
 | 4321 | Gebäude- und Freifläche Erholung, Bad | n.v. | |
 | 4330 | Campingplatz | 18030300 | (LN) |
 | 4331 | Gebäude- und Freifläche Erholung, Camping | n.v. | |
-| **4400** | **Grünanlage** — "eine Anlage mit Bäumen, Sträuchern, Rasenflächen, Blumenrabatten und Wegen. Sie dient der Erholung einschließlich spielerischer Aktivitäten oder erfüllt stadtgestalterische Aufgaben." | 18040000 | (G) (LN) |
-| 4410 | Siedlungsgrünfläche — "unbebaute Wiese, Rasenfläche und Parkanlage in Städten und Siedlungen" | n.v. | |
-| 4420 | Park — "landschaftsgärtnerisch gestaltete Grünanlage, die der Repräsentation und der Erholung dient" | 18040200 | |
+| **4400** | **Grünanlage**: "eine Anlage mit Bäumen, Sträuchern, Rasenflächen, Blumenrabatten und Wegen. Sie dient der Erholung einschließlich spielerischer Aktivitäten oder erfüllt stadtgestalterische Aufgaben." | 18040000 | (G) (LN) |
+| 4410 | Siedlungsgrünfläche, "unbebaute Wiese, Rasenfläche und Parkanlage in Städten und Siedlungen" | n.v. | |
+| 4420 | Park, "landschaftsgärtnerisch gestaltete Grünanlage, die der Repräsentation und der Erholung dient" | 18040200 | |
 | 4430 | Botanischer Garten | n.v. | |
 | 4431 | Gebäude- und Freifläche Grünanlage, Botanik | n.v. | |
 | 4440 | Kleingarten (Schrebergarten) | 18040400 | |
 | 4450 | Wochenendplatz | 18040500 | |
-| 4460 | Garten — "Flächen, die nicht im unmittelbaren Zusammenhang mit Wohnbauflächen stehen und nicht dem Bundeskleingartengesetz unterliegen ..." | 18040600 | |
+| 4460 | Garten, "Flächen, die nicht im unmittelbaren Zusammenhang mit Wohnbauflächen stehen und nicht dem Bundeskleingartengesetz unterliegen ..." | 18040600 | |
 | 4470 | Spielplatz, Bolzplatz | n.v. | |
 | 9999 | Sonstiges | n.v. | |
 
@@ -701,7 +701,7 @@ Codes: NAS 7.1.2 XSD (complete code sets). Labels/definitions: GDI-DE register d
 | 1012 | Hopfen | 31010200 | |
 | 1013 | Spargel | n.v. | |
 | 1014 | Hanf | n.v. | |
-| 1020 | Grünland — "Grasfläche, die gemäht oder beweidet wird" | 31020000 | |
+| 1020 | Grünland, "Grasfläche, die gemäht oder beweidet wird" | 31020000 | |
 | 1021 | Streuobstwiese | 31020100 | |
 | 1022 | Salzweide | n.v. | |
 | 1030 | Gartenbauland | 31030000 | |
@@ -729,11 +729,11 @@ Codes: NAS 7.1.2 XSD (complete code sets). Labels/definitions: GDI-DE register d
 | AX_Funktion_Fliessgewaesser (44001) | 8200 Fluss; 8210 Altwasser; 8220 Altarm; 8230 Flussmündungstrichter; 8300 Kanal; 8400 Graben; 8410 Fleet; 8500 Bach |
 | AX_Funktion_StehendesGewaesser (44006) | 8610 See; 8620 Teich; 8630 Stausee; 8631 Speicherbecken; 8640 Baggersee; 9999 Sonstiges |
 | AX_HydrologischesMerkmal_Fliessgewaesser / _StehendesGewaesser | 2000 Nicht ständig Wasser führend |
-| AX_Oberflaechenmaterial_Strasse (attribute `oberflaechenmaterial` of **AX_Strassenachse** (42003) and **AX_Fahrbahnachse** (42005) — V, NAS XSD) | 1220 Beton; 1230 Bitumen, Asphalt; 1240 Pflaster; 1250 Gestein, zerkleinert |
-| AX_Oberflaechenmaterial_Flugverkehrsanlage (attribute of AX_Flugverkehrsanlage) | codes 1210, 1220, 1230 (V); labels not fetched — by analogy and by the ATKIS-SK10 texts "Gras, Rasen" / "Beton" / "Bitumen, Asphalt" (S) |
+| AX_Oberflaechenmaterial_Strasse (attribute `oberflaechenmaterial` of **AX_Strassenachse** (42003) and **AX_Fahrbahnachse** (42005), V, NAS XSD) | 1220 Beton; 1230 Bitumen, Asphalt; 1240 Pflaster; 1250 Gestein, zerkleinert |
+| AX_Oberflaechenmaterial_Flugverkehrsanlage (attribute of AX_Flugverkehrsanlage) | codes 1210, 1220, 1230 (V); labels not fetched, by analogy and by the ATKIS-SK10 texts "Gras, Rasen" / "Beton" / "Bitumen, Asphalt" (S) |
 | AX_Befestigung_Fahrwegachse (AX_Fahrwegachse.befestigung); AX_Befestigung_WegPfadSteig | 1000, 2000 (V); WegPfadSteig labels: 1000 Befestigt, 2000 Unbefestigt (V) |
 
-#### 3.3b Complete Nutzungsartkennungen (NAK) per Werteart (V; read from the `AAA:Nutzungsartkennung` tagged values in the NAS 7.1.2 XSD — this supersedes the "n.v." entries in the tables above)
+#### 3.3b Complete Nutzungsartkennungen (NAK) per Werteart (V; read from the `AAA:Nutzungsartkennung` tagged values in the NAS 7.1.2 XSD: this supersedes the "n.v." entries in the tables above)
 
 | List | code = NAK |
 |---|---|
@@ -749,7 +749,7 @@ Codes: NAS 7.1.2 XSD (complete code sets). Labels/definitions: GDI-DE register d
 
 The 8-digit NAK ("wie sie von destatis festgelegt ist", ALKIS-OK) is the most stable single crosswalk key for ALKIS land use: it is unique across object type + Werteart and is the key of the official area statistics (Flächenerhebung nach Art der tatsächlichen Nutzung).
 
-### 3.4 AX_Vegetationsmerkmal (Kennung 54001) — "Besondere Vegetationsmerkmale" (point/line/area overlay)
+### 3.4 AX_Vegetationsmerkmal (Kennung 54001): "Besondere Vegetationsmerkmale" (point/line/area overlay)
 
 Kennung V (ALKIS-SK 2.1.0 XML `featureTypeNumber` 54001). Attributes (NAS XSD, V): `bewuchs` (BWS), `zustand`, `funktion`, `name`, `bezeichnung`, `breiteDesObjekts`.
 
@@ -795,12 +795,12 @@ Kennungen: 51000 group list V (ALKIS-OK Profil Hessen p. 222); 53xxx, 55xxx, 61x
 | 55001 | AX_Gewaessermerkmal | art | 1610 Quelle; 1620 Wasserfall; 1630 Stromschnelle; 1640 Sandbank; 1650 Watt; 1660 Priel; 1700 Bodden, Haff; 9999 |
 | 55002 | AX_UntergeordnetesGewaesser | funktion, lageZurErdoberflaeche, hydrologischesMerkmal | (values not extracted) |
 | 61001 | AX_BoeschungKliff (ZUSO) | zustand | 2400 Befestigt; 2500 Unbefestigt; plus objekthoehe, name |
-| 61002 (R) | AX_Boeschungsflaeche | — | no attributes (geometry part of the Böschung) |
+| 61002 (R) | AX_Boeschungsflaeche | n/a | no attributes (geometry part of the Böschung) |
 | 61003 | AX_DammWallDeich | art | 1910 Hochwasserdeich; 1920 Hauptdeich, Landesschutzdeich; 1930 Überlaufdeich; 1940 Leitdeich; 1950 Polderdeich; 1960 Schlafdeich; 1970 Mitteldeich; 1980 Binnendeich; 1990 Wall (1991/1992/1993); **2000 Knick** (2001/2002/2003); 2010/2011 Graben mit Wall rechts/links; 2012/2013 Graben mit Knick rechts/links |
 | | | funktion | 3001 Hochwasserschutz, Sturmflutschutz; 3002 Verkehrsführung; 3003 beides; 3004 Lärmschutz |
-| 61005 / 61006 / 61007 | AX_Hoehleneingang / AX_FelsenFelsblockFelsnadel / AX_Duene | — | — |
+| 61005 / 61006 / 61007 | AX_Hoehleneingang / AX_FelsenFelsblockFelsnadel / AX_Duene | n/a | n/a |
 
-### 3.6 What changed with GeoInfoDok 7.1 — Landbedeckung / Landnutzung
+### 3.6 What changed with GeoInfoDok 7.1: Landbedeckung / Landnutzung
 
 Verified facts:
 
@@ -808,13 +808,13 @@ Verified facts:
 2. The AAA-AS 7.1.2 itself KEEPS the combined "Tatsächliche Nutzung" classes (41001–44007). The object catalogue adds per class a line "Landnutzung: Ja" ("Kennzeichnung für das verpflichtende Mapping in die Landnutzung") and marks Wertearten "die sich zur automatisierten Ableitung der Landnutzung qualifizieren" with "(LN)" (V: ALKIS-OK 7.1.2 Teil A, pp. 8–14). AA_Fachdatenverbindung types "Mapping für Landnutzung" (2600) and "Erweitertes Mapping für Landnutzung" (2610) exist in the Hessen profile (V).
 3. AX_Siedlungsflaeche (41010) is part of the 41000 group; there is no AX_FlaecheZurZeitUnbestimmbar in the 7.1.2 NAS schema and the 43000 group list ends at 43007 (V). Whether these are changes against 6.0.1 was not compared in this session (R: 43008 existed in 6.0).
 
-**Landbedeckung 1.0.1 — 9 classes** (V, `lb.xsd`):
+**Landbedeckung 1.0.1, 9 classes** (V, `lb.xsd`):
 
 | Class | Attributes and values |
 |---|---|
-| LB_Hochbau | — |
-| LB_Tiefbau | — |
-| LB_Festgestein | — |
+| LB_Hochbau | n/a |
+| LB_Tiefbau | n/a |
+| LB_Festgestein | n/a |
 | LB_Lockermaterial | oberflaechenmaterial: 1000 Geröll, Schotter, Kies; 2000 Sand, Feinkies; 3000 Erdreich; 4000 Ton, Schluff; 5000 künstlich. wassersaettigung: 1000 ganzjährig; 2000 zeitweilig |
 | LB_HolzigeVegetation | vegetationsmerkmal: 4000 Bäume; 5000 Gehölz; 6000 Büsche, Sträucher; 7000 Zwergsträucher. blattform: 1000 Laub; 2000 Nadel (0..2). wassersaettigung: 1000/2000. verjuengungsflaeche: boolean |
 | LB_KrautigeVegetation | vegetationsmerkmal: 1000 Gras; 2000 Röhricht, Schilf; 3000 Getreide, Staudengewächse, Farne. wassersaettigung: 1000/2000. salzigerStandort: boolean |
@@ -824,7 +824,7 @@ Verified facts:
 
 Common attributes of LB_Landbedeckung: artDerErhebung (1000 Übernahme amtlicher Vermessungsdaten; 2000 Gebietstopograph, Terrestrische Außendiensterhebung; 3100 manuelle Interpretation Fernerkundung; 3200 automatische Analyse Fernerkundung; 4000 Übernahme von amtlichen Daten dritter Seite; 5000 Übernahme von nicht-amtlichen Daten), geometrischeGenauigkeit, bodenaufloesung, aktualitaetsstand.
 
-**Landnutzung 1.0.2 — 22 classes** (V, `ln.xsd`): LN_Wohnnutzung; LN_IndustrieUndVerarbeitendesGewerbe; LN_GewerblicheDienstleistungen; LN_VersorgungUndEntsorgung; LN_Lagerung; LN_Abbau; LN_OeffentlicheEinrichtungen; LN_KulturUndUnterhaltung; **LN_Sportanlage**; **LN_Freizeitanlage**; **LN_FreiluftUndNaherholung**; **LN_Bestattung**; LN_StrassenUndWegeverkehr; LN_Bahnverkehr; LN_Flugverkehr; LN_Schiffsverkehr; LN_Landwirtschaft; LN_Forstwirtschaft; LN_AquakulturUndFischereiwirtschaft; LN_Wasserwirtschaft; LN_Schutzanlage; **LN_OhneNutzung**. Common: istWeitereNutzung (1000 Überlagernd), ergebnisDerUeberpruefung, mappingannahme.
+**Landnutzung 1.0.2, 22 classes** (V, `ln.xsd`): LN_Wohnnutzung; LN_IndustrieUndVerarbeitendesGewerbe; LN_GewerblicheDienstleistungen; LN_VersorgungUndEntsorgung; LN_Lagerung; LN_Abbau; LN_OeffentlicheEinrichtungen; LN_KulturUndUnterhaltung; **LN_Sportanlage**; **LN_Freizeitanlage**; **LN_FreiluftUndNaherholung**; **LN_Bestattung**; LN_StrassenUndWegeverkehr; LN_Bahnverkehr; LN_Flugverkehr; LN_Schiffsverkehr; LN_Landwirtschaft; LN_Forstwirtschaft; LN_AquakulturUndFischereiwirtschaft; LN_Wasserwirtschaft; LN_Schutzanlage; **LN_OhneNutzung**. Common: istWeitereNutzung (1000 Überlagernd), ergebnisDerUeberpruefung, mappingannahme.
 
 | LN list | Values |
 |---|---|
@@ -901,36 +901,36 @@ Point symbols (area-filling/pattern or single symbol) inside 41008 by FKT (V): G
 
 | Object type / condition | Area signature / fill | Boundary | Symbol inside (point signature, colour) |
 |---|---|---|---|
-| 42001 Straßenverkehr, 42006 Weg, 42009 Platz, 42010 Bahnverkehr, 42016 Schiffsverkehr (default) | **no fill** (paper white) | sig 2515 "Grau5" #b3b3b3; "im Bau": sig 2516 "Grau4" #cccccc | — |
-| 42001 FKT 2312 Begleitfläche Straßenverkehr, 2313 Straßenentwässerungsanlage; 42010 FKT 2322 Begleitfläche Bahnverkehr; 42006 FKT 5270 Begleitfläche Weg; 42015 Flugverkehr | sig 1406 "Grün" COL00010 **#f3f5cc** | — | Hubschrauberlandeplatz 3438, Segelfluggelände 3439 |
-| Fußgängerzone (42001 or 42009 with FKT 5130) | sig 1414 "Grün3" COL00013 #cfe8d9 | — | — |
+| 42001 Straßenverkehr, 42006 Weg, 42009 Platz, 42010 Bahnverkehr, 42016 Schiffsverkehr (default) | **no fill** (paper white) | sig 2515 "Grau5" #b3b3b3; "im Bau": sig 2516 "Grau4" #cccccc | n/a |
+| 42001 FKT 2312 Begleitfläche Straßenverkehr, 2313 Straßenentwässerungsanlage; 42010 FKT 2322 Begleitfläche Bahnverkehr; 42006 FKT 5270 Begleitfläche Weg; 42015 Flugverkehr | sig 1406 "Grün" COL00010 **#f3f5cc** | n/a | Hubschrauberlandeplatz 3438, Segelfluggelände 3439 |
+| Fußgängerzone (42001 or 42009 with FKT 5130) | sig 1414 "Grün3" COL00013 #cfe8d9 | n/a | n/a |
 | 42009 Parkplatz (5310) / Rastplatz (5320) / Raststätte, Autohof (5330) | no fill | 2515 | 3432 / 3434 / 3436 in "Blau4" #0099ff |
 | 42006 Fußweg, Gang (5220, 5230) / Radweg (5240) / Rad- und Fußweg (5250) / Reitweg (5260) | no fill | 2515 | 3424 / 3426 / 3428 / 3430 (Blau4) |
 | 43001 Landwirtschaft, VEG 1010–1014 or empty (Ackerland, Streuobstacker, Hopfen, Spargel, Hanf) | sig 1409 "Ocker" COL00011 **#fff8dc** | 2515 | Streuobstacker 3440, Hopfen 3442, Spargel 3444 |
-| 43001 VEG 1020–1100 (Grünland, Streuobstwiese, Salzweide, Gartenbauland, Baumschule, Rebfläche, Obst- und Nussplantagen, Weihnachtsbaumkultur, Kurzumtriebsplantage) | sig 1406 "Grün" COL00010 **#f3f5cc** | 2515 | Grünland **3413** (same symbol as Grünanlage); Streuobstwiese 3441; Salzweide 3660; Gartenbauland 3421 (same as Garten); Baumschule 3446; Rebfläche 3448; Obst-/Nussplantage 3450 / 3452 / 3454; Weihnachtsbaumkultur 3661; Kurzumtriebsplantage 3662 — all in "Grün7" #008230 |
-| 43001 VEG 1200 Brachland | sig 1404 "Braun" COL00008 #f3e3ca | 2515 | — |
+| 43001 VEG 1020–1100 (Grünland, Streuobstwiese, Salzweide, Gartenbauland, Baumschule, Rebfläche, Obst- und Nussplantagen, Weihnachtsbaumkultur, Kurzumtriebsplantage) | sig 1406 "Grün" COL00010 **#f3f5cc** | 2515 | Grünland **3413** (same symbol as Grünanlage); Streuobstwiese 3441; Salzweide 3660; Gartenbauland 3421 (same as Garten); Baumschule 3446; Rebfläche 3448; Obst-/Nussplantage 3450 / 3452 / 3454; Weihnachtsbaumkultur 3661; Kurzumtriebsplantage 3662, all in "Grün7" #008230 |
+| 43001 VEG 1200 Brachland | sig 1404 "Braun" COL00008 #f3e3ca | 2515 | n/a |
 | 43002 Wald | sig 1414 "Grün3" COL00013 **#cfe8d9** | sig 2517 "Grün7" #008230 | Wald 3456; Laubholz 3458; Nadelholz 3460; Laub- und Nadelholz (1300/1310/1320) 3462 (Grün7) |
 | 43003 Gehölz | sig 1414 "Grün3" #cfe8d9 | 2517 Grün7 | Gehölz 3470; Latschenkiefer 3472 |
-| 43004 Heide | sig 1404 "Braun" **#f3e3ca** | — | 3474 (Grün7) |
-| 43005 Moor | sig 1404 "Braun" #f3e3ca | — | 3476 (Grün7) |
-| 43006 Sumpf | sig 1404 "Braun" #f3e3ca | — | 3478 ("Blau5" #0068a1) |
-| 43007 Unland, FKT 1000 Vegetationslose Fläche | no fill | — | 3480; by OFM: Fels 3481, Steine/Schotter 3482, Geröll 3483 (all "Grau5" #b3b3b3); **Sand 3484 ("Ocker2" #d7b351)**; Schnee / Eis, Firn 3486 (Blau5) with boundary 2518 |
-| 43007 FKT 1100/1110/1120 Gewässerbegleitfläche, 1200 Sukzessionsfläche, 1300 Naturnahe Fläche | sig 1406 "Grün" #f3f5cc | — | — |
+| 43004 Heide | sig 1404 "Braun" **#f3e3ca** | n/a | 3474 (Grün7) |
+| 43005 Moor | sig 1404 "Braun" #f3e3ca | n/a | 3476 (Grün7) |
+| 43006 Sumpf | sig 1404 "Braun" #f3e3ca | n/a | 3478 ("Blau5" #0068a1) |
+| 43007 Unland, FKT 1000 Vegetationslose Fläche | no fill | n/a | 3480; by OFM: Fels 3481, Steine/Schotter 3482, Geröll 3483 (all "Grau5" #b3b3b3); **Sand 3484 ("Ocker2" #d7b351)**; Schnee / Eis, Firn 3486 (Blau5) with boundary 2518 |
+| 43007 FKT 1100/1110/1120 Gewässerbegleitfläche, 1200 Sukzessionsfläche, 1300 Naturnahe Fläche | sig 1406 "Grün" #f3f5cc | n/a | n/a |
 | 44001 Fließgewässer, 44005 Hafenbecken, 44006 Stehendes Gewässer, 44007 Meer | sig 1410 "Blau" COL00012 **#c0e8fa** | sig 2518 "Blau5" **#0068a1**; "nicht ständig Wasser führend": sig 2520; Kanal im Bau: 2519 | 3488 / 3490 (Blau5; flow-direction / water symbol) |
-| 54001 Vegetationsmerkmal (overlay): Baumbestand Laub-/Nadel-/Mischholz (1021/1022/1023), Gehölz (1250), Gebüsch (1260), Röhricht/Schilf (1400), Gras (1500), Zierfläche (1600), Korbweide (1700), Reet (1800) | sig 1560: **outline only** in "Grün7" #008230, no fill | — | 3493 / 3494 / 3495, 3496, 3601, 3603, 3492, 3605, 3607, 3609 (Grün7) |
-| 54001 Schneise (1300), Rain (1510) | sig 1561 "Grün" #f3f5cc with Grün7 outline | — | Rain: 3492 |
-| 54001 Nadelbaum (1011) / Laubbaum (1012) — point | — | — | 3597 / 3599 (Grün7) |
-| 54001 Hecke (1100–1103), Gebüsch (line) | — | — | 3601 repeated along the line (Grün7) |
-| 54001 Baumreihe Laubholz (1210) / Nadelholz (1220) / gemischt (1230) — line | — | — | 3493 / 3494 / both, repeated along the line |
-| 54001 Zustand 5000 "nass" | sig 1563 outline "Blau5" | — | 3478 (Blau5; same as Sumpf) |
-| 51006 Spielfeld / Hartplatz / Rasenplatz (1410–1412) | sig 1520 "Grün3" #cfe8d9, outline "Braun4" #805c3a | — | — |
-| 51006 Schwimmbecken (1450) | sig 1526 "Blau" #c0e8fa, outline Blau5 | — | — |
-| 51006 Liegewiese (1460) | sig 1524 outline Braun4, no fill | — | — |
-| 51009 Treppe/Freitreppe, Rampe, Terrasse, Mauer, Stützmauer (area) | sig 1305 "Grau3" #e6e6e6, black outline | — | — |
-| 51009 Mauerkante / Stützmauer (line 1701–1703, 1721–1723) | — | line sig 2510 (Grau3) | — |
-| 51009 Zaun (1740) | — | line sig 2002 black with point marks 3580/3581 | — |
-| 51009 Brunnen (1780) | sig 1525 "Blau" with Blau5 outline / point 3529 | — | — |
-| 61001 Böschung, Kliff | — | sig 2531 "Braun4" #805c3a (slope hachures; SK element `SlopeHatchLines`) | — |
+| 54001 Vegetationsmerkmal (overlay): Baumbestand Laub-/Nadel-/Mischholz (1021/1022/1023), Gehölz (1250), Gebüsch (1260), Röhricht/Schilf (1400), Gras (1500), Zierfläche (1600), Korbweide (1700), Reet (1800) | sig 1560: **outline only** in "Grün7" #008230, no fill | n/a | 3493 / 3494 / 3495, 3496, 3601, 3603, 3492, 3605, 3607, 3609 (Grün7) |
+| 54001 Schneise (1300), Rain (1510) | sig 1561 "Grün" #f3f5cc with Grün7 outline | n/a | Rain: 3492 |
+| 54001 Nadelbaum (1011) / Laubbaum (1012), point | n/a | n/a | 3597 / 3599 (Grün7) |
+| 54001 Hecke (1100–1103), Gebüsch (line) | n/a | n/a | 3601 repeated along the line (Grün7) |
+| 54001 Baumreihe Laubholz (1210) / Nadelholz (1220) / gemischt (1230), line | n/a | n/a | 3493 / 3494 / both, repeated along the line |
+| 54001 Zustand 5000 "nass" | sig 1563 outline "Blau5" | n/a | 3478 (Blau5; same as Sumpf) |
+| 51006 Spielfeld / Hartplatz / Rasenplatz (1410–1412) | sig 1520 "Grün3" #cfe8d9, outline "Braun4" #805c3a | n/a | n/a |
+| 51006 Schwimmbecken (1450) | sig 1526 "Blau" #c0e8fa, outline Blau5 | n/a | n/a |
+| 51006 Liegewiese (1460) | sig 1524 outline Braun4, no fill | n/a | n/a |
+| 51009 Treppe/Freitreppe, Rampe, Terrasse, Mauer, Stützmauer (area) | sig 1305 "Grau3" #e6e6e6, black outline | n/a | n/a |
+| 51009 Mauerkante / Stützmauer (line 1701–1703, 1721–1723) | n/a | line sig 2510 (Grau3) | n/a |
+| 51009 Zaun (1740) | n/a | line sig 2002 black with point marks 3580/3581 | n/a |
+| 51009 Brunnen (1780) | sig 1525 "Blau" with Blau5 outline / point 3529 | n/a | n/a |
+| 61001 Böschung, Kliff | n/a | sig 2531 "Braun4" #805c3a (slope hachures; SK element `SlopeHatchLines`) | n/a |
 | 61003 Damm, Wall, Deich / Knick | sig 1551 outline Braun4 | line 2620 Braun4 + 3632 | Knick: additionally hedge symbol 3601 (Grün7) |
 
 Reading of the ALKIS palette (my summary of the verified values): built-up = very light red (#fde1e1) or near-white grey (#f5f5f5); recreation/cemetery = light grey-green (#dce6c2); grassland and "green" agriculture = pale yellow-green (#f3f5cc); arable = pale ochre (#fff8dc); forest/woodland = pale blue-green (#cfe8d9); heath/bog/swamp/fallow = pale brown (#f3e3ca); water = light blue (#c0e8fa) with dark blue outline (#0068a1); all vegetation symbols dark green (#008230). Traffic surfaces stay white. These are very pale tints by design (the Liegenschaftskarte must keep parcel boundaries and text legible).
@@ -939,7 +939,7 @@ Reading of the ALKIS palette (my summary of the verified values): built-up = ver
 
 Available (V): ATKIS-SK10 2.1.3 (Stand 30.11.2024), SK25 2.1.3, SK50 2.1.3, SK100 2.1.3 as HTML at https://sg.geodatenzentrum.de/web_public/adv/sk/v2.1.3/atkis/docAtkisSK10/SymbologyCatalog.html (…SK25, SK50, SK100) and as XML (SK10: 13.4 MB). Only **SK10 (DTK10, 1:10 000)** was evaluated here; SK25/50/100 not opened (open point).
 
-**Colour table of ATKIS-SK10 2.1.3** (V; https://sg.geodatenzentrum.de/web_public/adv/sk/v2.1.3/atkis/docAtkisSK10/html/ColorTable-SYCAT010.html). The ATKIS-SK defines colours **in CMYK only** (no RGB/hex is published, unlike the ALKIS-SK). The "naive RGB" column is my arithmetic conversion R = 255·(1−C)(1−K) etc. — not colour-managed, indicative only.
+**Colour table of ATKIS-SK10 2.1.3** (V; https://sg.geodatenzentrum.de/web_public/adv/sk/v2.1.3/atkis/docAtkisSK10/html/ColorTable-SYCAT010.html). The ATKIS-SK defines colours **in CMYK only** (no RGB/hex is published, unlike the ALKIS-SK). The "naive RGB" column is my arithmetic conversion R = 255·(1−C)(1−K) etc., not colour-managed, indicative only.
 
 | ID | Name | C/M/Y/K % | naive RGB (indicative) |
 |---|---|---|---|
@@ -965,9 +965,9 @@ Available (V): ATKIS-SK10 2.1.3 (Stand 30.11.2024), SK25 2.1.3, SK50 2.1.3, SK10
 | COL00029 | Grundrissbraun | 60/100/100/0 | #660000 |
 | COL00030 | Schwarz | 0/0/0/100 | #000000 |
 | COL00032 | Schutzgebietegrün | 50/0/50/0 | #80FF80 |
-| COL00050 | TK10-braun | 9/88/91/7 | — |
-| COL00051 | TK10-mittelbraun | 4/35/36/3 | — |
-| COL00052 | TK10-hellbraun | 0/13/14/0 | — |
+| COL00050 | TK10-braun | 9/88/91/7 | n/a |
+| COL00051 | TK10-mittelbraun | 4/35/36/3 | n/a |
+| COL00052 | TK10-hellbraun | 0/13/14/0 | n/a |
 
 **Area fills in SK10** (V; symbolizer descriptions from .../html/SymbolizersTable-SYCAT010.html, colour reference from .../mdlsrc/SymbologyCatalog_mdl.html; SNR = Signaturnummer):
 
@@ -1009,13 +1009,13 @@ Available (V): ATKIS-SK10 2.1.3 (Stand 30.11.2024), SK25 2.1.3, SK50 2.1.3, SK10
 
 Line/symbol colours by name (V, colour table): Baumgrün (vegetation symbols), Bachblau (water lines), Reliefbraun (relief), Straßengelb / Straßenorange (road fills), Grenzviolett (boundaries), Schutzgebietegrün (protected-area borders), Grundrissbraun, Gefahrenrot.
 
-### 4.3 basemap.de Web Vektor (AdV Smart Mapping) — style `bm_web_col`
+### 4.3 basemap.de Web Vektor (AdV Smart Mapping): style `bm_web_col`
 
-Source (V): https://sgx.geodatenzentrum.de/gdz_basemapde_vektor/styles/bm_web_col.json — read 2026-09-30: `"name": "bm_web_col"`, `"basemapde:style-version": "5.0.3"`, 550 layers (62 fill, 269 line, 209 symbol, 7 circle, 3 fill-extrusion), vector source https://sgx.geodatenzentrum.de/gdz_basemapde_vektor/tiles/v2/bm_web_de_3857/bm_web_de_3857.json, attribution "© 2026 basemap.de / BKG | Datenquellen: © GeoBasis-DE". Documentation: https://sgx.geodatenzentrum.de/web_public/gdz/dokumentation/deu/basemap.de_web_vektor.pdf (Stand 03.03.2025; styles "Relief", "Farbe", "Grau" — S, from search snippet). Values below are exact strings from the JSON.
+Source (V): https://sgx.geodatenzentrum.de/gdz_basemapde_vektor/styles/bm_web_col.json, read 2026-09-30: `"name": "bm_web_col"`, `"basemapde:style-version": "5.0.3"`, 550 layers (62 fill, 269 line, 209 symbol, 7 circle, 3 fill-extrusion), vector source https://sgx.geodatenzentrum.de/gdz_basemapde_vektor/tiles/v2/bm_web_de_3857/bm_web_de_3857.json, attribution "© 2026 basemap.de / BKG | Datenquellen: © GeoBasis-DE". Documentation: https://sgx.geodatenzentrum.de/web_public/gdz/dokumentation/deu/basemap.de_web_vektor.pdf (Stand 03.03.2025; styles "Relief", "Farbe", "Grau", S, from search snippet). Values below are exact strings from the JSON.
 
 | Layer id | source-layer | Filter (`klasse` values) | fill-color | Notes |
 |---|---|---|---|---|
-| Hintergrund | Hintergrund | — | rgb(255,253,238) = #FFFDEE | map background (also used for Ackerland) |
+| Hintergrund | Hintergrund | n/a | rgb(255,253,238) = #FFFDEE | map background (also used for Ackerland) |
 | SiedlungF_SportFreizeitundErholung | Siedlungsflaeche | Autokino, Freilichtkino; Botanischer Garten; Campingplatz; Erholungsfläche; Freilichtmuseum; Freilichtbühne; Freizeitanlage; Freizeitpark; Garten; Gelände für Luftsportgeräte; Go-Kart-Bahn; Golf; **Grünanlage**; Hundeübungsplatz; Kletteranlage; Reitsport; **Kleingarten**; Modellfluggelände; **Park**; Safaripark, Wildpark; Schwimmen; Sportanlage; Sport- Freizeit- und Erholungsfläche; Wochenend- und Ferienhausfläche; Zoo; **Siedlungsgrünfläche**; **Spielplatz, Bolzplatz**; Tennis; Verkehrsübungsplatz, Testgelände, Fahrsicherheit; Wochenendplatz | **rgb(230,247,210) = #E6F7D2** | z 11–22 |
 | SiedlungF_Friedhof | Siedlungsflaeche | Friedhof; Parkfriedhof | rgb(223,240,182) = #DFF0B6 | |
 | SiedlungF_Siedlung | Siedlungsflaeche | Bildung und Wissenschaft; Wohnbaufläche; Fläche besonderer funktionaler Prägung; Gesundheit, Kur; Kultur; Medien und Kommunikation; Regierung und Verwaltung; Religiöse Einrichtung; Sicherheit und Ordnung; Soziales; Öffentliche Zwecke; Fläche gemischter Nutzung; Gebäude- und Freifläche Land- und Forstwirtschaft; Wohnen; Wohnen und Betrieb | rgb(242,236,249) = #F2ECF9 | z 14–22 |
@@ -1031,27 +1031,27 @@ Source (V): https://sgx.geodatenzentrum.de/gdz_basemapde_vektor/styles/bm_web_co
 | VegetationsF_Gehoelz | Vegetationsflaeche | **Gehölz; Bewuchs, Gehölz; Gebüsch** | stops z11 rgb(223,240,182) → z22 **rgb(154,182,109) = #9AB66D** | |
 | VegetationsF_Wald | Vegetationsflaeche | **Laubholz; Laub- und Nadelholz; Nadelholz; Wald; Baumbestand, Laub- und Nadelholz; Baumbestand, Laubholz; Baumbestand, Nadelholz** | stops z11 rgb(223,240,182) → z22 rgb(154,182,109) | opacity z6 0.3 → z8 1 |
 | VegetationsF_VegetationsloseFlaeche_Fels_Geroell_Stein | Vegetationsflaeche | Vegetationslose Fläche; Fels; Geröll; Steine, Schotter | rgb(238,238,238) = #EEEEEE | |
-| VegetationsF_VegetationsloseFlaeche_Sand; ReliefF_Duene; Gewaesser_F_Sandbank | — | Sand; Düne; Sandbank | **rgb(255,242,224) = #FFF2E0** | |
+| VegetationsF_VegetationsloseFlaeche_Sand; ReliefF_Duene; Gewaesser_F_Sandbank | n/a | Sand; Düne; Sandbank | **rgb(255,242,224) = #FFF2E0** | |
 | VegetationsF_VegetationsloseFlaeche_Eis | Vegetationsflaeche | Eis, Firn | rgb(177,252,247) = #B1FCF7 | |
 | Gewaesser_F_Meer / _Fliessgewaesser / _See_Hafenbecken / _Priel | Gewaesserflaeche | Meer; Fliessgewässer, Kanal, Flussmündungstrichter; See, Hafenbecken, Baggersee, Stausee, Speicherbecken; Priel | **rgb(210,232,250) = #D2E8FA** | |
 | Gewaesser_F_Watt | Gewaesserflaeche | Watt | rgb(219,224,240) = #DBE0F0 | |
-| Gewaesser_F_Quelle_Wasserfall; BauwerkF_Brunnen | — | Quelle; Wasserfall; Brunnen | rgb(170,204,255) = #AACCFF | |
+| Gewaesser_F_Quelle_Wasserfall; BauwerkF_Brunnen | n/a | Quelle; Wasserfall; Brunnen | rgb(170,204,255) = #AACCFF | |
 | Gewaesser_L_* (line layers) | Gewaesserlinie | water lines by width class (3 m … 200 m); outlines of water polygons | line-color **rgb(170,204,255) = #AACCFF**; "nicht ständig wasserführend": dashed | |
 | Verkehrsflaeche_Fussgaengerzone; Decker_Fussgaengerzone_... | Verkehrsflaeche / Verkehrslinie | Fußgängerzone | **rgb(182,223,210) = #B6DFD2** | |
 | Verkehrsflaeche_Platz; IstWeitereNutzung_Flaeche_Platz | Verkehrsflaeche | Festplatz; Parkplatz; Platz; Rastplatz; Raststätte, Autohof; Marktplatz; Busbahnhof; Caravan-, Wohnmobilstellplatz; (funktion = Parken) | rgb(255,255,255) | |
 | Verkehrsflaeche_Flugverkehr | Verkehrsflaeche | Flugverkehr etc. | rgb(230,247,210) | runway/apron: rgb(255,255,255) |
 | Verkehrsflaeche_Bahnverkehr_Schiffsverkehr | Verkehrsflaeche | Bahnverkehr; Schiffsverkehr | rgb(214,210,219) | |
-| Road casings / fills (line layers "Kontur_*", "Decker_*") | Verkehrslinie | — | casing rgb(153,153,153); Gemeinde-/Kreisstraße fill rgb(255,255,255); Landes-/Staatsstraße rgb(255,243,105); Bundesstraße rgb(255,203,79); Autobahn rgb(89,143,236); Hauptwirtschaftsweg rgb(230,230,230); Fußwege: rgb(153,153,153) dashed [4,2] | |
-| Railways | Verkehrslinie | — | Eisenbahn rgb(102,102,102); S-Bahn rgb(51,153,51); U-Bahn rgb(0,0,255); Stadtbahn rgb(241,82,82) | |
+| Road casings / fills (line layers "Kontur_*", "Decker_*") | Verkehrslinie | n/a | casing rgb(153,153,153); Gemeinde-/Kreisstraße fill rgb(255,255,255); Landes-/Staatsstraße rgb(255,243,105); Bundesstraße rgb(255,203,79); Autobahn rgb(89,143,236); Hauptwirtschaftsweg rgb(230,230,230); Fußwege: rgb(153,153,153) dashed [4,2] | |
+| Railways | Verkehrslinie | n/a | Eisenbahn rgb(102,102,102); S-Bahn rgb(51,153,51); U-Bahn rgb(0,0,255); Stadtbahn rgb(241,82,82) | |
 | VegetationsL_Baumreihe / _Baumreihe_Fuellung | Vegetationslinie | Baumreihe | dotted line rgb(115,141,0) over rgb(223,240,182) | dash [0,2] (dots) |
 | VegetationsL_Hecke | Vegetationslinie | Hecke | dotted line rgb(147,217,101) = #93D965 | |
-| VegetationsL_Schneise / VegetationsF_Schneise | — | Schneise | dashed rgb(129,183,41) | |
+| VegetationsL_Schneise / VegetationsF_Schneise | n/a | Schneise | dashed rgb(129,183,41) | |
 | Symbol_VegetationP_Laubbaum / _Nadelbaum | Vegetationspunkt | Laubbaum / Nadelbaum | sprite icons "Laubbaum", "Nadelbaum" | |
-| Gebaeude2D_nicht_oeffentlich / _oeffentlich / _Treibhaus | Gebaeudeflaeche | — | rgb(168,168,168) / rgb(232,179,158) / rgb(255,255,255) with outline rgb(138,213,110) | |
+| Gebaeude2D_nicht_oeffentlich / _oeffentlich / _Treibhaus | Gebaeudeflaeche | n/a | rgb(168,168,168) / rgb(232,179,158) / rgb(255,255,255) with outline rgb(138,213,110) | |
 | BauwerkF_Schwimmbecken_Fuellung; BauwerkF_Rueckhaltebecken_Fuellung | Bauwerksflaeche | Schwimmbecken; Rückhaltebecken | rgb(210,232,250) | outline rgb(170,204,255) |
 | BauwerkF_Stadion_Spielfeld_Schiessanlage | Bauwerksflaeche | Spielfeld; Stadion (überdacht / nicht überdacht); Schießanlage | rgb(248,239,197) = #F8EFC5 | outline rgb(153,153,153) |
 | Barriere_Mauer / _Zaun / _Stuetzmauer | Barrierenlinie | Mauer; Zaun; Stützmauer | rgb(180,155,136); rgb(180,155,136) dashed; rgb(153,153,153) | |
-| ReliefL_Daemme_Deiche / _Einschnitt | Relieflinie | — | rgb(150,111,57) | |
+| ReliefL_Daemme_Deiche / _Einschnitt | Relieflinie | n/a | rgb(150,111,57) | |
 | Grenz-/Schutzgebiets-Layer | Grenze_Flaeche | Nationalpark; Biosphärenreservat; Naturschutzgebiet | rgb(111,193,53), fill-opacity 0.3 | |
 
 ---
@@ -1069,11 +1069,11 @@ Source for everything in this section (V unless noted): BKG, "Dokumentation Land
 | Minimum mapping unit | Mindestkartierfläche 1 ha; Mindestkartierbreite 15 m |
 | Sources | flächenhafte Objektarten des ATKIS Basis-DLM (Lieferstand 3. Quartal 2021); LBM-DE2018; SPOT 6/7; Sentinel-2; DOPs |
 | Format / access | GeoPackage; WMS |
-| Purpose | "Hauptanwendungsziel des LBM-DE ist die Ableitung des Datensatzes CORINE Land Cover (CLC) für das Gebiet der Bundesrepublik Deutschland" — national CLC contribution for Copernicus, on behalf of UBA |
+| Purpose | "Hauptanwendungsziel des LBM-DE ist die Ableitung des Datensatzes CORINE Land Cover (CLC) für das Gebiet der Bundesrepublik Deutschland", national CLC contribution for Copernicus, on behalf of UBA |
 | Attributes | LB_AKT (Landbedeckungscode), LN_AKT (Landnutzungscode), ZUS_AKT (Zusatzfunktion: F = Friedhof, M = Militär, S = Solar, O = Ortslage, K = künstlich geschaffene Fläche, W = Wald), SIE_AKT (Versiegelungsanteil), VEG_AKT (Vegetationsanteil), METHOD_AKT (31–34), CLC21 (derived CLC code), LBMDE_ID, LAND |
 | History of the model | LB/LN separation introduced 2012 (DLM-DE2009 was still in CLC nomenclature); VEG, SIE, ZUS introduced with LBM-DE2015; "Mit der Fortführung des LBM-DE2021 ergaben sich keine weiteren konzeptionellen Veränderungen." |
 
-### 5.2 Landbedeckung (LB) — 31 classes in 7 groups (Anlage 1, p. 11)
+### 5.2 Landbedeckung (LB): 31 classes in 7 groups (Anlage 1, p. 11)
 
 | Group | Code | Name |
 |---|---|---|
@@ -1111,7 +1111,7 @@ Source for everything in this section (V unless noted): BKG, "Dokumentation Land
 
 Legend colours of the groups in the BKG document (as printed, not sampled): A pink, B yellow, C light green, D dark green, E grey, F violet, G light blue.
 
-### 5.3 Landnutzung (LN) — 16 classes (Anlage 1, pp. 45–46)
+### 5.3 Landnutzung (LN): 16 classes (Anlage 1, pp. 45–46)
 
 | Code | Name | Description (abridged from the BKG text) |
 |---|---|---|
@@ -1122,20 +1122,20 @@ Legend colours of the groups in the BKG document (as printed, not sampled): A pi
 | N131 | Abbauflächen | Tagebau, Tongrube, Steinbruch, Baggersee |
 | N132 | Deponien | Abfallstoffe und Abraum |
 | N122 | Straßen- und Bahnverkehr | bebaute und nicht bebaute Flächen (auch Vegetation), die dem Verkehr dienen |
-| N124 | Flugverkehr | — |
+| N124 | Flugverkehr | n/a |
 | **N142** | **Sport und Freizeit** | "Bebaute oder unbebaute Flächen, die dem Sport, der Freizeitgestaltung oder der Erholung dienen. Dazu gehören: außerstädtische Parks, Zoos, Friedhöfe & Grünanlagen, Sportanlagen, Kleingärten, Freizeitparks, Campingplätze, Ferienhäuser etc." |
 | **N141** | **Städtische Grünfläche** | "Unbebaute Grünflächen im städtischen Bereich. Dazu gehören: innerstädtische Parks, Zoos, Friedhöfe & Grünanlagen" |
 | N510 | Wasser | Flächen am Wasser (Wiesen vs. Salzwiesen); Wasserflächen mit Schifffahrtsnutzung |
 | N211 | Landwirtschaft (intensiv) | regelmäßig gepflügte Flächen, Weideflächen, Baumschulen |
 | N214 | Extensive Nutzung | Grünland, nur einmal pro Jahr gemäht; v. a. in Naturschutzgebieten |
 | N311 | Forst | Waldflächen, Aufforstungsflächen, Waldlichtungen |
-| N133 | Baustelle | — |
+| N133 | Baustelle | n/a |
 | N999 | Nicht relevant | "Nur zulässig in Verbindung mit Landbedeckungsklassen der Gruppen C-G" |
 
 ### 5.4 Relation to CLC
 
 - CLC is derived per object from the **combination LB × LN**, "unter Berücksichtigung von Vegetations- und Versiegelungsgrad" (SIE/VEG thresholds) and in some cases ZUS, by the cross table in Anlage 3 (p. 54); the result is stored in attribute CLC21 (V).
-- The LB codes are deliberately CLC-like: "B" + a number that for most natural classes equals the CLC code obtained when LN = N999 (e.g. B311 → 311, B312 → 312, B313 → 313, B322 → 322, B324 → 324, B332 → 332, B334 → 334, B335 → 335, B411 → 411, B412 → 412, B423 → 423, B511 → 511, B512 → 512, B521 → 521, B522 → 522, B523 → 523) — read from the cross-table image (small print; S-quality reading, re-check against the PDF before hard-coding).
+- The LB codes are deliberately CLC-like: "B" + a number that for most natural classes equals the CLC code obtained when LN = N999 (e.g. B311 → 311, B312 → 312, B313 → 313, B322 → 322, B324 → 324, B332 → 332, B334 → 334, B335 → 335, B411 → 411, B412 → 412, B423 → 423, B511 → 511, B512 → 512, B521 → 521, B522 → 522, B523 → 523), read from the cross-table image (small print; S-quality reading, re-check against the PDF before hard-coding).
 - The LN codes are likewise CLC-like: for most LB classes the columns give N141 → CLC 141 (Städtische Grünflächen), N142 → 142 (Sport- und Freizeitanlagen), N122 → 122, N124 → 124, N123 → 123, N131 → 131, N132 → 132, N133 → 133, N120/N121 → 121; N112 → 111 or 112 depending on SIE (B110 with SIE ≥ 70 → 111; SIE > 15 and < 70 → 112) (same caveat).
 - ZUS modifications (p. 55, clearly legible, V): B321 + N121 + ZUS M → 321; B2xx + N121 + SIE ≤ 5 + VEG ≥ 95 + M → 321; B311/B312/B313/B324/B322 + N121 + SIE ≤ 5 + VEG ≥ 95 + M → 311/312/313/324/322; B310 + N121 + SIE ≤ 5 + VEG ≥ 95 + M → 324; Bxxx + N112 + SIE < 15 + ZUS O → 112.
 - Anlage 2 of the document contains the CLC nomenclature and the "Farblegende für CORINE Land Cover" (pp. 52–53; not read in this session).
@@ -1151,8 +1151,8 @@ Relation to the AdV schemas: LBM-DE (BKG product, CLC-oriented, MMU 1 ha) is NOT
 2. **BfN-Schriften 461/2 Planzeichenkatalog Landschaftsplanung** (RAL/RGB values) was only identified, not opened (probably covered by another stream).
 3. **XP_ZweckbestimmungGewaesser** (XPlanGML 5.x) values are recalled only (R). In 6.x the enumeration does not exist; SO_KlassifizGewaesser replaces it (V).
 4. Whether **§ 9 Abs. 1 Nr. 15a / § 5 Abs. 2 Nr. 5a BauGB** ("natürlicher Klimaschutz"), quoted by XPlanGML 6.1, are in force was not checked; PlanZV has no Planzeichen for them.
-5. **ATKIS-SK**: only SK10 2.1.3 evaluated; colours exist in CMYK only (the RGB column in 4.2 is my naive conversion); SK25/50/100 not opened; shapes of pattern/point signatures (Heide, Moor, Sumpf, Laub-/Nadelbaum, Grünanlage symbol 3413, Park 3415 ...) were NOT viewed — only signature numbers and colours are documented.
-6. **AAA 6.0.1 → 7.1.2 diff** at Werteart level not done (which FKT/VEG values are new is unknown); AX_Boeschungsflaeche Kennung 61002 is R; ATKIS-Basis-DLM-specific modelling (Modellart differences, AX_Ortslage etc.) not evaluated — TN tables come from the ALKIS (DLKM) catalogue, the common NAS 7.1.2 schema and the AdV enumeration register. The "(G)/(LN)" flags were only read for the values printed in the Hessen profile.
+5. **ATKIS-SK**: only SK10 2.1.3 evaluated; colours exist in CMYK only (the RGB column in 4.2 is my naive conversion); SK25/50/100 not opened; shapes of pattern/point signatures (Heide, Moor, Sumpf, Laub-/Nadelbaum, Grünanlage symbol 3413, Park 3415 ...) were NOT viewed, only signature numbers and colours are documented.
+6. **AAA 6.0.1 → 7.1.2 diff** at Werteart level not done (which FKT/VEG values are new is unknown); AX_Boeschungsflaeche Kennung 61002 is R; ATKIS-Basis-DLM-specific modelling (Modellart differences, AX_Ortslage etc.) not evaluated, TN tables come from the ALKIS (DLKM) catalogue, the common NAS 7.1.2 schema and the AdV enumeration register. The "(G)/(LN)" flags were only read for the values printed in the Hessen profile.
 7. **AdV statement on the reference version** ("Referenzversion 7.1 since 1 Jan 2024") was read via a summarising fetch; re-read before quoting.
 8. **LBM-DE cross table** (Anlage 3) was read from a small image; cell-level mappings in 5.4 must be re-checked against the PDF before hard-coding. CLC colour legend (Anlage 2) not read.
 9. The **GeoInfoDok Objektartenkatalog App** (https://www.gid-katalog-app.org/) can produce complete CSV/XML catalogues for AAA 7.1.2, LB 1.0.1 and LN 1.0.2; it requires a form submission + file download, which I did not perform. Recommended as the bulk source for building crosswalk tables.
@@ -1170,31 +1170,31 @@ Relation to the AdV schemas: LBM-DE (BKG product, CLC-oriented, MMU 1 ha) is NOT
 | **AdV ALKIS-Signaturenkatalog 2.1.0** | official Liegenschaftskarte of the surveying authorities (AdV standard; not binding for third parties) | full symbol rules per object type/Werteart | yes: RGB %, CMYK %, web hex | An exact "ALKIS" theme is possible (33 colours, signature numbers). Very pale tints. |
 | **AdV ATKIS-Signaturenkataloge (SK10 …)** | official DTK products | full rules | CMYK only | "DTK" theme needs a documented CMYK→RGB conversion. |
 | **basemap.de Web Vektor** | BKG/AdV web product | open style JSON | yes (rgb strings) | Best ready-made convention reference for web maps; pastel. |
-| **XPlanung / AAA / LBM-DE** | data semantics | classes and codes only | — | Pure crosswalk targets; no symbology prescribed. |
-| Everything else (inventory, ecology, design maps) | — | nothing | — | House style is free; only conventions apply. |
+| **XPlanung / AAA / LBM-DE** | data semantics | classes and codes only | n/a | Pure crosswalk targets; no symbology prescribed. |
+| Everything else (inventory, ecology, design maps) | n/a | nothing | n/a | House style is free; only conventions apply. |
 
 ### 7.2 Hue-family conventions that all four official sources share (verified values)
 
 | Theme | PlanZV (name / sampled) | xPlanBox | ALKIS-SK | ATKIS-SK10 (CMYK) | basemap.de |
 |---|---|---|---|---|---|
 | Public/private green space, parks, sport/recreation | Grün mittel / #92EB9B | #7FC643, #80E41B | Grün2 #dce6c2 (+ dark-green symbols #008230) | Parkgrün 40/0/30/0 | #E6F7D2 |
-| Cemetery | (green + cross pictogram) | — | Grün2 #dce6c2 | Wiesengrün 10/0/20/0 | #DFF0B6 |
+| Cemetery | (green + cross pictogram) | n/a | Grün2 #dce6c2 | Wiesengrün 10/0/20/0 | #DFF0B6 |
 | Grassland / meadow | (Landwirtschaft) Gelbgrün / #BCFC9C | #CCE968 | Grün #f3f5cc | Wiesengrün 10/0/20/0 | #DFF0B6 |
 | Arable land | Gelbgrün | #CCE968 | Ocker #fff8dc | Ackerocker 0/0/10/0 | #FFFDEE |
 | Forest / woodland / Gehölz | Blaugrün / #15ADAA | #34AB8F | Grün3 #cfe8d9 | Waldgrün 25/0/50/0 | #DFF0B6 → #9AB66D |
-| Heath, bog, swamp, fallow | — | — | Braun #f3e3ca | Brachbraun 5/5/20/0 | Heide #EEDDEE; Moor/Sumpf #CACB86 |
+| Heath, bog, swamp, fallow | n/a | n/a | Braun #f3e3ca | Brachbraun 5/5/20/0 | Heide #EEDDEE; Moor/Sumpf #CACB86 |
 | Water | Blau mittel / #C4E3EC | #99D9E8 | Blau #c0e8fa, outline #0068a1 | Seeblau 25/0/0/0 | #D2E8FA, lines #AACCFF |
-| Sand | — | — | symbol in Ocker2 #d7b351 | (white + pattern) | #FFF2E0 |
-| Rock / gravel / bare | — | — | symbols in Grau5 #b3b3b3 | white | #EEEEEE |
+| Sand | n/a | n/a | symbol in Ocker2 #d7b351 | (white + pattern) | #FFF2E0 |
+| Rock / gravel / bare | n/a | n/a | symbols in Grau5 #b3b3b3 | white | #EEEEEE |
 | Residential | Rot mittel / #F5C2B3 | #CF9377 | Rot #fde1e1 | Wohnflächenhellrot 0/20/10/0 | #F2ECF9 |
 | Industrial / commercial | Grau mittel / #B3BAB2 | #A6A596 | Grau2 #f5f5f5 | Industrieflächengrau 0/0/0/20 | #D6D2DB |
 | Road surface | Goldocker / #FEE223 | #FFD92F | white | Industrieflächengrau (area); Straßengelb/-orange (lines) | white; casing #999999 |
 | Pedestrian zone | (6.3 striped Goldocker) | pattern | Grün3 #cfe8d9 | Parkgrün | #B6DFD2 |
-| Nature-conservation overlays | Grün dunkel band / #39E554 | #4DAE38 | — | Schutzgebietegrün 50/0/50/0 | rgb(111,193,53) |
-| Water-law overlays | Blau dunkel band / #3BA4CD | #007BCE | — | — | — |
-| Plan boundary | Grau dunkel band / #767A76 | #80847A | — | — | — |
+| Nature-conservation overlays | Grün dunkel band / #39E554 | #4DAE38 | n/a | Schutzgebietegrün 50/0/50/0 | rgb(111,193,53) |
+| Water-law overlays | Blau dunkel band / #3BA4CD | #007BCE | n/a | n/a | n/a |
+| Plan boundary | Grau dunkel band / #767A76 | #80847A | n/a | n/a | n/a |
 
-Take-aways for the mellow house theme: (1) keep green space, grassland and woodland as three distinguishable greens with woodland shifted towards blue-green or darker; (2) water = light blue fill + darker blue outline; (3) heath/bog/fallow = brownish; arable = pale ochre/yellow; (4) the cadastral (ALKIS) and web (basemap.de) palettes are already pastel, so a pastel house palette is conventional in Germany; only the PlanZV theme is saturated; (5) topographic sources leave traffic surfaces white/grey, planning sources colour them yellow-ochre — the theme switch must swap this family.
+Take-aways for the mellow house theme: (1) keep green space, grassland and woodland as three distinguishable greens with woodland shifted towards blue-green or darker; (2) water = light blue fill + darker blue outline; (3) heath/bog/fallow = brownish; arable = pale ochre/yellow; (4) the cadastral (ALKIS) and web (basemap.de) palettes are already pastel, so a pastel house palette is conventional in Germany; only the PlanZV theme is saturated; (5) topographic sources leave traffic surfaces white/grey, planning sources colour them yellow-ochre, the theme switch must swap this family.
 
 ### 7.3 Reusable symbol motifs (all from the PlanZV Anlage unless noted)
 
@@ -1203,7 +1203,7 @@ Take-aways for the mellow house theme: (1) keep green space, grassland and woodl
 - Point symbols: circle = tree, three-lobed cloud = shrub, cloud + rectangle = other planting; **open centre = to be planted, filled centre = to be preserved**; letters in circles for protected-area types (N, NLP, L, NP, ND, LB) and water functions (H, R, Ü, GW, OW); "E" = Erholungswald.
 - Purpose pictograms in a frame: dot clumps (park), 2×3 plots with dots (allotments), oval (sports ground), bucket (playground), tent (camp site), waves (bathing), three crosses (cemetery); P / pedestrian / V for traffic areas.
 - Slope hachures for Böschung/embankment (PlanZV 15.9; ALKIS-SK sig 2531, `SlopeHatchLines`).
-- ALKIS-SK habit: pale area tint + dark-green (#008230) repeating point symbol per vegetation type; overlays (AX_Vegetationsmerkmal) are outline-only with symbols — a good model for "texture on top of tint".
+- ALKIS-SK habit: pale area tint + dark-green (#008230) repeating point symbol per vegetation type; overlays (AX_Vegetationsmerkmal) are outline-only with symbols, a good model for "texture on top of tint".
 
 ### 7.4 Must-have elements implied by this stream
 
@@ -1223,25 +1223,25 @@ Beyond the present 16 classes, the following are needed to cover PlanZV group 9�
 | Planning overlays | SPE-Fläche / -Maßnahme (PlanZV 13.1); Anpflanzfläche (13.2.1); Erhaltungsfläche (13.2.2); Ausgleich/Kompensation (istAusgleich, XP_ERFlaechenArt); Schutzgebiete (13.3; LP_KlassifizierungNaturschutzrecht incl. gesetzlich geschütztes Biotop, Natura 2000); Überschwemmungsgebiet, Wasserschutzgebiet (10.2/10.3); Geltungsbereich (15.13); Aufschüttung / Abgrabung (11.1/11.2); Biotopverbund (Kernfläche, Verbindungsfläche, Trittsteinbiotop ...) |
 | Building greening | Dachbegrünung, Fassadenbegrünung (XP gegenstand 6000 / 5000; no AAA code) |
 
-Crosswalk of the present 16 classes (anchors verified above; "—" = no code found in the examined catalogues):
+Crosswalk of the present 16 classes (anchors verified above; "-" = no code found in the examined catalogues):
 
 | House class | PlanZV | XPlanung 6.1 | ALKIS/ATKIS 7.1.2 (Kennung / attribute = value; NAK) | AdV LB 1.0.1 / LN 1.0.2 | LBM-DE |
 |---|---|---|---|---|---|
 | Lawn | 9 Grünflächen | XP_ZweckbestimmungGruen 1000 (as purpose) | 41008 FKT 4400 Grünanlage (18040000) / 4410 Siedlungsgrünfläche (18040100); 54001 BWS 1500 Gras, 1600 Zierfläche | LB_KrautigeVegetation VEG 1000 Gras; LN_FreiluftUndNaherholung 4400/4410/4480 | B231 + N141 |
 | Meadow | 12.1 | XP_ZweckbestimmungLandwirtschaft 1200; XP_SPE 1200, 1300 | 43001 VEG 1020 Grünland (31020000) | LB_KrautigeVegetation 1000; LN_Landwirtschaft 1020 Mahd- und Weideland | B231 / B321 + N211 / N214 |
-| Wildflower meadow | — | XP_SPE 1200 ExtensivesGruenland, 2100 Hochstaudenflur, 2200 Trockenrasen | 43007 FKT 1300 Naturnahe Fläche (37040000) (nearest) | LB_KrautigeVegetation 3000 Getreide, Staudengewächse, Farne (nearest) | B321 + N214 |
+| Wildflower meadow | n/a | XP_SPE 1200 ExtensivesGruenland, 2100 Hochstaudenflur, 2200 Trockenrasen | 43007 FKT 1300 Naturnahe Fläche (37040000) (nearest) | LB_KrautigeVegetation 3000 Getreide, Staudengewächse, Farne (nearest) | B321 + N214 |
 | Shrub | 13.2 Sträucher | gegenstand 2000, 2100 Hecke, 2200 Knick | 43003 Gehölz (33000000); 54001 BWS 1250, 1260, 1100 | LB_HolzigeVegetation 6000 Büsche, Sträucher / 5000 Gehölz | B324 |
 | Woodland | 12.2 | XP_ZweckbestimmungWald; XP_SPE 1000, 1100 | 43002 Wald VEG 1100/1200/1300 (32000000) | LB_HolzigeVegetation 4000 Bäume + blattform; LN_Forstwirtschaft 6100 | B311/B312/B313 (+ N311) |
 | Urban trees | 13.2 Bäume (Anpflanzen / Erhaltung) | gegenstand 1000, 1100, 1200, 1300 | 54001 BWS 1011/1012, 1210–1230, 1020–1023, 1900 | LB_HolzigeVegetation 4000 | B233 (Grasland mit Bäumen) (nearest) |
-| Reed / wetland | — | XP_SPE 1600 Roehrichtzone, 2400 Moor; LP_GesGeschBiotopTyp 2000 | 54001 BWS 1400 Röhricht, Schilf / 1800 Reet; zustand 5000 Nass; 43005 Moor; 43006 Sumpf | LB_KrautigeVegetation 2000 Röhricht, Schilf + wassersaettigung | B411–B414 |
+| Reed / wetland | n/a | XP_SPE 1600 Roehrichtzone, 2400 Moor; LP_GesGeschBiotopTyp 2000 | 54001 BWS 1400 Röhricht, Schilf / 1800 Reet; zustand 5000 Nass; 43005 Moor; 43006 Sumpf | LB_KrautigeVegetation 2000 Röhricht, Schilf + wassersaettigung | B411–B414 |
 | Water body | 10.1 | SO_KlassifizGewaesser 1000/2000/3000 | 44001, 44006 (+FKT); 55002 | LB_Binnengewaesser (gewaesserart, fliesseigenschaft, wasserfuehrung) | B511 / B512 |
-| Soil / bare ground | — | — | 43007 FKT 1000 (37010000); 43001 VEG 1200 Brachland | LB_Lockermaterial 3000 Erdreich / 4000 Ton, Schluff | B330 |
-| Sand | — | FP detail 2400_11 Strand | 43007 OFM 1040 Sand; 61007 Düne | LB_Lockermaterial 2000 Sand, Feinkies | B330 |
-| Gravel | — | — | 43007 OFM 1020 Steine, Schotter / 1030 Geröll; Straßenachse OFM 1250 Gestein, zerkleinert | LB_Lockermaterial 1000 Geröll, Schotter, Kies | B330 |
+| Soil / bare ground | n/a | n/a | 43007 FKT 1000 (37010000); 43001 VEG 1200 Brachland | LB_Lockermaterial 3000 Erdreich / 4000 Ton, Schluff | B330 |
+| Sand | n/a | FP detail 2400_11 Strand | 43007 OFM 1040 Sand; 61007 Düne | LB_Lockermaterial 2000 Sand, Feinkies | B330 |
+| Gravel | n/a | n/a | 43007 OFM 1020 Steine, Schotter / 1030 Geröll; Straßenachse OFM 1250 Gestein, zerkleinert | LB_Lockermaterial 1000 Geröll, Schotter, Kies | B330 |
 | Paving (light / dark) | 6.1 / 6.3 (as traffic area) | SO_ZweckbestimmungStrassenverkehr 14001 Platz, 14002 Fussgaengerbereich | Straßenachse/Fahrbahnachse OFM 1240 Pflaster; 42009 Platz | LB_Tiefbau | B122 |
 | Asphalt | 6.1 | SO_Strassenverkehr | OFM 1230 Bitumen, Asphalt; 42001 FKT 2315 Fahrbahn (21010100) | LB_Tiefbau | B122 |
-| Concrete | 6.1 | — | OFM 1220 Beton | LB_Tiefbau | B122 |
-| Wood decking | — | — | — (nearest: 51009 BWF 1670 Terrasse) | LB_Tiefbau (nearest) | — |
+| Concrete | 6.1 | n/a | OFM 1220 Beton | LB_Tiefbau | B122 |
+| Wood decking | n/a | n/a |, (nearest: 51009 BWF 1670 Terrasse) | LB_Tiefbau (nearest) | n/a |
 
 Finding: the official German catalogues describe land use and vegetation in depth but surface MATERIALS only marginally (4 road-surface values on axis objects, LB_Tiefbau without sub-types, LB_Lockermaterial). Light/dark paving, wood decking and "wildflower meadow" have no official code; they remain house elements with a "nearest" crosswalk and must be flagged as such.
 

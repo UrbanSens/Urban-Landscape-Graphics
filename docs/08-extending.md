@@ -1,43 +1,46 @@
-# 8 · Extending the style
+# 8 · Erweitern des Stils
 
-*How the style guide grows: adding elements, colours, textures, themes and crosswalks, checking them,
-and releasing a new version that every map, app and agent picks up.*
+*Wie der Stilleitfaden wächst: Elemente, Farben, Texturen, Themes und Zuordnungstabellen (Crosswalks) hinzufügen,
+sie prüfen und eine neue Version veröffentlichen, die alle Karten, Apps und Agenten übernehmen.*
 
-## 8.1 Where things live
+## 8.1 Wo was liegt
 
 ```text
 src/ulg/
   data/
-    palette.json            colour tokens (family.step)
-    settings.json           line weights, LOD breaks, ramps, class palettes, attribute docs, centre-line widths
-    elements/*.json         the catalog, one file per theme group, keyed by element id
-    themes/*.json           official conventions (planzv, alkis, basemap, bfn, osm, mono)
-    crosswalks/*.json       26 external classifications -> element ids
-    agent/                  SKILL.md, AGENTS.md, AGENTS.snippet.md for coding agents
-  catalog.py                loading, palette resolution, themes
+    palette.json            Farb-Tokens (family.step)
+    settings.json           Strichstärken, LOD-Grenzen, Farbrampen, Klassenpaletten, Attributdokumentation, Mittellinienbreiten
+    elements/*.json         der Katalog, eine Datei je Themengruppe, mit der Element-ID als Schlüssel
+    themes/*.json           amtliche Konventionen (planzv, alkis, basemap, bfn, osm, mono)
+    crosswalks/*.json       26 externe Klassifikationen -> Element-IDs
+    agent/                  SKILL.md, AGENTS.md, AGENTS.snippet.md für Coding-Agenten
+  catalog.py                Laden, Auflösen der Palette, Themes
   crosswalk.py              resolve / classify / explain
-  render/                   renderer: geometry, texture motifs, scene, SVG and Matplotlib backends
-  export/                   QGIS, SLD, web (MapLibre), design tokens
-  analysis.py               indicators, flatten, root protection zones
-  check.py                  legibility report
-  legend.py, sheet.py       legends and style sheets
+  render/                   Renderer: Geometrie, Texturmotive, Szene, SVG- und Matplotlib-Backends
+  export/                   QGIS, SLD, Web (MapLibre), Design-Tokens
+  analysis.py               indicators, flatten, Wurzelschutzbereiche
+  check.py                  Lesbarkeitsbericht
+  legend.py, sheet.py       Legenden und Stilblätter
+  brand.py                  die UrbanSens-Namensnennung: Website, Logo, Nennungszeile, das kleine UrbanSens-Zeichen auf den Blättern
 tools/                      build_docs.py, build_html.py, build_logo.py, build_reference.py, format_data.py, qgis_render.py
-  html/                     style sheet, script and font of the HTML documentation
-tests/                      pytest suite
-docs/                       this documentation; docs/reference and docs/html are generated
-examples/                   runnable examples and the MapLibre page
+  html/                     Stylesheet, Skript und Schriftart der HTML-Dokumentation
+tests/                      pytest-Testsuite
+docs/                       die Dokumentation auf Deutsch (Standard); docs/en ist die englische Fassung;
+                            docs/reference und docs/html sind erzeugt, docs/img enthält die Abbildungen
+examples/                   lauffähige Beispiele und die MapLibre-Seite
+LICENSE, CITATION.cff       MIT-Lizenz und die maschinenlesbare Zitierangabe
 ```
 
-**Data first.** Almost every change is a change to a JSON file. Python code changes only when the
-style needs a new kind of mark (a motif or a pictogram) or a new capability.
+**Zuerst die Daten.** Fast jede Änderung ist eine Änderung an einer JSON-Datei. Python-Code ändert sich nur, wenn der
+Stil eine neue Art von Zeichen (ein Motiv oder ein Piktogramm) oder eine neue Fähigkeit braucht.
 
-## 8.2 Add an element
+## 8.2 Ein Element hinzufügen
 
-1. **Check that it is missing.** `ulg find "<German and English names>"`. Many "new" things are aliases of
-   an existing element – then add the alias instead.
-2. **Pick the group and file.** Vegetation in `10_…`/`20_…`, trees in `30_trees.json`, water, ground,
-   surfaces, land use, built, points, lines, overlays in their files.
-3. **Write the entry** with palette tokens only:
+1. **Prüfen Sie, ob es fehlt.** `ulg find "<deutsche und englische Namen>"`. Viele „neue“ Dinge sind Aliase eines
+   vorhandenen Elements. Ergänzen Sie dann stattdessen den Alias.
+2. **Wählen Sie Gruppe und Datei.** Vegetation in `10_…`/`20_…`, Bäume in `30_trees.json`, Wasser, Boden, Oberflächen,
+   Flächennutzung, Bebauung, Punkte, Linien und Overlays in den jeweiligen Dateien.
+3. **Schreiben Sie den Eintrag** nur mit Paletten-Tokens:
 
 ```json
 "wood_pasture": {
@@ -58,28 +61,28 @@ style needs a new kind of mark (a motif or a pictogram) or a new capability.
 }
 ```
 
-4. **Choose `z` by band** ([style guide 2.7](02-style.md#27-drawing-order)): 20 for anything that covers
-   the ground (including complexes), 30–33 for water and what lies on it, 50–66 for hedges and built
-   structures, 66–76 for trees and points, 84–98 for overlays.
-5. **Attributes only with a source.** Use the keys documented in `settings.json → attributes`; leave a
-   coefficient out rather than estimate it. A new attribute needs its own entry there
+4. **Wählen Sie `z` nach Band** ([Stilleitfaden 2.7](02-style.md#27-zeichenreihenfolge)): 20 für alles, was den Boden
+   bedeckt (einschließlich der Komplexe), 30–33 für Wasser und was darauf liegt, 50–66 für Hecken und Bauwerke,
+   66–76 für Bäume und Punkte, 84–98 für Overlays.
+5. **Attribute nur mit Quelle.** Verwenden Sie die Schlüssel, die in `settings.json → attributes` dokumentiert sind;
+   lassen Sie einen Kennwert lieber weg, als ihn zu schätzen. Ein neues Attribut braucht dort einen eigenen Eintrag
    (`meaning`, `source`, `evidence`).
-6. **Aliases in both languages**, including the terms of the standards that name this thing
-   (ALKIS, BKompV, OSM) – search and agents rely on them.
-7. **Connect it**: point the crosswalk entries that describe it to the new id (8.6).
-8. **Check and regenerate** (8.8).
+6. **Aliase in beiden Sprachen**, einschließlich der Begriffe aus den Standards, die es benennen
+   (ALKIS, BKompV, OSM): Suche und Agenten stützen sich darauf.
+7. **Verknüpfen Sie es**: Lassen Sie die Crosswalk-Einträge, die es beschreiben, auf die neue ID zeigen (8.6).
+8. **Prüfen und neu erzeugen** (8.8).
 
-## 8.3 Add or change a colour
+## 8.3 Eine Farbe hinzufügen oder ändern
 
-Colours live only in `palette.json`. Stay in the tonal range of the family: light steps (100–400) for
-fills, darker steps (500–900) for marks. `ulg check` shows whether a change brings two land covers
-closer than ΔE₀₀ 10 without a texture difference, also for simulated colour-vision deficiencies.
-Changing a token changes every element, theme export and sheet that uses it – that is the point, but
-note it in the changelog.
+Farben werden nur in `palette.json` festgelegt. Bleiben Sie im Tonwertbereich der Farbfamilie: helle Stufen (100–400)
+für Füllungen, dunklere Stufen (500–900) für Zeichen. `ulg check` zeigt, ob eine Änderung zwei Landbedeckungen auf
+weniger als ΔE₀₀ 10 Abstand bringt, ohne dass sich ihre Textur unterscheidet. Das gilt auch für simulierte
+Farbsehschwächen. Ändert sich ein Token, ändern sich alle Elemente, Theme-Exporte und Blätter, die es verwenden. Das
+ist gewollt, vermerken Sie es aber im Changelog.
 
-## 8.4 Add a texture motif
+## 8.4 Ein Texturmotiv hinzufügen
 
-A motif is a function in `src/ulg/render/motifs.py`:
+Ein Motiv ist eine Funktion in `src/ulg/render/motifs.py`:
 
 ```python
 def my_motif(region, p, ctx: Ctx) -> list:
@@ -89,61 +92,62 @@ def my_motif(region, p, ctx: Ctx) -> list:
     return [Paths(...), Dots(...)]
 ```
 
-- `region` is the polygon, `p` the parameters merged from `DEFAULTS[motif]` (per LOD) and the
-  element's texture entry, `ctx` carries the scale (`ctx.u` metres per paper mm), the LOD and the
-  hand-drawn factor.
-- Place marks with the ground-anchored helpers (`G.scatter`, `_span_lines`, the `R` streams), never
-  with an unseeded random generator: that keeps patterns continuous across neighbouring polygons,
-  reproducible, and seamless when drawn into tiles (`ctx.period`).
-- Sizes are in paper millimetres; convert with `ctx.u`.
-- Register it in `MOTIFS` and give it `DEFAULTS` for LOD 1–3. `tests/test_render_engine.py` checks
-  that tiles repeat without seams.
+- `region` ist das Polygon, `p` die Parameter, zusammengeführt aus `DEFAULTS[motif]` (je LOD) und dem Textureintrag
+  des Elements; `ctx` enthält den Maßstab (`ctx.u` Meter je Millimeter auf dem Papier), die Detailstufe und den
+  Faktor für die handgezeichnete Anmutung.
+- Platzieren Sie Zeichen mit den an Bodenkoordinaten verankerten Hilfsfunktionen (`G.scatter`, `_span_lines`, die
+  `R`-Streams), nie mit einem Zufallsgenerator ohne festen Seed: So bleiben Muster über benachbarte Polygone hinweg
+  fortlaufend, reproduzierbar und beim Zeichnen in Kacheln nahtlos (`ctx.period`).
+- Größen werden in Millimetern auf dem Papier angegeben; rechnen Sie mit `ctx.u` um.
+- Tragen Sie es in `MOTIFS` ein und legen Sie `DEFAULTS` für LOD 1–3 an. `tests/test_render_engine.py` prüft,
+  dass sich Kacheln nahtlos wiederholen.
 
-## 8.5 Add a pictogram or a theme
+## 8.5 Ein Piktogramm oder ein Theme hinzufügen
 
-**Pictograms** are small vector drawings in `PICTOGRAMS` (`src/ulg/render/scene.py`): a list of parts
-`(kind, coordinates, fill role, stroke role, width)`, coordinates in units of the symbol radius, roles
-`fill`, `ink`, `paper`, `accent` taken from the element's `symbol`.
+**Piktogramme** sind kleine Vektorgrafiken in `PICTOGRAMS` (`src/ulg/render/scene.py`): eine Liste von Teilen
+`(Art, Koordinaten, Füllrolle, Konturrolle, Strichstärke)`, Koordinaten in Einheiten des Symbolradius, Rollen `fill`,
+`ink`, `paper`, `accent`, die dem `symbol` des Elements entnommen werden.
 
-**Themes** are JSON files in `src/ulg/data/themes/`:
+**Themes** sind JSON-Dateien in `src/ulg/data/themes/`:
 
-| Key | Meaning |
+| Schlüssel | Bedeutung |
 |---|---|
-| `title`, `description`, `source`, `evidence` | what the convention is and where the values come from |
-| `handdrawn` | outline wobble for this theme (0 = exact lines) |
-| `textures` | `"none"` (flat fills; overlays keep their hatches) or `"mono"` (every mark in ink) |
-| `background`, `ink`, `paper` | page colours |
-| `default`, `groups`, `elements` | fill/outline overrides, from general to specific; each with an `evidence` note |
+| `title`, `description`, `source`, `evidence` | was die Konvention ist und woher die Werte stammen |
+| `handdrawn` | Konturwackeln für dieses Theme (0 = exakte Linien) |
+| `textures` | `"none"` (einfarbige Füllungen; Overlays behalten ihre Schraffuren) oder `"mono"` (jedes Zeichen in der Zeichenfarbe) |
+| `background`, `ink`, `paper` | Seitenfarben |
+| `default`, `groups`, `elements` | Überschreibungen von Füllung und Kontur, vom Allgemeinen zum Besonderen; jeweils mit einem `evidence`-Vermerk |
 
-A new theme appears in `ulg.themes()`, the CLI `--theme` options and all exporters automatically.
+Ein neues Theme erscheint automatisch in `ulg.themes()`, in den `--theme`-Optionen der Kommandozeile und in allen
+Exportern.
 
-## 8.6 Add or extend a crosswalk
+## 8.6 Einen Crosswalk hinzufügen oder erweitern
 
-One file per scheme in `src/ulg/data/crosswalks/`; the format is in
-[reference/crosswalk-format.md](reference/crosswalk-format.md). Essentials:
+Eine Datei je Schema in `src/ulg/data/crosswalks/`; das Format steht in
+[reference/crosswalk-format.md](reference/crosswalk-format.md). Das Wesentliche:
 
-- metadata: `title`, `publisher`, `version`, `source`, `license_note`, `key`, `fields` (column aliases),
+- Metadaten: `title`, `publisher`, `version`, `source`, `license_note`, `key`, `fields` (Aliase für Spaltennamen),
   optional `hierarchy`, `suffixes`, `fallback_pattern`;
-- one entry per class with `code` or `match`, `name`, `element` (or `null`), `fit`, and `color` only
-  if the scheme's own legend colour was verified;
-- the most specific match wins, then file order.
+- ein Eintrag je Klasse mit `code` oder `match`, `name`, `element` (oder `null`), `fit` und, nur wenn die eigene
+  Legendenfarbe des Schemas verifiziert wurde, `color`;
+- der spezifischste Treffer gewinnt, danach die Reihenfolge in der Datei.
 
-`python -m pytest tests/test_crosswalks.py` validates every file. Add spot checks for the lookups your
-project relies on.
+`python -m pytest tests/test_crosswalks.py` validiert jede Datei. Ergänzen Sie Stichproben für die Abfragen, auf die
+Ihr Projekt angewiesen ist.
 
-## 8.7 Tools
+## 8.7 Werkzeuge
 
-| Command | Does |
+| Befehl | Aufgabe |
 |---|---|
-| `python tools/format_data.py` | normalises the layout of all JSON data files (`--check` only reports) |
-| `python tools/build_reference.py` | regenerates `docs/reference/*.md` from the data and docstrings |
-| `python tools/build_docs.py [names]` | regenerates the images in `docs/img/` (sheets, textures, maps, QGIS renders, the banners of the HTML pages) |
-| `python tools/build_logo.py` | redraws the logo, its variants and the favicons in `docs/img/logo/` from the catalog |
-| `python tools/build_html.py` | builds `docs/html/`: the multi-page site and the single file `ulg-documentation.html` (banner, serif text, numbered figures, quotations with their source); checks every link |
-| `python -m pytest` | the test suite (`-m "not slow"` skips sprite rasterisation) |
-| `ulg check` | the legibility report |
+| `python tools/format_data.py` | vereinheitlicht das Layout aller JSON-Datendateien (`--check` meldet nur) |
+| `python tools/build_reference.py` | erzeugt `docs/reference/*.md` aus den Daten und Docstrings neu |
+| `python tools/build_docs.py [names]` | erzeugt die Bilder in `docs/img/` neu, in beiden Sprachen (Blätter, Texturen, Karten, QGIS-Renderings, die Banner der HTML-Seiten) |
+| `python tools/build_logo.py` | zeichnet das Logo, seine Varianten und die Favicons in `docs/img/logo/` aus dem Katalog neu |
+| `python tools/build_html.py` | baut `docs/html/`: die deutsche Website (Stammverzeichnis) und die englische Website (`en/`), jeweils mit einer Einzeldatei (Banner, Serifenschrift, nummerierte Abbildungen, Zitate mit Quellenangabe); prüft jeden Link |
+| `python -m pytest` | die Testsuite (`-m "not slow"` überspringt die Rasterisierung der Sprites) |
+| `ulg check` | der Lesbarkeitsbericht |
 
-## 8.8 Checklist for every change
+## 8.8 Checkliste für jede Änderung
 
 ```bash
 python tools/format_data.py
@@ -169,40 +173,64 @@ python tools/build_docs.py sheets
 python tools/build_html.py
 ```
 
-Then look at the regenerated sheets – the style is visual, and the sheets are its review copy.
+Sehen Sie sich danach die neu erzeugten Blätter an: Der Stil ist visuell, und die Blätter sind sein Prüfexemplar.
+Eine Änderung am Text der Dokumentation wird in beiden Sprachen vorgenommen (8.11).
 
-## 8.9 Versions and the living style guide
+## 8.9 Versionen und der lebende Stilleitfaden
 
-The style is versioned with the package (`pyproject.toml`, `ulg.__version__` and `palette.json →
-version` move together) and every release is described in [`CHANGELOG.md`](../CHANGELOG.md):
+Der Stil wird zusammen mit dem Paket versioniert (`pyproject.toml`, `ulg.__version__` und `palette.json → version`
+ändern sich gemeinsam), und jedes Release ist in [`CHANGELOG.md`](../CHANGELOG.md) beschrieben:
 
-| Change | Version step |
+| Änderung | Versionsschritt |
 |---|---|
-| an element id removed or renamed, or its meaning changed | major |
-| new elements, themes, crosswalks, motifs; visible colour or texture changes | minor |
-| fixes that do not change how existing maps look | patch |
+| Element-ID entfernt oder umbenannt, oder ihre Bedeutung geändert | Major |
+| neue Elemente, Themes, Crosswalks, Motive; sichtbare Farb- oder Texturänderungen | Minor |
+| Korrekturen, die das Aussehen bestehender Karten nicht verändern | Patch |
 
-Proposals for the style work best as a picture: a crop of the sheet or a map with the problem, the
-element ids involved, and – for anything official – the source. Apps pick up a release through
-`ulg export tokens` / `ulg export web`; QGIS projects by reloading the exported QML files; agents
-through the installed skill, which reads the installed package.
+Vorschläge für den Stil funktionieren am besten als Bild: ein Ausschnitt des Blatts oder eine Karte mit dem Problem,
+die beteiligten Element-IDs und, bei allem Amtlichen, die Quelle. Apps übernehmen ein Release über
+`ulg export tokens` / `ulg export web`, QGIS-Projekte durch erneutes Laden der exportierten QML-Dateien, Agenten über
+den installierten Skill, der das installierte Paket liest.
 
-## 8.10 Publishing
+## 8.10 Veröffentlichen
 
-Two GitHub workflows in `.github/workflows/` run on every push to `main`:
+Zwei GitHub-Workflows in `.github/workflows/` laufen bei jedem Push auf `main`:
 
-| Workflow | Does |
+| Workflow | Aufgabe |
 |---|---|
-| `ci.yml` (Tests) | installs the package on Python 3.10, 3.12 and 3.13, checks the data layout, runs `ulg check` and the test suite |
-| `pages.yml` (Documentation) | builds the site and the single file with `python tools/build_html.py --out _site` (it fails on a broken link), exports and copies the MapLibre demo, and publishes everything with GitHub Pages at <https://urbansens.github.io/Urban-Landscape-Graphics/> |
+| `ci.yml` (Tests) | installiert das Paket unter Python 3.10, 3.12 und 3.13, prüft das Datenlayout, führt `ulg check` und die Testsuite aus |
+| `pages.yml` (Documentation) | baut beide Websites und ihre Einzeldateien mit `python tools/build_html.py --out _site` (der Aufruf schlägt bei einem defekten Link fehl), exportiert und kopiert die MapLibre-Demo und veröffentlicht alles mit GitHub Pages unter <https://urbansens.github.io/Urban-Landscape-Graphics/> (Deutsch) und <https://urbansens.github.io/Urban-Landscape-Graphics/en/> (Englisch) |
 
-Generated files are not committed: `docs/html/`, `examples/output/` and the exported web style in
-`examples/web/ulg/` are rebuilt by the workflows or by the commands in 8.7. What *is* committed are the
-images in `docs/img/` (sheets, maps, banners, logos), because they are the review copy of the style –
-regenerate them with `python tools/build_docs.py` and `python tools/build_logo.py` before committing a
-change that alters how the style looks. The GitHub social preview (1280 × 640 px, set by hand under
-Settings > General) is `docs/img/social-preview.png`, made by `python tools/build_docs.py social`.
+Erzeugte Dateien werden nicht committet: `docs/html/`, `examples/output/` und der exportierte Web-Stil in
+`examples/web/ulg/` werden von den Workflows oder mit den Befehlen aus 8.7 neu erzeugt. Committet *werden* dagegen die
+Bilder in `docs/img/` (Blätter, Karten, Banner, Logos), weil sie das Prüfexemplar des Stils sind.
+Erzeugen Sie sie mit `python tools/build_docs.py` und `python tools/build_logo.py` neu, bevor Sie eine Änderung
+committen, die das Aussehen des Stils verändert. Das Social-Preview-Bild von GitHub (1280 × 640 px, von Hand unter
+Settings > General gesetzt) ist `docs/img/social-preview.png` (Deutsch) oder `social-preview-en.png`, erzeugt mit
+`python tools/build_docs.py social`.
+
+## 8.11 Zwei Sprachen
+
+Die Dokumentation liegt auf Deutsch und auf Englisch vor, wobei Deutsch die Standardsprache ist:
+
+| | Deutsch (Standard) | Englisch |
+|---|---|---|
+| Startseite | `README.md` | `README.en.md` |
+| Kapitel | `docs/index.md`, `docs/01-origins.md` ... `docs/08-extending.md`, `docs/licence-and-credit.md` | dieselben Dateinamen in `docs/en/` |
+| Abbildungen mit Text | `docs/img/name-de.png` | `docs/img/name.png` |
+| Veröffentlicht | Stammverzeichnis der Website | `/en/` |
+
+Die Referenzseiten, die Recherchedateien, die Beispiele, das Changelog und `AGENTS.md` gibt es nur auf Englisch; beide
+Websites enthalten sie, und das deutsche Menü kennzeichnet sie mit *EN*. Der deutsche Text verwendet die förmliche
+Anrede *Sie* und ist sinngemäß und idiomatisch übersetzt, nicht Wort für Wort. Halten Sie Dateinamen,
+Überschriftennummern, Abbildungen und die Anzahl der Codeblöcke in beiden Sprachen identisch; `tests/test_docs_i18n.py`
+vergleicht die beiden Verzeichnisbäume. Der Text in den Abbildungen stammt aus `tools/build_docs.py`, das jedes
+sprachabhängige Bild zweimal zeichnet. Der Sprachumschalter der Website braucht nichts Zusätzliches: Das Build-Skript
+ordnet die Seiten über den Dateinamen einander zu.
+
+Für jeden Text gelten in beiden Sprachen zwei Hausregeln: keine Geviertstriche (stattdessen Komma, Doppelpunkt,
+Klammern oder Punkt) und keine Halbgeviertstriche mit Leerzeichen als Ersatz. `tests/test_style_rules.py` prüft das.
 
 ---
 
-Back to the [overview](index.md)
+Zurück zur [Übersicht](index.md)

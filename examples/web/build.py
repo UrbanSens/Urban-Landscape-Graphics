@@ -4,6 +4,7 @@
     python -m http.server 8765 --directory examples/web
     # http://localhost:8765            the demo park (a clean site plan)
     # http://localhost:8765/?data=osm  an OpenStreetMap-style block: stacked areas, streets as centre lines
+    # add lang=en for the English text of the page (German is the default), e.g. /?lang=en&data=osm
 """
 
 from pathlib import Path

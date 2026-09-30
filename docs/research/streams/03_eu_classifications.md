@@ -43,9 +43,9 @@ Colour values carry **V only if I saw the numbers** in an official legend, style
 
 ## 1. CORINE Land Cover (CLC)
 
-**Product facts (V):** pan-European inventory with 44 thematic classes in three levels; minimum mapping unit **25 ha**, minimum mapping width **100 m**; change layers with 5 ha MMU; vector and 100 m raster. Source: https://land.copernicus.eu/en/products/corine-land-cover. With a 25 ha MMU, CLC is a *context* dataset for cities — it does not resolve single parks, street trees or squares.
+**Product facts (V):** pan-European inventory with 44 thematic classes in three levels; minimum mapping unit **25 ha**, minimum mapping width **100 m**; change layers with 5 ha MMU; vector and 100 m raster. Source: https://land.copernicus.eu/en/products/corine-land-cover. With a 25 ha MMU, CLC is a *context* dataset for cities, it does not resolve single parks, street trees or squares.
 
-**Official legend (V):** RGB values below are the fill colours of the unique-value renderer (field `Code_18`) of the EEA map service `Corine/CLC2018_WM`, layer 0 "Corine Land Cover 2018 vector". They are identical in all sub-layers of that service. Source: https://image.discomap.eea.europa.eu/arcgis/rest/services/Corine/CLC2018_WM/MapServer/layers?f=pjson. Class labels are taken from the same renderer. (The Copernicus nomenclature guideline at https://land.copernicus.eu/content/corine-land-cover-nomenclature-guidelines/html/ spells a few names slightly differently: "Natural grassland", "Bare rock", "Peatbogs", "Transitional woodland/shrub" — S.)
+**Official legend (V):** RGB values below are the fill colours of the unique-value renderer (field `Code_18`) of the EEA map service `Corine/CLC2018_WM`, layer 0 "Corine Land Cover 2018 vector". They are identical in all sub-layers of that service. Source: https://image.discomap.eea.europa.eu/arcgis/rest/services/Corine/CLC2018_WM/MapServer/layers?f=pjson. Class labels are taken from the same renderer. (The Copernicus nomenclature guideline at https://land.copernicus.eu/content/corine-land-cover-nomenclature-guidelines/html/ spells a few names slightly differently: "Natural grassland", "Bare rock", "Peatbogs", "Transitional woodland/shrub", S.)
 
 Column "City": **U** = typical inside settlements; **P** = typical in the peri-urban fringe of Central European cities; **–** = rarely relevant there (A = author's assessment).
 
@@ -96,7 +96,7 @@ Column "City": **U** = typical inside settlements; **P** = typical in the peri-u
 | 522 | 5.2 | Estuaries | 166,255,230 | #A6FFE6 | – | V |
 | 523 | 5.2 | Sea and ocean | 230,242,255 | #E6F2FF | – | V |
 
-**Convention notes (A):** artificial surfaces are reds, magentas and pinks (including the *vegetated* artificial classes 141/142, which are pink — not green); agriculture is yellow to orange; forests saturated greens; grass/heath yellow-greens; open ground greys; wetlands blue-violets; water cyan to pale blue.
+**Convention notes (A):** artificial surfaces are reds, magentas and pinks (including the *vegetated* artificial classes 141/142, which are pink, not green); agriculture is yellow to orange; forests saturated greens; grass/heath yellow-greens; open ground greys; wetlands blue-violets; water cyan to pale blue.
 
 ---
 
@@ -118,7 +118,7 @@ Sources: UA 2021 PUM https://library.land.copernicus.eu/products/Urban_Atlas_CLM
 
 Codes and names: **V** from the PUM nomenclature tables. RGB: **V** for the 2018 legend, read from the renderer (field `code_2018`) of the EEA map service `UrbanAtlas/UA_UrbanAtlas_2018`, layer 2 "Land Use vector": https://image.discomap.eea.europa.eu/arcgis/rest/services/UrbanAtlas/UA_UrbanAtlas_2018/MapServer/layers?f=pjson
 
-The **2021 legend** was read (**V**) from the SLD that the CLMS web map service returns for `GetStyles` on the layers `UA_LCU_2021_VECTOR` and `UA_LCU_2018_VECTOR`: https://mapserver.dataspace.copernicus.eu/ogc?service=WMS&request=GetCapabilities&version=1.3.0 — all classes that exist in both years have exactly the 2018 colours; the 2021 style adds the three access classes and the two no-data classes. The product page counts 19 urban classes (MMU 0.25 ha) and 9 rural classes (MMU 1 ha) for 2021.
+The **2021 legend** was read (**V**) from the SLD that the CLMS web map service returns for `GetStyles` on the layers `UA_LCU_2021_VECTOR` and `UA_LCU_2018_VECTOR`: https://mapserver.dataspace.copernicus.eu/ogc?service=WMS&request=GetCapabilities&version=1.3.0, all classes that exist in both years have exactly the 2018 colours; the 2021 style adds the three access classes and the two no-data classes. The product page counts 19 urban classes (MMU 0.25 ha) and 9 rural classes (MMU 1 ha) for 2021.
 
 | Code | UA no. | Name | R,G,B (2018 legend; 2021 style for the 2021-only and no-data codes) | Hex | Mark |
 |---|---|---|---|---|---|
@@ -138,15 +138,15 @@ The **2021 legend** was read (**V**) from the SLD that the CLMS web map service 
 | 13300 | 1.3.3 | Construction sites | 185,165,110 | #B9A56E | V |
 | 13400 | 1.3.4 | Land without current use | 135,69,69 | #874545 | V |
 | 14100 | 1.4.1 | Green urban areas (2006–2018; still used in the revised 2018 layer) | 140,220,0 | #8CDC00 | V |
-| 14110 | 1.4.1 | Green urban areas (Public access) — 2021 only | 140,220,0 | #8CDC00 | V |
-| 14120 | 1.4.1 | Green urban areas (Private access) — 2021 only | 116,184,0 | #74B800 | V |
-| 14130 | 1.4.1 | Green urban areas (Unknown access conditions) — 2021 only | 90,143,0 | #5A8F00 | V |
+| 14110 | 1.4.1 | Green urban areas (Public access), 2021 only | 140,220,0 | #8CDC00 | V |
+| 14120 | 1.4.1 | Green urban areas (Private access), 2021 only | 116,184,0 | #74B800 | V |
+| 14130 | 1.4.1 | Green urban areas (Unknown access conditions), 2021 only | 90,143,0 | #5A8F00 | V |
 | 14200 | 1.4.2 | Sports and leisure facilities | 175,210,165 | #AFD2A5 | V |
 | 21000 | 2.1 | Arable land (annual crops) | 255,255,168 | #FFFFA8 | V |
 | 22000 | 2.2 | Permanent crops (vineyards, fruit trees, olive groves) | 242,166,77 | #F2A64D | V |
 | 23000 | 2.3 | Pastures | 230,230,77 | #E6E64D | V |
 | 24000 | 2.4 | Complex and mixed cultivation patterns | 255,230,77 | #FFE64D | V |
-| 25000 | – | Orchards — **legacy entry**: present only in the legend of the older EEA service `UA_UrbanAtlas_2018`; absent from the nomenclature tables of the manuals and from the current CLMS styles for 2018 and 2021 | 242,204,128 | #F2CC80 | V (legacy legend) |
+| 25000 | – | Orchards, **legacy entry**: present only in the legend of the older EEA service `UA_UrbanAtlas_2018`; absent from the nomenclature tables of the manuals and from the current CLMS styles for 2018 and 2021 | 242,204,128 | #F2CC80 | V (legacy legend) |
 | 31000 | 3.1 | Forests | 0,140,0 | #008C00 | V |
 | 32000 | 3.2 | Herbaceous vegetation associations (natural grassland, moors …) | 204,242,77 | #CCF24D | V |
 | 33000 | 3.3 | Open spaces with little or no vegetation (beaches, dunes, bare rocks, glaciers) | 204,255,204 | #CCFFCC | V |
@@ -201,7 +201,7 @@ Sources: PUM 2023 https://library.land.copernicus.eu/products/CLCplus_Backbone_2
 
 ### 3.2 Classes, EAGLE link and official colours
 
-Codes and names: V (technical specification tables of both manuals). RGB: **V** — read from the colour-palette tables printed (as images) in the annexes of the 2021 and the 2023 manuals; both years are identical. EAGLE references: V (section 6.1.2 of the 2023 manual).
+Codes and names: V (technical specification tables of both manuals). RGB: **V**: read from the colour-palette tables printed (as images) in the annexes of the 2021 and the 2023 manuals; both years are identical. EAGLE references: V (section 6.1.2 of the 2023 manual).
 
 | Code | Class name | EAGLE reference given in the 2023 manual | R,G,B | Hex | Mark |
 |---|---|---|---|---|---|
@@ -228,7 +228,7 @@ Codes and names: V (technical specification tables of both manuals). RGB: **V** 
 | 2–4 Woody – trees | Perennial woody plants with a single self-supporting stem. 2 = needle-leaved (gymnosperms; Ginkgo counts as broadleaved deciduous); 3 = broadleaved, leafless for part of the year; 4 = broadleaved never entirely without foliage (includes palms). |
 | 5 Low-growing woody plants | Shrub growth form, multiple stems, height usually below 5 m. Includes bushes, dwarf shrubs (Calluna, Erica), Pinus mugo, Alnus viridis, **vines (Vitis) and hops**. Excludes low fruit trees and young tree regrowth (→ trees). |
 | 6 Permanent herbaceous | Continuous herbaceous cover (more than 30 %) throughout the year, no bare-soil phase: natural and managed grassland, set-aside, permanent fodder. Includes grasses, **reeds** and forbs. |
-| 7 Periodically herbaceous | At least one change between bare soil and herbaceous cover within the observation period — in practice mostly arable land; grassland ploughed in the reference year also ends up here. |
+| 7 Periodically herbaceous | At least one change between bare soil and herbaceous cover within the observation period, in practice mostly arable land; grassland ploughed in the reference year also ends up here. |
 | 8 Lichens and mosses | Essentially a northern-European tundra class. |
 | 9 Non and sparsely vegetated | Non-vegetated share ≥ 70 %: rock, scree, sand, gravel, permanent bare soil, quarries, sparsely vegetated ground (vegetation below 30 %), and any non-sealed artificial surface with vegetation below 30 %. |
 | 10 Water | Inland water in liquid state, running and standing, natural or artificial; under water for at least half of the observation period. Coastal seawater is separated as code 253. |
@@ -236,9 +236,9 @@ Codes and names: V (technical specification tables of both manuals). RGB: **V** 
 
 ---
 
-## 4. Nature Restoration Regulation (EU) 2024/1991 — urban ecosystems
+## 4. Nature Restoration Regulation (EU) 2024/1991: urban ecosystems
 
-Primary source (all quotes V): Regulation (EU) 2024/1991 of the European Parliament and of the Council of 24 June 2024 on nature restoration and amending Regulation (EU) 2022/869, OJ L, 2024/1991, 29.7.2024 — https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401991 (ELI: http://data.europa.eu/eli/reg/2024/1991/oj).
+Primary source (all quotes V): Regulation (EU) 2024/1991 of the European Parliament and of the Council of 24 June 2024 on nature restoration and amending Regulation (EU) 2022/869, OJ L, 2024/1991, 29.7.2024, https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401991 (ELI: http://data.europa.eu/eli/reg/2024/1991/oj).
 
 ### 4.1 Definitions in Article 3 (verbatim)
 
@@ -259,19 +259,19 @@ Primary source (all quotes V): Regulation (EU) 2024/1991 of the European Parliam
 | Art. 8(1) | "By 31 December 2030, Member States shall ensure that there is no net loss in the total national area of urban green space and of urban tree canopy cover in urban ecosystem areas, determined in accordance with Article 14(4), compared to 2024. For the purposes of this paragraph, Member States may exclude from those total national areas the urban ecosystem areas in which the share of urban green space in the urban centres and urban clusters exceeds 45 % and the share of urban tree canopy cover exceeds 10 %." | V |
 | Art. 8(2) | "From 1 January 2031, Member States shall achieve an increasing trend in the total national area of urban green space, including through the integration of urban green space into buildings and infrastructure, in urban ecosystem areas, determined in accordance with Article 14(4), measured every six years from 1 January 2031, until a satisfactory level as set in accordance with Article 14(5) is reached." | V |
 | Art. 8(3) | "Member States shall achieve, in each urban ecosystem area, determined in accordance with Article 14(4), an increasing trend of urban tree canopy cover, measured every six years from 1 January 2031, until the satisfactory level identified as set in accordance with Article 14(5) is reached." | V |
-| Art. 14(4) — urban ecosystem area | Member States "shall determine and map urban ecosystem areas as referred to in Article 8 for all their cities and towns and suburbs." The area "shall include: (a) the entire city or town and suburb; or (b) parts of the city or of the town and suburb, including at least its urban centres, urban clusters and, if deemed appropriate by the Member State concerned, peri-urban areas." Adjacent cities/towns may be aggregated into one common urban ecosystem area. | V |
+| Art. 14(4), urban ecosystem area | Member States "shall determine and map urban ecosystem areas as referred to in Article 8 for all their cities and towns and suburbs." The area "shall include: (a) the entire city or town and suburb; or (b) parts of the city or of the town and suburb, including at least its urban centres, urban clusters and, if deemed appropriate by the Member State concerned, peri-urban areas." Adjacent cities/towns may be aggregated into one common urban ecosystem area. | V |
 | Art. 14(5) | By 2030 Member States set **satisfactory levels** for, among others, (d) urban green space (Art. 8(2)) and (e) urban tree canopy cover (Art. 8(3)). | V |
 | Art. 20(1)(b), 20(6) | Member States monitor "the area of urban green space and urban tree canopy cover within urban ecosystem areas"; this monitoring is carried out **at least every six years**. | V |
 | Art. 20(10) | By 31 December 2028 the Commission establishes, by implementing acts, a guiding framework for setting the satisfactory levels referred to in Art. 8(2) and (3). | V |
 | Recital 47 | Urban ecosystems are about 22 % of the Union's land surface; urban green spaces "include, inter alia, urban forests, parks and gardens, urban farms, tree-lined streets, urban meadows and urban hedges". | V |
 | Recital 48 | Loss of urban green space should be stopped; integration of green infrastructure "such as green roofs and green walls" in building design can maintain and increase urban green space and, if trees are included, tree canopy cover. | V |
-| Last annex (examples of restoration measures), item 31 | Increase urban green spaces with ecological features such as parks, trees and woodland patches, green roofs, wildflower grasslands, gardens, city horticulture, tree-lined streets, urban meadows and hedges, ponds and watercourses, considering species diversity, native species, local conditions and climate resilience. (Annex number not captured — it is the final annex of the act; paraphrased.) | V (content) |
+| Last annex (examples of restoration measures), item 31 | Increase urban green spaces with ecological features such as parks, trees and woodland patches, green roofs, wildflower grasslands, gardens, city horticulture, tree-lined streets, urban meadows and hedges, ponds and watercourses, considering species diversity, native species, local conditions and climate resilience. (Annex number not captured, it is the final annex of the act; paraphrased.) | V (content) |
 
 **Key distinction (V):** the no-net-loss target of Art. 8(1) and the green-space trend of Art. 8(2) are assessed on the **total national area**; the tree-canopy trend of Art. 8(3) is assessed **in each urban ecosystem area**.
 
 ### 4.3 Which data and classes measure the targets
 
-Source (V): "Methodological support on datasets to be used under Article 8 of the Nature Restoration Regulation", informal discussion document of DG Environment with EEA logo, document version 2.0, portal date 07/07/2026 — https://biodiversity.europa.eu/europes-biodiversity/nature-restoration/reference-portal-for-nature-restoration-regulation/documentation/nrp-urban-explantory-notes-v2_07072026.pdf/@@display-file/file (linked from the NRR Reference Portal, https://biodiversity.europa.eu/europes-biodiversity/nature-restoration/reference-portal-for-nature-restoration-regulation). The document states that it is not legally binding.
+Source (V): "Methodological support on datasets to be used under Article 8 of the Nature Restoration Regulation", informal discussion document of DG Environment with EEA logo, document version 2.0, portal date 07/07/2026, https://biodiversity.europa.eu/europes-biodiversity/nature-restoration/reference-portal-for-nature-restoration-regulation/documentation/nrp-urban-explantory-notes-v2_07072026.pdf/@@display-file/file (linked from the NRR Reference Portal, https://biodiversity.europa.eu/europes-biodiversity/nature-restoration/reference-portal-for-nature-restoration-regulation). The document states that it is not legally binding.
 
 | NRR term | Dataset to be used | Reference / baseline | Update | Type | Mark |
 |---|---|---|---|---|---|
@@ -284,7 +284,7 @@ Source (V): "Methodological support on datasets to be used under Article 8 of th
 
 **CLCplus Backbone classes counted as urban green space (V):** trees = classes **2, 3 and 4**; bushes, shrubs = class **5**; permanent herbaceous vegetation = class **6**; lichens and mosses = class **8**; ponds and watercourses = class **10**. The note recommends reclassifying these to 1 and everything else to no-data. Consequently **not counted**: 1 Sealed, 7 Periodically herbaceous, 9 Non and sparsely vegetated, 11 Snow and ice, 253 coastal seawater.
 
-**Urban tree canopy cover (V):** the HRL Tree Cover Density layer gives a tree-cover percentage per 10 m pixel; the canopy area is obtained by summing the percentages over the urban ecosystem area. It has to be reported per urban ecosystem area. The CLMS product family "High Resolution Layer Tree Cover and Forests" consists of Tree Cover Density (0–100 % per pixel), Dominant Leaf Type (broadleaved / coniferous) and Forest Type; only Forest Type applies the FAO forest definition and filters out street trees, orchards and patches below half a hectare — Tree Cover Density therefore **includes street trees and orchard trees** (V, https://land.copernicus.eu/en/products/high-resolution-layer-tree-cover-density).
+**Urban tree canopy cover (V):** the HRL Tree Cover Density layer gives a tree-cover percentage per 10 m pixel; the canopy area is obtained by summing the percentages over the urban ecosystem area. It has to be reported per urban ecosystem area. The CLMS product family "High Resolution Layer Tree Cover and Forests" consists of Tree Cover Density (0–100 % per pixel), Dominant Leaf Type (broadleaved / coniferous) and Forest Type; only Forest Type applies the FAO forest definition and filters out street trees, orchards and patches below half a hectare, Tree Cover Density therefore **includes street trees and orchard trees** (V, https://land.copernicus.eu/en/products/high-resolution-layer-tree-cover-density).
 
 **Thresholds used in the note (V):** urban centre = contiguous 1 km² cells with at least 1,500 inhabitants/km² and at least 50,000 inhabitants in total; urban cluster = contiguous cells with at least 300 inhabitants/km² and at least 5,000 inhabitants. Peri-urban area: no obligation to delineate; if included, at least 1 km around centres and clusters, clipped to the LAU.
 
@@ -308,11 +308,11 @@ Regulation (EU) 2024/3024, Annex IX, Section 3(3)(a): condition accounts for "se
 - Revised classification ("EUNIS habitat types hierarchical view 2021/2022"): https://biodiversity.europa.eu/resources/search-habitat/eunis-habitat-types-hierarchical-view-2021-2022
 - EUNIS 2012 (includes the groups not yet revised): https://biodiversity.europa.eu/resources/search-habitat/eunis-habitat-types-hierarchical-view-2012
 - EEA SDI series "EUNIS habitat classification and crosswalks (tabular data)": the review covers marine habitats, coastal habitats, grasslands, heathland, forest, sparsely vegetated, vegetated man-made habitats and wetlands; the remaining groups (**inland waters and complex habitats**) are to be revised later; the 2012 version "includes the not yet revised groups". https://sdi.eea.europa.eu/catalogue/srv/api/records/638330ea-90e6-4e41-81ea-e70f25ae7117
-- **Constructed habitats (2012 group J) do not appear in the revised tree at all** and are not named among the pending groups in the current metadata (an older EEA text listed them as pending — S). For buildings, roads, artificial waters and waste deposits the **2012 J codes remain the only EUNIS codes** (A).
+- **Constructed habitats (2012 group J) do not appear in the revised tree at all** and are not named among the pending groups in the current metadata (an older EEA text listed them as pending, S). For buildings, roads, artificial waters and waste deposits the **2012 J codes remain the only EUNIS codes** (A).
 
 Code syntax differs between generations: **2012 uses a dot after the second character (E2.6, E2.64); the 2021/2022 revision has no dot (V31, R22)**. Both generations must be stored in separate fields.
 
-### 5.2 Revised classification 2021/2022 — level 1 (V)
+### 5.2 Revised classification 2021/2022: level 1 (V)
 
 | Code | Name | Replaces 2012 group (A) |
 |---|---|---|
@@ -330,7 +330,7 @@ Code syntax differs between generations: **2012 uses a dot after the second char
 | (not revised) | Constructed, industrial and other artificial habitats → use 2012 group **J** | – |
 | (not revised) | Habitat complexes → use 2012 group **X** | – |
 
-### 5.3 Revised group V "Vegetated man-made habitats" — complete (V)
+### 5.3 Revised group V "Vegetated man-made habitats": complete (V)
 
 Source: BISE tree (URL above). The name of V31 is truncated in BISE after the first comma; the full name is taken from FloraVeg.EU (S): https://floraveg.eu/habitat/overview/V3
 
@@ -343,7 +343,7 @@ Source: BISE tree (URL above). The name of V31 is truncated in BISE after the fi
 | **V5** Shrub plantations | V51 Shrub plantations for whole-plant harvesting · V52 Shrub plantations for leaf or branch harvest · V53 Shrub plantations for ornamental purposes or for fruit, other than vineyards · V54 Vineyards |
 | **V6** Tree dominated man-made habitats | V61 Broadleaved fruit and nut tree orchards · V62 Evergreen orchards and groves · V63 Lines of planted trees · V64 Small deciduous broadleaved planted other wooded land · V65 Small evergreen broadleaved planted other wooded land · V66 Small coniferous planted other wooded land |
 
-### 5.4 Revised groups R, S, T, Q, U, N — level 2 complete, level 3 selected for temperate urban / peri-urban use (V)
+### 5.4 Revised groups R, S, T, Q, U, N: level 2 complete, level 3 selected for temperate urban / peri-urban use (V)
 
 All codes and names V from the BISE tree; the *selection* of level-3 codes is mine (A). Mediterranean, Macaronesian, alpine and boreal level-3 units are omitted here.
 
@@ -356,15 +356,15 @@ All codes and names V from the BISE tree; the *selection* of level-3 codes is mi
 | **U** Inland habitats with no or little soil … | U1 Terrestrial underground caves, cave systems, passages and waterbodies · U2 Screes · U3 Inland cliffs, rock pavements and outcrops · U4 Snow or ice-dominated habitats · U5 Miscellaneous inland habitats usually with very sparse or no vegetation · U6 Recent volcanic features | U11 Cave · U12 Disused underground mines and tunnels · U23 Temperate, lowland to montane siliceous scree · U27 Temperate, lowland to montane base-rich scree · U33 Temperate, lowland to montane siliceous inland cliff · U37 Temperate, lowland to montane base-rich inland cliff · U3D Wet inland cliff · U3E Limestone pavement · U51 Fjell field · U52 Polar desert · U53 Glacial moraines with very sparse or no vegetation |
 | **N** Coastal habitats | N1 Coastal dunes and sandy shores · N2 Coastal shingle · N3 Rock cliffs, ledges and shores, including the supralittoral | N11 Atlantic, Baltic and Arctic sand beach · N13 Atlantic and Baltic shifting coastal dune · N15 Atlantic and Baltic coastal dune grassland (grey dune) · N21 Atlantic, Baltic and Arctic coastal shingle beach |
 
-Observations (A): the revised group U lists at level 3 only fjell fields, polar desert and moraines under U5 — the 2012 units for **bare clay, sand and gravel (H5.3x), burnt areas (H5.5) and trampled areas (H5.6)** have no visible level-3 successor in the BISE tree; the official crosswalk table should be consulted before assigning 2021 codes to bare urban ground. Group T4 keeps "Lines of trees" in its title, but planted tree lines are V63.
+Observations (A): the revised group U lists at level 3 only fjell fields, polar desert and moraines under U5, the 2012 units for **bare clay, sand and gravel (H5.3x), burnt areas (H5.5) and trampled areas (H5.6)** have no visible level-3 successor in the BISE tree; the official crosswalk table should be consulted before assigning 2021 codes to bare urban ground. Group T4 keeps "Lines of trees" in its title, but planted tree lines are V63.
 
-### 5.5 EUNIS 2012 — codes still in wide use for urban greens and constructed habitats (V)
+### 5.5 EUNIS 2012: codes still in wide use for urban greens and constructed habitats (V)
 
 Source: BISE EUNIS 2012 tree (URL above). "→ 2021" gives the revised code with the **same or near-identical name** (A, name-based; not taken from the official crosswalk).
 
 | 2012 code | Name | → 2021 (A) |
 |---|---|---|
-| **C** | Inland surface waters (not revised — current) | – |
+| **C** | Inland surface waters (not revised, current) | – |
 | C1 / C1.1–C1.7 | Surface standing waters: C1.1 Permanent oligotrophic, C1.2 mesotrophic, C1.3 eutrophic, C1.4 dystrophic lakes, ponds and pools; C1.5 Permanent inland saline and brackish lakes, ponds and pools; C1.6 Temporary lakes, ponds and pools; C1.7 Permanent lake ice | – |
 | C2 / C2.1–C2.6 | Surface running waters: C2.1 Springs, spring brooks and geysers; C2.2 Permanent non-tidal, fast, turbulent watercourses; C2.3 Permanent non-tidal, smooth-flowing watercourses; C2.4 Tidal rivers, upstream from the estuary; C2.5 Temporary running waters; C2.6 Films of water flowing over rocky watercourse margins | – |
 | C3 / C3.1–C3.8 | Littoral zone of inland surface waterbodies: C3.1 Species-rich helophyte beds; **C3.2 Water-fringing reedbeds and tall helophytes other than canes** (C3.21 Phragmites australis beds, C3.23 Typha beds, C3.26 Phalaris arundinacea beds, C3.29 Water-fringing large sedge communities); C3.3 Water-fringing beds of tall canes; C3.4 Species-poor beds of low-growing water-fringing or amphibious vegetation; C3.5 Periodically inundated shores with pioneer and ephemeral vegetation; C3.6 / C3.7 Unvegetated or sparsely vegetated shores with soft or mobile sediments / with non-mobile substrates; C3.8 Inland spray- and steam-dependent habitats | Q51, Q53, Q6x (part) |
@@ -534,9 +534,9 @@ Source: https://biodiversity.europa.eu/europes-biodiversity/ecosystems/correspon
 | 511, 512 | Rivers and lakes |
 | 523 | Marine |
 
-### 6.3 Ecosystem types of Regulation (EU) No 691/2011 as amended by Regulation (EU) 2024/3024 — level 1 (V)
+### 6.3 Ecosystem types of Regulation (EU) No 691/2011 as amended by Regulation (EU) 2024/3024: level 1 (V)
 
-Source: Annex IX "Module for ecosystem accounts", Section 3, point 5 — https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202403024. First reference year 2024; extent and condition accounts every 3 years; transmission within 24 months; extent reported in thousand hectares.
+Source: Annex IX "Module for ecosystem accounts", Section 3, point 5, https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202403024. First reference year 2024; extent and condition accounts every 3 years; transmission within 24 months; extent reported in thousand hectares.
 
 | Category | Ecosystem type |
 |---|---|
@@ -557,7 +557,7 @@ Source: Annex IX "Module for ecosystem accounts", Section 3, point 5 — https:/
 
 Source: Eurostat, "EU ecosystem typology – Technical Note", version July 2026 (URL in section 0.3). Level 1 is legally fixed (above); level 2 is in the questionnaire for voluntary reporting and "aligns, where feasible, with Corine Land Cover"; level 3 is "inspired by EUNIS". Names were extracted from the PDF text layer (multi-line cells re-joined by script; terrestrial names checked against the raw text).
 
-**Type 1 "Settlements and other artificial areas" — complete (V)**
+**Type 1 "Settlements and other artificial areas", complete (V)**
 
 | Level 2 | Level 3 | Defining points (paraphrase) |
 |---|---|---|
@@ -567,7 +567,7 @@ Source: Eurostat, "EU ecosystem typology – Technical Note", version July 2026 
 | **1.4 Urban greenspace** | **1.4.1 Parks · 1.4.2 Sports and recreation sites · 1.4.3 Other urban green · 1.4.4 Urban blue** | Vegetated areas within or partly embraced by urban fabric; includes small urban water bodies; **excludes areas with soil sealing above 30 %**. Parks include lawns, small woods, flowerbeds, shrubberies, zoological and botanical gardens, community gardens. Other urban green includes tree alleys. Urban blue = lakes or substantial ponds in parks and other water bodies in settlements. |
 | 1.5 Other artificial areas | 1.5.1 Permanent Greenhouses · 1.5.2 Cemeteries · 1.5.3 Archaeological sites | Urban-character land not in 1.1–1.4; cemeteries are placed here "even if predominantly green". |
 
-**Other types — level 2 complete, level 3 for the types that occur in and around cities (V)**
+**Other types, level 2 complete, level 3 for the types that occur in and around cities (V)**
 
 | Level 1 | Level 2 | Level 3 (selected) |
 |---|---|---|
@@ -585,7 +585,7 @@ Source: Eurostat, "EU ecosystem typology – Technical Note", version July 2026 
 
 ### 6.5 General ecosystem typology for National Restoration Plans (V)
 
-Source: DG Environment "Technical background note" (rev. 02-10-25), "Use of a general ecosystem typology as part of the National Restoration Plan" — https://biodiversity.europa.eu/europes-biodiversity/nature-restoration/reference-portal-for-nature-restoration-regulation/documentation/technical-background-note-typology-of-ecosystems.pdf (informal, non-binding).
+Source: DG Environment "Technical background note" (rev. 02-10-25), "Use of a general ecosystem typology as part of the National Restoration Plan", https://biodiversity.europa.eu/europes-biodiversity/nature-restoration/reference-portal-for-nature-restoration-regulation/documentation/technical-background-note-typology-of-ecosystems.pdf (informal, non-binding).
 
 | NRP general ecosystem type | Link to EU ecosystem typology given in the note |
 |---|---|
@@ -612,7 +612,7 @@ Source: D2.8.II.2 Data Specification on Land Cover – Technical Guidelines, v3.
 
 - INSPIRE prescribes **no land-cover nomenclature**. The code list `LandCoverClassValue` is empty and extensible with any values (registry: https://inspire.ec.europa.eu/codelist/LandCoverClassValue).
 - **Default portrayal carries no thematic colours:** `LC.LandCoverPoints.Default` = 3-pixel circle, black fill and outline (#000000); `LC.LandCoverSurfaces.Default` = white fill (#FFFFFF), black outline (#000000) of 3 pixels; `LC.LandCoverRaster.Default` = opaque raster. The guideline *recommends* filling polygons with the colour of the nomenclature's own legend (its example is CORINE Land Cover).
-- **Pure Land Cover Components (PLCC)** — Annex H, *informative*, developed with the EAGLE group; not mandatory. The annex provides a colour map; the values below were read from the table image in the guideline (V).
+- **Pure Land Cover Components (PLCC)**: Annex H, *informative*, developed with the EAGLE group; not mandatory. The annex provides a colour map; the values below were read from the table image in the guideline (V).
 
 | Code | Pure land cover component | R/G/B | Hex | Mark |
 |---|---|---|---|---|
@@ -637,7 +637,7 @@ Source: D2.8.II.2 Data Specification on Land Cover – Technical Guidelines, v3.
 
 PLCC content notes (V, paraphrased): 001 covers all sealed man-made constructions (buildings, other constructions, linear networks) and excludes parks and gardens; 002 is solid rock including quarries; 003 is loose natural material (boulders to clay) and unvegetated fallow land; 008 includes dwarf shrubs; 009 is all grass and forb vegetation except arable crops; 011 and 012 describe growing conditions and are meant to be combined with a vegetation component; components may be combined with percentages (e.g. mixed forest = 006 + 007). LUCAS 2022 reproduces these 18 components as Annex 9.11 of its surveyor instructions (V): https://ec.europa.eu/eurostat/documents/205002/13686460/C1-Annex-9.11-LUCAS-2022.pdf
 
-### 7.2 Land Use theme (Annex III) — HILUCS (V)
+### 7.2 Land Use theme (Annex III): HILUCS (V)
 
 Sources: INSPIRE registry code list `HILUCSValue` (98 values, all "Valid", governance level "Legal (EU)") https://inspire.ec.europa.eu/codelist/HILUCSValue; portrayal from D2.8.III.4 Data Specification on Land Use – Technical Guidelines (published 2024-07-31) https://inspire-mif.github.io/technical-guidelines/data/lu/dataspecification_lu.html
 
@@ -666,7 +666,7 @@ Sources: INSPIRE registry code list `HILUCSValue` (98 values, all "Valid", gover
 | 5_ResidentialUse | 5_1_PermanentResidentialUse · 5_2_ResidentialUseWithOtherCompatibleUses · 5_3_OtherResidentialUse | – |
 | 6_OtherUses | 6_1_TransitionalAreas · 6_2_AbandonedAreas · 6_3_NaturalAreasNotInOtherEconomicUse · 6_4_AreasWhereAnyUseAllowed · 6_5_AreasWithoutAnySpecifiedPlannedUse · 6_6_NotKnownUse | 6_3_1_LandAreasNotInOtherEconomicUse · 6_3_2_WaterAreasNotInOtherEconomicUse |
 
-**INSPIRE default portrayal for Land Use (V — colour tables are images in section 11.2 of the guideline):** style `LandUse.ExistingLandUse.Default` (and the identical `LandUse.ZoningElement.Default`): objects filled by **HILUCS level 1**, boundaries black, 2 pixels. Data providers may apply the limited level-2 "adjustments" listed second.
+**INSPIRE default portrayal for Land Use (V, colour tables are images in section 11.2 of the guideline):** style `LandUse.ExistingLandUse.Default` (and the identical `LandUse.ZoningElement.Default`): objects filled by **HILUCS level 1**, boundaries black, 2 pixels. Data providers may apply the limited level-2 "adjustments" listed second.
 
 | HILUCS value (spelling as in the guideline's table) | R | G | B | Hex | Mark |
 |---|---|---|---|---|---|
@@ -689,7 +689,7 @@ Other LU styles: `LandUse.SpatialPlan.Default` = plan extent as black line, 2 pi
 Source: D2.8.III.18 v4.0.0 (2024-01-31) https://inspire-mif.github.io/technical-guidelines/data/hb/dataspecification_hb.html; registry https://inspire.ec.europa.eu/codelist/ReferenceHabitatTypeSchemeValue
 
 - Reference habitat type schemes (`ReferenceHabitatTypeSchemeValue`, not extensible): **eunis** (EUNIS habitat classification), **habitatsDirective** (Annex I to Directive 92/43/EEC), **marineStrategyFrameworkDirective** (Table 1 of Annex III to Directive 2008/56/EC).
-- Code lists: `EunisHabitatTypeCodeValue` (values as published by the EEA; the registry lists none itself), `HabitatsDirectiveCodeValue`, `MarineStrategyFrameworkDirectiveCodeValue`, `LocalNameCodeValue` with `QualifierLocalNameValue` for the relation between a local type and the pan-European reference type — five values (V, https://inspire.ec.europa.eu/codelist/QualifierLocalNameValue): **congruent** (conceptually the same), **includedIn** (the local type is a subtype of the pan-European type), **includes** (the pan-European type is a subtype of the local type), **overlaps** (partial overlap, none of the other relations holds), **excludes**.
+- Code lists: `EunisHabitatTypeCodeValue` (values as published by the EEA; the registry lists none itself), `HabitatsDirectiveCodeValue`, `MarineStrategyFrameworkDirectiveCodeValue`, `LocalNameCodeValue` with `QualifierLocalNameValue` for the relation between a local type and the pan-European reference type, five values (V, https://inspire.ec.europa.eu/codelist/QualifierLocalNameValue): **congruent** (conceptually the same), **includedIn** (the local type is a subtype of the pan-European type), **includes** (the pan-European type is a subtype of the local type), **overlaps** (partial overlap, none of the other relations holds), **excludes**.
 - Layers: `HB.Habitat`, `HB.HabitatDistribution`. **Default style `HB.Habitat.Default`:** points as 6-pixel squares and surfaces filled 50 % grey with black 1-pixel outline; the guideline gives the grey as "#808080" in the SLD abstract and as "RGB 80,80,80" in the prose (internally inconsistent). No per-habitat colours are prescribed; a layer per habitat type is recommended.
 
 **Conclusion (V):** among the three INSPIRE themes only **Land Use** prescribes thematic default colours (six HILUCS level-1 colours); Land Cover offers an informative PLCC colour map; Habitats and Biotopes prescribes a uniform grey.
@@ -700,7 +700,7 @@ Source: D2.8.III.18 v4.0.0 (2024-01-31) https://inspire-mif.github.io/technical-
 
 ### 8.1 LUCAS land cover (Eurostat) (V)
 
-Source: LUCAS 2022 Technical reference document C3 "Classification (Land cover & Land use)" https://ec.europa.eu/eurostat/documents/205002/13686460/C3-LUCAS-2022.pdf (linked from https://ec.europa.eu/eurostat/web/lucas/database/2022). LUCAS is an in-situ point survey (2 km grid, about 1 million points; a sample is visited) — a nomenclature and validation source, not a map product. **No official legend colours were found for LUCAS** (not verified either way → open point).
+Source: LUCAS 2022 Technical reference document C3 "Classification (Land cover & Land use)" https://ec.europa.eu/eurostat/documents/205002/13686460/C3-LUCAS-2022.pdf (linked from https://ec.europa.eu/eurostat/web/lucas/database/2022). LUCAS is an in-situ point survey (2 km grid, about 1 million points; a sample is visited), a nomenclature and validation source, not a map product. **No official legend colours were found for LUCAS** (not verified either way → open point).
 
 | Code | Name | Key definition (paraphrase) |
 |---|---|---|
@@ -711,7 +711,7 @@ Source: LUCAS 2022 Technical reference document C3 "Classification (Land cover &
 | A13 | Greenhouses | glass or plastic; crop inside is double-coded |
 | A20 | Artificial non-built up areas | hard artificial materials, concrete, gravel |
 | A21 | Non built-up area features | yards, farmyards, **cemeteries**, car parks (even if grass-covered), quays, storage areas |
-| A22 | Non built-up linear features | roads (even unsealed), railways, runways — if wider than 3 m |
+| A22 | Non built-up linear features | roads (even unsealed), railways, runways, if wider than 3 m |
 | A30 | Other artificial areas | bridges and viaducts, mobile homes, solar panels, power plants, substations, pipelines, sewage plants, open dump sites |
 | **B00** | **Cropland** | B10 Cereals (B11 Common wheat, B12 Durum wheat, B13 Barley, B15 Oats, …) · B20 Root crops (B21–B23) · B30 Non-permanent industrial crops (B31–B37) · B40 Dry pulses, vegetables and flowers (B41–B45; B44 Floriculture and ornamental plants) · B50 Fodder crops (B51–B55; B55 Temporary grasslands) · B70 Permanent crops: fruit trees (B71 Apple, B72 Pear, B73 Cherry, B76 Oranges, B77 Other citrus, …) · B80 Other permanent crops (B81 Olive groves, B82 Vineyards, B83 Nurseries, B84 Permanent industrial crops). Codes B14, B16–B19, B74, B75 exist in the series but were not captured in my extraction. |
 | **C00** | **Woodland** | tree canopy at least 10 %; woody hedges and palm trees included |
@@ -753,7 +753,7 @@ Sources: https://land.copernicus.eu/en/eagle (tabs "Introduction and context" an
 - In the UML data model a **Land Unit** is composed of one or several LCCs, can be enriched by LUAs, and each LCC or the whole unit can be described further by LCHs.
 - Design criteria named on the page: clear separation of land cover and land use plus further characteristics; object-oriented description instead of classification; inclusion of seasonal phenomena; scale independence.
 
-Land Cover Components — upper levels as drawn in the official matrix figure (V):
+Land Cover Components, upper levels as drawn in the official matrix figure (V):
 
 | Level 1 | Level 2 | Level 3 | Next level (as far as legible in the figure) | Code cited in the CLC+ Backbone 2023 manual |
 |---|---|---|---|---|
@@ -770,9 +770,9 @@ Land Cover Components — upper levels as drawn in the official matrix figure (V
 | WATER | Liquid | Inland · Marine | – | 3.1 |
 | WATER | Solid | Snow · Ice | – | 3.2 |
 
-The CLC+ manual additionally cites LCC 1.1.1.3 (the node from which railway tracks deviate — by position "Open Sealed", A) and the Land Characteristics LCH 3.1.1, 3.2.1 and 3.2.2 for needle-leaved, evergreen and deciduous trees (codes V, meanings inferred from the class definitions, A).
+The CLC+ manual additionally cites LCC 1.1.1.3 (the node from which railway tracks deviate, by position "Open Sealed", A) and the Land Characteristics LCH 3.1.1, 3.2.1 and 3.2.2 for needle-leaved, evergreen and deciduous trees (codes V, meanings inferred from the class definitions, A).
 
-**Why this matters for the catalog (A):** the library's surface elements are EAGLE land-cover components in all but name — sealed (asphalt, concrete, paving), non-sealed artificial (gravel, water-bound surfaces), unconsolidated natural (soil, sand), woody (trees, bushes), herbaceous (grass-like, forbs), water. Tagging each element with its LCC node gives a single pivot from which CLC+ Backbone, INSPIRE PLCC and LUCAS codes follow.
+**Why this matters for the catalog (A):** the library's surface elements are EAGLE land-cover components in all but name, sealed (asphalt, concrete, paving), non-sealed artificial (gravel, water-bound surfaces), unconsolidated natural (soil, sand), woody (trees, bushes), herbaceous (grass-like, forbs), water. Tagging each element with its LCC node gives a single pivot from which CLC+ Backbone, INSPIRE PLCC and LUCAS codes follow.
 
 ---
 
@@ -784,8 +784,8 @@ Typology: Stewart, I. D. & Oke, T. R. (2012), "Local Climate Zones for Urban Tem
 
 **Two colour tables are in circulation and they differ slightly:**
 
-- **Palette A — the "official hex color" of the global LCZ map (V).** Listed in the `readme.txt` (updated 2023-10-08) of Demuzere et al., "Global map of Local Climate Zones", Zenodo, version 3.0.0, and embedded in the GeoTIFF `lcz_filter_v3.tif`: https://zenodo.org/records/8419340 (described in Demuzere et al. 2022, Earth Syst. Sci. Data 14, 3835–3873, doi:10.5194/essd-14-3835-2022).
-- **Palette B — class table of the Earth Engine Data Catalog** for the same dataset (producer: Bochum Urban Climate Lab) (S — a catalogue page, numbers seen): https://developers.google.com/earth-engine/datasets/catalog/RUB_RUBCLIM_LCZ_global_lcz_map_latest. This is the palette commonly quoted as "the WUDAPT colours". Which of the two the LCZ Generator and older WUDAPT level-0 maps use was not checked.
+- **Palette A, the "official hex color" of the global LCZ map (V).** Listed in the `readme.txt` (updated 2023-10-08) of Demuzere et al., "Global map of Local Climate Zones", Zenodo, version 3.0.0, and embedded in the GeoTIFF `lcz_filter_v3.tif`: https://zenodo.org/records/8419340 (described in Demuzere et al. 2022, Earth Syst. Sci. Data 14, 3835–3873, doi:10.5194/essd-14-3835-2022).
+- **Palette B, class table of the Earth Engine Data Catalog** for the same dataset (producer: Bochum Urban Climate Lab) (S, a catalogue page, numbers seen): https://developers.google.com/earth-engine/datasets/catalog/RUB_RUBCLIM_LCZ_global_lcz_map_latest. This is the palette commonly quoted as "the WUDAPT colours". Which of the two the LCZ Generator and older WUDAPT level-0 maps use was not checked.
 
 | Value | LCZ | Name (Zenodo readme) | Palette A R,G,B | Palette A hex (V) | Palette B hex (S) |
 |---|---|---|---|---|---|
@@ -809,7 +809,7 @@ Typology: Stewart, I. D. & Oke, T. R. (2012), "Local Climate Zones for Urban Tem
 
 Notes:
 - Raster value coding 1–17 (A–G = 11–17) is the convention of the global map (V). RGB triples are my conversion of the readme's hex values.
-- The dataset authors themselves advise combining the ten built classes with another land-cover product where a wider range of natural classes is needed (V, Zenodo description) — for this library that means: LCZ 1–10 style *urban structure*, the library's own elements style the land cover.
+- The dataset authors themselves advise combining the ten built classes with another land-cover product where a wider range of natural classes is needed (V, Zenodo description), for this library that means: LCZ 1–10 style *urban structure*, the library's own elements style the land cover.
 - Convention (A): compact built types run dark red → red, open built types brown-orange → light orange, lightweight yellow, large low-rise light grey, heavy industry dark grey, trees two greens, scrub olive, low plants light green, paved black, bare soil pale yellow, water blue-violet.
 - The Urban Atlas 2021 manual cites France's national LCZ map (Cerema), built on Urban Atlas areas, as a use case (V).
 
@@ -837,7 +837,7 @@ Convention (A): built-up red; trees dark green; shrubland orange; grassland yell
 
 ---
 
-## 10. Crosswalks — what exists and where
+## 10. Crosswalks: what exists and where
 
 | Crosswalk | Where | Mark |
 |---|---|---|
@@ -858,20 +858,20 @@ Convention (A): built-up red; trees dark green; shrubland orange; grassland yell
 
 ---
 
-## 11. Official portrayal — availability per scheme
+## 11. Official portrayal: availability per scheme
 
 | Scheme | Official / quasi-official colours available? | Form | Usable for an "official colours" theme |
 |---|---|---|---|
-| CORINE Land Cover | **Yes** — one RGB per level-3 class | EEA map-service renderer; legend files shipped with the data | Yes (44 values in section 1) |
-| Urban Atlas | **Yes** — 2018 and 2021 legends, including the access sub-classes 14110–14130 and the Street Tree Layer | EEA map-service renderer (2018); SLD of the CLMS WMS (2021); QML shipped with the data | Yes (sections 2.2 and 2.4) |
+| CORINE Land Cover | **Yes**: one RGB per level-3 class | EEA map-service renderer; legend files shipped with the data | Yes (44 values in section 1) |
+| Urban Atlas | **Yes**: 2018 and 2021 legends, including the access sub-classes 14110–14130 and the Street Tree Layer | EEA map-service renderer (2018); SLD of the CLMS WMS (2021); QML shipped with the data | Yes (sections 2.2 and 2.4) |
 | CLC+ Backbone | **Yes** | colour palette table in the manuals; `.clr`, `.qml`, `.sld`, `.lyr`, embedded colour map | Yes (section 3.2) |
 | INSPIRE Land Cover | Default style is colourless; PLCC colour map is *informative* | guideline annex | Optional "INSPIRE PLCC" theme (section 7.1) |
-| INSPIRE Land Use (HILUCS) | **Yes** — six level-1 colours plus five permitted adjustments | guideline section 11.2; SLD distributed separately | Yes (section 7.2) |
+| INSPIRE Land Use (HILUCS) | **Yes**: six level-1 colours plus five permitted adjustments | guideline section 11.2; SLD distributed separately | Yes (section 7.2) |
 | INSPIRE Habitats and Biotopes | Uniform grey only | guideline | No thematic theme possible |
 | EUNIS | For the **2012 codes at level 1 and level 2 only**, via the legend of the EEA "Ecosystem types of Europe" map; nothing for the 2021/2022 codes or for level 3 and below | swatch images of the EEA map service (values sampled) | Partly (section 5.6): an "EEA ecosystem map" theme for level-2 habitat data; house colours for everything finer |
 | MAES / EU ecosystem typology | None found for the 12 MAES types or for the EU ecosystem typology; the EEA ecosystem-type maps are drawn in the EUNIS level-2 legend instead | – | No official theme |
 | LUCAS | None found | – | No official theme |
-| Local Climate Zones | **Yes** — "official hex color" table of the global LCZ map (palette A); a slightly different palette B circulates | Zenodo readme; colour table embedded in the GeoTIFF | Yes (section 9.1): ship palette A, offer B as an alias |
+| Local Climate Zones | **Yes**: "official hex color" table of the global LCZ map (palette A); a slightly different palette B circulates | Zenodo readme; colour table embedded in the GeoTIFF | Yes (section 9.1): ship palette A, offer B as an alias |
 | ESA WorldCover | **Yes** | Table 3 of the Product User Manual v2.0 | Yes (section 9.2) |
 
 **Hue conventions shared across the European schemes (A, derived from the verified values):**
@@ -880,13 +880,13 @@ Convention (A): built-up red; trees dark green; shrubland orange; grassland yell
 |---|---|---|---|---|---|
 | Sealed / built-up | reds, magentas | dark-to-pale reds by sealing; roads grey | pure red | pinkish red | **red family = sealed/built**; grey is read as *bare/non-vegetated* or as *roads* |
 | Trees / forest | saturated greens (broadleaf lighter, conifer darker) | dark green | three greens (conifer darkest) | two greens (conifer darker) | green; conifer darker than broadleaf |
-| Shrubs | yellow-greens | (in 32000) | **brown** | olive | not settled — olive/brownish green is the safest bridge |
+| Shrubs | yellow-greens | (in 32000) | **brown** | olive | not settled, olive/brownish green is the safest bridge |
 | Herbaceous / grassland | 204,242,77 (natural grassland); pasture yellow 230,230,77 | 204,242,77 | 204,242,77 | 202,242,77 | **light yellow-green** is shared by all four |
 | Arable | 255,255,168 | 255,255,168 | 255,255,128 | 255,255,168 | **pale yellow** |
 | Bare / sparse | greys, pale green | pale green | grey 191 | grey / beige | light grey or beige |
 | Wetlands | blue-violet 166,166,255 | 166,166,255 | (in class 6 or 10) | turquoise | blue-violet (CLC family) or turquoise (INSPIRE) |
 | Water | cyan / pale turquoise 128,242,230 | 128,242,230 | blue 0,128,255 | blues | blue-cyan family |
-| Urban green | **pink** 255,166,255 | **yellow-green** 140,220,0 | (by land cover) | (by land cover) | conflict between CLC and UA — follow UA/green for city-scale maps |
+| Urban green | **pink** 255,166,255 | **yellow-green** 140,220,0 | (by land cover) | (by land cover) | conflict between CLC and UA, follow UA/green for city-scale maps |
 
 ---
 
@@ -932,11 +932,11 @@ All codes are verified codes from the sections above; the *assignment* of a libr
 | Paving (dark) | as above | no | as above | as above | as above | as above | 001 | A21, A22 |
 | Asphalt | 1 | no | 12210, 12220 (roads); inside other class-1 units | inside 122, 111–124 | J4.2 Road networks; J4.4; J4.5 | 1.3.1; 1.1, 1.2 | 001 | A22 (roads), A21 (car parks) |
 | Concrete | 1 | no | inside class-1 units | inside 111–124 | J4.x; J1.x, J2.x for structures | 1.1–1.3 | 001 | A21, A30 |
-| Wood decking | 1 (artificial construction) — no scheme distinguishes the material | no | inside class-1 units | – | J4.6 (nearest) | 1.1–1.4 | 001 | A21 / A30 |
+| Wood decking | 1 (artificial construction), no scheme distinguishes the material | no | inside class-1 units | – | J4.6 (nearest) | 1.1–1.4 | 001 | A21 / A30 |
 
 **Reading of the table (A):**
-- The European schemes distinguish **sealed vs. non-sealed**, **woody vs. herbaceous**, **permanent vs. periodic** and **tree leaf type** — they do **not** distinguish paving materials. Asphalt, concrete, light and dark paving and decking all collapse into one class (CLC+ 1, PLCC 001, LUCAS A2x). Material stays a house-level attribute.
-- Lawn, meadow and wildflower meadow also collapse into one land-cover class (CLC+ 6, PLCC 009, LUCAS E20). Only **EUNIS** separates them (V31 vs. R22/R21 vs. R1x/V38/V39) — EUNIS is therefore the scheme that justifies the library's fine vegetation split.
+- The European schemes distinguish **sealed vs. non-sealed**, **woody vs. herbaceous**, **permanent vs. periodic** and **tree leaf type**: they do **not** distinguish paving materials. Asphalt, concrete, light and dark paving and decking all collapse into one class (CLC+ 1, PLCC 001, LUCAS A2x). Material stays a house-level attribute.
+- Lawn, meadow and wildflower meadow also collapse into one land-cover class (CLC+ 6, PLCC 009, LUCAS E20). Only **EUNIS** separates them (V31 vs. R22/R21 vs. R1x/V38/V39), EUNIS is therefore the scheme that justifies the library's fine vegetation split.
 - Reed sits in an awkward position: land-cover products put it into "permanent herbaceous" (or water), land-use/habitat schemes into wetlands. The element needs both codes.
 
 **Global / climate schemes (assignments A; LCZ land-cover semantics not re-read in the 2012 paper):**
@@ -972,7 +972,7 @@ All codes are verified codes from the sections above; the *assignment* of a libr
 | **Sports and leisure facility; sports turf vs. artificial pitch** | UA 14200; CLC 142; EUET 1.4.2; EUNIS E2.63; HILUCS 3_4_3, 3_4_4 | Turf pitch = CLC+ 6; non-vegetated pitch = CLC+ 9. |
 | **Allotment garden / domestic garden / vegetable plot** | UA (in 14200 resp. 1.1); EUNIS V22 (I2.2, I2.22 subsistence garden areas), X24, X25; LUCAS U113 kitchen garden | |
 | **Ornamental planting / flower bed** | EUNIS V21, V22 (I2.11 park flower beds, arbours and shrubbery; I2.21); LUCAS B44 | |
-| **Cemetery** | EUET 1.5.2; UA (in 14100); LUCAS A21; EUNIS J4.7 | Classified differently by every scheme — needs explicit crosswalk entries. |
+| **Cemetery** | EUET 1.5.2; UA (in 14100); LUCAS A21; EUNIS J4.7 | Classified differently by every scheme, needs explicit crosswalk entries. |
 | **Hedgerow** (linear) | EUNIS V4, V41–V44 (FA); NRR recital 47 "urban hedges" | Linear symbol. |
 | **Tree row / avenue** (linear) and **single tree / canopy overlay** | EUNIS V63 (G5.1); UA Street Tree Layer; NRR tree canopy cover; EUET 1.4.3 | Canopy must be drawable *over* any ground surface. |
 | **Orchard; vineyard; permanent crops** | EUNIS V61, V54; CLC 221, 222; UA 22000 (25000); PLCC 005; LUCAS B7x, B8x | |
@@ -1011,10 +1011,10 @@ All codes are verified codes from the sections above; the *assignment* of a libr
 
 ### 13.4 Themes the library can ship from verified values
 
-1. **House theme** (mellow pastel) — keep the shared conventions of section 11: light yellow-green for herbaceous, darker greens for woody (conifer darkest), pale yellow for arable, blue-cyan for water, blue-violet or turquoise for wetlands. Be aware that the house greys for asphalt/concrete/paving read as "bare / non-vegetated" or "roads" in European land-cover legends, where **red means sealed**; for city-scale landscape plans grey hardscape is fine, but a toggle to a red-family "sealed" rendering is needed for sealing and land-cover maps.
+1. **House theme** (mellow pastel), keep the shared conventions of section 11: light yellow-green for herbaceous, darker greens for woody (conifer darkest), pale yellow for arable, blue-cyan for water, blue-violet or turquoise for wetlands. Be aware that the house greys for asphalt/concrete/paving read as "bare / non-vegetated" or "roads" in European land-cover legends, where **red means sealed**; for city-scale landscape plans grey hardscape is fine, but a toggle to a red-family "sealed" rendering is needed for sealing and land-cover maps.
 2. **Official CLC theme** (44 colours, section 1).
 3. **Official Urban Atlas theme** (section 2.2: 2018 and 2021 legends with the three access greens; Street Tree Layer greens in section 2.4).
 4. **Official CLC+ Backbone theme** (section 3.2) including an **NRR mask** variant (classes 2, 3, 4, 5, 6, 8, 10 vs. the rest).
 5. **INSPIRE themes**: HILUCS level-1 land-use colours (section 7.2) and the informative PLCC colour map (section 7.1).
 6. **LCZ theme** (palette A of section 9.1, palette B as an alias) and **WorldCover theme** (section 9.2).
-7. **EEA ecosystem-map theme for EUNIS 2012 level 2** (section 5.6) — possible, but coarse; note that it draws I2 "gardens and parks" pure yellow and J1 buildings pure red. For the revised EUNIS codes, MAES / EU ecosystem typology and LUCAS no official theme exists; these are **semantic crosswalks only** and are rendered with the house theme.
+7. **EEA ecosystem-map theme for EUNIS 2012 level 2** (section 5.6), possible, but coarse; note that it draws I2 "gardens and parks" pure yellow and J1 buildings pure red. For the revised EUNIS codes, MAES / EU ecosystem typology and LUCAS no official theme exists; these are **semantic crosswalks only** and are rendered with the house theme.

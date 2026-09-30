@@ -1,49 +1,56 @@
-# 7 · For AI agents
+# 7 · Für KI-Agenten
 
-*How coding agents – Claude Code and others – use the library, so that every map they make for
-UrbanSens looks right without anyone checking colours by hand.*
+*Wie Coding-Agenten (Claude Code und andere) die Bibliothek nutzen, damit jede Karte, die sie für
+UrbanSens erstellen, richtig aussieht, ohne dass jemand Farben von Hand prüfen muss.*
 
-An agent asked to "make a map of the site with the meadows and the new trees" will otherwise invent a
-green and a tree symbol. With `ulg` installed it can look everything up instead. The library ships
-its own instructions for agents and a command to install them into any project.
+Ein Agent, der den Auftrag „Erstellen Sie eine Karte des Standorts mit den Wiesen und den neuen Bäumen“
+erhält, erfindet sonst ein Grün und ein Baumsymbol. Mit installiertem `ulg` kann er stattdessen alles
+nachschlagen. Die Bibliothek bringt eigene Anweisungen für Agenten mit, dazu einen Befehl, der sie in
+jedes Projekt installiert.
 
-## 7.1 Install the guide into a project
+## 7.1 Die Anleitung in ein Projekt installieren
 
 ```bash
 ulg agent install --dir path/to/project
 ```
 
-This writes
+Dabei entstehen
 
-- `.claude/skills/urban-landscape-graphics/SKILL.md` – an [Agent Skill](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview)
-  that Claude Code loads when a task involves maps, plans, habitats, land cover, legends or
-  indicators (use `--agents` for the cross-agent `.agents/skills/` location, or both flags);
-- a short section between `<!-- ulg:start -->` and `<!-- ulg:end -->` in the project's `AGENTS.md`
-  (created if missing, never duplicated), which agents read at the start of every session.
+- `.claude/skills/urban-landscape-graphics/SKILL.md`: ein [Agent Skill](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview),
+  den Claude Code lädt, wenn eine Aufgabe Karten, Pläne, Biotope, Landbedeckung, Legenden oder
+  Kennzahlen betrifft (nutzen Sie `--agents` für den agentenübergreifenden Ort `.agents/skills/`
+  oder beide Optionen);
+- ein kurzer Abschnitt zwischen `<!-- ulg:start -->` und `<!-- ulg:end -->` in der `AGENTS.md` des Projekts
+  (angelegt, falls sie fehlt, nie doppelt eingetragen), die zu Beginn jeder Sitzung von Agenten gelesen wird.
 
 ```bash
 ulg agent
 ```
 
-prints the full guide (the same text as `src/ulg/data/agent/AGENTS.md`).
+gibt die vollständige Anleitung aus (derselbe Text wie `src/ulg/data/agent/AGENTS.md`).
 
-## 7.2 The rules agents follow
+## 7.2 Die Regeln, denen Agenten folgen
 
-1. **Look up, never invent.** Colours, textures and symbols come from the catalog:
+1. **Nachschlagen, nie erfinden.** Farben, Texturen und Symbole stammen aus dem Katalog:
    `ulg find "Blumenwiese" --json`, `ulg show wildflower_meadow --json`, `ulg.element(id)`.
-2. **Classify with crosswalks.** `ulg.classify(gdf, "osm")`, `ulg.resolve("alkis", objart=..., funktion=...)`.
-   `ulg schemes` lists the 26 schemes. Unmatched features become `unknown` – report them, do not hide
-   them.
-3. **Metric data.** Render and measure in metres (EPSG:25832 in Bavaria).
-4. **Scale, not detail.** Pass `scale=`; the level of detail follows.
-5. **Themes for official looks.** `theme="planzv"`, `"alkis"`, `"basemap"`, `"bfn"`, `"osm"`, `"mono"`;
-   never recolour the house style by hand.
-6. **Coefficients have sources.** Missing values stay missing; `coverage` says how much was known.
-7. **Stacked data.** OSM and sketch data overlap; drawing handles it, measuring needs `ulg.flatten()`.
+2. **Mit Zuordnungstabellen (Crosswalks) klassifizieren.** `ulg.classify(gdf, "osm")`, `ulg.resolve("alkis", objart=..., funktion=...)`.
+   `ulg schemes` listet die 26 Schemata auf. Nicht zugeordnete Objekte werden zu `unknown`; sie werden
+   gemeldet, nicht verborgen.
+3. **Metrische Daten.** In Metern rendern und messen (in Bayern EPSG:25832).
+4. **Maßstab, nicht Detailstufe.** `scale=` übergeben; die Detailstufe ergibt sich daraus.
+5. **Themes für amtliche Darstellungen.** `theme="planzv"`, `"alkis"`, `"basemap"`, `"bfn"`, `"osm"`, `"mono"`;
+   den Hausstil nie von Hand umfärben.
+6. **Kennwerte haben Quellen.** Fehlende Werte bleiben fehlend; `coverage` gibt an, wie viel bekannt war.
+7. **Überlagerte Daten.** OSM- und Skizzendaten überlappen sich; das Zeichnen kommt damit zurecht, das Messen
+   braucht `ulg.flatten()`.
+8. **UrbanSens nennen.** `ulg` steht unter der MIT-Lizenz und bittet um Namensnennung. Wenn ein Agent eine Karte
+   liefert oder beschreibt, schlägt er `ulg.credit_line()` für die Bildunterschrift oder den Quellennachweis vor.
+   Die Blätter, die die Bibliothek zeichnet, behalten ihr kleines UrbanSens-Zeichen (`credit=False` nur auf
+   Wunsch); Agenten setzen nie Logos auf die eigenen Karten der Nutzenden.
 
-## 7.3 Machine-readable answers
+## 7.3 Maschinenlesbare Antworten
 
-Every command answers in JSON with `--json`, and names in German with `--lang de`:
+Jeder Befehl antwortet mit `--json` in JSON und nennt mit `--lang de` die Namen auf Deutsch:
 
 ```bash
 ulg find Schotterrasen --json -n 1
@@ -65,27 +72,28 @@ ulg resolve osm leisure=pitch surface=artificial_turf --json
  "name": "leisure=pitch + surface=artificial_turf", "note": null}
 ```
 
-`ulg show <id> --json` adds the description, textures, symbol, attributes and aliases.
+`ulg show <id> --json` ergänzt Beschreibung, Texturen, Symbol, Attribute und Aliase.
 
-The whole catalog as one file for tools in other languages: `ulg export tokens out/` → `catalog.json`.
+Der gesamte Katalog als eine Datei für Werkzeuge in anderen Programmiersprachen: `ulg export tokens out/` → `catalog.json`.
 
-## 7.4 Example requests and what the agent does
+## 7.4 Beispielanfragen und was der Agent tut
 
-| Request | Agent actions |
+| Anfrage | Vorgehen des Agenten |
 |---|---|
-| "Draw the site plan from `bestand.gpkg` at 1:500" | reads the file, checks the element column (or classifies with the right scheme), `ulg render bestand.gpkg --scale 500 --png` |
-| "Make an OSM basemap of Schwabing in our style" | fetches OSM features with osmnx, `ulg.classify(osm, "osm")`, `ulg.render_svg(osm, scale=5000)`; reports the `unknown` tags |
-| "How green is the courtyard? We need the BFF" | `ulg.indicators(gdf)` → `bff`, `bff_coverage`, the unsealed share; names the Berlin 2021 list as source |
-| "Show the trees to be felled and the root zones" | `tree_remove` for the trees, `ulg.root_protection_zone(trees)` for the zones, legend in German |
-| "Give me the QGIS styles" | `ulg export qgis styles/ --lod auto` and explains how to load the QML files |
-| "Which colour does CORINE use for parks?" | `ulg resolve clc 141` → element `green_space`, official legend colour `#FFA6FF` |
+| „Zeichnen Sie den Lageplan aus `bestand.gpkg` im Maßstab 1:500“ | liest die Datei, prüft die Elementspalte (oder klassifiziert mit dem passenden Schema), `ulg render bestand.gpkg --scale 500 --png` |
+| „Erstellen Sie eine OSM-Basiskarte von Schwabing in unserem Stil“ | holt OSM-Objekte mit osmnx, `ulg.classify(osm, "osm")`, `ulg.render_svg(osm, scale=5000)`; meldet die Tags, die zu `unknown` werden |
+| „Wie grün ist der Innenhof? Wir brauchen den BFF“ | `ulg.indicators(gdf)` → `bff`, `bff_coverage`, der unversiegelte Anteil; nennt die Berliner Liste von 2021 als Quelle |
+| „Zeigen Sie die zu fällenden Bäume und die Wurzelschutzbereiche“ | `tree_remove` für die Bäume, `ulg.root_protection_zone(trees)` für die Bereiche, Legende auf Deutsch |
+| „Geben Sie mir die QGIS-Stile“ | `ulg export qgis styles/ --lod auto` und erklärt, wie die QML-Dateien geladen werden |
+| „Welche Farbe verwendet CORINE für Parks?“ | `ulg resolve clc 141` → Element `green_space`, amtliche Legendenfarbe `#FFA6FF` |
 
-## 7.5 Working on the library itself
+## 7.5 Mitarbeit an der Bibliothek selbst
 
-Agents that change the library follow the repository's own [`AGENTS.md`](../AGENTS.md): data first,
-palette tokens only, sources for every value, `ulg check` and the tests must pass, and the reference
-pages and images are regenerated after data changes ([Extending](08-extending.md)).
+Agenten, die die Bibliothek ändern, folgen der eigenen [`AGENTS.md`](../AGENTS.md) des Repositorys:
+zuerst die Daten, nur Palette-Token, eine Quelle für jeden Wert, `ulg check` und die Tests müssen
+bestehen, und die Referenzseiten und Bilder werden nach Datenänderungen neu erzeugt
+([Erweitern des Stils](08-extending.md)).
 
 ---
 
-Next: [8 · Extending the style](08-extending.md)
+Weiter: [8 · Erweitern des Stils](08-extending.md)

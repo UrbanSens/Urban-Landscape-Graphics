@@ -1,271 +1,276 @@
-# 2 · The style guide
+# 2 · Der Stilleitfaden
 
-*The rules of the UrbanSens Ecological Vector Style: what a map in this style looks like, and why.*
+*Die Regeln des UrbanSens Ecological Vector Style: wie eine Karte in diesem Stil aussieht und warum.*
 
-![The style sheet, generated from the catalog](img/style-sheet.png)
+![Das Stilblatt, erzeugt aus dem Katalog](img/style-sheet-de.png)
 
-The sheet above is not a drawing of the style but a product of it: `ulg sheet` renders it from the same
-data that styles your maps, so the guide and the maps cannot drift apart. The German version is
-[`img/style-sheet-de.png`](img/style-sheet-de.png).
+Das Blatt oben ist keine Zeichnung des Stils, sondern sein Produkt: `ulg sheet` rendert es aus denselben
+Daten, nach denen Ihre Karten gestaltet werden, sodass Leitfaden und Karten nicht auseinanderdriften können.
+Die englische Fassung ist [`img/style-sheet.png`](img/style-sheet.png).
 
 ---
 
-## 2.1 Five principles
+## 2.1 Fünf Prinzipien
 
-The UrbanSens reference sheet names five design principles. The library turns each of them into something that can be checked:
+Das Referenzblatt von UrbanSens nennt fünf Gestaltungsprinzipien. Die Bibliothek macht jedes davon überprüfbar:
 
-> Vector-based (polygonizable, GIS compatible) · Subtle, natural color palette · Consistent iconography and line weights · Minimal, non-photorealistic, architectural style · Scalable detail (works at all zoom levels)
+> Vektorbasiert (flächenscharf, GIS-kompatibel) · Zurückhaltende, natürliche Farbpalette · Einheitliche Symbolik und Strichstärken · Reduziert, nicht fotorealistisch, architektonisch · Skalierbarer Detailgrad (für alle Maßstäbe)
 >
-> — UrbanSens, reference sheet of the Ecological Vector Style, "Design principles"
+> Quelle: UrbanSens, Referenzblatt des Ecological Vector Style, „Gestaltungsprinzipien“ (Übersetzung)
 
-| # | Principle | What it means in practice |
+| # | Prinzip | Was es in der Praxis bedeutet |
 |---|---|---|
-| 1 | **Vector-based, GIS-exact** | Every mark is a vector path computed from the feature geometry. Polygons stay the polygons of your data: the hand-drawn wobble moves only the *drawn* outline, and never by more than half the line width (0.09 mm on the standard 0.18 mm outline), so the ink always covers the true edge. |
-| 2 | **Subtle, natural palette** | High lightness, low chroma, warm paper. Colours come from named palette tokens (`grass.300`), never from ad-hoc hex values. |
-| 3 | **Consistent iconography and line weights** | One line-weight series (ISO 128: 0.13 · 0.18 · 0.25 · 0.35 · 0.5 · 0.7 · 1.0 mm), one outline rule, one symbol grammar for trees and status. |
-| 4 | **Minimal, non-photorealistic** | Textures are abstract marks – tufts, ticks, crowns, pebbles, waves – that say *what* a surface is, not what a photo of it looks like. |
-| 5 | **Scalable detail** | Four levels of detail follow the map scale. A meadow is a tinted area at 1:20 000, tufts at 1:5 000 and single blades and flowers at 1:500. |
+| 1 | **Vektorbasiert, GIS-exakt** | Jedes Zeichen ist ein Vektorpfad, der aus der Geometrie des Objekts berechnet wird. Die Polygone bleiben die Polygone Ihrer Daten: Das handgezeichnete Konturwackeln verschiebt nur die *gezeichnete* Kontur, und zwar nie um mehr als die halbe Strichstärke (0,09 mm bei der Standardkontur von 0,18 mm), sodass die Tinte stets die wahre Kante überdeckt. |
+| 2 | **Zurückhaltende, natürliche Palette** | Hohe Helligkeit, geringe Buntheit, warmes Papier. Farben stammen aus benannten Tokens der Palette (`grass.300`), nie aus ad hoc eingesetzten Hex-Werten. |
+| 3 | **Einheitliche Symbolik und Strichstärken** | Eine Reihe von Strichstärken (ISO 128: 0,13 · 0,18 · 0,25 · 0,35 · 0,5 · 0,7 · 1,0 mm), eine Regel für Konturen, eine Symbolgrammatik für Bäume und Status. |
+| 4 | **Reduziert, nicht fotorealistisch** | Texturen sind abstrakte Zeichen (Büschel, Striche, Kronen, Kiesel, Wellen), die sagen, *was* eine Oberfläche ist, und nicht, wie ein Foto von ihr aussieht. |
+| 5 | **Skalierbarer Detailgrad** | Vier Detailstufen folgen dem Kartenmaßstab. Eine Wiese ist bei 1:20 000 eine getönte Fläche, bei 1:5000 sind es Büschel und bei 1:500 einzelne Halme und Blüten. |
 
-## 2.2 Colour
+## 2.2 Farbe
 
-![Palette](img/palette.png)
+![Palette](img/palette-de.png)
 
-The palette has 21 families of primitive colours, addressed as `family.step`. Elements, themes and
-exporters refer to tokens only; changing a token changes every map, sheet and export at once.
+Die Palette hat 21 Farbfamilien mit Basisfarben, die als `family.step` angesprochen werden. Elemente, Themes und
+Exporter verweisen nur auf Tokens; ein geändertes Token ändert jede Karte, jedes Blatt und jeden Export auf einmal.
 
-| Family | Role |
+| Farbfamilie | Rolle |
 |---|---|
-| `paper` | page and map background (`paper.base` #F5F5F1), white, shade |
-| `ink` | text, outlines, boundaries (`ink.900` #112D36 down to `ink.200`) |
-| `grass`, `fallow` | lawns, meadows, pasture, fallow and dry grass |
-| `leaf`, `pine` | shrubs and broadleaved crowns; conifers |
-| `reed`, `marsh`, `lichen` | reeds and wetlands; wet meadows; grey-greens (salt marsh, permeable surfaces) |
-| `water`, `aqua` | natural water; pools, basins and other built water |
-| `earth`, `sand`, `wood` | soil, mulch; sand and water-bound surfaces; decks and timber |
-| `stone`, `granite`, `clay` | pavings, concrete, buildings; natural stone and commercial land; clinker, clay courts, residential land |
-| `straw`, `heather`, `bloom` | fields and bedding; heath and public facilities; flower accents |
-| `signal` | planning status and analysis: `highlight` orange, `planned` red, `remove` yellow, `protect` green, `info` blue, each with a `-soft` tint |
+| `paper` | Seiten- und Kartenhintergrund (`paper.base` #F5F5F1), Weiß, Schattierton |
+| `ink` | Text, Konturen, Grenzen (`ink.900` #112D36 bis `ink.200`) |
+| `grass`, `fallow` | Rasen, Wiesen, Weiden, Brachflächen und trockenes Gras |
+| `leaf`, `pine` | Sträucher und Laubbaumkronen; Nadelbäume |
+| `reed`, `marsh`, `lichen` | Röhricht und Feuchtflächen; Feuchtwiesen; Graugrüntöne (Salzwiese, durchlässige Oberflächen) |
+| `water`, `aqua` | natürliche Gewässer; Pools, Becken und andere künstlich angelegte Gewässer |
+| `earth`, `sand`, `wood` | Boden, Mulch; Sand und wassergebundene Decken; Holzdecks und Bauholz |
+| `stone`, `granite`, `clay` | Beläge, Beton, Gebäude; Naturstein und Gewerbeflächen; Klinker, Tennenbeläge, Wohnbauflächen |
+| `straw`, `heather`, `bloom` | Äcker und Wechselflor; Heide und Gemeinbedarfsflächen; Blütenakzente |
+| `signal` | Planungsstatus und Analyse: `highlight` orange, `planned` rot, `remove` gelb, `protect` grün, `info` blau, jeweils mit einer `-soft`-Tönung |
 
-**Rules**
+**Regeln**
 
-- Areas use the light steps (100–400); texture marks use darker steps of the same family (600–900), so
-  a texture always reads as part of its surface.
-- Outlines are the fill darkened by a fixed amount (`settings.json → outline_darken`), unless an
-  element sets its own.
-- Saturated colour is reserved for meaning: the `signal` family marks what is planned, removed,
-  protected or highlighted. Never use it for land cover.
-- Neighbouring land covers must differ by at least ΔE₀₀ 10 in colour, or else in texture or outline
-  (checked by `ulg check`, see 2.8).
+- Flächen verwenden die hellen Stufen (100–400); Texturzeichen verwenden dunklere Stufen derselben Familie
+  (600–900), damit eine Textur stets als Teil ihrer Oberfläche wirkt.
+- Konturen entstehen, indem die Füllung um einen festen Betrag abgedunkelt wird (`settings.json → outline_darken`),
+  sofern ein Element keine eigene festlegt.
+- Gesättigte Farbe ist der Bedeutung vorbehalten: Die Familie `signal` kennzeichnet, was geplant, entfernt,
+  geschützt oder hervorgehoben ist. Verwenden Sie sie nie für Landbedeckung.
+- Benachbarte Landbedeckungen müssen sich in der Farbe um mindestens ΔE₀₀ 10 unterscheiden, andernfalls in Textur
+  oder Kontur (geprüft von `ulg check`, siehe 2.8).
 
-For analysis layers there are ready ramps and class palettes in the same tonal range:
+Für Analyse-Layer gibt es fertige Farbverläufe und Klassenpaletten im selben Tonwertbereich:
 
-| Name | Kind | Use |
+| Name | Art | Verwendung |
 |---|---|---|
-| `heat`, `cool`, `vitality`, `biodiversity`, `sealing` | sequential | thermal load, cooling and shade, vegetation vitality, biodiversity value, degree of sealing |
-| `diverging` | diverging | change and anomaly |
-| `klimatop` | classes | climatopes with the class names of VDI 3787 Blatt 1 (house colours in the usual hue order) |
-| `utci`, `pet` | classes with limits | thermal comfort classes (10 UTCI classes, 9 PET classes) |
+| `heat`, `cool`, `vitality`, `biodiversity`, `sealing` | sequenziell | Wärmebelastung, Kühlung und Schatten, Vegetationsvitalität, Biodiversitätswert, Versiegelungsgrad |
+| `diverging` | divergierend | Veränderung und Abweichung |
+| `klimatop` | Klassen | Klimatope mit den Klassennamen der VDI 3787 Blatt 1 (Hausfarben in der üblichen Farbtonfolge) |
+| `utci`, `pet` | Klassen mit Grenzwerten | Klassen des thermischen Komforts (10 UTCI-Klassen, 9 PET-Klassen) |
 
 ```python
 ulg.ramp("heat", 5)                  # ['#F7F1DC', '#F6D5A5', '#EFAC77', '#DB805F', '#B5574F']
 ulg.category_of("utci", 34.2)        # {'id': 'strong_heat', 'min': 32, 'max': 38, 'color': '#F0B273', ...}
 ```
 
-## 2.3 Textures
+## 2.3 Texturen
 
-![Texture tiles](img/textures.png)
+![Texturkacheln](img/textures-de.png)
 
-Seventeen texture *motifs* draw every surface. Each element picks one or two motifs and their inks
-from the palette:
+Siebzehn *Texturmotive* zeichnen jede Oberfläche. Jedes Element wählt ein oder zwei Motive und deren Zeichenfarben
+aus der Palette:
 
-| Motif | Marks | Used for, for example |
+| Motiv | Zeichen | Verwendet z. B. für |
 |---|---|---|
-| `grass_ticks` | short leaning ticks | lawn, golf course |
-| `grass_tufts` | tufts of blades | meadow, heath, bog, salt marsh, dune |
-| `flowers` | small heads on stems | wildflower meadow, flower strip, heath |
-| `reeds` | upright stems with heads | reed, sedge marsh |
-| `canopy` | lobed crowns with a branch star | woodland, grove, orchard meadow, wood pasture |
-| `rosettes` | small star plants and dots | perennials, green roofs, recreation areas |
-| `rows` | planting rows with plants | vineyard, vegetable garden, allotments, horticulture |
-| `waves` | short wave strokes | water, wetland water, mudflat |
-| `stipple` | dots of varying size | sand, soil, dune, mudflat, concrete grain |
-| `pebbles` | outlined stones | gravel, rock, bunkers, floating leaves |
-| `chips` | short splinters | wood chips, bark mulch |
-| `bond`, `herringbone`, `cells` | paving joints and grids | concrete pavers, setts, slabs, clinker, grass pavers, solar panels |
-| `hatch` | parallel lines, optionally crossed | land use, sports grounds, airports, snow and ice, planning overlays |
-| `stripes` | exact bands | mown sports turf, running-track lanes |
-| `wash` | faint tonal variation | the watercolour feel of large vegetated areas |
+| `grass_ticks` | kurze, schräg stehende Striche | Rasen, Golfplatz |
+| `grass_tufts` | Halmbüschel | Wiese, Heide, Moor, Salzwiese, Düne |
+| `flowers` | kleine Blütenköpfe auf Stielen | Blumenwiese, Blühstreifen, Heide |
+| `reeds` | aufrechte Halme mit Köpfen | Röhricht, Seggenried |
+| `canopy` | gelappte Kronen mit Aststern | Wald, Feldgehölz, Streuobstwiese, Hutewald |
+| `rosettes` | kleine sternförmige Pflanzen und Punkte | Staudenpflanzungen, Dachbegrünungen, Freizeit- und Erholungsflächen |
+| `rows` | Pflanzreihen mit Einzelpflanzen | Rebfläche, Nutzgarten, Kleingärten, Gartenbau |
+| `waves` | kurze Wellenstriche | Gewässer, Gewässer in Feuchtgebieten, Watt |
+| `stipple` | Punkte unterschiedlicher Größe | Sand, offener Boden, Düne, Watt, Betonkorn |
+| `pebbles` | umrandete Steine | Kies, Fels, Bunker, Schwimmblätter |
+| `chips` | kurze Splitter | Holzhäcksel, Rindenmulch |
+| `bond`, `herringbone`, `cells` | Pflasterfugen und Raster | Betonsteinpflaster, Natursteinpflaster, Plattenbeläge, Klinkerpflaster, Rasengittersteine, Photovoltaik |
+| `hatch` | parallele Linien, wahlweise gekreuzt | Flächennutzungen, Sportanlagen, Flughäfen, Schnee und Eis, Planungs-Overlays |
+| `stripes` | exakte Streifen | gemähter Sportrasen, Bahnen der Laufbahn |
+| `wash` | schwache Tonwertunterschiede | die Aquarellwirkung großer Vegetationsflächen |
 
-**How textures behave**
+**Wie sich Texturen verhalten**
 
-- **Anchored to the ground.** Mark positions are derived from ground coordinates, not from the
-  feature. Two neighbouring polygons of the same element continue each other's pattern, and a map
-  panned or tiled shows the same marks in the same places.
-- **Seamless tiles.** For QGIS, SLD and the web the same motifs are drawn into periodic tiles that
-  repeat without seams.
-- **Clipped to their area.** Crowns and marks never spill over the feature edge, so drawing order
-  never changes the look of clean data.
-- **Density by level of detail** (2.6), not by feature size, so a texture looks the same on a small
-  and a large polygon.
+- **Am Boden verankert.** Die Positionen der Zeichen werden aus Bodenkoordinaten abgeleitet, nicht aus dem
+  Objekt. Zwei benachbarte Polygone desselben Elements setzen das Muster des jeweils anderen fort, und eine
+  verschobene oder in Kacheln zerlegte Karte zeigt dieselben Zeichen an denselben Stellen.
+- **Nahtlose Kacheln.** Für QGIS, SLD und das Web werden dieselben Motive in periodische Kacheln gezeichnet,
+  die sich nahtlos wiederholen.
+- **Auf die eigene Fläche beschnitten.** Kronen und Zeichen ragen nie über den Objektrand hinaus, sodass die
+  Zeichenreihenfolge das Aussehen sauberer Daten nie verändert.
+- **Dichte nach Detailstufe** (2.6), nicht nach Objektgröße, sodass eine Textur auf einem kleinen und einem
+  großen Polygon gleich aussieht.
 
-## 2.4 Lines
+## 2.4 Linien
 
-Line elements use the ISO 128 series from `settings.json → line_weights`: hair 0.13, fine 0.18,
-regular 0.25, medium 0.35, bold 0.5, heavy 0.7, extra 1.0 mm. Texture marks are drawn finer than the
-finest outline on purpose: they must never compete with a boundary.
+Linienelemente verwenden die Reihe nach ISO 128 aus `settings.json → line_weights`: `hair` 0,13, `fine` 0,18,
+`regular` 0,25, `medium` 0,35, `bold` 0,5, `heavy` 0,7, `extra` 1,0 mm. Texturzeichen werden absichtlich feiner
+gezeichnet als die feinste Kontur: Sie dürfen nie mit einer Grenze konkurrieren.
 
-| Line | Look | Basis |
+| Linie | Aussehen | Grundlage |
 |---|---|---|
-| Area outline | 0.18 mm, fill darkened, lightly wobbled | house rule |
-| Site / parcel boundary | dark continuous / thin grey | plan conventions |
-| Plan area boundary | bold dashed dark band | PlanZV 15.13 (black-and-white form) |
-| Compensation area | border with T-ticks pointing inwards | PlanZV 13.1 |
-| Areas to plant / to preserve | border with open circles / filled dots on the inside | PlanZV 13.2.1 / 13.2.2 |
-| Protected area boundary | green chain line | house convention (PlanZV 13.3 uses stroke groups) |
-| Root protection zone | green chain line with a light tint | DIN 18920 geometry, ISO 11091 protection line |
-| Fence, retaining wall, embankment, contour | small crosses, ticks on the high side, hachures, fine brown lines | topographic conventions |
+| Flächenkontur | 0,18 mm, abgedunkelte Füllung, leichtes Konturwackeln | Hausregel |
+| Grundstücksgrenze / Flurstücksgrenze | dunkel durchgezogen / dünn grau | Plankonventionen |
+| Grenze des Geltungsbereichs | kräftiges, gestricheltes, dunkles Band | PlanZV 15.13 (Schwarz-Weiß-Form) |
+| Maßnahmenfläche Natur (SPE) | Rand mit nach innen weisenden T-Strichen | PlanZV 13.1 |
+| Flächen zum Anpflanzen / mit Erhaltungsbindung | Rand mit offenen Kreisen / gefüllten Punkten auf der Innenseite | PlanZV 13.2.1 / 13.2.2 |
+| Schutzgebietsgrenze | grüne Strichpunktlinie | Hauskonvention (PlanZV 13.3 verwendet Strichgruppen) |
+| Wurzelschutzbereich | grüne Strichpunktlinie mit heller Tönung | Geometrie nach DIN 18920, Schutzlinie nach ISO 11091 |
+| Zaun, Stützmauer, Böschung, Höhenlinie | kleine Kreuze, Striche auf der höheren Seite, Schraffen, feine braune Linien | topografische Konventionen |
 
-Lines and roads or paths that arrive as **centre lines** (OpenStreetMap highways) are drawn above
-all land cover. Area elements such as roads and footways become strips of their real width (see 2.7).
+Linien sowie Straßen oder Wege, die als **Mittellinien** vorliegen (OpenStreetMap-Highways), werden über der
+gesamten Landbedeckung gezeichnet. Flächenelemente wie Fahrbahnen und Gehwege werden zu Streifen in ihrer
+tatsächlichen Breite (siehe 2.7).
 
-## 2.5 Symbols
+## 2.5 Symbole
 
-![Tree symbols](img/tree-symbols.png)
+![Baumsymbole](img/tree-symbols-de.png)
 
-**Trees are drawn to scale.** A crown is a lobed outline of the tree's real diameter (attribute
-`crown_diameter`, or the element default), with a branch star from 1:1 500 upwards. When a stem
-diameter or girth (`stammumfang` in cm) is known, the stem is drawn to scale too.
+**Bäume werden maßstäblich gezeichnet.** Eine Krone ist eine gelappte Kontur im tatsächlichen Durchmesser des
+Baums (Attribut `crown_diameter` oder der Standardwert des Elements), ab 1:1500 und größer mit einem Aststern.
+Ist ein Stammdurchmesser oder Stammumfang (`stammumfang` in cm) bekannt, wird auch der Stamm maßstäblich gezeichnet.
 
-**Status follows the standards.** One grammar serves all planning drawings:
+**Der Status folgt den Standards.** Eine Grammatik gilt für alle Planzeichnungen:
 
-| Status | Element | Drawing | Source |
+| Status | Element | Darstellung | Quelle |
 |---|---|---|---|
-| existing | `tree` … | thin outline, branch star | ISO 11091 (existing = thin) |
-| to plant | `tree_planned`, `shrub_planned` | thick red outline, small cross in an open ring | ISO 11091 (proposed = thick, centre cross); PlanZV 13.2 (open centre = to plant) |
-| to keep | `tree_protected` | filled centre, chain-line square frame, root zone | PlanZV 13.2 (filled = to preserve); ISO 11091 protection frame |
-| to fell | `tree_remove` | dashed yellow outline with a cross | ISO 11091 removal; Bavarian building-submission colours (grey existing, red new, yellow removal) |
+| Bestand | `tree` … | dünne Kontur, Aststern | ISO 11091 (Bestand = dünn) |
+| Neupflanzung | `tree_planned`, `shrub_planned` | kräftige rote Kontur, kleines Kreuz in einem offenen Ring | ISO 11091 (geplant = kräftig, Mittelkreuz); PlanZV 13.2 (offene Mitte = anpflanzen) |
+| Erhalt | `tree_protected` | gefüllte Mitte, quadratischer Rahmen aus Strichpunktlinie, Wurzelschutzbereich | PlanZV 13.2 (gefüllt = erhalten); Schutzrahmen nach ISO 11091 |
+| Fällung | `tree_remove` | gestrichelte gelbe Kontur mit Kreuz | ISO 11091 (Beseitigung); Farben der bayerischen Bauvorlagen (Bestand grau, neu rot, Beseitigung gelb) |
 
-The root protection zone (`ulg.root_protection_zone()`) is the crown drip line plus 1.50 m
-(columnar trees plus 5.00 m) after DIN 18920; the minimum distance for trenches is four times the stem
-girth, at least 2.50 m.
+Der Wurzelschutzbereich (`ulg.root_protection_zone()`) ist nach DIN 18920 die Kronentraufe plus 1,50 m
+(bei säulenförmigen Bäumen plus 5,00 m); der Mindestabstand für Gräben beträgt das Vierfache des Stammumfangs,
+mindestens 2,50 m.
 
-**Pictograms** mark furniture and ecological structures (bench, bin, lamp, bicycle stand, sign,
-play equipment, planter, bollard, deadwood, stone pile, nesting aid …). They are drawn at a fixed paper
-size, so they stay legible at every scale, and enlarged automatically in legends and sheets.
+**Piktogramme** kennzeichnen Ausstattung und ökologische Strukturen (Bank, Abfallbehälter, Leuchte, Fahrradständer,
+Schild, Spielgerät, Pflanzkübel, Poller, Totholz, Steinhaufen, Nisthilfe …). Sie werden in fester Papiergröße
+gezeichnet, bleiben so in jedem Maßstab lesbar und werden in Legenden und Blättern automatisch vergrößert.
 
-![Land use, buildings, furniture](img/catalog-built-landuse.png)
+![Nutzungen, Gebäude, Ausstattung](img/catalog-built-landuse-de.png)
 
-## 2.6 Levels of detail
+## 2.6 Detailstufen
 
-![Levels of detail](img/lod.png)
+![Detailstufen](img/lod-de.png)
 
-| LOD | Scale | What is drawn |
+| LOD | Maßstab | Was gezeichnet wird |
 |---|---|---|
-| 3 | 1:750 and larger | single blades, flowers, pebbles, crowns with stems; plan drawings |
-| 2 | 1:750 – 1:2 500 | tufts, clusters, crowns with branch stars; site plans and park maps |
-| 1 | 1:2 500 – 1:10 000 | fine sparse marks, simplified crowns; district maps |
-| 0 | smaller than 1:10 000 | flat colours; city maps and overviews |
+| 3 | 1:750 und größer | einzelne Halme, Blüten, Kiesel, Kronen mit Stämmen; Planzeichnungen |
+| 2 | 1:750 bis 1:2500 | Büschel, Gruppen, Kronen mit Aststernen; Lagepläne und Parkkarten |
+| 1 | 1:2500 bis 1:10 000 | feine, spärliche Zeichen, vereinfachte Kronen; Stadtteilkarten |
+| 0 | kleiner als 1:10 000 | einfarbige Flächen; Stadtkarten und Übersichten |
 
-`ulg.lod_for_scale(500)` → 3, `ulg.lod_for_zoom(18)` → 2. Give the scale; do not switch textures
-off by hand.
+`ulg.lod_for_scale(500)` → 3, `ulg.lod_for_zoom(18)` → 2. Geben Sie den Maßstab an und schalten Sie Texturen nicht
+von Hand aus.
 
-## 2.7 Drawing order
+## 2.7 Zeichenreihenfolge
 
-Real data is often *stacked*: OpenStreetMap maps a park as one polygon and the lawn, the pond and
-the paths inside it as further polygons on top. The style draws in bands so that stacked data looks
-right and clean data is unaffected:
+Reale Daten sind oft *gestapelt*: OpenStreetMap erfasst einen Park als ein Polygon, den Rasen, den Teich und die
+Wege darin als weitere Polygone darüber. Der Stil zeichnet in Bändern, damit gestapelte Daten richtig aussehen und
+saubere Daten davon unberührt bleiben:
 
-| z | Band | Elements |
+| z | Band | Elemente |
 |---|---|---|
-| 1–5 | fallback, context | `unknown`, grey context buildings, roads, green and water |
-| 20 | **ground** – drawn largest first | land use and complexes (residential land, parks, cemeteries, playgrounds, airports …), grass, meadows, plantings, woodland, fields, soil, sand, all paved and loose surfaces |
-| 30–33 | water, then what lies on water | ponds, rivers, pools; mudflats; reeds, marsh, floating leaves; decks and jetties |
-| 35 | lines and centre-line strips | paths, streets, streams and ditches given as lines |
-| 50–66 | hedges and built | hedges, bridges, stairs, buildings, green roofs, solar panels, walls |
-| 66–76 | trees and points | crowns, furniture, ecology |
-| 84–98 | overlays | boundaries, planning, analysis |
+| 1–5 | Rückfallebene, Umgebung | `unknown`, graue Gebäude der Umgebung, Straßen, Grün und Gewässer |
+| 20 | **Boden**, größte zuerst gezeichnet | Flächennutzungen und Komplexe (Wohnbauflächen, Parks, Friedhöfe, Spielplätze, Flughäfen …), Rasen, Wiesen, Pflanzungen, Wald, Äcker, offener Boden, Sand, alle befestigten und losen Oberflächen |
+| 30–33 | Gewässer, dann was auf dem Wasser liegt | Teiche, Flüsse, Wasserbecken; Watt; Röhricht, Sumpf, Schwimmblätter; Holzdecks und Stege |
+| 35 | Linien und Mittellinienstreifen | Wege, Straßen, Bäche und Gräben, die als Linien vorliegen |
+| 50–66 | Hecken und Bauwerke | Hecken, Brücken, Treppen, Gebäude, Dachbegrünungen, Photovoltaik, Mauern |
+| 66–76 | Bäume und Punkte | Kronen, Ausstattung, ökologische Strukturen |
+| 84–98 | Overlays | Grenzen, Planung, Analyse |
 
-Inside the ground band **smaller areas are drawn on top of larger ones** – the rule OpenStreetMap
-Carto uses for land cover. A playground inside a park, a lawn covering the park, a meadow inside the
-lawn and a clearing inside a wood all stay visible, and a complex such as a park never hides the
-surfaces mapped inside it. Water comes above the ground band because ponds are routinely mapped on
-top of parks and woods. `ulg.flatten()` applies the same order to the geometry itself, which turns
-stacked data into a clean partition for area statistics.
+Innerhalb des Bodenbands werden **kleinere Flächen über größeren gezeichnet**, nach der Regel, die OpenStreetMap
+Carto für die Landbedeckung verwendet. Ein Spielplatz im Park, ein Rasen, der den Park überdeckt, eine Wiese im
+Rasen und eine Lichtung im Wald bleiben alle sichtbar, und ein Komplex wie ein Park verdeckt nie die darin
+kartierten Oberflächen. Gewässer liegen über dem Bodenband, weil Teiche regelmäßig überlagernd zu Parks und Wäldern
+kartiert werden. `ulg.flatten()` wendet dieselbe Reihenfolge auf die Geometrie selbst an und macht aus gestapelten
+Daten eine saubere Partition für Flächenstatistiken.
 
-## 2.8 Legibility
+## 2.8 Lesbarkeit
 
-![Colour-vision simulation](img/cvd.png)
+![Simulation der Farbsehschwäche](img/cvd-de.png)
 
-`ulg check` (and the test suite) enforces three rules:
+`ulg check` (und die Testsuite) erzwingt drei Regeln:
 
-1. **Distinguishable.** Two land covers that are closer than ΔE₀₀ 10 must differ in texture or
-   outline. Pairs that differ in nothing are errors.
-2. **Colour-vision safe.** The same test is repeated after simulating protanopia, deuteranopia and
-   tritanopia (Machado et al. 2009). Meaning never depends on hue alone (WCAG 2 success criterion
-   1.4.1).
-3. **Marks with contrast.** Texture marks are measured against their fill; the report lists the
-   weakest, and symbols and boundaries follow WCAG 1.4.11 for non-text contrast.
+1. **Unterscheidbar.** Zwei Landbedeckungen mit einem Farbabstand von weniger als ΔE₀₀ 10 müssen sich in Textur
+   oder Kontur unterscheiden. Paare, die sich in nichts unterscheiden, sind Fehler.
+2. **Sicher bei Farbsehschwäche.** Derselbe Test wird nach der Simulation von Protanopie, Deuteranopie und
+   Tritanopie wiederholt (Machado et al. 2009). Die Bedeutung hängt nie allein vom Farbton ab (WCAG 2,
+   Erfolgskriterium 1.4.1).
+3. **Zeichen mit Kontrast.** Texturzeichen werden gegen ihre Füllung gemessen; der Bericht führt die schwächsten
+   auf, und Symbole und Grenzen folgen WCAG 1.4.11 zum Nicht-Text-Kontrast.
 
-## 2.9 Typography and layout
+## 2.9 Typografie und Layout
 
-Sheets, legends and titles use a humanist sans-serif (Avenir Next, falling back to Nunito Sans,
-Source Sans 3, Helvetica Neue, Arial), `ink.900` for titles and `ink.500` for secondary text, small
-capitals with wide tracking for section heads, and thin `ink.200` rules. Maps are laid out in paper
-millimetres at the chosen scale.
+Blätter, Legenden und Titel verwenden eine humanistische Sans-Serif-Schrift (Avenir Next, ersatzweise Nunito Sans,
+Source Sans 3, Helvetica Neue, Arial), `ink.900` für Titel und `ink.500` für nachrangigen Text, Kapitälchen mit
+weiter Laufweite für Abschnittsüberschriften und dünne Linien in `ink.200`. Karten werden im gewählten Maßstab in
+Papiermillimetern angelegt.
 
-## 2.10 Themes: the same map in other conventions
+## 2.10 Themes: dieselbe Karte in anderen Konventionen
 
-![One quarter, seven conventions](img/conventions.png)
+![Ein Quartier, sieben Konventionen](img/conventions-de.png)
 
-The house style is `mellow`. Six further themes redraw the same data in an official or familiar
-convention, with the colour values of the published source: `planzv` (land-use and zoning plans),
-`alkis` (cadastral map), `basemap` (basemap.de), `bfn` (landscape planning), `osm` (OpenStreetMap
-Carto) and `mono` (black-and-white drawing after ISO 11091). Official themes use flat colours and
-exact lines. Sources and evidence: [Standards](06-standards.md#62-themes) and
+Der Hausstil ist `mellow`. Sechs weitere Themes zeichnen dieselben Daten in einer amtlichen oder vertrauten
+Konvention, mit den Farbwerten der veröffentlichten Quelle: `planzv` (Flächennutzungs- und Bebauungspläne),
+`alkis` (Liegenschaftskarte), `basemap` (basemap.de), `bfn` (Landschaftsplanung), `osm` (OpenStreetMap
+Carto) und `mono` (Schwarz-Weiß-Zeichnung nach ISO 11091). Amtliche Themes verwenden einfarbige Flächen und
+exakte Linien. Quellen und Belege: [Standards](06-standards.md#62-themes) und
 [reference/themes.md](reference/themes.md).
 
-## 2.11 Do and don't
+## 2.11 Richtig und falsch
 
-| Do | Don't |
+| Richtig | Falsch |
 |---|---|
-| Look an element up (`ulg.find("Schotterrasen")`) | Invent a colour or texture for a surface that exists in the catalog |
-| Classify external data with a crosswalk | Map codes to colours by hand |
-| Give the map scale | Switch textures on or off by hand |
-| Keep planning status in the status elements | Colour a planned tree green because it will be green |
-| Use `signal` colours for meaning only | Use orange or red for land cover |
-| Fix `unknown` features at the source | Hide unclassified features |
-| Work in a metric CRS (EPSG:25832 in Bavaria) | Measure or texture in degrees |
+| Ein Element nachschlagen (`ulg.find("Schotterrasen")`) | Für eine Oberfläche, die es im Katalog gibt, eine Farbe oder Textur erfinden |
+| Externe Daten mit einer Zuordnungstabelle (Crosswalk) klassifizieren | Schlüssel von Hand Farben zuordnen |
+| Den Kartenmaßstab angeben | Texturen von Hand ein- oder ausschalten |
+| Den Planungsstatus in den Statuselementen führen | Einen geplanten Baum grün färben, weil er später grün sein wird |
+| `signal`-Farben nur für Bedeutung verwenden | Orange oder Rot für Landbedeckung verwenden |
+| `unknown`-Objekte an der Quelle korrigieren | Nicht klassifizierte Objekte ausblenden |
+| In einem metrischen CRS arbeiten (EPSG:25832 in Bayern) | In Grad messen oder texturieren |
 
-## 2.12 The mark
+## 2.12 Das Zeichen
 
-The logo spells *ulg* with three things of a landscape plan, each drawn by the library from a catalog
-element: a **pond** in the shape of a *u* (`water`), a **tree-lined path** as the *l* (`waterbound` and
-`tree`), and a **tree crown with a stream** as the tail of the *g* (`tree` and `watercourse`). The hand-drawn
-outline and the texture marks are the renderer's, so the mark is a specimen of the style: exact geometry
-underneath, an imperfect drawing on top.
+Das Logo buchstabiert *ulg* mit drei Dingen aus einem Landschaftsplan, die die Bibliothek jeweils aus einem
+Katalogelement zeichnet: ein **Teich** in Form eines *u* (`water`), ein **baumgesäumter Weg** als *l* (`waterbound`
+und `tree`) und eine **Baumkrone mit Bach** als Unterlänge des *g* (`tree` und `watercourse`). Die handgezeichnete
+Kontur und die Texturzeichen stammen vom Renderer, das Zeichen ist also ein Musterbeispiel des Stils: darunter
+exakte Geometrie, darüber eine unvollkommene Zeichnung.
 
-![The ulg logo: name, mark and tagline](img/logo/ulg-logo.png)
+![Das ulg-Logo: Name, Zeichen und Claim](img/logo/ulg-logo.png)
 
-![How the mark is made: exact geometry with its vertices, then the drawing the renderer makes of it](img/logo/ulg-mark-construction.png)
+![Wie das Zeichen entsteht: exakte Geometrie mit ihren Stützpunkten, dann die Zeichnung, die der Renderer daraus macht](img/logo/ulg-mark-construction.png)
 
-*Left: the geometry in metres – polygons with their vertices, trees as points with a crown radius. Right: the
-same data drawn at 1:300 by the renderer that `ulg.render_svg` uses.*
+*Links: die Geometrie in Metern, Polygone mit ihren Stützpunkten und Bäume als Punkte mit Kronenradius. Rechts:
+dieselben Daten, im Maßstab 1:300 gezeichnet mit dem Renderer, den `ulg.render_svg` verwendet.*
 
-| File in `docs/img/logo/` | Use |
+| Datei in `docs/img/logo/` | Verwendung |
 |---|---|
-| `ulg-logo.svg`, `.png` | mark, name and tagline side by side; the default |
-| `ulg-logo-stacked.svg`, `.png` | the same, centred, for square spaces |
-| `ulg-logo-dark.svg`, `.png` | for dark backgrounds (`ink.900`) |
-| `ulg-mark.svg`, `ulg-mark-dark.svg` | the mark alone |
-| `ulg-mark-small.svg` | the mark without texture marks and with a stronger outline, for sizes below 40 px |
-| `ulg-favicon.svg`, `favicon.ico`, `apple-touch-icon.png` | the *g* on a rounded tile: crown and stream stay readable at 16 px |
+| `ulg-logo.svg`, `.png` | Zeichen, Name und Claim nebeneinander; die Standardvariante |
+| `ulg-logo-stacked.svg`, `.png` | dasselbe, zentriert, für quadratische Flächen |
+| `ulg-logo-dark.svg`, `.png` | für dunkle Hintergründe (`ink.900`) |
+| `ulg-mark.svg`, `ulg-mark-dark.svg` | das Zeichen allein |
+| `ulg-mark-small.svg` | das Zeichen ohne Texturzeichen und mit kräftigerer Kontur, für Größen unter 40 px |
+| `ulg-favicon.svg`, `favicon.ico`, `apple-touch-icon.png` | das *g* auf einer abgerundeten Kachel: Krone und Bach bleiben bei 16 px lesbar |
 
-The name is set in Rethink Sans (SIL Open Font License) and converted to outlines, so the files need no font.
-Keep a free margin of half the height of the mark around it, show it at no less than 24 px tall (use
-`ulg-mark-small.svg` below 40 px), and do not recolour it: the colours are palette tokens (`water.300`,
-`sand.300`, `leaf.300`–`leaf.600`). `python tools/build_logo.py` redraws every file from the catalog, so a change of the palette
-changes the logo with it.
+Der Name ist in Rethink Sans (SIL Open Font License) gesetzt und in Pfade umgewandelt, sodass die Dateien keine
+Schrift brauchen. Lassen Sie um das Zeichen einen freien Rand in halber Zeichenhöhe, zeigen Sie es mit mindestens
+24 px Höhe (unter 40 px nehmen Sie `ulg-mark-small.svg`) und färben Sie es nicht um: Die Farben sind Tokens der
+Palette (`water.300`, `sand.300`, `leaf.300`–`leaf.600`). `python tools/build_logo.py` zeichnet jede Datei aus dem
+Katalog neu, sodass sich mit der Palette auch das Logo ändert.
+
+**Das UrbanSens-Zeichen.** Das Stilblatt, die Katalogblätter und die Abbildungen dieser Dokumentation tragen in
+einer Ecke das kleine UrbanSens-Zeichen, mit der Website und der Version; `credit=False` lässt es weg. Einzelheiten
+und die Bitte um Namensnennung: [Lizenz und Nennung](licence-and-credit.md).
 
 ---
 
-Next: [3 · The catalog](03-catalog.md)
+Weiter: [3 · Der Katalog](03-catalog.md)

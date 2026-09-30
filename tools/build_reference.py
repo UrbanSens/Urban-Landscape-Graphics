@@ -48,7 +48,7 @@ def element_list() -> None:
     cat = ulg.load()
     out = ["# Element list", "",
            f"All {len(cat)} element ids of the catalog with geometry, names, aliases and description, "
-           "grouped as in the data files. Pictures of every element: [catalog pages](../03-catalog.md).", ""]
+           "grouped as in the data files. Pictures of every element: [catalog pages](../en/03-catalog.md).", ""]
     for group, els in by_group(cat).items():
         out += [f"## {group}", "", "| id | geometry | en | de | aliases | description |", "|---|---|---|---|---|---|"]
         for el in els:
@@ -174,8 +174,8 @@ def _doc(obj, level: str = "###", name: str | None = None) -> list[str]:
 
 def api() -> None:
     out = ["# API reference", "",
-           "Generated from the docstrings. Guides with examples: [Python](../04-python.md), "
-           "[GIS and web](../05-gis-and-web.md).", "", "## Package `ulg`", ""]
+           "Generated from the docstrings. Guides with examples: [Python](../en/04-python.md), "
+           "[GIS and web](../en/05-gis-and-web.md).", "", "## Package `ulg`", ""]
     for name in ulg.__all__:
         obj = getattr(ulg, name)
         if callable(obj):

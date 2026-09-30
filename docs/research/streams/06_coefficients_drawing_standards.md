@@ -1,4 +1,4 @@
-# Stream 06 — Coefficients per surface type, drawing/graphic standards, urban-climate map conventions
+# Stream 06: Coefficients per surface type, drawing/graphic standards, urban-climate map conventions
 
 Research date: 2026-09-30. Author: research agent (stream 06). Status: **final for this session** (version 2; supersedes the interim version written earlier the same day).
 
@@ -46,9 +46,9 @@ Method caveats
 | Dec 2019 | Flächentypen for Dach- und Vertikalbegrünung newly differentiated | S (search snippet of the berlin.de page "BFF-Berechnung"; page body not readable by the fetch tool) | https://www.berlin.de/sen/uvk/natur-und-gruen/landschaftsplanung/bff-biotopflaechenfaktor/bff-berechnung/ |
 | 2020 / Feb 2021 | remaining types re-evaluated (IASP studies 2018–2020); 9 → 16 types in four categories | V (brochure, imprint "Berlin, Februar 2021", SenUVK; Bearbeitung D. Melzer & S. Herfort, IASP) | https://www.berlin.de/sen/uvk/_assets/natur-gruen/landschaftsplanung/bff-biotopflaechenfaktor/broschuere_bff_als_oekologisches_planungsinstrument.pdf |
 | Transitional rule | BFF-Landschaftspläne festgesetzt before 2020 refer to the factor list "vor Dezember 2019" and stay valid in that form | V | same brochure, p. 23 |
-| 2022–2026 | no further revision found | not verified beyond the Feb 2021 brochure | — |
+| 2022–2026 | no further revision found | not verified beyond the Feb 2021 brochure | n/a |
 
-**Current list (brochure Feb 2021) — 16 Flächentypen. All rows V (brochure pp. 7–18, re-read at the end of the session).**
+**Current list (brochure Feb 2021), 16 Flächentypen. All rows V (brochure pp. 7–18, re-read at the end of the session).**
 
 | # | Kategorie | Flächentyp (DE) | English gloss | Criteria / examples (shortened) | Faktor |
 |---|---|---|---|---|---|
@@ -71,7 +71,7 @@ Method caveats
 
 Types not listed may be credited if demonstrably beneficial; their factor is estimated from the listed types (V, brochure p. 6).
 
-**BFF-Zielwerte (targets), brochure p. 5 — V**
+**BFF-Zielwerte (targets), brochure p. 5, V**
 
 | Nutzung | Bauliche Änderungen: Überbauungsgrad (ÜBG) → BFF | Neubau |
 |---|---|---|
@@ -85,7 +85,7 @@ Types not listed may be credited if demonstrably beneficial; their factor is est
 
 ÜBG = share of the plot covered by buildings (0–1). "Bauliche Änderungen" = creating additional habitable rooms or increasing the ÜBG.
 
-**Worked examples from the brochure (pp. 19–22) — usable as unit-test vectors (V).** Plot 750 m², building 330 m² (ÜBG 0,43 → Ziel-BFF 0,45). Products are rounded to whole m² in the brochure.
+**Worked examples from the brochure (pp. 19–22), usable as unit-test vectors (V).** Plot 750 m², building 330 m² (ÜBG 0,43 → Ziel-BFF 0,45). Products are rounded to whole m² in the brochure.
 
 | Scenario | Areas (m²) × factor | Sum | BFF |
 |---|---|---|---|
@@ -94,7 +94,7 @@ Types not listed may be credited if demonstrably beneficial; their factor is est
 | C | teilversiegelt 32 × 0,1; durchlässig 78 × 0,2; begrünte Beläge 80 × 0,4; Vegetation 176 × 0,8 (down-rated); Versickerung 220 × 0,2; extensive Dachbegrünung 35 × 0,5; intensive 100 × 0,8; bodengebundene Wandbegrünung 15 × 0,5 | 342 | **0,45** |
 | D (Neubau) | teilversiegelt 25 × 0,1; durchlässig 54 × 0,2; begrünte Beläge 59 × 0,4; unterbaute Vegetation 81–150 cm 80 × 0,7; Vegetation 40 × 1; Wasser 10 × 0,5; einfach-intensive Dachbegrünung 225 × 0,7; intensive 100 × 0,8; bodengebundene Vertikalbegrünung 20 × 0,5; wandgebundene 100 × 0,7 | 457 | **0,6** |
 
-**Original 1990 list (9 types) — V (Gutachten 1990, Kurzfassung pp. 7–8).** Basis of older BFF-Landschaftspläne; keep as `bff_1990`.
+**Original 1990 list (9 types), V (Gutachten 1990, Kurzfassung pp. 7–8).** Basis of older BFF-Landschaftspläne; keep as `bff_1990`.
 
 | Flächentyp 1990 | Faktor |
 |---|---|
@@ -114,7 +114,7 @@ Differences 1990 → 2021 that matter for a catalog: teilversiegelt 0,3 → 0,1;
 
 ### A1b. Comparable instruments
 
-**London — Urban Greening Factor (London Plan 2021, Policy G5, Table 8.2).** Values **S**: Buckingham Town Council, Neighbourhood Plan Appendix E, which adopts the London Plan 2021 generic UGF model (london.gov.uk returned HTTP 403 to the fetch tool). Targets 0.4 (predominantly residential) and 0.3 (predominantly commercial). GLA "London Plan Guidance – Urban Greening Factor", February 2023 (S, title in search results).
+**London, Urban Greening Factor (London Plan 2021, Policy G5, Table 8.2).** Values **S**: Buckingham Town Council, Neighbourhood Plan Appendix E, which adopts the London Plan 2021 generic UGF model (london.gov.uk returned HTTP 403 to the fetch tool). Targets 0.4 (predominantly residential) and 0.3 (predominantly commercial). GLA "London Plan Guidance – Urban Greening Factor", February 2023 (S, title in search results).
 https://www.buckingham-tc.gov.uk/wp-content/uploads/2024/08/06-App-E-Urban-Greening-Factor.pdf ; primary (not readable): https://www.london.gov.uk/sites/default/files/2023-02/London%20Plan%20Guidance%20-%20Urban%20Greening%20Factor.pdf
 
 | Surface cover type (paraphrased) | Factor | Mark |
@@ -138,7 +138,7 @@ https://www.buckingham-tc.gov.uk/wp-content/uploads/2024/08/06-App-E-Urban-Green
 
 **Seattle Green Factor.** Current minimum scores (V, city page as summarised by the fetch tool): Neighborhood Residential 0.60; Lowrise 0.60; Midrise/Highrise 0.50; Commercial/Neighborhood Commercial 0.30; Seattle Mixed 0.30; Industrial 0.30. Legal basis: SMC 23.86.019 Table A + SDCI Director's Rule 11-2020. https://seattle.gov/sdci/codes/codes-we-enforce-(a-z)/seattle-green-factor
 
-Historical score sheet of 29 Feb 2008 (Ordinance 122311, commercial zones, minimum 0.30) — **V for that version only** (official city score sheet hosted by US EPA): https://www.epa.gov/sites/default/files/2014-07/documents/greenfactor_0.pdf
+Historical score sheet of 29 Feb 2008 (Ordinance 122311, commercial zones, minimum 0.30), **V for that version only** (official city score sheet hosted by US EPA): https://www.epa.gov/sites/default/files/2014-07/documents/greenfactor_0.pdf
 
 | Element (2008 sheet) | Factor |
 |---|---|
@@ -154,7 +154,7 @@ Historical score sheet of 29 Feb 2008 (Ordinance 122311, commercial zones, minim
 
 Current multipliers of SMC 23.86.019 Table A: **R, not verified** (recalled: planted areas soil < 24 in 0.1, ≥ 24 in 0.6; bioretention 1.0; trees 0.3–0.4; preserved large trees 0.8; green roof 2–4 in 0.4, ≥ 4 in 0.7; vegetated walls 0.7; permeable paving 6–24 in 0.2, ≥ 24 in 0.5; structural soil 0.2). Do not ship.
 
-**Sweden — Grönytefaktor (GYF).** **S**: Delshammar & Falck (2014), *Grönytefaktorn i Sverige*, SLU (Urban Transition Öresund), Tabell 1, p. 7 (re-read). Tilläggsfaktorer (bonus factors) not included. GYF = ekoeffektiv yta / hela tomtens yta. https://pub.epsilon.slu.se/11705/7/delshammar_t_falck_m_141216.pdf
+**Sweden, Grönytefaktor (GYF).** **S**: Delshammar & Falck (2014), *Grönytefaktorn i Sverige*, SLU (Urban Transition Öresund), Tabell 1, p. 7 (re-read). Tilläggsfaktorer (bonus factors) not included. GYF = ekoeffektiv yta / hela tomtens yta. https://pub.epsilon.slu.se/11705/7/delshammar_t_falck_m_141216.pdf
 
 | Delfaktor | Bo01 Malmö | Malmö stad et al. 2012 (Miljöbyggprogram Syd) | Stockholm Norra Djurgårdsstaden |
 |---|---|---|---|
@@ -169,7 +169,7 @@ Current multipliers of SMC 23.86.019 Table A: **R, not verified** (recalled: pla
 
 Typical target: Sundbyberg ≥ 0,5 (0,3 in central areas) (S, same report, Tabell 3).
 
-**Graz (AT) — Verordnung über die Festlegung des Grünflächenfaktors**, in force 20 July 2023 — **V** (Austrian legal information system RIS, read through the fetch tool's extraction): https://ris.bka.gv.at/Dokumente/Gemeinderecht/GEMRE_ST_60101_A17_BVO_109720_2023_0001/GEMRE_ST_60101_A17_BVO_109720_2023_0001.html
+**Graz (AT), Verordnung über die Festlegung des Grünflächenfaktors**, in force 20 July 2023, **V** (Austrian legal information system RIS, read through the fetch tool's extraction): https://ris.bka.gv.at/Dokumente/Gemeinderecht/GEMRE_ST_60101_A17_BVO_109720_2023_0001/GEMRE_ST_60101_A17_BVO_109720_2023_0001.html
 
 | Flächentyp | Faktor |
 |---|---|
@@ -179,7 +179,7 @@ Typical target: Sundbyberg ≥ 0,5 (0,3 in central areas) (S, same report, Tabel
 | Dachbegrünung 15–20 cm / 21–50 cm / 51–70 cm / > 70 cm Substrat | 0,4 / 0,6 / 0,75 / 0,8 |
 | Wege/Befestigung: begrünt, vollsickerfähig / durchlässig ohne Begrünung / teilversiegelt / vollversiegelt | 0,8 / 0,5 / 0,3 / 0 |
 | Fassadenbegrünung (Länge × 50 % der Höhe, max. 6 m) | 0,3 |
-| Baumbonus: Neupflanzung 5 m² je Baum (StU ≥ 16/18); erhaltenswerter Bestandsbaum Kronenfläche × 0,2 | — |
+| Baumbonus: Neupflanzung 5 m² je Baum (StU ≥ 16/18); erhaltenswerter Bestandsbaum Kronenfläche × 0,2 | n/a |
 
 Required minimum by area type: 0,4 (Betriebsgebiete) … 0,8 (Blockrandbebauung, Grüngürtel).
 
@@ -191,18 +191,18 @@ Required minimum by area type: 0,4 (Betriebsgebiete) … 0,8 (Blockrandbebauung,
 | Leipzig | Begrünungssatzung, in force 17.03.2024 | No factor. 1 Laubbaum (StU 18–20) per 150 m² Freifläche; greening of roofs/façades; Schottergarten ban | S (search snippets) | https://www.leipzig.de/buergerservice-und-verwaltung/aemter-und-behoerdengaenge/satzungen/details/satzung/6-28 |
 | München | Freiflächengestaltungssatzung (1996) / Gestaltungs- und Begrünungssatzung (Stadtrecht 924) | No factor. § 3 no longer applied because of the BayBO amendment; revision announced (outcome not verified) | V (city page) | https://stadt.muenchen.de/infos/freiflaechengestaltung-in-muenchen.html |
 | Bayern (all municipalities) | Art. 81 Abs. 1 Nr. 5 BayBO, new wording | Municipalities may by Satzung only **prohibit** Bodenversiegelung, nicht begrünte Steingärten and similarly monotonous uses with high thermal or hydrological load. The changes to municipal Satzungsrecht (Erstes Modernisierungsgesetz Bayern, GVBl. 2024 S. 605, §§ 11, 13) entered into force on **1 October 2025**; older Freiflächengestaltungs-/Grünordnungssatzungen based on the former Nr. 5/7 lapsed (S). | V (wording: gesetze-bayern.de; date: StMB Vollzugshinweise 04.02.2025) / S (lapse) | https://www.gesetze-bayern.de/Content/Document/BayBO-81 ; https://www.stmb.bayern.de/assets/stmi/buw/baurechtundtechnik/24_baybo-vollzugshinweise_2025-modg-1-2.pdf |
-| Hamburg | — | No city-wide Grünflächenfaktor found (Gründachstrategie 2014, green-façade strategy 2024). **Could not verify** any factor instrument. | S | https://www.hamburg.de/politik-und-verwaltung/behoerden/bukea/themen/hamburgs-gruen/gruendach-und-gruene-fassaden/ |
+| Hamburg | n/a | No city-wide Grünflächenfaktor found (Gründachstrategie 2014, green-façade strategy 2024). **Could not verify** any factor instrument. | S | https://www.hamburg.de/politik-und-verwaltung/behoerden/bukea/themen/hamburgs-gruen/gruendach-und-gruene-fassaden/ |
 
 Consequence for a Bavarian user: a BFF-type factor is not a municipal legal instrument in Bavaria after 1 Oct 2025; it remains usable as an analytical indicator and inside Bebauungsplan/Grünordnung.
 
-**Helsinki Green Factor** (viherkerroin): piloted 2014, formal use from 2016, Excel tool updated in the iWater project 2015–2018 (S). Element weights **not retrieved**. **Wien**: "Grünflächen- und Regenwassermanagementfaktor (GRF Wien)" exists (MA 22) — not evaluated.
+**Helsinki Green Factor** (viherkerroin): piloted 2014, formal use from 2016, Excel tool updated in the iWater project 2015–2018 (S). Element weights **not retrieved**. **Wien**: "Grünflächen- und Regenwassermanagementfaktor (GRF Wien)" exists (MA 22), not evaluated.
 
 ### A2. Abflussbeiwerte (runoff coefficients)
 
 **Cs** = Spitzenabflussbeiwert (peak coefficient: pipe sizing, Überflutungsnachweis); **Cm** = mittlerer Abflussbeiwert (mean coefficient: retention/infiltration volume). Abflusswirksame Fläche A_u = A · C (A in plan projection).
 
 **DIN 1986-100:2016-12, Tabelle 9.** Edition status: 2016-12 valid (V, DIN Media / Baunormenlexikon). Draft E DIN 1986-100:2025-06 (published 2 May 2025) differentiates the coefficients by roof type, greening and use and adds retention roofs; still a draft in March 2026 (S: ddh.de 10.03.2026). Publication of the new edition by 30.09.2026 **not verified**.
-Values **S**: "Hinweise und Auszug aus der DIN 1986-100:2016-12 (Abflussbeiwerte / Tabelle 9)", Eigen- und Wirtschaftsbetrieb Frankenthal — https://www.frankenthal.de/ewf/de/abwasser/grundstuecksentwaesserung/informationen-fuer-den-bauherrn/abflussbeiwerte-nach-din1986-100-2016-12.pdf?cid=3n5
+Values **S**: "Hinweise und Auszug aus der DIN 1986-100:2016-12 (Abflussbeiwerte / Tabelle 9)", Eigen- und Wirtschaftsbetrieb Frankenthal, https://www.frankenthal.de/ewf/de/abwasser/grundstuecksentwaesserung/informationen-fuer-den-bauherrn/abflussbeiwerte-nach-din1986-100-2016-12.pdf?cid=3n5
 
 | Nr. | Art der Fläche (shortened) | Cs | Cm |
 |---|---|---|---|
@@ -232,8 +232,8 @@ Values **S**: "Hinweise und Auszug aus der DIN 1986-100:2016-12 (Abflussbeiwerte
 | | Sportflächen mit Dränung: Tennenflächen | 0,3 | 0,2 |
 | | Sportflächen mit Dränung: Rasenflächen | 0,2 | 0,1 |
 | 3 | **Wasserdurchlässige Flächen** | | |
-| | Parkanlagen, Rasenflächen, Gärten — flaches Gelände | 0,2 | 0,1 |
-| | Parkanlagen, Rasenflächen, Gärten — steiles Gelände | 0,3 | 0,2 |
+| | Parkanlagen, Rasenflächen, Gärten, flaches Gelände | 0,2 | 0,1 |
+| | Parkanlagen, Rasenflächen, Gärten, steiles Gelände | 0,3 | 0,2 |
 
 All rows S. Note in the excerpt: Cm refers to a uniform return period T = 2 a (retention volume V_RRR); for the Überflutungsnachweis a higher coefficient may be needed on permeable areas (slope, soil, vegetation).
 
@@ -250,11 +250,11 @@ Same values as the DIN table above, **except / plus**:
 | Gleisanlage, Schotterbau mit durchlässigem Unterbau | 0,1 | 0,2 | S |
 | Gleisanlage, Schotterbau mit schwach durchlässigem Unterbau | 0,4 | 0,6 | S |
 | Dauerhaft eingestaute Wasserflächen | 1,0 | 1,0 | S |
-| Sportflächen mit Dränung: Kunststoffrasen / Tennenflächen / Rasenflächen | 0,1 / 0,3 / 0,1 | 0,1 / 0,3 / 0,1 | S — printed like this in the project sheet, **differs from DIN 1986-100 (0,5/0,2/0,1 and 0,6/0,3/0,2); check in the original before use** |
+| Sportflächen mit Dränung: Kunststoffrasen / Tennenflächen / Rasenflächen | 0,1 / 0,3 / 0,1 | 0,1 / 0,3 / 0,1 | S, printed like this in the project sheet, **differs from DIN 1986-100 (0,5/0,2/0,1 and 0,6/0,3/0,2); check in the original before use** |
 
 Further content of DWA-A 138-1:2024 (S, Mall slides and the project sheet): assessment of connected areas by Belastungskategorien I–III analogous to DWA-A 102-2; design infiltration rate k_i = k · f_Ort · f_Methode with f_Methode e.g. 0,9 for a small test pit (< 1 m²) and a local factor f_Ort (0,8 in the example); typical design frequency for decentralised systems T = 5 a, surcharge factor 1,2 in the example. Older Bavarian practice notes (S, LfU slides on DWA-A 138:2005): favourable soil permeability range k_f 1·10⁻³ … 1·10⁻⁶ m/s; ≥ 1 m to mean highest groundwater level; swale design ponding ≤ 30 cm; vegetated topsoil ≥ 20 cm; no trees in swales/over infiltration trenches.
 
-**DWA-A 138 (April 2005), Tabelle 2 "mittlere Abflussbeiwerte ψm"** — superseded, still embedded in software and municipal forms. **S**: Bayerisches Landesamt für Umwelt (Ref. 67), slides "Arbeitsblatt DWA-A 138 – Anwendung bei der Regenwasserbewirtschaftung in Bayern", slide 6 — https://www.wwa-r.bayern.de/service/antraege/doc/dwa_a138_lfu.pdf
+**DWA-A 138 (April 2005), Tabelle 2 "mittlere Abflussbeiwerte ψm"**: superseded, still embedded in software and municipal forms. **S**: Bayerisches Landesamt für Umwelt (Ref. 67), slides "Arbeitsblatt DWA-A 138 – Anwendung bei der Regenwasserbewirtschaftung in Bayern", slide 6, https://www.wwa-r.bayern.de/service/antraege/doc/dwa_a138_lfu.pdf
 
 | Flächentyp | Art der Befestigung | ψm |
 |---|---|---|
@@ -277,7 +277,7 @@ Further content of DWA-A 138-1:2024 (S, Mall slides and the project sheet): asse
 
 All rows S.
 
-**DWA-A 102-2 / BWK-A 3-2 (Dezember 2020; Korrekturblätter Okt 2021 and Aug 2022)** — pollution categories of source areas for discharge to surface waters. **S**: Mall GmbH "Zuordnung von Belastungskategorien" (Stand Feb 2021, quoting DWA-A 102-2, Dec 2020); AFS63 values from T. G. Schmitt, Rostocker Abwassertagung 2023.
+**DWA-A 102-2 / BWK-A 3-2 (Dezember 2020; Korrekturblätter Okt 2021 and Aug 2022)**: pollution categories of source areas for discharge to surface waters. **S**: Mall GmbH "Zuordnung von Belastungskategorien" (Stand Feb 2021, quoting DWA-A 102-2, Dec 2020); AFS63 values from T. G. Schmitt, Rostocker Abwassertagung 2023.
 https://www.mall.info/fileadmin/user_upload/produkte/regenwasserbewirtschaftung/einbau-und-wartung/zuordnung-von-belastungskategorien-mit-mall-anlagen.pdf ; https://abwassertagung.auf.uni-rostock.de/docs/pub/p/RAT23-I-01_Schmitt_DWA-A_M_102_nachhalt_Bewirt_NSW.pdf
 
 | Flächengruppe | Description (shortened) | Kategorie |
@@ -296,16 +296,16 @@ https://www.mall.info/fileadmin/user_upload/produkte/regenwasserbewirtschaftung/
 
 All rows S. Rechenwerte flächenspezifischer Stoffabtrag AFS63: Kategorie I **280**, II **530**, III **760** kg/(ha·a); zulässiger flächenspezifischer Stoffaustrag **280 kg/(ha·a)** → category I may be discharged untreated, II and III need treatment (S, Schmitt 2023).
 
-Not retrieved: **DWA-M 153 (August 2007)** type table (superseded by A 102 for surface waters and by A 138-1 for infiltration; still referenced in Bavaria together with TRENGW — S); **DWA-M 102-4 / BWK-M 3-4 (März 2022)** Wasserhaushaltsbilanz with Aufteilungswerte a/g/v (runoff / groundwater recharge / evaporation shares) per surface and measure — existence V (UBA list), **table not retrieved**; **DWA-A 117 / DWA-A 118** typical values — R only.
+Not retrieved: **DWA-M 153 (August 2007)** type table (superseded by A 102 for surface waters and by A 138-1 for infiltration; still referenced in Bavaria together with TRENGW, S); **DWA-M 102-4 / BWK-M 3-4 (März 2022)** Wasserhaushaltsbilanz with Aufteilungswerte a/g/v (runoff / groundwater recharge / evaporation shares) per surface and measure, existence V (UBA list), **table not retrieved**; **DWA-A 117 / DWA-A 118** typical values, R only.
 
 ### A3. Versiegelung (sealing): definitions and classes
 
-**Umweltbundesamt (UBA)** — V (page updated 26.03.2026, read through the fetch tool): https://www.umweltbundesamt.de/daten/flaeche-boden-land-oekosysteme/boden/bodenversiegelung
+**Umweltbundesamt (UBA)**: V (page updated 26.03.2026, read through the fetch tool): https://www.umweltbundesamt.de/daten/flaeche-boden-land-oekosysteme/boden/bodenversiegelung
 - Bodenversiegelung: the soil is covered air- and water-tight so that rainwater cannot infiltrate or only with difficulty.
 - Full sealing: bebaut, betoniert, asphaltiert, gepflastert oder anderweitig befestigt; partial sealing: loosely laid slabs, paving, wassergebundene Decken (uncertainty acknowledged). There is no statutory three-class definition.
 - About 45 % of the Siedlungs- und Verkehrsfläche (52 266 km² = 14,6 % of Germany) is sealed = 6,57 % of the territory; estimated by the LABO model (settlement density) and the UGRdL method (sealing shares per land-use type).
 
-**Berlin Umweltatlas 01.02 Versiegelung (Ausgabe 2017), Tab. 1 Belagsklassen** — V (read earlier in the session; classes 1, 2, 4 also confirmed by a search snippet of the 2021 edition): https://www.berlin.de/umweltatlas/_assets/boden/versiegelung/de-texte/kd102.pdf . Berlin counts permeable pavings as "versiegelt" and separates **bebaut versiegelt** (buildings) from **unbebaut versiegelt** (pavements), the latter in four classes:
+**Berlin Umweltatlas 01.02 Versiegelung (Ausgabe 2017), Tab. 1 Belagsklassen**: V (read earlier in the session; classes 1, 2, 4 also confirmed by a search snippet of the 2021 edition): https://www.berlin.de/umweltatlas/_assets/boden/versiegelung/de-texte/kd102.pdf . Berlin counts permeable pavings as "versiegelt" and separates **bebaut versiegelt** (buildings) from **unbebaut versiegelt** (pavements), the latter in four classes:
 
 | Belagsklasse | Impact on Naturhaushalt | Belagsarten |
 |---|---|---|
@@ -314,7 +314,7 @@ Not retrieved: **DWA-M 153 (August 2007)** type table (superseded by A 102 for s
 | 3 | mittel | Klein- und Mosaikpflaster (Kantenlänge < 8 cm) |
 | 4 | gering | Rasengittersteine, wassergebundene Decke (z. B. Schlacke, Kies-, Tennenfläche), Schotterrasen |
 
-**Berlin water-balance model ABIMO — parameters per Belagsklasse** (Umweltatlas 02.13, text edition 2005, Tab. 2) — V (read earlier in the session; identical to the default ABIMO configuration known to me): https://www.berlin.de/umweltatlas/_assets/wasser/wasserhaushalt/de-texte/ka213.pdf
+**Berlin water-balance model ABIMO, parameters per Belagsklasse** (Umweltatlas 02.13, text edition 2005, Tab. 2), V (read earlier in the session; identical to the default ABIMO configuration known to me): https://www.berlin.de/umweltatlas/_assets/wasser/wasserhaushalt/de-texte/ka213.pdf
 
 | Klasse | Effektivitätsparameter n (Bagrov) | Infiltrationsfaktor F_i |
 |---|---|---|
@@ -326,14 +326,14 @@ Not retrieved: **DWA-M 153 (August 2007)** type table (superseded by A 102 for s
 
 (Long-term mean water balance, not design storms; the parameters are calibration values.)
 
-**bdla, "Der qualifizierte Freiflächengestaltungsplan" (Stand Juli 2022)** — V: the plan should prove the Versiegelungsgrad / Begrünungsanteil, as a rule in five classes: (1) Vegetationsflächen mit Erdanschluss, (2) begrünte Unterbauung, (3) teilversiegelte versickerungsfähige Flächen (e.g. Rasenpflaster, wassergebundene Wegedecke, Schotterrasen), (4) vollversiegelte undurchlässige Flächen (e.g. Asphalt, Ortbeton, fugenloses Verbundpflaster), (5) überbaute Flächen (buildings without or with extensive/intensive green roof). This is the most practical class scheme for a landscape-plan catalog. https://www.bdla.de/de/dokumente/bundesverband/freiraumplanung-und-staedtebau/1406-bdla-broschuere-fgp-stand-juli-2022/file
+**bdla, "Der qualifizierte Freiflächengestaltungsplan" (Stand Juli 2022)**: V: the plan should prove the Versiegelungsgrad / Begrünungsanteil, as a rule in five classes: (1) Vegetationsflächen mit Erdanschluss, (2) begrünte Unterbauung, (3) teilversiegelte versickerungsfähige Flächen (e.g. Rasenpflaster, wassergebundene Wegedecke, Schotterrasen), (4) vollversiegelte undurchlässige Flächen (e.g. Asphalt, Ortbeton, fugenloses Verbundpflaster), (5) überbaute Flächen (buildings without or with extensive/intensive green roof). This is the most practical class scheme for a landscape-plan catalog. https://www.bdla.de/de/dokumente/bundesverband/freiraumplanung-und-staedtebau/1406-bdla-broschuere-fgp-stand-juli-2022/file
 
-**LfU Bayern, "Satellitengestützte Erfassung der Bodenversiegelung in Bayern"** — V (LfU page): Siedlungs- und Verkehrsfläche sealed **47 % (2000)** and **51 % (2015)**; satellite-based, University of Würzburg; Kurzfassung and Langfassung 2015. https://www.lfu.bayern.de/umweltkommunal/flaechenmanagement/bodenversiegelung/index.htm . Ten Versiegelungsgrad classes per land-use form: S (search snippet) — class limits **not verified** (report PDF exceeded the fetch size limit).
+**LfU Bayern, "Satellitengestützte Erfassung der Bodenversiegelung in Bayern"**: V (LfU page): Siedlungs- und Verkehrsfläche sealed **47 % (2000)** and **51 % (2015)**; satellite-based, University of Würzburg; Kurzfassung and Langfassung 2015. https://www.lfu.bayern.de/umweltkommunal/flaechenmanagement/bodenversiegelung/index.htm . Ten Versiegelungsgrad classes per land-use form: S (search snippet), class limits **not verified** (report PDF exceeded the fetch size limit).
 Data hint (V, LfU Rheinland-Pfalz documentation): state agencies derive sealing degrees from the Copernicus High Resolution Layer *Imperviousness Density* 2018 (10 m raster).
 
 ### A4. Albedo and emissivity per urban surface
 
-**Citable, machine-readable default set: PALM model system 6.0 lookup tables** (Leibniz Universität Hannover; land-surface model described in Gehrke et al. 2021, Geosci. Model Dev. 14, 5307) — V (tables read through the fetch tool; spot-check before release):
+**Citable, machine-readable default set: PALM model system 6.0 lookup tables** (Leibniz Universität Hannover; land-surface model described in Gehrke et al. 2021, Geosci. Model Dev. 14, 5307), V (tables read through the fetch tool; spot-check before release):
 https://palm.muk.uni-hannover.de/trac/wiki/doc/app/land_surface_parameters ; https://palm.muk.uni-hannover.de/trac/wiki/doc/app/radiation_parameters . Broadband albedo at solar zenith angle 60° (after Briegleb et al. 1986; Briegleb 1992).
 
 | Surface (PALM type) | Broadband albedo | Emissivity ε |
@@ -355,9 +355,9 @@ https://palm.muk.uni-hannover.de/trac/wiki/doc/app/land_surface_parameters ; htt
 | Gravel / fine gravel / pebblestone | 0,17 | 0,98 / 0,93 / 0,97 |
 | Wood / woodchips | 0,17 | 0,94 / 0,97 |
 | Tartan / artificial turf / clay (sports) | 0,17 | 0,97 / 0,94 / 0,98 |
-| Building roof: standard / (very) bright / reflective | 0,07 / 0,30 / 0,60 | — |
+| Building roof: standard / (very) bright / reflective | 0,07 / 0,30 / 0,60 | n/a |
 
-All rows V. Caveat: in PALM every pavement type except concrete carries the same placeholder albedo 0,17 — a model default, not a material measurement. For material differentiation use measured ranges:
+All rows V. Caveat: in PALM every pavement type except concrete carries the same placeholder albedo 0,17, a model default, not a material measurement. For material differentiation use measured ranges:
 
 | Material | Albedo range | Emissivity | Mark |
 |---|---|---|---|
@@ -378,7 +378,7 @@ Recommendation: ship `albedo` and `emissivity` from PALM (one citable, consisten
 
 ## B. Drawing and graphic standards
 
-### B5. ISO 11091:1994 "Construction drawings — Landscape drawing practice"
+### B5. ISO 11091:1994 "Construction drawings: Landscape drawing practice"
 
 | Item | Finding | Mark | Source |
 |---|---|---|---|
@@ -388,7 +388,7 @@ Recommendation: ship `albedo` and `emissivity` from PALM (one citable, consisten
 | Scope | General rules plus graphical symbols and simplified representations ("conventions") for landscape drawings; Annex A lists applicable conventions from other ISO standards | V | preview p. 1 |
 | General rules | Detail depends on required accuracy; production drawings dimensioned for setting-out; existing and proposed levels as spot levels and/or contours; conventions may be completed by text, abbreviations, additions; non-standardised conventions must be explained on the drawing | V | preview p. 1 |
 
-**Convention table (clause 3), described in words — all rows V (preview pp. 2–5).** "Thin/thick" = the two line widths of the chosen line group. The standard is black-and-white; it defines no colours.
+**Convention table (clause 3), described in words, all rows V (preview pp. 2–5).** "Thin/thick" = the two line widths of the chosen line group. The standard is black-and-white; it defines no colours.
 
 | Ref. | Element | Convention as drawn |
 |---|---|---|
@@ -423,25 +423,25 @@ Recommendation: ship `albedo` and `emissivity` from PALM (one citable, consisten
 | 3.29 | Sign | extra-thick bar (example: fixed to two poles) |
 | 3.30–3.33 | Luminaire; + wall bracket; pole + arm; bollard/low-level | thick circle with thin diagonal cross; variants with bracket, pole and arm, letter B |
 
-Clause 4 (V): new planting should be scheduled — name, classification/designation, root system, planting location, quantity; optionally height/girth, spread, form, cost; schedules may be split into trees, shrubs, other plants.
+Clause 4 (V): new planting should be scheduled, name, classification/designation, root system, planting location, quantity; optionally height/girth, spread, form, cost; schedules may be split into trees, shrubs, other plants.
 
 What clause 3 does **not** contain: no dedicated symbol for a single tree to be felled (removal = hatch 3.9 or ISO 7518), none for water surfaces or perennials as such, no colours. The portable semantic rule is: **existing = thin; proposed = thick; protected = thick chain-line frame; removed = dashed diagonal hatch.**
 
 ### B6. Building-drawing standards
 
-**DIN 1356-1 — edition chain (changed three times in 2024–2026)**
+**DIN 1356-1, edition chain (changed three times in 2024–2026)**
 
 | Document | Content / status on 2026-09-30 | Mark | Source |
 |---|---|---|---|
-| DIN 1356-1:1995-02 | "Bauzeichnungen – Teil 1: Arten, Inhalte und Grundregeln der Darstellung" — withdrawn, replaced by 2024-04 | V | https://www.baunormenlexikon.de/norm/din-1356-1/77956a27-e598-4ce5-8733-f962cf6621de |
+| DIN 1356-1:1995-02 | "Bauzeichnungen – Teil 1: Arten, Inhalte und Grundregeln der Darstellung", withdrawn, replaced by 2024-04 | V | https://www.baunormenlexikon.de/norm/din-1356-1/77956a27-e598-4ce5-8733-f962cf6621de |
 | DIN 1356-1:2024-04 | "Bauzeichnungen – Teil 1: Grundregeln der Darstellung", 29 pp.; clauses on line types, line widths, lettering, dimensioning, marking of cut surfaces, alterations of existing structures; refers to DIN EN ISO 128-2 plus its own Tabelle 2. **Withdrawn**, superseded by DIN EN ISO 7519:2025-01 | V | https://www.dinmedia.de/en/standard/din-1356-1/325728444 |
 | DIN EN ISO 7519:2025-01 | "TPD – Baukonstruktionszeichnungen – Allgemeine Grundlagen für Übersichts-/Anordnungs- und Zusammenbauzeichnungen (ISO 7519:2024)", 44 pp.; replaces DIN ISO 7519:1992-09 and DIN 1356-1:2024-04; listed as **current** | V | https://www.dinmedia.de/en/standard/din-en-iso-7519/379472829 |
-| E DIN EN ISO 7519:2025-03 + BAK statement (14.04.2025) | The Bundesarchitektenkammer objects that (a) ISO marks the site boundary with a dash-dot line, whereas German practice (Bauvorlagenverordnungen) uses a thick dashed line; (b) outlines of building parts above the section plane should stay a dotted line "as in DIN 1356"; (c) the Annex B hatches do not match German practice (masonry drawn like reinforced concrete; no hatches for seals or natural ground) — a national annex is requested | V | https://bak.de/wp-content/uploads/2025/04/BAK-Stellungnahme-DIN-EN-ISO-7519_2025-03-Endf.pdf |
+| E DIN EN ISO 7519:2025-03 + BAK statement (14.04.2025) | The Bundesarchitektenkammer objects that (a) ISO marks the site boundary with a dash-dot line, whereas German practice (Bauvorlagenverordnungen) uses a thick dashed line; (b) outlines of building parts above the section plane should stay a dotted line "as in DIN 1356"; (c) the Annex B hatches do not match German practice (masonry drawn like reinforced concrete; no hatches for seals or natural ground), a national annex is requested | V | https://bak.de/wp-content/uploads/2025/04/BAK-Stellungnahme-DIN-EN-ISO-7519_2025-03-Endf.pdf |
 | E DIN 1356-1:2026-09 | Norm-Entwurf "Bauzeichnungen – Teil 1: Grundregeln der Darstellung", 29 pp.; intended to **replace DIN EN ISO 7519:2025-01** and to reinstate the content of DIN 1356-1:2024-04, keeping its own marking of cut surfaces of building materials | V (as summarised from the DIN Media page) | https://www.dinmedia.de/de/norm-entwurf/din-1356-1/403956420 |
 
 Practical conclusion: design against the DIN 1356-1 conventions (they are returning), not against the ISO 7519 Annex B hatches.
 
-**Line types, line widths and text heights for building drawings (DIN 1356-1 table)** — S: bauforumstahl, Arbeitshilfe 2.12 "Konstruktionszeichnungen", Tabelle 2 (reproduces the DIN 1356-1 table with line groups; edition not named there, content corresponds to the 1995 table): https://bauforumstahl.de/wp-content/uploads/2024/10/Arbeitshilfe_02-12.pdf ; agrees with https://www.architektur-studieren.info/tipps/technisches-zeichnen-linien/
+**Line types, line widths and text heights for building drawings (DIN 1356-1 table)**: S: bauforumstahl, Arbeitshilfe 2.12 "Konstruktionszeichnungen", Tabelle 2 (reproduces the DIN 1356-1 table with line groups; edition not named there, content corresponds to the 1995 table): https://bauforumstahl.de/wp-content/uploads/2024/10/Arbeitshilfe_02-12.pdf ; agrees with https://www.architektur-studieren.info/tipps/technisches-zeichnen-linien/
 
 | Linienart | Anwendung | Liniengruppe I | **II** | **III** | IV |
 |---|---|---|---|---|---|
@@ -457,7 +457,7 @@ Practical conclusion: design against the DIN 1356-1 conventions (they are return
 
 All values in mm, all rows S. Groups II and III are the standard groups; group I only for drawings reduced 2:1 from group III, group IV for drawings that will be reduced (e.g. 1:50 → 1:100). Permitted scales: 1:500, 1:200, 1:100, 1:50, 1:20, 1:10, 1:5, 1:1, additionally 1:25 (S, same source). Hatches are drawn in the narrowest width (S).
 
-**Material hatches (Kennzeichnung von Schnittflächen)** — low evidence:
+**Material hatches (Kennzeichnung von Schnittflächen)**: low evidence:
 
 | Material | Motif | Mark |
 |---|---|---|
@@ -471,38 +471,38 @@ All values in mm, all rows S. Groups II and III are the standard groups; group I
 
 Colour fills are permitted in the 2024 edition if a legend is given (S). Traditional colours of the 1995 edition (Boden sepia, Beton olive green, Stahlbeton blue-green, Mauerwerk brown-red, Holz brown, Dämmung blue-grey): **R, not verified.**
 
-**DIN EN ISO 128-2** — current edition **DIN EN ISO 128-2:2023-06** (ISO 128-2:2022), replacing 2022-02 (S, DIN Media catalogue via search). Line-width series 0,13 – 0,18 – 0,25 – 0,35 – 0,5 – 0,7 – 1,0 – 1,4 – 2,0 mm (ratio 1 : √2) (R; consistent with the table above); wide : narrow = 2 : 1 within one line group; one line group per drawing (S).
+**DIN EN ISO 128-2**: current edition **DIN EN ISO 128-2:2023-06** (ISO 128-2:2022), replacing 2022-02 (S, DIN Media catalogue via search). Line-width series 0,13 – 0,18 – 0,25 – 0,35 – 0,5 – 0,7 – 1,0 – 1,4 – 2,0 mm (ratio 1 : √2) (R; consistent with the table above); wide : narrow = 2 : 1 within one line group; one line group per drawing (S).
 Lettering: ISO 3098 nominal sizes 1,8 – 2,5 – 3,5 – 5 – 7 – 10 – 14 – 20 mm (R).
 
-**DIN 4023** — current edition **DIN 4023:2023-02** "Geotechnische Erkundung und Untersuchung – Zeichnerische Darstellung der Ergebnisse von Bohrungen und sonstigen direkten Aufschlüssen", replaces DIN 4023:2006-02; aligned with DIN EN ISO 14688-1, 14689 and 22475-1; rock symbols and colours updated; Tables 1–6 give Kurzformen, Zeichen, Farben; DIN 6164 colour codes in an informative annex (V, Baunormenlexikon abstract): https://www.baunormenlexikon.de/norm/din-4023/766114db-c24f-4bcd-b2e0-fcd8ca6ac252
-Motifs and colours below: **S** — legend sheet "Kurzzeichen, Zeichen und Farbkennzeichen für Bodenarten nach DIN 4022 Teil 1 und DIN 4023" (CDM Smith 2019, federal waterway planning documents; i.e. conventions of the 2006 edition): https://www.gdws.wsv.bund.de/SharedDocs/Downloads/DE/Planfeststellungsverfahren/700_Wehr_Neue_Muhle/Beilage_13/Anlagen_1-3/Anlage_3-1.pdf?__blob=publicationFile&v=2 . Colour names and DIN 6164 codes from a search snippet (source page not opened).
+**DIN 4023**: current edition **DIN 4023:2023-02** "Geotechnische Erkundung und Untersuchung – Zeichnerische Darstellung der Ergebnisse von Bohrungen und sonstigen direkten Aufschlüssen", replaces DIN 4023:2006-02; aligned with DIN EN ISO 14688-1, 14689 and 22475-1; rock symbols and colours updated; Tables 1–6 give Kurzformen, Zeichen, Farben; DIN 6164 colour codes in an informative annex (V, Baunormenlexikon abstract): https://www.baunormenlexikon.de/norm/din-4023/766114db-c24f-4bcd-b2e0-fcd8ca6ac252
+Motifs and colours below: **S**: legend sheet "Kurzzeichen, Zeichen und Farbkennzeichen für Bodenarten nach DIN 4022 Teil 1 und DIN 4023" (CDM Smith 2019, federal waterway planning documents; i.e. conventions of the 2006 edition): https://www.gdws.wsv.bund.de/SharedDocs/Downloads/DE/Planfeststellungsverfahren/700_Wehr_Neue_Muhle/Beilage_13/Anlagen_1-3/Anlage_3-1.pdf?__blob=publicationFile&v=2 . Colour names and DIN 6164 codes from a search snippet (source page not opened).
 
-| Bodenart | Kurzzeichen | Motif (as drawn in the legend) | Colour name (code) — as rendered |
+| Bodenart | Kurzzeichen | Motif (as drawn in the legend) | Colour name (code), as rendered |
 |---|---|---|---|
 | Steine | X | small lying ovals | pale yellow |
-| Kies | G (gG, mG, fG) | open circles, size by grain class; coarse gravel with centre dot | **gelb** (2:6:1) — pale yellow |
-| Sand | S (gS, mS, fS) | dots, size by grain class | **orange** (6:6:2) — light orange |
-| Schluff | U | small paired wedge/triangle marks in rows | **oliv** (1:4:5) — rendered light green |
-| Ton | T | broken horizontal dashes | **violett** (14:5:4) — light violet |
-| Torf, Humus | H | short thick horizontal dashes | **dunkelbraun** — mid brown |
-| Mudde, Faulschlamm | F (older sheets: M) | dashes with small marks | **helllila** — pink |
-| Mutterboden (2023: Oberboden) | Mu | letters "Mu" scattered | **gelblichbraun** (4:5:3) — light peach |
+| Kies | G (gG, mG, fG) | open circles, size by grain class; coarse gravel with centre dot | **gelb** (2:6:1), pale yellow |
+| Sand | S (gS, mS, fS) | dots, size by grain class | **orange** (6:6:2), light orange |
+| Schluff | U | small paired wedge/triangle marks in rows | **oliv** (1:4:5), rendered light green |
+| Ton | T | broken horizontal dashes | **violett** (14:5:4), light violet |
+| Torf, Humus | H | short thick horizontal dashes | **dunkelbraun**: mid brown |
+| Mudde, Faulschlamm | F (older sheets: M) | dashes with small marks | **helllila**: pink |
+| Mutterboden (2023: Oberboden) | Mu | letters "Mu" scattered | **gelblichbraun** (4:5:3), light peach |
 | Auffüllung | A | letters "A" scattered | white |
 | Geschiebelehm / Geschiebemergel | Lg / Mg | diagonal lines with small circles (Mg with extra bar marks) | grey / pale blue-violet |
-| Kohle; Asphalt; Beton | Bk; asp; zbt | black bars on brown; blank; diagonal hatch | — |
+| Kohle; Asphalt; Beton | Bk; asp; zbt | black bars on brown; blank; diagonal hatch | n/a |
 | Fels | Z | rock-type specific (changed in 2023) | not verified |
 
 All rows S.
 
 **DIN 18915** (Bodenarbeiten): DIN 18920:2014-07 refers to "Bodengruppe 2 oder 3 nach DIN 18915" for fill in root zones (V). Current edition and soil-group table: R (2018-06), not verified.
 
-**DIN EN ISO 13567** (CAD layers) — S (Wikipedia; standard not opened): ISO 13567-1:2017 (overview and principles) and ISO 13567-2:2017 (concepts, format and codes for construction documentation). Layer names are built from fixed-length fields — mandatory: agent responsible (2 characters), element (6), presentation (2); optional: **status (1)**, sector (4), phase (1), projection (1), scale (1), work package (2), user-defined. Status codes: **N** new, **E** existing to remain, **R** to be removed, **T** temporary, **O** to be moved – original position, **F** to be moved – final position. The status field is the CAD counterpart of the status colours in B7. https://en.wikipedia.org/wiki/ISO_13567
+**DIN EN ISO 13567** (CAD layers), S (Wikipedia; standard not opened): ISO 13567-1:2017 (overview and principles) and ISO 13567-2:2017 (concepts, format and codes for construction documentation). Layer names are built from fixed-length fields, mandatory: agent responsible (2 characters), element (6), presentation (2); optional: **status (1)**, sector (4), phase (1), projection (1), scale (1), work package (2), user-defined. Status codes: **N** new, **E** existing to remain, **R** to be removed, **T** temporary, **O** to be moved – original position, **F** to be moved – final position. The status field is the CAD counterpart of the status colours in B7. https://en.wikipedia.org/wiki/ISO_13567
 
-**ISO 7518 / DIN ISO 7518** — DIN ISO 7518:1986-11 "Zeichnungen für das Bauwesen; Vereinfachte Darstellung von Abriß und Wiederaufbau; identisch mit ISO 7518, Ausgabe 1983", 4 pp. (V existence, DIN Media catalogue via search; current status not checked). ISO 11091 (3.9) refers to it for removal. Content **R**: existing parts to be retained = thin continuous outline; parts to be demolished = outline marked with crosses (×); new parts = thick outline or hatch. The ×-on-outline motif is the one used by the Bavarian BauVorlV for "zu beseitigen" (V, below).
+**ISO 7518 / DIN ISO 7518**: DIN ISO 7518:1986-11 "Zeichnungen für das Bauwesen; Vereinfachte Darstellung von Abriß und Wiederaufbau; identisch mit ISO 7518, Ausgabe 1983", 4 pp. (V existence, DIN Media catalogue via search; current status not checked). ISO 11091 (3.9) refers to it for removal. Content **R**: existing parts to be retained = thin continuous outline; parts to be demolished = outline marked with crosses (×); new parts = thick outline or hatch. The ×-on-outline motif is the one used by the Bavarian BauVorlV for "zu beseitigen" (V, below).
 
 ### B7. Status colours Bestand / Neubau / Abbruch
 
-**Bavaria: Bauvorlagenverordnung (BauVorlV) vom 10.11.2007 (GVBl. S. 792, BayRS 2132-1-2-B), Anlage 1 "Zeichen und Farben für Bauvorlagen" (zu § 7 Abs. 5 und § 8 Abs. 4)** — **V** (official image of the Anlage, text status "gültig ab 01.01.2025"): https://www.gesetze-bayern.de/Content/Document/BayBauVorlV2008-ANL_1 . § 8 Abs. 1: Bauzeichnungen in scale 1:100; § 8 Abs. 4: the signs **or** the colours of Anlage 1 are to be used (V: https://www.gesetze-bayern.de/Content/Document/BayBauVorlV2008-8).
+**Bavaria: Bauvorlagenverordnung (BauVorlV) vom 10.11.2007 (GVBl. S. 792, BayRS 2132-1-2-B), Anlage 1 "Zeichen und Farben für Bauvorlagen" (zu § 7 Abs. 5 und § 8 Abs. 4)**: **V** (official image of the Anlage, text status "gültig ab 01.01.2025"): https://www.gesetze-bayern.de/Content/Document/BayBauVorlV2008-ANL_1 . § 8 Abs. 1: Bauzeichnungen in scale 1:100; § 8 Abs. 4: the signs **or** the colours of Anlage 1 are to be used (V: https://www.gesetze-bayern.de/Content/Document/BayBauVorlV2008-8).
 
 | Nr. | Gegenstand | Zeichen (black-and-white sign) | Farbe |
 |---|---|---|---|
@@ -512,9 +512,9 @@ All rows S.
 | 4 | zu beseitigende bauliche Anlagen oder Bauteile (to be removed) | plain outline with × marks on the outline | **Gelb** |
 | 5 | Flächen, auf denen Abstandsflächen nach Art. 6 Abs. 2 Satz 3 BayBO übernommen sind | open diagonal hatch (rising), no frame | **Braun** |
 
-All rows V. Colours are named by word only — no RAL/RGB values are prescribed. The same triad grau / rot / gelb is used in other Länder (R, not checked Land by Land).
+All rows V. Colours are named by word only, no RAL/RGB values are prescribed. The same triad grau / rot / gelb is used in other Länder (R, not checked Land by Land).
 
-**Trees in Baumbestandsplan / Freiflächengestaltungsplan** — no codified colour standard exists. V (bdla brochure 2022, pp. 8, 11): existing trees are recorded with number, species, height, Stammumfang, Kronendurchmesser; trees to be retained are to be "highlighted" with tree number, reference to the Baumliste and protection measures (Schutzzaun, Stamm- und Wurzelschutz); trees to be felled are to be "marked" with number, reference and a short reason (abbruchbedingt / baubedingt / zustandsbedingt); new trees and shrubs with name, size and quantity; the plan is drawn at 1:100 (1:200 / 1:500 for large sites) and "geeignete Planzeichen in Anlehnung an die Vorgaben zu den Bauzeichnungen nach der Bauvorlagenverordnung des jeweiligen Bundeslandes" are to be used.
+**Trees in Baumbestandsplan / Freiflächengestaltungsplan**: no codified colour standard exists. V (bdla brochure 2022, pp. 8, 11): existing trees are recorded with number, species, height, Stammumfang, Kronendurchmesser; trees to be retained are to be "highlighted" with tree number, reference to the Baumliste and protection measures (Schutzzaun, Stamm- und Wurzelschutz); trees to be felled are to be "marked" with number, reference and a short reason (abbruchbedingt / baubedingt / zustandsbedingt); new trees and shrubs with name, size and quantity; the plan is drawn at 1:100 (1:200 / 1:500 for large sites) and "geeignete Planzeichen in Anlehnung an die Vorgaben zu den Bauzeichnungen nach der Bauvorlagenverordnung des jeweiligen Bundeslandes" are to be used.
 Common office practice (R): retain = green or black crown circle with stem dot; fell = red or yellow crown circle, crossed out or dashed; new = thick circle with centre cross, often red or dark green.
 Defensible derivation for the library: ISO 11091 line semantics + BauVorlV colour triad (see Implications).
 
@@ -534,7 +534,7 @@ Geometry for the library: `root_zone = buffer(crown_polygon, 1.5 m)` (columnar h
 
 ### B9. Line, colour and label conventions in German plans
 
-**Planzeichenverordnung (PlanZV)** of 18.12.1990, last amended by Art. 6 of the Act of 12.08.2025 (BGBl. 2025 I Nr. 189) — V: https://www.gesetze-im-internet.de/planzv_90/BJNR000580991.html . § 2: the Planzeichen of the Anlage are to be used, in colour or black-and-white; lines may be coloured; additional signs are allowed if explained; colour tone, line weight and density must leave the base map readable.
+**Planzeichenverordnung (PlanZV)** of 18.12.1990, last amended by Art. 6 of the Act of 12.08.2025 (BGBl. 2025 I Nr. 189), V: https://www.gesetze-im-internet.de/planzv_90/BJNR000580991.html . § 2: the Planzeichen of the Anlage are to be used, in colour or black-and-white; lines may be coloured; additional signs are allowed if explained; colour tone, line weight and density must leave the base map readable.
 
 Colour words in the Anlage (V, two independent text extractions of https://www.gesetze-im-internet.de/planzv_90/anlage.html ; the signs themselves are images):
 
@@ -566,17 +566,17 @@ Other conventions
 
 | Guideline | Title | Edition / status | Mark | Source |
 |---|---|---|---|---|
-| VDI 3787 Blatt 1 (old) | Klima- und Lufthygienekarten für Städte und Regionen | 2015-09, 54 pp. — **withdrawn**, replaced by VDI 3787 Blatt 1:2026-10 | V | https://www.dinmedia.de/en/technical-rule/vdi-3787-blatt-1/231797573 |
+| VDI 3787 Blatt 1 (old) | Klima- und Lufthygienekarten für Städte und Regionen | 2015-09, 54 pp., **withdrawn**, replaced by VDI 3787 Blatt 1:2026-10 | V | https://www.dinmedia.de/en/technical-rule/vdi-3787-blatt-1/231797573 |
 | **VDI 3787 Blatt 1 (new)** | Umweltmeteorologie – **Klima in der räumlichen Planung** | **2026-10** (issue date 01.10.2026), 65 pp., DE/EN; replaces Blatt 1:2015-09 **and** Blatt 9:2004-12; draft objection deadline was 31.01.2025 | V | https://www.vdi.de/richtlinien/details/vdi-3787-blatt-1-umweltmeteorologie-klima-in-der-raeumlichen-planung |
 | VDI 3787 Blatt 2 | Methoden zur human-biometeorologischen Bewertung der thermischen Komponente des Klimas | 2022-06 | V | https://www.umweltbundesamt.de/themen/klima-energie/klimafolgen-anpassung/anpassung-an-den-klimawandel/anpassung-auf-kommunaler-ebene/normen-technische-regeln-richtlinien-zur-anpassung |
 | VDI 3787 Blatt 4 / Blatt 8 | Wind in built-up areas / Stadtentwicklung im Klimawandel (greening, ventilation, water management, technical measures) | 2020-12 / 2020-09 | V | same |
 | VDI 3785 Blatt 1 | Methodik und Ergebnisdarstellung von Untersuchungen zum planungsrelevanten Stadtklima | 2008-12 | V | same |
 | VDI-EE 3787 Blatt 13.1 | Hitzeaktionsplanung | 2025-04 | V | same |
-| **VDI 3787 Blatt 12** | **Visualisierung klimatischer Analysen und Ergebnisse** — is to standardise presentation (scales, colours) for 2D maps and 4D animations | **Projekt**, possible publication 2027-03 | V | https://www.vdi.de/mitgliedschaft/vdi-richtlinien/details/vdi-3787-blatt-12-umweltmeteorologie-visualisierung-klimatischer-analysen-und-ergebnisse |
+| **VDI 3787 Blatt 12** | **Visualisierung klimatischer Analysen und Ergebnisse**: is to standardise presentation (scales, colours) for 2D maps and 4D animations | **Projekt**, possible publication 2027-03 | V | https://www.vdi.de/mitgliedschaft/vdi-richtlinien/details/vdi-3787-blatt-12-umweltmeteorologie-visualisierung-klimatischer-analysen-und-ergebnisse |
 
 So there is **no published numeric colour standard** for climate maps yet; Blatt 12 is where one is being prepared. The content of the new Blatt 1 (2026-10) could not be read.
 
-**Klimatope** (microclimatically fairly homogeneous units named after dominant land use or building type) — V: Klimaatlas Region Stuttgart (2008), pp. 148–151, and Städtebauliche Klimafibel ch. 5.7, both stating that signatures and symbols "entsprechen weitgehend der VDI-Richtlinie 3787 Blatt 1".
+**Klimatope** (microclimatically fairly homogeneous units named after dominant land use or building type), V: Klimaatlas Region Stuttgart (2008), pp. 148–151, and Städtebauliche Klimafibel ch. 5.7, both stating that signatures and symbols "entsprechen weitgehend der VDI-Richtlinie 3787 Blatt 1".
 https://www.region-stuttgart.org/fileadmin/Verband_Region_Stuttgart/Dokumentenshop/10_05_Klimaatlas/klimaatlas_148-154_klimaanalyse.pdf ; https://www.staedtebauliche-klimafibel.de/?p=60&p2=5.7
 
 | Klimatop | Characteristics (shortened) | Legend colour in the Klimaatlas Region Stuttgart (sampled from the PDF legend swatches; overview map 6.1 / sheet map 6.2) |
@@ -593,11 +593,11 @@ https://www.region-stuttgart.org/fileadmin/Verband_Region_Stuttgart/Dokumentensh
 | Industrie-Klimatop | large sealed areas, much higher emissions, heat island also at night | dark red `#a80000` |
 | Bahnanlagen-Klimatop | strong daytime heating, rapid night cooling, wind-open; mapped from about 50 m width | brown diagonal hatch `#a87000` on a light ground |
 
-Characteristics V. Colours: **V for this atlas** (values sampled from the vector legend, quantised to steps of 4, i.e. ±2 per channel; they look like default GIS palette colours) — they are an example of the VDI-style colour logic, **not** normative VDI values.
+Characteristics V. Colours: **V for this atlas** (values sampled from the vector legend, quantised to steps of 4, i.e. ±2 per channel; they look like default GIS palette colours), they are an example of the VDI-style colour logic, **not** normative VDI values.
 
 Other map elements of the Stuttgart Klimaanalysekarte (V, legend): Kaltluftproduktionsgebiete and Kaltluftsammelgebiete as blue diagonal hatches in opposite directions; Kaltluftstau as thick blue line; Berg-/Talwindsystem and Hangabwinde as blue arrows (large/small); Luftleitbahn unbelastet = light grey arrow, belastet = black arrow; roads in three traffic-load classes as grey bands of different width; pictograms for commercial and domestic-heating emissions; wind roses. Klimatop boundaries are not parcel-sharp (tolerance up to 100 m). Planungshinweiskarte categories there: open spaces with significant / minor climatic activity, built-up areas with minor / significant climate-relevant function, areas needing remediation (V, Klimafibel).
 
-**Operational Klimatop classification (LfU Rheinland-Pfalz, Klimatopkarte; "nach VDI 3787 Blatt 1", style "lehnt sich an die VDI 3787 Blatt 1 an")** — V: https://www.klimawandel.rlp.de/Kartenwerke_Klimaanpassung/data/Download/Dokumentation-Klimatopkarte_LfU_RLP.pdf
+**Operational Klimatop classification (LfU Rheinland-Pfalz, Klimatopkarte; "nach VDI 3787 Blatt 1", style "lehnt sich an die VDI 3787 Blatt 1 an")**: V: https://www.klimawandel.rlp.de/Kartenwerke_Klimaanpassung/data/Download/Dokumentation-Klimatopkarte_LfU_RLP.pdf
 
 | Klasse | Rule (ATKIS land use + mean Versiegelungsgrad + mean building height from LoD1) |
 |---|---|
@@ -610,7 +610,7 @@ Other map elements of the Stuttgart Klimaanalysekarte (V, legend): Kaltluftprodu
 | 9 / 10 Gewerbe-, Industrieklima offen / dicht | Versiegelung < 70 % / ≥ 70 %; squares, airfields, ports and unvegetated waste land → class 9 |
 | 11 Bahnverkehr; 12 Straßenverkehr | from ATKIS |
 
-The data set (GeoPackage with embedded QGIS style, CC BY 4.0) contains a QML file with the agency's colours: https://www.klimawandel.rlp.de/Kartenwerke_Klimaanpassung/ (ZIP not opened — too large for the fetch tool). NRW uses the same ten classes (S, open.nrw metadata).
+The data set (GeoPackage with embedded QGIS style, CC BY 4.0) contains a QML file with the agency's colours: https://www.klimawandel.rlp.de/Kartenwerke_Klimaanpassung/ (ZIP not opened, too large for the fetch tool). NRW uses the same ten classes (S, open.nrw metadata).
 
 **Thermal indices**
 
@@ -618,29 +618,29 @@ The data set (GeoPackage with embedded QGIS style, CC BY 4.0) contains a QML fil
 |---|---|---|---|
 | PET (Matzarakis & Mayer 1996; used in VDI 3787 Blatt 2) | class limits 4 / 8 / 13 / 18 / 23 / 29 / 35 / 41 °C; heat side: 23–29 slight (schwache), 29–35 moderate (mäßige), 35–41 strong (starke), > 41 extreme heat stress (extreme Wärmebelastung); 18–23 no thermal stress | S (search snippets of papers reproducing the table) | e.g. https://link.springer.com/chapter/10.1007/978-1-4020-6877-5_10 |
 | UTCI | > 46 extreme; 38–46 very strong; 32–38 strong; 26–32 moderate heat stress; 9–26 no thermal stress; 0–9 slight; −13–0 moderate; −27 to −13 strong; −40 to −27 very strong; < −40 extreme cold stress | V | https://thermofeel.readthedocs.io/en/latest/guide/utci.html ; https://climate-adapt.eea.europa.eu/en/metadata/indicators/thermal-comfort-indices-universal-thermal-climate-index-1979-2019 |
-| Colours | no standardised colour scale for PET or UTCI classes found in a primary source | — | — |
+| Colours | no standardised colour scale for PET or UTCI classes found in a primary source | n/a | n/a |
 
-**Bavaria: LfU Schutzgutkarte Klima/Luft (state-wide climate analysis for the Landschaftsrahmenplanung)** — V (LfU pages): day indicator PET at 14:00, night indicator air temperature at 04:00; 100 m resolution; three cases (Bestand, schwacher Klimawandel, starker Klimawandel); Klimaanalysekarten combine heat load, cold-air production and flow, air quality; the Planungshinweiskarte rates all settlement areas on a **five-level scale** and green/open spaces by importance; data under CC BY 4.0 as PDF, GeoTIFF, Shape. Class limits and legend colours are in the Abschlussbericht (exceeded the fetch size limit) — not verified.
+**Bavaria: LfU Schutzgutkarte Klima/Luft (state-wide climate analysis for the Landschaftsrahmenplanung)**: V (LfU pages): day indicator PET at 14:00, night indicator air temperature at 04:00; 100 m resolution; three cases (Bestand, schwacher Klimawandel, starker Klimawandel); Klimaanalysekarten combine heat load, cold-air production and flow, air quality; the Planungshinweiskarte rates all settlement areas on a **five-level scale** and green/open spaces by importance; data under CC BY 4.0 as PDF, GeoTIFF, Shape. Class limits and legend colours are in the Abschlussbericht (exceeded the fetch size limit), not verified.
 https://www.lfu.bayern.de/natur/schutzgutkarten/klima_luft/index.htm ; https://www.lfu.bayern.de/download/natur/schutzgutkarten/klimaluft_abschlussbericht.pdf
 
 ### C11. Minimum dimensions for map graphics (Mindestgrößen)
 
-**Could not be verified** (no searches left; the Lexikon der Kartographie entry returned HTTP 403; Wikipedia articles contain no numbers). Recalled textbook values — **R**, from Hake/Grünreich/Meng, *Kartographie* (8th ed. 2002) and the Swiss Society of Cartography guideline on map graphics and generalisation: smallest line width about 0,05–0,08 mm in black and about 0,1 mm in colour; smallest gap between lines about 0,15–0,25 mm; smallest filled square about 0,3 mm, hollow square about 0,5–0,6 mm side length; smallest dot about 0,15–0,25 mm; smallest colour patch about 0,3–0,5 mm², pattern-filled area about 1 mm² or more; smallest lettering about 1,0–1,5 mm height (running labels ≥ 6 pt). On screens these values grow by a factor of roughly 1,5–3 (one CSS pixel ≈ 0,26 mm). Verify before writing them into the style guide.
+**Could not be verified** (no searches left; the Lexikon der Kartographie entry returned HTTP 403; Wikipedia articles contain no numbers). Recalled textbook values, **R**, from Hake/Grünreich/Meng, *Kartographie* (8th ed. 2002) and the Swiss Society of Cartography guideline on map graphics and generalisation: smallest line width about 0,05–0,08 mm in black and about 0,1 mm in colour; smallest gap between lines about 0,15–0,25 mm; smallest filled square about 0,3 mm, hollow square about 0,5–0,6 mm side length; smallest dot about 0,15–0,25 mm; smallest colour patch about 0,3–0,5 mm², pattern-filled area about 1 mm² or more; smallest lettering about 1,0–1,5 mm height (running labels ≥ 6 pt). On screens these values grow by a factor of roughly 1,5–3 (one CSS pixel ≈ 0,26 mm). Verify before writing them into the style guide.
 
 ---
 
 ## Open points (not verified / not retrieved)
 
-1. **DWA-M 102-4 Aufteilungswerte (a/g/v)** per surface and measure — needed for water-balance indicators.
+1. **DWA-M 102-4 Aufteilungswerte (a/g/v)** per surface and measure, needed for water-balance indicators.
 2. **DIN 1986-100 successor**: whether the 2025-06 draft became a standard by 09/2026 and with which coefficients.
 3. **DWA-A 138-1:2024 Tabelle 9** in the original (all values S; sports-surface rows contradict DIN 1986-100).
 4. **Climate colours**: normative Klimatop colours of VDI 3787 Blatt 1 (2015 and 2026 editions), PET/UTCI class colours, LfU Bayern Schutzgutkarte class limits and legend; the RLP QML style file.
-5. **Minimum dimensions for map graphics** — only recalled values.
-6. **Cadastral/survey signs** (ALKIS-Signaturenkatalog, Flurstücksgrenze, spot heights) — not researched.
+5. **Minimum dimensions for map graphics**: only recalled values.
+6. **Cadastral/survey signs** (ALKIS-Signaturenkatalog, Flurstücksgrenze, spot heights), not researched.
 7. **Wording of DIN 18920:2026-06**; ISO life-cycle stage of ISO 11091; whether DIN 1356-1:2024-04 / E 2026-09 prescribe status colours and which hatch table they contain; DIN 4023:2023-02 colour codes and rock symbols; ISO 7518 content; DIN 18915 soil groups.
-8. Seattle current multipliers, Helsinki element weights, Wien GRF, Hamburg — not verified; London UGF only via a secondary reproduction.
-9. Oke (1987/2017) albedo and emissivity tables — recalled only; PALM tables were read through text extraction.
-10. LfU Bayern sealing classes (ten classes) — limits not verified.
+8. Seattle current multipliers, Helsinki element weights, Wien GRF, Hamburg, not verified; London UGF only via a secondary reproduction.
+9. Oke (1987/2017) albedo and emissivity tables, recalled only; PALM tables were read through text extraction.
+10. LfU Bayern sealing classes (ten classes), limits not verified.
 
 ---
 
@@ -664,7 +664,7 @@ https://www.lfu.bayern.de/natur/schutzgutkarten/klima_luft/index.htm ; https://w
 | `status` | `existing` / `proposed` / `to_be_removed` / `protected` (ISO 13567: E / N / R; T, O, F optional) | drives line weight, hatch and colour (section b) |
 | `evidence` | V / S / R per coefficient | carry the marks of this file into the data |
 
-**Filled-in table for generic surface types.** BFF 2021, BFF 1990 and Belagsklasse = V; Cs/Cm and ψm = S; UGF = S; albedo/ε = V (PALM). "—" = no value in the source; do not interpolate.
+**Filled-in table for generic surface types.** BFF 2021, BFF 1990 and Belagsklasse = V; Cs/Cm and ψm = S; UGF = S; albedo/ε = V (PALM). "-" = no value in the source; do not interpolate.
 
 | Element | sealing_class | Belagsklasse Berlin | BFF 2021 (type) | BFF 1990 | Cs / Cm (DIN 1986-100:2016-12) | ψm (DWA-A 138:2005) | UGF London | Albedo / ε (PALM) |
 |---|---|---|---|---|---|---|---|---|
@@ -672,21 +672,21 @@ https://www.lfu.bayern.de/natur/schutzgutkarten/klima_luft/index.htm ; https://w
 | Concrete (Betonfläche) | vollversiegelt | 1 | 0,0 | 0,0 | 1,0 / 0,9 | 0,9 | 0 | 0,30 / 0,98 |
 | Sealed-joint paving (Pflaster mit Fugenverguss / gebundenem Unterbau) | vollversiegelt | 1 | 0,0 | 0,0 | 1,0 / 0,8 | 0,75 | 0 | 0,17 / 0,97 |
 | Open-joint paving laid in sand (Betonstein, Klinker, Naturstein, Platten) | teilversiegelt | 2 (large units) / 3 (Klein-, Mosaikpflaster) | 0,1 (teilversiegelt) | 0,3 | 0,9 / 0,7; joint share > 15 %: 0,7 / 0,6 | 0,5 | 0 | 0,17 / 0,97 (sett 0,93) |
-| Permeable paving (Sickerpflaster, Dränsteine) | teilversiegelt | — | 0,2 (durchlässig) | 0,3 | 0,4 / 0,25 | 0,25 | 0.1 | 0,17 / 0,97 |
-| Grass pavers (Rasengittersteine, Rasenfugenpflaster) | teilversiegelt | 4 | 0,4 (begrünt; 0,1 under high use intensity) | 0,5 (0,3 without closed turf) | 0,4 / 0,2 (frequent traffic); 0,2 / 0,1 (infrequent) | 0,15 | 0.1 | — |
-| Gravel turf (Schotterrasen) | teilversiegelt | 4 | 0,4 (begrünt) | 0,5 | 0,3 / 0,2 | 0,3 | — | — |
-| Water-bound surface (wassergebundene Decke) | teilversiegelt | 4 | 0,1 (teilversiegelt) | 0,3 | 0,9 / 0,7 | — (nearest: fester Kiesbelag 0,6) | 0 | — |
-| Gravel, loose (Kies, Schotter) | teilversiegelt | 4 (Kiesfläche) | 0,2 (durchlässig: Schotter) | 0,3 | 0,3 / 0,2 (loose); 0,7 / 0,6 (fester Kiesbelag) | 0,3 (loose); 0,6 (fest) | — | 0,17 / 0,98 |
-| Wood deck / Holzpflaster | teilversiegelt | — | 0,1 (Holzpflaster); 0,4 only with high joint share and vegetation | 0,3 / 0,5 | — | — | — | 0,17 / 0,94 |
-| Bare soil (offener Boden) | unversiegelt | — | 0,1 only for "offener verdichteter Boden"; loose bare soil is not a BFF type | 0,3 (offener, stark verdichteter Boden) | — | 0,3–0,5 (Böschung, by soil type) | — | 0,08 / 0,94 |
-| Sand (Sandfläche, play sand) | unversiegelt | — | 0,2 (durchlässig: Sandflächen) | 0,3 | — | — | — | — |
-| Lawn (Rasen) | unversiegelt | — | 1,0 (down to 0,5 for pure Zierrasen) | 1,0 | 0,2 / 0,1 (flat); 0,3 / 0,2 (steep) | 0,0–0,1 (flat); 0,1–0,3 (steep) | 0.4 | 0,25 / 0,95 |
-| Meadow (Wiese) | unversiegelt | — | 1,0 | 1,0 | 0,2 / 0,1 | 0,0–0,1 | 1 (species-rich) | 0,18 / 0,97 |
-| Shrubs (Sträucher, Hecken) | unversiegelt | — | 1,0 | 1,0 | 0,2 / 0,1 (as Gärten) | 0,0–0,1 | 0.6 (hedge) / 0.5 (groundcover) | 0,25 (deciduous), 0,23 (evergreen) / 0,97 |
-| Woodland (Gehölz, Wald) | unversiegelt | — | 1,0 | 1,0 | — (use Parkanlagen/Gärten 0,2 / 0,1) | 0,0–0,1 | 1 | 0,17 (deciduous), 0,14 (conifer) / 0,97 |
-| Water | — | — | 0,5 (rain-fed; +0,1 with vegetation) | — | 1,0 / 1,0 (DWA-A 138-1: dauerhaft eingestaute Wasserfläche) | — | 1 (semi-natural) / 0.2 (chlorinated) | 0,06 / 0,99 |
-| Extensive green roof | ueberbaut | — | 0,5 (< 20 cm; +0,1 with retention) | 0,7 | < 10 cm: 0,5 / 0,3; ≥ 10 cm: 0,4 / 0,2; slope > 5°: 0,7 / 0,4 | 0,5 (< 10 cm); 0,3 (≥ 10 cm) | 0.7 (≥ 80 mm, GRO) / 0.3 (sedum mat) | — |
-| Intensive green roof | ueberbaut | — | 0,8 (> 50 cm); semi-intensive 15–50 cm: 0,7 | 0,7 | ≥ 30 cm: 0,2 / 0,1 | 0,3 | 0.8 (≥ 150 mm) | — |
+| Permeable paving (Sickerpflaster, Dränsteine) | teilversiegelt | n/a | 0,2 (durchlässig) | 0,3 | 0,4 / 0,25 | 0,25 | 0.1 | 0,17 / 0,97 |
+| Grass pavers (Rasengittersteine, Rasenfugenpflaster) | teilversiegelt | 4 | 0,4 (begrünt; 0,1 under high use intensity) | 0,5 (0,3 without closed turf) | 0,4 / 0,2 (frequent traffic); 0,2 / 0,1 (infrequent) | 0,15 | 0.1 | n/a |
+| Gravel turf (Schotterrasen) | teilversiegelt | 4 | 0,4 (begrünt) | 0,5 | 0,3 / 0,2 | 0,3 | n/a | n/a |
+| Water-bound surface (wassergebundene Decke) | teilversiegelt | 4 | 0,1 (teilversiegelt) | 0,3 | 0,9 / 0,7 |, (nearest: fester Kiesbelag 0,6) | 0 | n/a |
+| Gravel, loose (Kies, Schotter) | teilversiegelt | 4 (Kiesfläche) | 0,2 (durchlässig: Schotter) | 0,3 | 0,3 / 0,2 (loose); 0,7 / 0,6 (fester Kiesbelag) | 0,3 (loose); 0,6 (fest) | n/a | 0,17 / 0,98 |
+| Wood deck / Holzpflaster | teilversiegelt | n/a | 0,1 (Holzpflaster); 0,4 only with high joint share and vegetation | 0,3 / 0,5 | n/a | n/a | n/a | 0,17 / 0,94 |
+| Bare soil (offener Boden) | unversiegelt | n/a | 0,1 only for "offener verdichteter Boden"; loose bare soil is not a BFF type | 0,3 (offener, stark verdichteter Boden) | n/a | 0,3–0,5 (Böschung, by soil type) | n/a | 0,08 / 0,94 |
+| Sand (Sandfläche, play sand) | unversiegelt | n/a | 0,2 (durchlässig: Sandflächen) | 0,3 | n/a | n/a | n/a | n/a |
+| Lawn (Rasen) | unversiegelt | n/a | 1,0 (down to 0,5 for pure Zierrasen) | 1,0 | 0,2 / 0,1 (flat); 0,3 / 0,2 (steep) | 0,0–0,1 (flat); 0,1–0,3 (steep) | 0.4 | 0,25 / 0,95 |
+| Meadow (Wiese) | unversiegelt | n/a | 1,0 | 1,0 | 0,2 / 0,1 | 0,0–0,1 | 1 (species-rich) | 0,18 / 0,97 |
+| Shrubs (Sträucher, Hecken) | unversiegelt | n/a | 1,0 | 1,0 | 0,2 / 0,1 (as Gärten) | 0,0–0,1 | 0.6 (hedge) / 0.5 (groundcover) | 0,25 (deciduous), 0,23 (evergreen) / 0,97 |
+| Woodland (Gehölz, Wald) | unversiegelt | n/a | 1,0 | 1,0 |, (use Parkanlagen/Gärten 0,2 / 0,1) | 0,0–0,1 | 1 | 0,17 (deciduous), 0,14 (conifer) / 0,97 |
+| Water | n/a | n/a | 0,5 (rain-fed; +0,1 with vegetation) | n/a | 1,0 / 1,0 (DWA-A 138-1: dauerhaft eingestaute Wasserfläche) | n/a | 1 (semi-natural) / 0.2 (chlorinated) | 0,06 / 0,99 |
+| Extensive green roof | ueberbaut | n/a | 0,5 (< 20 cm; +0,1 with retention) | 0,7 | < 10 cm: 0,5 / 0,3; ≥ 10 cm: 0,4 / 0,2; slope > 5°: 0,7 / 0,4 | 0,5 (< 10 cm); 0,3 (≥ 10 cm) | 0.7 (≥ 80 mm, GRO) / 0.3 (sedum mat) | n/a |
+| Intensive green roof | ueberbaut | n/a | 0,8 (> 50 cm); semi-intensive 15–50 cm: 0,7 | 0,7 | ≥ 30 cm: 0,2 / 0,1 | 0,3 | 0.8 (≥ 150 mm) | n/a |
 
 Design consequences
 - One texture is not one coefficient: grass pavers, gravel and green roofs need **variants** (use intensity, build-up depth, slope). Model these as element parameters, not as separate colours.
@@ -701,7 +701,7 @@ Design consequences
 3. **Status colours (BauVorlV Bayern, Anlage 1)**: Bestand **grau**, geplant **rot**, zu beseitigen **gelb**, Grundstücksgrenze **violett** (long dashes), übernommene Abstandsflächen **braun**. Provide pastel-compatible but unmistakable versions of exactly these hues, reserve them for status, and always pair the colour with the black-and-white sign (single hatch / cross-hatch / × on outline), because the regulation allows signs *or* colours.
 4. **Tree symbols**: existing = thin crown circle to scale + thick stem circle to scale (diameter at 1 m); proposed = thick crown circle + thin centre cross, not to scale; tree pit = thick square with dashed diagonals; protected = chain-line frame; felling = removal hatch or × plus yellow; every tree carries its number (Baumliste). Add the computed root-protection buffer (Kronentraufe + 1,50 m; columnar + 5,00 m) as a thin chain line.
 5. **Vegetation outlines**: shrub and woodland masses with irregular looped outline (thin = existing, thick = proposed); hedges as band (existing thin angular, proposed thick wavy, optionally with plant dots); grass as light random stipple; plant beds as dense regular dots; single shrubs/perennials as dots linked by thin lines to their label; climbers as dot with cross.
-6. **Hard surfaces**: the ISO 11091 paving patterns are "representational only" — small units = close parallel lines, large units = square grid, cobbles = small irregular rounded outlines. That leaves room for hand-drawn textures as long as the three families stay distinguishable.
+6. **Hard surfaces**: the ISO 11091 paving patterns are "representational only", small units = close parallel lines, large units = square grid, cobbles = small irregular rounded outlines. That leaves room for hand-drawn textures as long as the three families stay distinguishable.
 7. **Soil, gravel, sand motifs (DIN 4023 tradition)**: gravel = open circles on yellow; sand = dots on orange; silt = small paired wedges on olive/green; clay = broken horizontal dashes on violet; peat/humus = short thick dashes on brown; topsoil = "Mu" on yellowish brown; fill = "A". Surface textures for Kies, Sand, Schotter, wassergebundene Decke should reuse circles vs. dots and the yellow / orange hue families so that plans and sections read alike.
 8. **Planning-law colours (PlanZV)**: Baulinie red, Baugrenze blue, traffic areas goldocker, green areas mid green, water mid blue, agriculture yellow-green, forest blue-green, nature-conservation measures dark green, plan boundary dark grey. Keep the landscape palette inside these families and keep pure red and blue lines free for Baulinie/Baugrenze overlays.
 9. **Climate layers**: use the Klimatop class names as vocabulary and the hue order water blue → open land pale mint → green → apricot → orange → light red → red → dark red / magenta for commercial and industrial areas, railways hatched; cold-air areas as blue hatches, air-flow as arrows (blue = cold air, grey = unloaded, black = loaded ventilation path). Classify PET at 23/29/35/41 °C and UTCI at 26/32/38/46 °C. Treat all climate colours as house style until VDI 3787 Blatt 12 appears.

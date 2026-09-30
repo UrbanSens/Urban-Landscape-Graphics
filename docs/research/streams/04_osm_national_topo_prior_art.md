@@ -1,4 +1,4 @@
-# Stream 04 — OpenStreetMap tagging, large-scale national topographic models, prior-art habitat symbology
+# Stream 04: OpenStreetMap tagging, large-scale national topographic models, prior-art habitat symbology
 
 Research date: 2026-09-30 · Scope: OSM tags and OSM Carto colours; NL BGT/IMGeo; CH amtliche Vermessung; AT DKM; UK habitat/metric systems; other European large-scale conventions · Purpose: crosswalks and colour lessons for the "Urban Landscape Graphics" element catalog (house style "UrbanSens – Ecological Vector Style").
 
@@ -39,7 +39,7 @@ Research date: 2026-09-30 · Scope: OSM tags and OSM Carto colours; NL BGT/IMGeo
 | CH drafting instructions | Plan für das Grundbuch: Weisung 9 Mar 2007 (Stand 1 Feb 2014) · BP-AV: Weisung 22 Apr 2009 · Basisplan for DMAV 1.0: Weisung 1 Aug 2024 | V-img | URLs in section 4 |
 | AT cadastre | BANU-V, BGBl. II Nr. 116/2010 (consolidated version in force since 07.05.2012) · DKM SHP interface v2.9 (04.12.2024) · DXF v2.6 (16.12.2024) · parcel CSV v1.2 (29.01.2025) | V / V-img | URLs in section 5 |
 | UK statutory biodiversity metric | calculation tool **v1.0.4** (released 3 July 2025 according to the workbook's "Version History" sheet); user guide "June 2026" (gov.uk page last updated 2 June 2026); small sites metric tool 1.2.3, SSM user guide July 2025; condition sheets July 2025 | V | https://www.gov.uk/government/publications/statutory-biodiversity-metric-tools-and-guides |
-| UKHab | v2.01 (July 2023) is the stable release in the community tooling; ukhab.org documentation page states v2.1 was released 7 July 2026, while its home page still speaks of a consultation — **conflicting, see Open points** | V (both pages) | https://www.ukhab.org/ukhab-documentation/ · https://www.ukhab.org/ |
+| UKHab | v2.01 (July 2023) is the stable release in the community tooling; ukhab.org documentation page states v2.1 was released 7 July 2026, while its home page still speaks of a consultation, **conflicting, see Open points** | V (both pages) | https://www.ukhab.org/ukhab-documentation/ · https://www.ukhab.org/ |
 | OS MasterMap Topography stylesheets | "Schema version 9" folder, colour workbook `OSMM-Topography-Layer-Colour-Values.xlsx` | V | https://github.com/OrdnanceSurvey/OSMM-Topography-Layer-stylesheets |
 | GeoDanmark | Specifikation 6.0.2 (11.07.2024); 7.0 preliminary / in consultation | V | https://www.geodanmark.dk/anvend-geodata/specifikation/ |
 | Hamburg biotope key | 7th revised edition, March 2025 | V-img | section 6.6 |
@@ -51,7 +51,7 @@ Research date: 2026-09-30 · Scope: OSM tags and OSM Carto colours; NL BGT/IMGeo
 
 All rows in 1.1–1.15 are **V** (OSM wiki page named in each heading, fetched this session) unless a row says otherwise. Meanings are the wiki descriptions, shortened faithfully. "Carto" = rendered by OSM Carto v6.1 according to `style/landcover.mss` (section 2).
 
-### 1.1 `landuse=*` — https://wiki.openstreetmap.org/wiki/Key:landuse
+### 1.1 `landuse=*`: https://wiki.openstreetmap.org/wiki/Key:landuse
 
 | Tag | Wiki meaning | Note for the library |
 |---|---|---|
@@ -86,7 +86,7 @@ All rows in 1.1–1.15 are **V** (OSM wiki page named in each heading, fetched t
 | `landuse=depot`, `garages`, `port` | depot for vehicles · one-level garage boxes · coastal industrial area | built context |
 | `landuse=residential`, `commercial`, `retail`, `industrial`, `education`, `institutional` (ambiguous), `fairground`, `religious`, `military`, `winter_sports`, `conservation` (deprecated) | zone-type land uses | not surface elements; use as context/background only |
 
-### 1.2 `natural=*` — https://wiki.openstreetmap.org/wiki/Key:natural
+### 1.2 `natural=*`: https://wiki.openstreetmap.org/wiki/Key:natural
 
 | Tag | Wiki meaning | Note |
 |---|---|---|
@@ -113,7 +113,7 @@ All rows in 1.1–1.15 are **V** (OSM wiki page named in each heading, fetched t
 | `natural=cliff`, `earth_bank`, `gully`, `ridge`, `arete`, `dune`, `sinkhole`, `cave_entrance` | landform lines/points | line symbols |
 | `natural=glacier`, `bay`, `cape`, `coastline`, `reef`, `shoal`, `strait`, `peninsula`, `isthmus`, `blowhole`, `crevasse`, `blockfield`, `arch`, `fumarole`, `gorge`, `hill`, `peak`, `saddle`, `valley`, `volcano` | remaining documented values | out of urban scope |
 
-### 1.2b `meadow=*` (sub-key of landuse=meadow) — https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dmeadow
+### 1.2b `meadow=*` (sub-key of landuse=meadow): https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dmeadow
 
 | Value | Wiki meaning | Note |
 |---|---|---|
@@ -125,7 +125,7 @@ All rows in 1.1–1.15 are **V** (OSM wiki page named in each heading, fetched t
 | `meadow=meadow_orchard` | both an orchard and a meadow (Streuobstwiese) | meadow orchard |
 | `meadow=wildflower` | "A wildflower meadow. It serves primarily as a habitat for insects and for nature conservation rather than for the production of grass and hay" | **→ wildflower meadow (direct hit for the existing class)** |
 
-### 1.3 `wetland=*` — https://wiki.openstreetmap.org/wiki/Key:wetland
+### 1.3 `wetland=*`: https://wiki.openstreetmap.org/wiki/Key:wetland
 
 | Value | Wiki meaning | Carto pattern |
 |---|---|---|
@@ -141,14 +141,14 @@ All rows in 1.1–1.15 are **V** (OSM wiki page named in each heading, fetched t
 | `tidalflat` | Intertidal sediment deposits | `@mud` fill |
 | `dambo` | Shallow wetland of African plateaus | generic `wetland.png` |
 
-### 1.4 `water=*` (with `natural=water`) — https://wiki.openstreetmap.org/wiki/Key:water
+### 1.4 `water=*` (with `natural=water`): https://wiki.openstreetmap.org/wiki/Key:water
 
 | Group | Values (wiki meaning) |
 |---|---|
 | Natural | `lake` (body of relatively still water) · `river` (water area of a river) · `stream` (water area of a stream) · `oxbow` · `lagoon` · `stream_pool` · `rapids` · `cenote` |
 | Artificial | `pond` (standing water, man-made in most cases, smaller than a lake) · `reservoir` · `basin` (land artificially graded to hold water) · `canal` · `ditch` · `drain` · `lock` · `moat` · `harbour` · `fish_pass` · `reflecting_pool` (shallow ornamental pool in gardens/parks) · `wastewater` (clarifier/settling basin) |
 
-### 1.5 `leisure=*` — https://wiki.openstreetmap.org/wiki/Key:leisure
+### 1.5 `leisure=*`: https://wiki.openstreetmap.org/wiki/Key:leisure
 
 | Tag | Wiki meaning | Note |
 |---|---|---|
@@ -171,11 +171,11 @@ All rows in 1.1–1.15 are **V** (OSM wiki page named in each heading, fetched t
 
 `leisure=pitch` page (https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpitch): `sport=` soccer, basketball, tennis, baseball, cricket, rugby_union, american_football, field_hockey, handball, volleyball, badminton, ice_hockey, table_tennis, equestrian, skateboard, chess, multi; `surface=` artificial_turf, paved, acrylic, sand, concrete, carpet, paving_stones, clay, grass.
 
-### 1.6 `landcover=*` — https://wiki.openstreetmap.org/wiki/Key:landcover
+### 1.6 `landcover=*`: https://wiki.openstreetmap.org/wiki/Key:landcover
 
 Status on the wiki: **"in use"** (not approved; many values flagged "not yet rendered"; the page advises double-tagging trees with `landuse=forest`/`natural=wood` and grass with `natural=grassland`). OSM Carto does not render the key. Usage (taginfo API `key/values?key=landcover`, data 2026-09-29, 248 distinct values): `trees` 292,418 · `mostly_rock` 78,708 · `grass` 69,156 · `scrub` 11,940 · `dry_swamp` 4,353 · `mostly_scree` 4,149 · `fell` 4,079 · `bare_ground` 3,688 · `greenery` 1,345 · `shrubbery` 1,209 · `water` 983 · `grassland` 896 · `gravel` 791 · `sand` 754 · `barren` 657 · `meadow` 584 · `reindeer_lichen` 463 · `bushes` 398 · `flowerbed` 339 · `concrete` 338 · `artificial_turf` 322 · `ground` 282 · `asphalt` 277 · `dirt` 274 · `forest` 200 · `heath` 170 · `hedge` 152 · `flowers` 110 · `woodchips` 108. Values documented on the wiki page: trees, grass, water, gravel, sand ("very rarely used"), hedge, greenery, mostly_rock, scrub, dry_swamp, fell, bare_ground, shrubbery, flowerbed. **Conclusion:** support `landcover=trees|grass|scrub|shrubbery|greenery|flowerbed|gravel|sand|bare_ground|water` as low-priority aliases; do not rely on the key.
 
-### 1.7 `surface=*` — https://wiki.openstreetmap.org/wiki/Key:surface (all documented values) + taginfo counts
+### 1.7 `surface=*`: https://wiki.openstreetmap.org/wiki/Key:surface (all documented values) + taginfo counts
 
 Counts: taginfo API `key/values?key=surface`, data 2026-09-29 (8,539 distinct values in the database; only the documented ones and the most used undocumented ones matter).
 
@@ -229,7 +229,7 @@ Frequent **undocumented** values worth aliasing (taginfo, same call): `stone` 16
 
 Detail keys for paving (https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving_stones, V): `paving_stones:shape` = `square`, `rectangle`, `hexagon`, `zigzag`, `double_t`, `squarish_octagon`, `s-shape`, `irregular` · `paving_stones:pattern` = `stack_bond`, `half_bond`, `quarter_bond`, `herringbone`, `basket_weave`, `tudor`, `linen`, `interleaved`, `random_course` · `paving_stones:direction` (angle), `paving_stones:orientation` (angle, `along`, `across`) · `paving_stones:length`, `paving_stones:width` · `paving_stones:material` (stone, concrete, brick …) · `surface:colour`. Related keys on Key:surface: `smoothness`, `tracktype`, `sidewalk:surface`, `cycleway:surface`, `crossing:surface`.
 
-### 1.8 `barrier=*` — https://wiki.openstreetmap.org/wiki/Key:barrier
+### 1.8 `barrier=*`: https://wiki.openstreetmap.org/wiki/Key:barrier
 
 | Tag | Wiki meaning | Note |
 |---|---|---|
@@ -244,19 +244,19 @@ Detail keys for paving (https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving
 | `barrier=planter` | Plant box preventing large vehicles from passing | point symbol (planter) |
 | `barrier=bollard`, `block`, `gate`, `lift_gate`, `swing_gate`, `sliding_gate`, `wicket_gate`, `kissing_gate`, `hampshire_gate`, `stile`, `horse_stile`, `turnstile`, `full-height_turnstile`, `cycle_barrier`, `motorcycle_barrier`, `cattle_grid`, `entrance`, `height_restrictor`, `kent_carriage_gap`, `toll_booth`, `border_control`, `bump_gate`, `bus_trap`, `coupure`, `debris`, `floating_boom`, `sally_port`, `sliding_beam`, `spikes`, `sump_buster`, `wedge` | access-control node barriers | point symbols (only bollard/gate/planter relevant) |
 
-### 1.9 `waterway=*` — https://wiki.openstreetmap.org/wiki/Key:waterway
+### 1.9 `waterway=*`: https://wiki.openstreetmap.org/wiki/Key:waterway
 
 `river` (wide natural watercourse) · `stream` (too narrow to be a river) · `tidal_channel` · `flowline` · `canal` (artificial open waterway for transport, power, irrigation) · `drain` (artificial, carries superfluous water e.g. storm water) · `ditch` (small artificial waterway for drainage/irrigation) · `pressurised` · `link` · `fairway` · `fish_pass` · `canoe_pass` · `dock` · `boatyard` · `dam` · `weir` · `waterfall` · `rapids` · `lock_gate` · `sluice_gate` · `floodgate` · `debris_screen` · `security_lock` · `check_dam` · `turning_point` · `water_point` · `fuel`.
 
-### 1.10 `man_made=*` (selection) — https://wiki.openstreetmap.org/wiki/Key:man_made
+### 1.10 `man_made=*` (selection): https://wiki.openstreetmap.org/wiki/Key:man_made
 
 `embankment` ("an artificial steep slope") · `dyke` (embankment restricting water) · `pier` ("raised walkway over water, supported by widely spread piles or pillars") · `quay` · `bridge` ("the outline of a bridge") · `breakwater` · `groyne` · `courtyard` ("area usually enclosed by walls or buildings") · `planter` ("a structure for planting flowers or other ornamental plants") · `cutline` · `clearcut` · `heap` · `spoil_heap` · `flagpole` · `street_cabinet` · `manhole` · `utility_pole` · `mast` · `tower` · `chimney` · `surveillance` · `water_tap` · `water_well` · `trough` · `insect_hotel` ("a structure intended to provide shelter for insects") · `nesting_site` · `beehive` · `wildlife_crossing` · `reservoir_covered` · `storage_tank` · `silo` · `pipeline` · `wastewater_plant` · `water_works` · `works`.
 
-### 1.11 `amenity=*` (street furniture / open space) — https://wiki.openstreetmap.org/wiki/Key:amenity
+### 1.11 `amenity=*` (street furniture / open space): https://wiki.openstreetmap.org/wiki/Key:amenity
 
 `bench` · `lounger` · `drinking_water` · `water_point` · `watering_place` · `fountain` ("for cultural/decorational/recreational purposes") · `toilets` · `shower` · `waste_basket` · `waste_disposal` · `recycling` · `grit_bin` · `parking` · `parking_space` · `parking_entrance` · `bicycle_parking` · `bicycle_rental` · `motorcycle_parking` · `charging_station` · `compressed_air` · `marketplace` · `public_bookcase` · `bbq` · `dog_toilet` · `kneipp_water_cure` · `give_box` · `shelter` · `clock` · `telephone` · `post_box` · `hunting_stand` · `grave_yard` ("smaller place of burial, often near a church"). Not amenity: street lamps are `highway=street_lamp`; picnic tables are `leisure=picnic_table`. `amenity=vending_machine`: **R** (not returned by the extraction).
 
-### 1.12 `highway=*` — https://wiki.openstreetmap.org/wiki/Key:highway
+### 1.12 `highway=*`: https://wiki.openstreetmap.org/wiki/Key:highway
 
 | Group | Values |
 |---|---|
@@ -268,7 +268,7 @@ Detail keys for paving (https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving
 
 Line features carry the material in `surface=*` (1.7); polygons of pedestrian areas are `highway=pedestrian` + `area=yes`. (`area:highway=*` for carriageway polygons: **R**.)
 
-### 1.13 `building=*` — https://wiki.openstreetmap.org/wiki/Key:building
+### 1.13 `building=*`: https://wiki.openstreetmap.org/wiki/Key:building
 
 Accommodation: `apartments`, `barracks`, `bungalow`, `cabin`, `detached`, `annexe`, `dormitory`, `farm`, `ger`, `hotel`, `house`, `houseboat`, `residential`, `semidetached_house`, `static_caravan`, `stilt_house`, `terrace`, `tree_house`, `trullo` · Commercial: `commercial`, `industrial`, `kiosk`, `office`, `retail`, `supermarket`, `warehouse` · Religious: `religious`, `cathedral`, `chapel`, `church`, `kingdom_hall`, `monastery`, `mosque`, `presbytery`, `shrine`, `synagogue`, `temple` · Civic: `bakehouse`, `bridge`, `civic`, `clock_tower`, `college`, `fire_station`, `government`, `gatehouse`, `hospital`, `kindergarten`, `museum`, `public`, `school`, `toilets`, `train_station`, `transportation`, `university` · Agricultural: `barn`, `conservatory`, `cowshed`, `farm_auxiliary`, `greenhouse`, `slurry_tank`, `stable`, `sty`, `livestock` · Sports: `grandstand`, `pavilion`, `riding_hall`, `sports_hall`, `sports_centre`, `stadium` · Storage: `allotment_house`, `boathouse`, `hangar`, `hut`, `shed` · Cars: `carport`, `garage`, `garages`, `parking` · Technical: `digester`, `service`, `tech_cab`, `transformer_tower`, `water_tower`, `storage_tank`, `silo` · Other: `beach_hut`, `bunker`, `castle`, `construction`, `container`, `guardhouse`, `military`, `outbuilding`, `pagoda`, `quonset_hut`, `roof` (roof with open sides), `ruins`, `ship`, `tent`, `tower`, `triumphal_arch`, `windmill`, `yes`. For the catalog three renderings suffice: building (generic), glasshouse (`greenhouse`, `conservatory`), open roof/shelter (`roof`, `carport`).
 
@@ -283,7 +283,7 @@ Accommodation: `apartments`, `barracks`, `bungalow`, `cabin`, `detached`, `annex
 
 Rule for the library: green roof if `green_roof=yes` OR `roof:material ∈ {grass, plants, roof_greening}` OR `leisure=garden`+`garden:type=roof_garden`; `roof:material=gravel` alone is *not* sufficient.
 
-### 1.15 Tree attributes — https://wiki.openstreetmap.org/wiki/Tag:natural%3Dtree (+ key pages)
+### 1.15 Tree attributes: https://wiki.openstreetmap.org/wiki/Tag:natural%3Dtree (+ key pages)
 
 | Key | Wiki definition / values | St. |
 |---|---|---|
@@ -357,7 +357,7 @@ Files: `style/landcover.mss`, `style/style.mss`, `style/water.mss`, `style/water
 
 **Complete list of area/line features styled in `landcover.mss`** (V, second targeted read of the file): leisure_swimming_pool, landuse_recreation_ground, leisure_playground, leisure_fitness_station, tourism_camp_site, tourism_caravan_site, tourism_picnic_site, landuse_quarry, landuse_vineyard, landuse_orchard, leisure_garden, landuse_flowerbed, landuse_plant_nursery, landuse_cemetery, amenity_grave_yard, amenity_place_of_worship, landuse_religious, amenity_prison, landuse_residential, landuse_garages, leisure_park, leisure_ice_rink, leisure_dog_park, leisure_golf_course, leisure_miniature_golf, landuse_allotments, landuse_forest, natural_wood, landuse_farmyard, landuse_farmland, landuse_greenhouse_horticulture, natural_grassland, landuse_meadow, landuse_grass, landuse_village_green, landuse_retail, shop_mall, amenity_marketplace, landuse_industrial, man_made_works, man_made_wastewater_plant, man_made_water_works, landuse_railway, power_plant, power_generator, power_substation, landuse_commercial, landuse_brownfield, landuse_construction, landuse_landfill, landuse_salt_pond, natural_bare_rock, natural_scree, natural_shingle, natural_sand, natural_heath, natural_scrub, wetland_swamp, wetland_mangrove, wetland_reedbed, wetland_bog, wetland_string_bog, wetland_wet_meadow, wetland_fen, wetland_saltmarsh, wetland_marsh, amenity_hospital, amenity_clinic, amenity_university, amenity_college, amenity_school, amenity_kindergarten, amenity_community_centre, amenity_social_facility, amenity_arts_centre, amenity_fire_station, amenity_police, amenity_parking, amenity_bicycle_parking, amenity_motorcycle_parking, amenity_taxi, amenity_parking_space, aeroway_apron, aeroway_aerodrome, amenity_ferry_terminal, amenity_bus_station, natural_beach, natural_shoal, highway_services, highway_rest_area, railway_station, leisure_sports_centre, leisure_water_park, leisure_stadium, leisure_track, leisure_pitch, historic_citywalls, barrier_city_wall, barrier_hedge, natural_arete, natural_cliff, natural_ridge, man_made_embankment (plus `natural=mud` and the `wetland=*` patterns in the area-symbol layer).
 
-**Not styled in `landcover.mss`** (V: the strings do not occur in the file): `natural=shrubbery`, `landuse=greenery`, any `landcover=*`; also absent from the list above: `landuse=greenfield`, `logging`, `education`, `animal_keeping`, `aquaculture`, `natural=fell/moor/tundra/dune`, `leisure=common`, and `surface=*` on areas. The default OSM map therefore shows nothing for planted shrub beds and generic greenery — a gap the library can fill.
+**Not styled in `landcover.mss`** (V: the strings do not occur in the file): `natural=shrubbery`, `landuse=greenery`, any `landcover=*`; also absent from the list above: `landuse=greenfield`, `logging`, `education`, `animal_keeping`, `aquaculture`, `natural=fell/moor/tundra/dune`, `leisure=common`, and `surface=*` on areas. The default OSM map therefore shows nothing for planted shrub beds and generic greenery, a gap the library can fill.
 
 ### 2.2 Pattern and symbol images used for land cover
 
@@ -395,11 +395,11 @@ Complete listing of `patterns/` (13 files, V): allotments, danger_red_hatch, dog
 
 ---
 
-## 3. Netherlands — BGT / IMGeo (Basisregistratie Grootschalige Topografie)
+## 3. Netherlands: BGT / IMGeo (Basisregistratie Grootschalige Topografie)
 
 Structure: the **BGT** part is mandatory and nationwide (scale ≈ 1:500–1:5,000); **IMGeo** adds optional "plus" attributes (`plus-fysiekVoorkomen`, `plus-type`, `plus-functie`) and optional object types (trees, hedges, street furniture). Terrain is partitioned without gaps into *wegdeel*, *ondersteunend wegdeel*, *begroeid terreindeel*, *onbegroeid terreindeel*, *waterdeel*, *ondersteunend waterdeel*, *pand* and others. Class lists below: IMGeo objectenhandboek (Geonovum), V.
 
-### 3.1 Begroeid terreindeel — `fysiekVoorkomen` — https://geonovum.github.io/IMGeo-objectenhandboek/begroeidterreindeel
+### 3.1 Begroeid terreindeel: `fysiekVoorkomen`: https://geonovum.github.io/IMGeo-objectenhandboek/begroeidterreindeel
 
 | BGT value | Definition (shortened) | IMGeo plus values |
 |---|---|---|
@@ -422,7 +422,7 @@ Structure: the **BGT** part is mandatory and nationwide (scale ≈ 1:500–1:5,0
 
 Further attributes: `begroeid terreindeel op talud` (on slope), `kruinlijn` (crest line, when slope ≥ 1:4 and height difference > 1 m), `relatieve hoogteligging`. A `haag` value under groenvoorziening has been *requested* (Geonovum/IMGeo-dev issue #173, S) but hedges are currently the separate IMGeo object *VegetatieObject*.
 
-### 3.2 Onbegroeid terreindeel — `fysiekVoorkomen` — https://geonovum.github.io/IMGeo-objectenhandboek/onbegroeidterreindeel
+### 3.2 Onbegroeid terreindeel: `fysiekVoorkomen`: https://geonovum.github.io/IMGeo-objectenhandboek/onbegroeidterreindeel
 
 | BGT value | Definition (shortened) | IMGeo plus values |
 |---|---|---|
@@ -435,7 +435,7 @@ Further attributes: `begroeid terreindeel op talud` (on slope), `kruinlijn` (cre
 
 Translation trap: Dutch `gravel` = red crushed-brick court surface (OSM `surface=clay`); Dutch `grind` = English gravel.
 
-### 3.3 Wegdeel and ondersteunend wegdeel — https://geonovum.github.io/IMGeo-objectenhandboek/wegdeel · …/ondersteunendwegdeel
+### 3.3 Wegdeel and ondersteunend wegdeel: https://geonovum.github.io/IMGeo-objectenhandboek/wegdeel · …/ondersteunendwegdeel
 
 | Attribute | Values |
 |---|---|
@@ -444,7 +444,7 @@ Translation trap: Dutch `gravel` = red crushed-brick court surface (OSM `surface
 | Ondersteunend wegdeel `functie` | `verkeerseiland` (traffic island), `berm` (verge) |
 | Ondersteunend wegdeel `fysiekVoorkomen` | the four paving classes above **plus** `groenvoorziening` (→ `bosplantsoen`, `gras- en kruidachtigen`, `planten`, `struikrozen`, `heesters`, `bodembedekkers`) |
 
-### 3.4 Water and vegetation objects — …/waterdeel · …/ondersteunendwaterdeel · …/vegetatieobject
+### 3.4 Water and vegetation objects: …/waterdeel · …/ondersteunendwaterdeel · …/vegetatieobject
 
 | Object | Values |
 |---|---|
@@ -454,9 +454,9 @@ Translation trap: Dutch `gravel` = red crushed-brick court surface (OSM `surface
 
 ### 3.5 Official visualisation rules (colours)
 
-Source documents: BGT\|IMGeo Visualisatieregels 2.3 (https://docs.geostandaarden.nl/bgt/visualisatie/) define **seven visualisations** — *standaard* (BGT as main theme, aligned with the BRT), *achtergrond* (background map), *icoon*, *lijngericht*, *omtrekgericht*, *pastel* (background for civil-engineering use), *plan*. The document itself contains no colour values; they are in the implementation files at https://github.com/Geonovum/IMGeo/tree/master/visualisatie/2.3 (Excel rule sheets, SLD files, SVG/PNG patterns, SVG/TTF symbols). Rules of the text (V): terreindelen are styled by `bgt-fysiekvoorkomen`, wegdelen by `bgt-functie`, waterdelen by `bgt-type`; every polygon also gets an outline in the fill colour "om te voorkomen, dat er dunne, witte lijnen tussen de objecten blijven"; roads are drawn twice (casing, then fill) so carriageway parts are not separated by hard lines; vegetation objects (trees, hedges) only in the standaardvisualisatie; drawing order: unclassified → water → onbegroeid → begroeid → tunnel/bridge → ondersteunend wegdeel → wegdeel → spoor → pand → other structures → scheiding → vegetatieobject → labels.
+Source documents: BGT\|IMGeo Visualisatieregels 2.3 (https://docs.geostandaarden.nl/bgt/visualisatie/) define **seven visualisations**: *standaard* (BGT as main theme, aligned with the BRT), *achtergrond* (background map), *icoon*, *lijngericht*, *omtrekgericht*, *pastel* (background for civil-engineering use), *plan*. The document itself contains no colour values; they are in the implementation files at https://github.com/Geonovum/IMGeo/tree/master/visualisatie/2.3 (Excel rule sheets, SLD files, SVG/PNG patterns, SVG/TTF symbols). Rules of the text (V): terreindelen are styled by `bgt-fysiekvoorkomen`, wegdelen by `bgt-functie`, waterdelen by `bgt-type`; every polygon also gets an outline in the fill colour "om te voorkomen, dat er dunne, witte lijnen tussen de objecten blijven"; roads are drawn twice (casing, then fill) so carriageway parts are not separated by hard lines; vegetation objects (trees, hedges) only in the standaardvisualisatie; drawing order: unclassified → water → onbegroeid → begroeid → tunnel/bridge → ondersteunend wegdeel → wegdeel → spoor → pand → other structures → scheiding → vegetatieobject → labels.
 
-**(a) Standaardvisualisatie** — V, Geonovum SLD 2.3 (`…/implementatiebestanden (SLD)/standaardvisualisatie/sld-0010-begroeidterreindeel.xml`, `sld-0011-…`, `sld-0021-wegdeel.xml`, `sld-0022-…`, `sld-0030-waterdeel.xml`, `sld-0044-pand.xml`), cross-checked against PDOK's Mapbox-GL implementation `bgt_standaardvisualisatie` (https://api.pdok.nl/lv/bgt/ogc/v1/styles/bgt_standaardvisualisatie__webmercatorquad?f=mapbox) — identical values.
+**(a) Standaardvisualisatie**: V, Geonovum SLD 2.3 (`…/implementatiebestanden (SLD)/standaardvisualisatie/sld-0010-begroeidterreindeel.xml`, `sld-0011-…`, `sld-0021-wegdeel.xml`, `sld-0022-…`, `sld-0030-waterdeel.xml`, `sld-0044-pand.xml`), cross-checked against PDOK's Mapbox-GL implementation `bgt_standaardvisualisatie` (https://api.pdok.nl/lv/bgt/ogc/v1/styles/bgt_standaardvisualisatie__webmercatorquad?f=mapbox), identical values.
 
 | Object / value | Fill | Outline | Pattern |
 |---|---|---|---|
@@ -484,14 +484,14 @@ Source documents: BGT\|IMGeo Visualisatieregels 2.3 (https://docs.geostandaarden
 | scheiding (lines): `hek`, `damwand` / `muur` / `geluidsscherm` | – | `#000000` / `#cc0000` / `#6600cc`, width 2 (PDOK Mapbox) | – |
 | kunstwerkdeel `perron` | `#ff9999` | `#535353` | – |
 
-**(b) Pastelvisualisatie** — V, Geonovum SLD 2.3 (`…/pastelvisualisatie/pastel-*.sld`; all rules `MaxScaleDenominator 5000`, i.e. large scale only). Key XML rules were re-read verbatim.
+**(b) Pastelvisualisatie**: V, Geonovum SLD 2.3 (`…/pastelvisualisatie/pastel-*.sld`; all rules `MaxScaleDenominator 5000`, i.e. large scale only). Key XML rules were re-read verbatim.
 
 | Object / value | Fill | Outline |
 |---|---|---|
 | begroeid: `loofbos`, `naaldbos`, `gemengd bos`, `boomteelt`, `heide`, `houtwal`, `kwelder`, `moeras`, `rietland` | `#d4dfd5` | fill-coloured 0.25; separate line rule `#787878` |
 | begroeid: `grasland agrarisch`, `grasland overig`, `bouwland`, `fruitteelt`, `struiken` | `#e1e7e3` | same |
 | begroeid: `duin`; onbegroeid: `zand` | `#f6f3db` | `#787878` 0.25 for zand |
-| begroeid: `groenvoorziening` | `#FFFFFF` (sic — verified in the XML) | `#FFFFFF` 0.25 |
+| begroeid: `groenvoorziening` | `#FFFFFF` (sic, verified in the XML) | `#FFFFFF` 0.25 |
 | ondersteunend wegdeel: `groenvoorziening` | `#e1e7e3` | `#787878` 0.25 |
 | onbegroeid: `erf`, `gesloten verharding`, `open verharding`, `half verhard`, `onverhard`; ondersteunend wegdeel paving classes | `#ffffff` | `#787878` 0.25 |
 | wegdeel: carriageways (`rijbaan autosnelweg`, `autoweg`, `regionale weg`, `lokale weg`) | `#f5f5f5` | casing `#787878` width 2 |
@@ -500,7 +500,7 @@ Source documents: BGT\|IMGeo Visualisatieregels 2.3 (https://docs.geostandaarden
 | waterdeel (all types) | `#d2dfe6` | fill-coloured 0.25; line rule `#787878` |
 | pand | `#e8e8e4` | `#787878`, width 0.4 |
 
-**(c) Achtergrondvisualisatie** — V: Geonovum SLD 2.3 (`…/achtergrondvisualisatie/achtergrond_landuse_polygon.sld`, `achtergrond_urban_polygon.sld`, `achtergrond_water_polygon.sld`; all rules have `MaxScaleDenominator 5000`) and PDOK's Mapbox implementation (https://api.pdok.nl/lv/bgt/ogc/v1/styles/bgt_achtergrondvisualisatie__webmercatorquad?f=mapbox) carry identical values for land use, buildings and water. Road rows below come from the PDOK style only.
+**(c) Achtergrondvisualisatie**: V: Geonovum SLD 2.3 (`…/achtergrondvisualisatie/achtergrond_landuse_polygon.sld`, `achtergrond_urban_polygon.sld`, `achtergrond_water_polygon.sld`; all rules have `MaxScaleDenominator 5000`) and PDOK's Mapbox implementation (https://api.pdok.nl/lv/bgt/ogc/v1/styles/bgt_achtergrondvisualisatie__webmercatorquad?f=mapbox) carry identical values for land use, buildings and water. Road rows below come from the PDOK style only.
 
 | Group (layer id) | Members | Fill | Outline |
 |---|---|---|---|
@@ -521,9 +521,9 @@ Notes: `bosplantsoen` and `zand` are matched on `plus_fysiekvoorkomen`; all fill
 
 ---
 
-## 4. Switzerland — amtliche Vermessung (AV), Bodenbedeckung
+## 4. Switzerland: amtliche Vermessung (AV), Bodenbedeckung
 
-### 4.1 Land-cover categories — DM.01-AV-CH, domain `BBArt` (V, INTERLIS model file https://models.geo.admin.ch/V_D/DM.01-AV-CH_LV95_24d_ili1.ili)
+### 4.1 Land-cover categories: DM.01-AV-CH, domain `BBArt` (V, INTERLIS model file https://models.geo.admin.ch/V_D/DM.01-AV-CH_LV95_24d_ili1.ili)
 
 | Group | Value | Gloss |
 |---|---|---|
@@ -536,7 +536,7 @@ Notes: `bosplantsoen` and `zand` are matched on `plus_fysiekvoorkomen`; all fill
 
 Single objects, domain `EOArt` (V, same file): `Mauer`, `unterirdisches_Gebaeude`, `uebriger_Gebaeudeteil`, `eingedoltes_oeffentliches_Gewaesser`, `wichtige_Treppe`, `Tunnel_Unterfuehrung_Galerie`, `Bruecke_Passerelle`, `Bahnsteig`, `Brunnen`, `Reservoir`, `Pfeiler`, `Unterstand`, `Silo_Turm_Gasometer`, `Hochkamin`, `Denkmal`, `Mast_Antenne`, `Aussichtsturm`, `Uferverbauung`, `Schwelle`, `Lawinenverbauung`, `massiver_Sockel`, `Ruine_archaeologisches_Objekt`, `Landungssteg`, `einzelner_Fels`, `schmale_bestockte_Flaeche`, `Rinnsal`, `schmaler_Weg`, `Hochspannungsfreileitung`, `Druckleitung`, `Bahngeleise`, `Luftseilbahn`, `Gondelbahn_Sesselbahn`, `Materialseilbahn`, `Skilift`, `Faehre`, `Grotte_Hoehleneingang`, `Achse`, `wichtiger_Einzelbaum`, `Bildstock_Kruzifix`, `Quelle`, `Bezugspunkt`, `weitere`.
 
-DMAV Version 1.0 (successor model): value names seen in the 2024 drafting instruction are the same except `fliessendes_Gewaesser`, `stehendes_Gewaesser` (instead of `fliessendes`, `stehendes`) and an additional single object `Jauchengrube_Mistlege` (V-img). The DMAV INTERLIS files themselves could not be fetched (guessed URLs returned 404) — see Open points.
+DMAV Version 1.0 (successor model): value names seen in the 2024 drafting instruction are the same except `fliessendes_Gewaesser`, `stehendes_Gewaesser` (instead of `fliessendes`, `stehendes`) and an additional single object `Jauchengrube_Mistlege` (V-img). The DMAV INTERLIS files themselves could not be fetched (guessed URLs returned 404), see Open points.
 
 ### 4.2 Official colours in the three federal drafting instructions (all V-img)
 
@@ -555,7 +555,7 @@ Sources: **GB** = Weisung "Amtliche Vermessung – Darstellung des Planes für d
 | Wytweide dicht / offen | dots 0.3 mm, spacing 8 mm / 16 mm | – | fill Grün (25,0,45,0), transparency 65 %; b/w dots 0.3 mm / 4 mm | fill grün (191,255,140) `#BFFF8C`, transparency 65 % |
 | schmale bestockte Fläche (single object) | line dashed (gestrichelt2) | – | line Grün (100,43,100,0); fill Grün (60,0,69,0) 65 % | line grün (0,145,0) `#009100`; fill (156,255,156) 50 % |
 | Acker_Wiese_Weide | no fill, dashed outline | – | **no fill**; outline black dashed | not drawn (Table 3 "nein") |
-| Gartenanlage | no fill, dashed outline | – | **no fill**; outline Grün (70,40,100,0) dashed (1:2,500, 1:5,000) | not drawn per Table 3 (Table 7 still lists outline grün (77,153,0)) — inconsistency in source |
+| Gartenanlage | no fill, dashed outline | – | **no fill**; outline Grün (70,40,100,0) dashed (1:2,500, 1:5,000) | not drawn per Table 3 (Table 7 still lists outline grün (77,153,0)), inconsistency in source |
 | Reben | symbol raster (CADASTRA glyph b), 3.0 mm, spacing 10 mm, 50 % grey | – | glyph v 2.0 mm in Grün (80,34,100,0), outline same | glyph v, grün (51,168,0) `#33A800`, spacing 1.5 mm / 1.75 mm |
 | Hoch_Flachmoor | symbol raster (glyph D), 4 mm, spacing 10 mm, 50 % grey | – | glyph d 2.0 mm in Blau (70,60,0,0), spacing 9 / 4.5 mm; no outline | glyph d, blau (77,102,255), 10.0 / 5.0 mm |
 | Schilfgürtel | symbol raster (glyph c), 3.0 mm, spacing 10 mm, 50 % grey | – | glyph c 1.8 mm in Blau (70,60,0,0), spacing 9 / 4.5 mm; no outline | glyph c, blau (77,102,255), 10.0 / 5.0 mm |
@@ -575,16 +575,16 @@ Further verified rules:
 - **Scales.** GB: 1:200, 1:250, 1:500, 1:1,000, 1:2,000, 1:2,500, 1:5,000, 1:10,000; symbol sizes defined at 1:1,000 and scaled. BP: 1:2,500, 1:5,000 (reference), optionally 1:10,000; factor 1.4 (BP09) resp. 1.2 (BP24) for 1:2,500 and 0.7 for 1:10,000.
 - **Font.** All symbols are glyphs of the font "Cadastra" (open source, based on Bitstream; may be modified if renamed).
 - **Drawing priority** (both BP versions): labels and boundaries on top, point/line single objects, then roads/pavements, buildings, humus classes, water, and at the bottom forest, glacier, wooded pasture (transparent fills so relief remained visible in BP09).
-- **D (my conversion):** the BP24 RGB values are the BP09 CMYK values under the naive conversion R = 255·(1−C)(1−K) — e.g. (70,60,0,0)→(77,102,255), (80,34,100,0)→(51,168,0), (25,0,45,0)→(191,255,140), (47,31,25,0)→(135,176,191), (15,50,50,0)→(217,128,128). Only the forest fill changed: (60,0,69,0) = (102,255,79) at 65 % transparency in 2009 → (156,255,156) at 50 % in 2024. Effective colours on white paper: forest 2024 ≈ `#CEFFCE`, forest 2009 ≈ `#C9FFC1`, wooded pasture ≈ `#E9FFD7`, glacier ≈ `#D5E3E9`.
+- **D (my conversion):** the BP24 RGB values are the BP09 CMYK values under the naive conversion R = 255·(1−C)(1−K), e.g. (70,60,0,0)→(77,102,255), (80,34,100,0)→(51,168,0), (25,0,45,0)→(191,255,140), (47,31,25,0)→(135,176,191), (15,50,50,0)→(217,128,128). Only the forest fill changed: (60,0,69,0) = (102,255,79) at 65 % transparency in 2009 → (156,255,156) at 50 % in 2024. Effective colours on white paper: forest 2024 ≈ `#CEFFCE`, forest 2009 ≈ `#C9FFC1`, wooded pasture ≈ `#E9FFD7`, glacier ≈ `#D5E3E9`.
 
 ### 4.3 swisstopo general palette
 
-- swisstopo **Light Base Map** vector-tile style (V, but read through the extraction model; filters simplified): style name `lightbasemap_v1.19.0`, https://vectortiles.geo.admin.ch/styles/ch.swisstopo.lightbasemap.vt/style.json — forest/wood rgb(186,210,172) · default land cover rgb(215,224,209) · glacier/ice rgb(205,232,244) · wetland rgb(204,229,245) · sand, landfill, quarry rgb(240,218,188) · pitch and grass runway rgb(224,234,221) · cemetery, zoo rgb(215,224,209) · parking rgb(255,255,255) · water rgb(209,228,240) → rgb(199,224,245) by zoom · buildings hsl(220,10%,82%) → hsl(220,10%,75%) · vineyard, orchard, swamp by pattern.
+- swisstopo **Light Base Map** vector-tile style (V, but read through the extraction model; filters simplified): style name `lightbasemap_v1.19.0`, https://vectortiles.geo.admin.ch/styles/ch.swisstopo.lightbasemap.vt/style.json, forest/wood rgb(186,210,172) · default land cover rgb(215,224,209) · glacier/ice rgb(205,232,244) · wetland rgb(204,229,245) · sand, landfill, quarry rgb(240,218,188) · pitch and grass runway rgb(224,234,221) · cemetery, zoo rgb(215,224,209) · parking rgb(255,255,255) · water rgb(209,228,240) → rgb(199,224,245) by zoom · buildings hsl(220,10%,82%) → hsl(220,10%,75%) · vineyard, orchard, swamp by pattern.
 - RGB definitions of the printed national-map symbols (Zeichenerklärung): not found / not verified.
 
 ---
 
-## 5. Austria — DKM (Digitale Katastralmappe), Benützungsarten and Nutzungen
+## 5. Austria: DKM (Digitale Katastralmappe), Benützungsarten and Nutzungen
 
 ### 5.1 Code list (V-img; BEV "CSV-Datei – Grundstücksdaten", interface description v1.2 of 29.01.2025, https://www.bev.gv.at/dam/jcr:a0e89772-7b55-4889-a029-69d93311811c/BEV_S_KA_Grundstuecksdaten-csv_V1.2.pdf; DKM symbol numbers from "Katastralmappe SHP", interface description v2.9 of 04.12.2024, https://www.bev.gv.at/dam/jcr:a6342749-e2c2-4525-9cee-3b7531474599/BEV_S_KA_Katastralmappe_SHP_V2.9.pdf; definitions from BANU-V § 2, https://www.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40117347/NOR40117347.html, V, shortened)
 
@@ -618,7 +618,7 @@ Further verified rules:
 | 8 | 11 | Sonstige | Gletscher | 88 (six-armed star) | glacier |
 | 9 | 01–04 | (legal overlay) | Rechtlich Weingarten / kein Weingarten / Wald / nicht Wald | `NS_RECHT` 77 / 78 / 74 / 73 | legal status, not land cover |
 
-History: the 2012 reform replaced the older, finer list (e.g. 49 Acker, 50 Wiese, 51 Hutweide, 89 Streuobstwiese, 52 "Baufläche begrünt", 83 "Baufläche befestigt", 96 "Erholungsfläche", 62 "Ödland") — old data may still carry these codes (V-img).
+History: the 2012 reform replaced the older, finer list (e.g. 49 Acker, 50 Wiese, 51 Hutweide, 89 Streuobstwiese, 52 "Baufläche begrünt", 83 "Baufläche befestigt", 96 "Erholungsfläche", 62 "Ödland"), old data may still carry these codes (V-img).
 
 ### 5.2 Data layers people actually have (V-img, SHP interface v2.9)
 
@@ -637,14 +637,14 @@ History: the 2012 reform replaced the older, finer list (e.g. 49 Acker, 50 Wiese
 
 | Aspect | Finding | St. |
 |---|---|---|
-| Structure | Primary habitats in a hierarchy: level 2 (letters `g` grassland, `w` woodland and forest, `h` heathland and shrub, `f` wetland, `c` cropland, `u` urban, `s` sparsely vegetated land, `r` rivers and lakes, `t` marine inlets and transitional waters), level 3 (`g4` modified grassland), level 4 (`g3c` other neutral grassland), level 5 (`g3c5` …); plus numeric **secondary codes** for mosaics, management, origin and land use. Each code has allowed geometries (Area/Line/Point). | S — community extraction of the official tables, https://github.com/mrichar1/UKHAB-QGIS (`2.01/primary_codes.csv`, `secondary_codes.csv`) |
+| Structure | Primary habitats in a hierarchy: level 2 (letters `g` grassland, `w` woodland and forest, `h` heathland and shrub, `f` wetland, `c` cropland, `u` urban, `s` sparsely vegetated land, `r` rivers and lakes, `t` marine inlets and transitional waters), level 3 (`g4` modified grassland), level 4 (`g3c` other neutral grassland), level 5 (`g3c5` …); plus numeric **secondary codes** for mosaics, management, origin and land use. Each code has allowed geometries (Area/Line/Point). | S, community extraction of the official tables, https://github.com/mrichar1/UKHAB-QGIS (`2.01/primary_codes.csv`, `secondary_codes.csv`) |
 | Urban branch (identical in v2.01 and v2.1 extracts) | `u` Urban · `u1` Built-up areas and gardens · `u1b` Developed land – sealed surface · `u1b5` Buildings · `u1b6` Other developed land · `u1c` Artificial unvegetated – unsealed surface · `u1d` Suburban mosaic of developed and natural surface · `u1e` Built linear features · `u1f` Sparsely vegetated urban land | S |
 | Urban-relevant secondary codes (v2.01 extract) | 10 scattered scrub · 32 scattered trees · 33 line of trees · 81 ruderal or ephemeral · 82 vacant or derelict land · 86 green roof · 87 biodiverse green roof · 88 intensive green roof · 89 other green roof · 90 cemeteries and churchyards · 106 mown · 108 frequently mown · 114 dry stone wall · 200 tree · 203 mature tree · 204 veteran tree · 209 avenue · 510 bare ground · 612 fence · 616 allotments · 800 road · 801 road verge or island · 802 railway · 804 car park · 806–812 park types (urban, pocket, neighbourhood, community, district, regional, country) · 820 natural sports pitches · 821 artificial sports pitches · 822 recreation ground · 823 children's play space · 827 garden · 828 vegetated garden · 829 unvegetated garden · 830 community garden · 841 green wall · 842 ground-based green wall · 843 facade-bound green wall · 844 balcony green · 845 ground level planters · 846 flower bed · 847 introduced shrub · 848 sustainable drainage system · 849 bioswale · 850 rain garden · 851 culvert · 852 water treatment filter bed · 853 mortared wall | S |
 | v2.1 additions seen | `h2a` native hedgerow (`h2a5` species-rich, `h2a6` other), `h2b` non-native and ornamental hedgerow; more `g3c` sub-types (`g3c3`, `g3c4`, `g3c9` wet meadow) | S |
 | Official colour palette / GIS styles | **Could not verify.** Downloads are gated: "All UKHab publications are published and only available under licence" (Free End User Licence v2, 31 March 2023; registration; bespoke commercial licences). Copyright "© UKHab Ltd 2018-2026. All rights reserved". Editions: Professional and abridged Basic. | V (https://www.ukhab.org/ukhab-documentation/, https://www.ukhab.org/) |
 | Community colours (not official) | per level-2 letter, baseline / proposed RGB: g (0,252,4)/(128,255,130) · w (51,160,44)/(153,204,150) · h (130,104,214)/(179,159,230) · f (253,123,238)/(255,180,245) · c (255,127,0)/(255,180,100) · u (236,34,68)/(245,120,140) · s (168,168,164)/(200,200,198) · r (39,237,245)/(130,245,250) · t (0,0,255)/(100,100,255). Noteworthy idea: a **lighter tint of the same hue for "proposed" habitats**. | S (`config.py` of the repo above) |
 
-### 6.2 JNCC Phase 1 habitat survey colours (the classic UK scheme that UKHab replaces) — S (community SLD implementing the JNCC handbook: https://github.com/QGIS-UK/Styles/blob/master/Phase%201%20Habitat/phase_1_habitat.sld)
+### 6.2 JNCC Phase 1 habitat survey colours (the classic UK scheme that UKHab replaces): S (community SLD implementing the JNCC handbook: https://github.com/QGIS-UK/Styles/blob/master/Phase%201%20Habitat/phase_1_habitat.sld)
 
 | Code | Habitat | Fill | Overlay |
 |---|---|---|---|
@@ -667,7 +667,7 @@ History: the 2012 reform replaced the older, finer list (e.g. 49 Acker, 50 Wiese
 
 Design principle visible in the scheme: **hue = habitat family, solid fill = semi-natural/unimproved, hatch in the same hue = planted/modified/mosaic.**
 
-### 6.3 England's statutory biodiversity metric (Defra / Natural England) — a habitat list tied to a score
+### 6.3 England's statutory biodiversity metric (Defra / Natural England): a habitat list tied to a score
 
 Sources: user guide June 2026, 89 pp (V-img: https://assets.publishing.service.gov.uk/media/6a1d98e9c7335e2ca6daadd5/The_Statutory_Biodiversity_Metric_-_User_Guide_-_June_2026.pdf) and small sites metric (SSM) user guide July 2025, 63 pp (V-img: https://assets.publishing.service.gov.uk/media/686677acdd1a7e01559e6d45/The_Small_Sites_Metric__Statutory_Biodiversity_Metric__-_User_Guide_July_2025.pdf).
 
@@ -681,7 +681,7 @@ Sources: user guide June 2026, 89 pp (V-img: https://assets.publishing.service.g
 | Ponds vs lakes | water bodies < 2 ha are ponds, ≥ 2 ha lakes | guide p. 67 |
 | SSM strategic significance | High 1.15 · Medium 1.10 · Low 1 | SSM guide |
 
-**SSM "UKHab translation table" (Appendix 2, Table A2, pp. 58–63)** — written for landscape architects; this is the closest published prior art for the catalog's element names. Codes as printed.
+**SSM "UKHab translation table" (Appendix 2, Table A2, pp. 58–63)**: written for landscape architects; this is the closest published prior art for the catalog's element names. Codes as printed.
 
 | Landscape term (code) | Metric broad habitat – habitat type | Distinctiveness |
 |---|---|---|
@@ -718,27 +718,27 @@ Sources: user guide June 2026, 89 pp (V-img: https://assets.publishing.service.g
 | Orchard (c1e) · Horticulture (c1f) · Cropland (c1c, c1d, c1b) · Cropland margins (c1a…) | Cropland – Intensive orchards · Horticulture · Cereal / non-cereal crops, temporary grass and clover leys · Arable field margins | Low · Low · Low · Medium |
 | Scree (s1d) · Saltmarsh (A2.5) | Sparsely vegetated land – Other inland rock and scree · Coastal saltmarsh | Medium · Medium |
 
-Notes: (1) the numeric codes printed in this SSM guide table (1160, 1170, 1111 …) are *not* UKHab 2.x secondary codes; the statutory tool itself uses the UKHab codes (see next table). (2) The guide states that UKHab "is used under licence from UKHab Ltd. No onward licence implied or provided and, where applicable, the same shall be out of scope of the OGL v3.0" — relevant for an open library. (3) Several SSM rows differ from the statutory tool (urban tree Low vs Medium; other green roof Medium vs Low; native hedgerow Medium vs Low) — quoted as printed, cause not established.
+Notes: (1) the numeric codes printed in this SSM guide table (1160, 1170, 1111 …) are *not* UKHab 2.x secondary codes; the statutory tool itself uses the UKHab codes (see next table). (2) The guide states that UKHab "is used under licence from UKHab Ltd. No onward licence implied or provided and, where applicable, the same shall be out of scope of the OGL v3.0", relevant for an open library. (3) Several SSM rows differ from the statutory tool (urban tree Low vs Medium; other green roof Medium vs Low; native hedgerow Medium vs Low), quoted as printed, cause not established.
 
-**Statutory metric calculation tool v1.0.4 — sheet "G-1 All Habitats" ("All Habitats Based on UKHab"), V** (parsed from the official workbook https://assets.publishing.service.gov.uk/media/6867e62810d550c668de3b4e/The_Statutory_Metric_Macro_Disabled_1.0.4.xlsx; columns: label, "Definitive UKHAB / EUNIS / NE Code", distinctiveness category and score).
+**Statutory metric calculation tool v1.0.4, sheet "G-1 All Habitats" ("All Habitats Based on UKHab"), V** (parsed from the official workbook https://assets.publishing.service.gov.uk/media/6867e62810d550c668de3b4e/The_Statutory_Metric_Macro_Disabled_1.0.4.xlsx; columns: label, "Definitive UKHAB / EUNIS / NE Code", distinctiveness category and score).
 
-| Broad habitat | Habitat type (code) — distinctiveness score |
+| Broad habitat | Habitat type (code), distinctiveness score |
 |---|---|
-| **Urban** (21 types) | Developed land; sealed surface (u1b) — V.Low 0 · Artificial unvegetated, unsealed surface (u1c) — V.Low 0 · Built linear features (u1e) — V.Low 0 · Unvegetated garden (829) — V.Low 0 · Vegetated garden (828) — Low 2 · Allotments (616) — Low 2 · Introduced shrub (847) — Low 2 · Ground level planters (845) — Low 2 · Intensive green roof (88) — Low 2 · Other green roof (89) — Low 2 · Biodiverse green roof (87) — Medium 4 · Facade-bound green wall (843) — Low 2 · Ground based green wall (842) — Low 2 · Bioswale (849) — Low 2 · Rain garden (850) — Low 2 · Sustainable drainage system (848) — Low 2 · Bare ground (510) — Low 2 · Vacant or derelict land (82) — Low 2 · Actively worked sand pit quarry or open cast mine (85) — Low 2 · Cemeteries and churchyards (90) — Medium 4 · Open mosaic habitats on previously developed land (80) — High 6 |
-| **Individual trees** | Urban tree (NE0014) — Medium 4 · Rural tree (NE0016) — Medium 4 |
-| **Grassland** | Modified grassland (g4) — Low 2 · Bracken (g1c) — Low 2 · Other neutral grassland (g3c) — Medium 4 · Other lowland acid grassland (g1d) — Medium 4 · Upland acid grassland (g1b) — Medium 4 · Lowland calcareous grassland (g2a) — High 6 · Upland calcareous grassland (g2b) — High 6 · Traditional orchards (27) — High 6 · Floodplain wetland mosaic and CFGM (19) — High 6 · Tall herb communities (H6430) (s1a9) — High 6 · Lowland meadows (g3a) — V.High 8 · Lowland dry acid grassland (g1a) — V.High 8 · Upland hay meadows (g3b) — V.High 8 |
-| **Heathland and shrub** | Rhododendron scrub (h3g) — Low 2 · Other sea buckthorn scrub (h3c6) — Low 2 · Blackthorn (h3a), Bramble (h3d), Gorse (h3e), Hawthorn (h3f), Hazel (h3b), Mixed (h3h), Willow (h3j) scrub — Medium 4 · Lowland heathland (h1a), Upland heathland (h1b), Dunes with sea buckthorn (h3c5) — High 6 · Mountain heaths and willow scrub (h1c) — V.High 8 |
-| **Woodland and forest** | Other coniferous woodland (w2c) — Low 2 · Other woodland; broadleaved (w1g) — Medium 4 · Other woodland; mixed (w1h) — Medium 4 · Other Scot's pine woodland (w2b) — Medium 4 · Felled (206), Lowland mixed deciduous (w1f), Lowland beech and yew (w1c), Wet woodland (w1d), Upland oakwood (w1a), Upland mixed ashwoods (w1b), Upland birchwoods (w1e), Native pine woodlands (w2a) — High 6 · Wood-pasture and parkland (26) — V.High 8 |
-| **Lakes** | Ornamental lake or pond (46) — Low 2 · Ponds (non-priority habitat) (41) — Medium 4 · Reservoirs (45) — Medium 4 · Ponds (priority habitat) (40) — High 6 · lake types by alkalinity, peat, marl, temporary (r1f5) — High 6 · Aquifer fed naturally fluctuating water bodies (r1d) — V.High 8 |
-| **Sparsely vegetated land** | Ruderal/Ephemeral (81) — Low 2 · Tall forbs (16) — Low 2 · Other inland rock and scree (s1d) — Medium 4 · Inland rock outcrop and scree habitats (s1a), Coastal sand dunes (s3a), Coastal vegetated shingle (s3b), Maritime cliff and slopes (s2a) — High 6 · Limestone pavement (s1b), Calaminarian grasslands (s1c) — V.High 8 |
-| **Cropland** | Cereal crops (c1c), Winter stubble (c1c5), Non-cereal crops (c1d), Horticulture (c1f), Intensive orchards (c1e), Temporary grass and clover leys (c1b) — Low 2 · Arable field margins: cultivated annually (c1a7), game bird mix (c1a8), pollen and nectar (c1a6), tussocky (c1a5) — Medium 4 |
-| **Wetland** | Reedbeds (f2e) — High 6 · Blanket bog (f1a), Lowland raised bog (f1b), Fens (f2a/f2c/f2f), Purple moor grass and rush pastures (f2b), Transition mires and quaking bogs, Depressions on peat substrates (56), Oceanic valley mire — V.High 8 |
-| Coastal and intertidal groups | Coastal lagoons, Rocky shore, Coastal saltmarsh, Intertidal sediment, Intertidal hard structures (artificial variants Low 2; "with integrated greening of grey infrastructure (IGGI)" Medium 4) · Watercourse footprint (NE0017) — V.low 0 |
-| **Hedgerow module** (sheet "G-6 Hedgerow Data") | Non-native and ornamental hedgerow — V.Low 1 · Native hedgerow — Low 2 · Line of trees (± bank or ditch) — Low 2 · Native hedgerow with trees — Medium 4 · Native hedgerow associated with bank or ditch — Medium 4 · Species-rich native hedgerow — Medium 4 · Ecologically valuable line of trees (± bank or ditch) — Medium 4 · Native hedgerow with trees associated with bank or ditch — High 6 · Species-rich native hedgerow with trees — High 6 · Species-rich native hedgerow associated with bank or ditch — High 6 · Species-rich native hedgerow with trees associated with bank or ditch — V.High 8 |
+| **Urban** (21 types) | Developed land; sealed surface (u1b), V.Low 0 · Artificial unvegetated, unsealed surface (u1c), V.Low 0 · Built linear features (u1e), V.Low 0 · Unvegetated garden (829), V.Low 0 · Vegetated garden (828), Low 2 · Allotments (616), Low 2 · Introduced shrub (847), Low 2 · Ground level planters (845), Low 2 · Intensive green roof (88), Low 2 · Other green roof (89), Low 2 · Biodiverse green roof (87), Medium 4 · Facade-bound green wall (843), Low 2 · Ground based green wall (842), Low 2 · Bioswale (849), Low 2 · Rain garden (850), Low 2 · Sustainable drainage system (848), Low 2 · Bare ground (510), Low 2 · Vacant or derelict land (82), Low 2 · Actively worked sand pit quarry or open cast mine (85), Low 2 · Cemeteries and churchyards (90), Medium 4 · Open mosaic habitats on previously developed land (80), High 6 |
+| **Individual trees** | Urban tree (NE0014), Medium 4 · Rural tree (NE0016), Medium 4 |
+| **Grassland** | Modified grassland (g4), Low 2 · Bracken (g1c), Low 2 · Other neutral grassland (g3c), Medium 4 · Other lowland acid grassland (g1d), Medium 4 · Upland acid grassland (g1b), Medium 4 · Lowland calcareous grassland (g2a), High 6 · Upland calcareous grassland (g2b), High 6 · Traditional orchards (27), High 6 · Floodplain wetland mosaic and CFGM (19), High 6 · Tall herb communities (H6430) (s1a9), High 6 · Lowland meadows (g3a), V.High 8 · Lowland dry acid grassland (g1a), V.High 8 · Upland hay meadows (g3b), V.High 8 |
+| **Heathland and shrub** | Rhododendron scrub (h3g), Low 2 · Other sea buckthorn scrub (h3c6), Low 2 · Blackthorn (h3a), Bramble (h3d), Gorse (h3e), Hawthorn (h3f), Hazel (h3b), Mixed (h3h), Willow (h3j) scrub, Medium 4 · Lowland heathland (h1a), Upland heathland (h1b), Dunes with sea buckthorn (h3c5), High 6 · Mountain heaths and willow scrub (h1c), V.High 8 |
+| **Woodland and forest** | Other coniferous woodland (w2c), Low 2 · Other woodland; broadleaved (w1g), Medium 4 · Other woodland; mixed (w1h), Medium 4 · Other Scot's pine woodland (w2b), Medium 4 · Felled (206), Lowland mixed deciduous (w1f), Lowland beech and yew (w1c), Wet woodland (w1d), Upland oakwood (w1a), Upland mixed ashwoods (w1b), Upland birchwoods (w1e), Native pine woodlands (w2a), High 6 · Wood-pasture and parkland (26), V.High 8 |
+| **Lakes** | Ornamental lake or pond (46), Low 2 · Ponds (non-priority habitat) (41), Medium 4 · Reservoirs (45), Medium 4 · Ponds (priority habitat) (40), High 6 · lake types by alkalinity, peat, marl, temporary (r1f5), High 6 · Aquifer fed naturally fluctuating water bodies (r1d), V.High 8 |
+| **Sparsely vegetated land** | Ruderal/Ephemeral (81), Low 2 · Tall forbs (16), Low 2 · Other inland rock and scree (s1d), Medium 4 · Inland rock outcrop and scree habitats (s1a), Coastal sand dunes (s3a), Coastal vegetated shingle (s3b), Maritime cliff and slopes (s2a), High 6 · Limestone pavement (s1b), Calaminarian grasslands (s1c), V.High 8 |
+| **Cropland** | Cereal crops (c1c), Winter stubble (c1c5), Non-cereal crops (c1d), Horticulture (c1f), Intensive orchards (c1e), Temporary grass and clover leys (c1b), Low 2 · Arable field margins: cultivated annually (c1a7), game bird mix (c1a8), pollen and nectar (c1a6), tussocky (c1a5), Medium 4 |
+| **Wetland** | Reedbeds (f2e), High 6 · Blanket bog (f1a), Lowland raised bog (f1b), Fens (f2a/f2c/f2f), Purple moor grass and rush pastures (f2b), Transition mires and quaking bogs, Depressions on peat substrates (56), Oceanic valley mire, V.High 8 |
+| Coastal and intertidal groups | Coastal lagoons, Rocky shore, Coastal saltmarsh, Intertidal sediment, Intertidal hard structures (artificial variants Low 2; "with integrated greening of grey infrastructure (IGGI)" Medium 4) · Watercourse footprint (NE0017), V.low 0 |
+| **Hedgerow module** (sheet "G-6 Hedgerow Data") | Non-native and ornamental hedgerow, V.Low 1 · Native hedgerow, Low 2 · Line of trees (± bank or ditch), Low 2 · Native hedgerow with trees, Medium 4 · Native hedgerow associated with bank or ditch, Medium 4 · Species-rich native hedgerow, Medium 4 · Ecologically valuable line of trees (± bank or ditch), Medium 4 · Native hedgerow with trees associated with bank or ditch, High 6 · Species-rich native hedgerow with trees, High 6 · Species-rich native hedgerow associated with bank or ditch, High 6 · Species-rich native hedgerow with trees associated with bank or ditch, V.High 8 |
 
 Reading for the catalog: the urban list is a complete, scored vocabulary of **built-environment elements** (sealed / unsealed artificial surface, walls, two garden types, planters, introduced shrub, three green-roof and two green-wall types, three SuDS types, bare/vacant land, allotments, cemetery, open mosaic habitat, urban tree). Every one of these should exist as a library element or modifier so a styled layer can be scored without re-classification.
 
-### 6.4 Switzerland — TypoCH (Delarze, Gonseth, Eggenberg & Vust 2015), urban-relevant classes (V, https://www.infoflora.ch/en/habitats/typoch-(delarze-et-al.)/full-list-typoch.html)
+### 6.4 Switzerland: TypoCH (Delarze, Gonseth, Eggenberg & Vust 2015), urban-relevant classes (V, https://www.infoflora.ch/en/habitats/typoch-(delarze-et-al.)/full-list-typoch.html)
 
 Decimal hierarchy, 9 level-1 groups: 1 Gewässer · 2 Ufer und Feuchtgebiete · 3 Gletscher, Fels, Schutt und Geröll · 4 Grünland · 5 Krautsäume, Hochstaudenfluren und Gebüsche · 6 Wälder · 7 Pioniervegetation gestörter Plätze · 8 Pflanzungen, Äcker und Kulturen · 9 Bauten, Anlagen. The scheme deliberately reserves ".0" codes for artificial variants:
 
@@ -761,13 +761,13 @@ Decimal hierarchy, 9 level-1 groups: 1 Gewässer · 2 Ufer und Feuchtgebiete · 
 
 No colour scheme is published with the typology on the InfoFlora pages (not found).
 
-### 6.5 Germany — LBP-Musterlegendenkatalog (Bundesnetzagentur, 2nd version, Dec 2021) — V-img, https://www.netzausbau.de/SharedDocs/Downloads/DE/Methodik/Eingriffsregelung/LBP-Musterlegendenkatalog.pdf?__blob=publicationFile
+### 6.5 Germany: LBP-Musterlegendenkatalog (Bundesnetzagentur, 2nd version, Dec 2021): V-img, https://www.netzausbau.de/SharedDocs/Downloads/DE/Methodik/Eingriffsregelung/LBP-Musterlegendenkatalog.pdf?__blob=publicationFile
 
 A federal model legend for landscape conservation plans at **1:1,000–1:5,000**, with RGB values per biotope "Obergruppe" (example codes use the Lower Saxony key of Drachenfels). Colours are mandatory ("Das Symbol selbst und die Farbe sind dabei beizubehalten"); over aerial imagery fills get "Transparenzwert … 35 %".
 
 | Obergruppe | RGB as printed | Hex | Symbol |
 |---|---|---|---|
-| Laubwald | "0/168/132" as printed — **probable misprint**: swatch is light green and the planting hatch for Laubwald in chapter 5.3 is 137/205/102 | (`#89CD66`) | fill |
+| Laubwald | "0/168/132" as printed, **probable misprint**: swatch is light green and the planting hatch for Laubwald in chapter 5.3 is 137/205/102 | (`#89CD66`) | fill |
 | Nadelwald | 114/137/68 | `#728944` | fill |
 | Mischwald | area 137/205/102, lines 114/137/68 | `#89CD66` + `#728944` | vertical stripes |
 | Waldrand / Waldlichtung | area 137/205/102, lines 163/255/115 | `#89CD66` + `#A3FF73` | diagonal stripes |
@@ -789,7 +789,7 @@ A federal model legend for landscape conservation plans at **1:1,000–1:5,000**
 
 State modifiers (chapter 5): **new planting/development = diagonal hatch in the colour of the target biotope** (e.g. Grünland 220/255/200, Heiden 245/122/182, Gehölz 163/255/115); **extensification/forest conversion = dot overlay 0/168/132** on the base colour; trees to be protected = red ring 255/0/0 around the green symbol; tree loss = red X; unsealing = cross-hatch 78/78/78; timing labels yellow 255/255/0 (advance), orange 255/170/0 (during construction), blue 115/178/255 (after completion). A GIS style file "kann auf Anfrage von der Bundesnetzagentur … zur Verfügung gestellt werden".
 
-### 6.6 Germany — Hamburg "Kartieranleitung und Biotoptypenschlüssel", 7th ed., March 2025 — V-img, https://www.hamburg.de/resource/blob/1036252/de53ab36043c5d658b46aa8d4337c97b/kartieranleitung-biotoptypenschluessel-maerz-2025-data.pdf
+### 6.6 Germany: Hamburg "Kartieranleitung und Biotoptypenschlüssel", 7th ed., March 2025: V-img, https://www.hamburg.de/resource/blob/1036252/de53ab36043c5d658b46aa8d4337c97b/kartieranleitung-biotoptypenschluessel-maerz-2025-data.pdf
 
 City-wide, area-covering biotope **and** land-use key (451 types, modelled on the Lower Saxony key), digitised at ≥ 1:1,000; polygons for features wider than 5 m, lines up to 5 m, points for single trees and springs; legend is built from the first letter (`GRUPPE`). No RGB table in the pages read. Groups: A Gras-, Stauden- und Ruderalfluren · B Biotopkomplexe der Siedlungsflächen · E Biotopkomplexe der Freizeit-, Erholungs-, Grünanlagen · F Lineare und Fließgewässer · G Grünländer · H Gebüsche und Kleingehölze · K Küstenbiotope · L Biotope landwirtschaftlich genutzter Flächen · M Hoch- und Übergangsmoore · N Sümpfe und Niedermoore · O Offenbodenbiotope · S Stillgewässer · T Heiden, Borstgrasrasen, Magerrasen · V Verkehrsflächen · W Wälder · Y Biotope vegetationsarmer Flächen mit Spontanvegetation · Z Vegetationsbestimmte Habitatstrukturen besiedelter Bereiche.
 
@@ -823,9 +823,9 @@ Berlin (Umweltatlas 06.02 "Grün- und Freiflächenbestand", Biotoptypenliste): c
 
 ### 7.1 Ordnance Survey MasterMap Topography Layer (GB, 1:1,250–1:10,000)
 
-Features carry `descriptiveGroup` (Building, Buildings Or Structure, Built Environment, General Feature, General Surface, Glasshouse, Height Control, Historic Interest, Inland Water, Landform, Natural Environment, Network Or Polygon Closing Geometry, Path, Political Or Administrative, Rail, Road Or Track, Roadside, Structure, Terrain And Height, Tidal Water, Unclassified), `descriptiveTerm` and `make` (Manmade, Multiple, Natural, Unclassified, Unknown) — S (OS documentation assistant answer on https://docs.os.uk/os-downloads/products/maps-and-imagery-portfolio/os-mastermap-topography-layer/os-mastermap-topography-layer-technical-specification/enumerations.md). Feature codes seen (V, feature-code lookup table of the same specification): 10021 Building · 10053 General Surface / Multi Surface · 10054 General Surface / Step · 10056 General Surface · 10062 Glasshouse · 10089 Inland Water · 10111 Natural Environment · 10123 Path / Step · 10172 Road Or Track · 10183 Roadside · 10185 Structure · 10096 Landform / Slope · 10099 Landform / Cliff · 10203 Tidal Water / Foreshore · points 10048 Positioned Nonconiferous Tree, 10050 Positioned Coniferous Tree, 10051 Positioned Boulder.
+Features carry `descriptiveGroup` (Building, Buildings Or Structure, Built Environment, General Feature, General Surface, Glasshouse, Height Control, Historic Interest, Inland Water, Landform, Natural Environment, Network Or Polygon Closing Geometry, Path, Political Or Administrative, Rail, Road Or Track, Roadside, Structure, Terrain And Height, Tidal Water, Unclassified), `descriptiveTerm` and `make` (Manmade, Multiple, Natural, Unclassified, Unknown), S (OS documentation assistant answer on https://docs.os.uk/os-downloads/products/maps-and-imagery-portfolio/os-mastermap-topography-layer/os-mastermap-topography-layer-technical-specification/enumerations.md). Feature codes seen (V, feature-code lookup table of the same specification): 10021 Building · 10053 General Surface / Multi Surface · 10054 General Surface / Step · 10056 General Surface · 10062 Glasshouse · 10089 Inland Water · 10111 Natural Environment · 10123 Path / Step · 10172 Road Or Track · 10183 Roadside · 10185 Structure · 10096 Landform / Slope · 10099 Landform / Cliff · 10203 Tidal Water / Foreshore · points 10048 Positioned Nonconiferous Tree, 10050 Positioned Coniferous Tree, 10051 Positioned Boulder.
 
-**Official OS style, "Outdoor style" colour values** — V (parsed from the OS workbook https://github.com/OrdnanceSurvey/OSMM-Topography-Layer-stylesheets → `Schema version 9/Stylesheets/Colour Values/OSMM-Topography-Layer-Colour-Values.xlsx`, Open Government Licence 3.0; assignment rules from `Schema version 9/SQL/PostGIS/Array/topographicarea_createtable_array.sql`):
+**Official OS style, "Outdoor style" colour values**: V (parsed from the OS workbook https://github.com/OrdnanceSurvey/OSMM-Topography-Layer-stylesheets → `Schema version 9/Stylesheets/Colour Values/OSMM-Topography-Layer-Colour-Values.xlsx`, Open Government Licence 3.0; assignment rules from `Schema version 9/SQL/PostGIS/Array/topographicarea_createtable_array.sql`):
 
 | style_code | style_description | Hex | Assigned when |
 |---|---|---|---|
@@ -849,32 +849,32 @@ Features carry `descriptiveGroup` (Building, Buildings Or Structure, Built Envir
 | 27 | Mud Fill | `#e8e4dd` | term Mud |
 | 20 / 21 / 22 / 28 | Boulders / Rock / Scree / Shingle Fill | `#eaeae4` | terms Boulders, Rock (also "(Scattered)"), Scree, Shingle |
 | 31 | Foreshore Fill | `#eaead3` | term Foreshore |
-| 32 / 33 | Slope / Cliff Fill | `#669966` / `#666666` — "refer to a dashed line pattern rather than a solid fill" | term Slope / Cliff |
+| 32 / 33 | Slope / Cliff Fill | `#669966` / `#666666`, "refer to a dashed line pattern rather than a solid fill" | term Slope / Cliff |
 | 3 / 5 / 12 | Road Bridge / Bridge / Footbridge Fill | `#e6dddd` / `#d6d2d2` / `#e8cfcc` | term Bridge by group; Footbridge |
 | 2 / 8 | Archway / Pylon Fill | `#dcd7c6` / `#eee8d3` | |
 | 99 | Unclassified | `#f8f6f0` | fallback |
 | points | Positioned (non)coniferous tree, other point symbols | `#8c8c8c` | |
 | text | colour codes 1–5 | `#655314`, `#318fae`, `#857660`, `#296314`, `#ff98ff` | |
 
-### 7.2 OS MasterMap Greenspace Layer — V (https://docs.os.uk/os-downloads/products/land-and-terrain-portfolio/os-mastermap-greenspace-layer/os-mastermap-greenspace-layer-technical-specification/code-lists-and-enumerations/function.md and …/form.md)
+### 7.2 OS MasterMap Greenspace Layer: V (https://docs.os.uk/os-downloads/products/land-and-terrain-portfolio/os-mastermap-greenspace-layer/os-mastermap-greenspace-layer-technical-specification/code-lists-and-enumerations/function.md and …/form.md)
 
 A two-axis typology worth copying: **function** (use) × **form** (cover).
 - `primaryFunction` / `secondaryFunction`: Allotments Or Community Growing Spaces · Amenity – Residential or Business · Amenity – Transport · Bowling Green · Camping Or Caravan Park · Cemetery · Golf Course · Institutional Grounds · Land Use Changing · Natural · Other Sports Facility · Play Space · Playing Field · Private Garden · Public Park or Garden · Religious Grounds · School Grounds · Tennis Court.
 - `primaryForm` / `secondaryForm`: Woodland ("trees with an area larger than 0.1 hectares and width greater than 5m") · Open Semi-Natural (scrub, heath, rough grassland) · Inland Water · Beach Or Foreshore · Manmade Surface · Multi Surface ("multiple surface types, such as grass, decking and hard standing making up a private garden polygon").
 
-### 7.3 OS NGD land cover code lists — V (https://docs.os.uk/osngd/code-lists/code-lists-overview/landcovertieravalue.md, …/landcovertierbvalue.md)
+### 7.3 OS NGD land cover code lists: V (https://docs.os.uk/osngd/code-lists/code-lists-overview/landcovertieravalue.md, …/landcovertierbvalue.md)
 
 Tier A: Excavated Or Deposited · Made · Mineral · Multiple (residential gardens) · Open Vegetation · Open Vegetation And Mineral · Trees · Under Construction · Water. Tier B: Bare Earth Or Grass · Boulders · Coniferous Trees · Deposited · Excavated · Heath · Inter Tidal · **Made Sealed** ("solid material that is bonded") · **Made Unsealed** ("enhanced by the addition of a loose material") · Made Unknown · Marsh · Mud · Non-Coniferous Trees · Orchard · Peat · Reeds · Residential Garden · Rock · Rough Grassland · Saltmarsh · Sand · Scattered Boulders · Scattered Coniferous Trees · Scattered Non-Coniferous Trees · Scattered Rock · Scree · Scrub · Shingle · Solar Panels · Under Construction · Vineyard. Thresholds: trees "generally spaced not more than 30m apart" (else "scattered"); boulders > 0.2 m.
 
-### 7.4 GeoDanmark (DK municipal/state base data) — partly V
+### 7.4 GeoDanmark (DK municipal/state base data): partly V
 
 Specification 6.0.2 (11.07.2024), 7.0 in consultation (V, https://www.geodanmark.dk/anvend-geodata/specifikation/). Object types named on that page: Plads, Hede, Skov, Sø, Dige, Vandløbskant, Brønddæksel, Nedløbsrist, Telemast (V). The full object catalogue (help-system frameset at https://www.geodanmark.nu/Spec6/…) could not be read; further object names (BYGNING, VÅDOMRÅDE, KRAT/BEVOKSNING, TRÆ, TRÆGRUPPE, LEVENDE HEGN, SAND/KLIT, RÅSTOFOMRÅDE, GARTNERI, BEGRAVELSESOMRÅDE, REKREATIVT OMRÅDE, VEJKANT, PARKERING …) are **R**.
 
-### 7.5 Finland — partly V
+### 7.5 Finland: partly V
 
-NLS Topographic Database (Maastotietokanta): nationwide, 1:10,000 (positional accuracy class 1:5,000–1:10,000), themes transport, buildings and structures, administrative borders, names, land use, waters, elevation; SHP/GML/GeoPackage, CC BY 4.0, object model as Excel (V, https://www.maanmittauslaitos.fi/kartat-ja-paikkatieto/asiantuntevalle-kayttajalle/tuotekuvaukset/maastotietokanta-0). Feature-class codes and the municipal conventions (city base map "kantakartta", Helsinki register of public areas, national green-area maintenance classification with classes R/A/M/S/E) are **R** — not verified.
+NLS Topographic Database (Maastotietokanta): nationwide, 1:10,000 (positional accuracy class 1:5,000–1:10,000), themes transport, buildings and structures, administrative borders, names, land use, waters, elevation; SHP/GML/GeoPackage, CC BY 4.0, object model as Excel (V, https://www.maanmittauslaitos.fi/kartat-ja-paikkatieto/asiantuntevalle-kayttajalle/tuotekuvaukset/maastotietokanta-0). Feature-class codes and the municipal conventions (city base map "kantakartta", Helsinki register of public areas, national green-area maintenance classification with classes R/A/M/S/E) are **R**: not verified.
 
-### 7.6 Germany — ALKIS/ATKIS
+### 7.6 Germany: ALKIS/ATKIS
 
 Not researched in this stream (presumably covered elsewhere). **R:** ALKIS "tatsächliche Nutzung" (object types 41001–44007, e.g. 43001 Landwirtschaft, 43002 Wald, 43003 Gehölz, 41008 Sport-, Freizeit- und Erholungsfläche, 41009 Friedhof) with the GeoInfoDok signature catalogue is the German counterpart of BGT / AV / DKM and must be in the crosswalk set.
 
@@ -912,7 +912,7 @@ Element names below are **my proposals** (not taken from any source). "16" marks
 | `compacted_waterbound` | new | areas/ways with `surface=compacted/fine_gravel/unpaved` | – | – |
 | `rock_scree` | new | `natural=bare_rock` · `natural=scree` · `landuse=quarry` · `surface=rock` | `natural=rock/stone` (point: boulder), `natural=cliff` (line) | – |
 | `mulch` | new | areas/ways with `surface=woodchips` | – | – |
-| paved elements | 16 (5 classes) | `highway=pedestrian`/`footway`/`service` + `area=yes`, `amenity=parking`, `man_made=courtyard`, `leisure=pitch/playground/track`, `highway=*` lines — element chosen **only by `surface=*`**, see 8.2 | kerbs `barrier=kerb` | `paving_stones:*`, `surface:colour` |
+| paved elements | 16 (5 classes) | `highway=pedestrian`/`footway`/`service` + `area=yes`, `amenity=parking`, `man_made=courtyard`, `leisure=pitch/playground/track`, `highway=*` lines, element chosen **only by `surface=*`**, see 8.2 | kerbs `barrier=kerb` | `paving_stones:*`, `surface:colour` |
 | `building` | new (context) | `building=*` (except below) | – | `roof:material`, `green_roof` |
 | `glasshouse` | new | `building=greenhouse/conservatory` · `landuse=greenhouse_horticulture` | – | – |
 | `green_roof` | new | `building=*` + (`green_roof=yes` or `roof:material=grass/plants/roof_greening`) · `leisure=garden` + `garden:type=roof_garden` | `garden:type=green_wall` (line: green wall) | – |
@@ -989,7 +989,7 @@ Element names below are **my proposals** (not taken from any source). "16" marks
 | Extraction / landfill / construction / "transition" state | `transitie` | `Abbau_Deponie` | Land use changing (OS), development site | OSM construction/brownfield |
 | Built context: building, underground building, glasshouse, open roof, wall, retaining wall, steps, bridge, railway, traffic island, verge, pavement | `pand`, `overig bouwwerk`, `scheiding`, `kunstwerkdeel`, `berm`, `verkeerseiland`, wegdeel functions | `Gebaeude`, `Mauer`, `wichtige_Treppe`, `Trottoir`, `Verkehrsinsel`, `Bahn` | Developed land; sealed surface; built linear features | all models |
 
-Structural consequences: (1) every national model separates **cover/material** from **function/use** (BGT fysiekVoorkomen vs functie; OS form vs function; Hamburg Z/Y elements vs E/B complexes; OSM surface vs landuse/leisure) — the catalog needs both axes, with function drawn as overlay. (2) Every model has a **"mixed garden / yard" class** because gardens are not surveyed in detail; the library needs a deliberate mosaic element instead of pretending to know. (3) All need an **"unknown / in transition"** element. (4) The models at this scale carry **lines and points** (hedge, wall, fence, tree, steps, fountain) as first-class objects. (5) A score-linked catalog (UK metric) needs **condition and size attributes** (grass quality, tree DBH class, roof type), so elements should accept modifiers rather than multiply classes.
+Structural consequences: (1) every national model separates **cover/material** from **function/use** (BGT fysiekVoorkomen vs functie; OS form vs function; Hamburg Z/Y elements vs E/B complexes; OSM surface vs landuse/leisure), the catalog needs both axes, with function drawn as overlay. (2) Every model has a **"mixed garden / yard" class** because gardens are not surveyed in detail; the library needs a deliberate mosaic element instead of pretending to know. (3) All need an **"unknown / in transition"** element. (4) The models at this scale carry **lines and points** (hedge, wall, fence, tree, steps, fountain) as first-class objects. (5) A score-linked catalog (UK metric) needs **condition and size attributes** (grass quality, tree DBH class, roof type), so elements should accept modifiers rather than multiply classes.
 
 ### 8.4 (c) Lessons from the colour systems
 
@@ -1005,12 +1005,12 @@ Structural consequences: (1) every national model separates **cover/material** f
 
 ---
 
-## 9. Open points (not verified — do not treat as facts)
+## 9. Open points (not verified: do not treat as facts)
 
 | # | Item | What is missing |
 |---|---|---|
 | 1 | UKHab official colour palette / QGIS and ArcGIS style files | Licence-gated download (registration and acceptance of terms); only a community palette was seen. Also unclear whether v2.1 is released (documentation page) or still in consultation (home page). Redistribution rights for UKHab codes/names in an open library need a legal check. |
-| 2 | Statutory biodiversity metric vs small sites metric | The full statutory list is now in 6.3 (resolved). Remaining: several SSM guide rows differ from the statutory tool (urban tree Low vs Medium, other green roof Medium vs Low, native hedgerow Medium vs Low, sedum roof printed as "Intensive green roof") — SSM simplification or misprints, not established; the SSM tool workbook 1.2.3 and the condition-assessment criteria per habitat (xlsx, July 2025) were not opened. |
+| 2 | Statutory biodiversity metric vs small sites metric | The full statutory list is now in 6.3 (resolved). Remaining: several SSM guide rows differ from the statutory tool (urban tree Low vs Medium, other green roof Medium vs Low, native hedgerow Medium vs Low, sedum roof printed as "Intensive green roof"), SSM simplification or misprints, not established; the SSM tool workbook 1.2.3 and the condition-assessment criteria per habitat (xlsx, July 2025) were not opened. |
 | 3 | BGT/IMGeo remaining gaps | Land-use, building and water colours of the achtergrondvisualisatie are confirmed against the Geonovum SLDs; its road colours come from PDOK's style only (`achtergrond_infra*.sld` not read). The icoon-, lijngerichte, omtrekgerichte and plan visualisations and the tree/hedge symbols were not read. IMGeo "plus" lists come from the objectenhandboek, not from the normative catalogue tables; street-furniture object types (bak, bord, paal, put, straatmeubilair …) not collected. |
 | 4 | DMAV 1.0 INTERLIS enumerations | Model files not found at guessed URLs; DMAV names taken from the 2024 drafting instruction only. |
 | 5 | Austria: official fill colours | None exist in the BEV documents read; the legal "Zeichenschlüssel" of the Vermessungsverordnung was not read. Colours inside `BEV0.qgz` not inspected. |

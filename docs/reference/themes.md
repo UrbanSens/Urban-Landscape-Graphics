@@ -36,7 +36,7 @@ Colours of the official German web basemap (AdV/BKG basemap.de Web Vektor, style
 
 Pastel backdrop series of the federal plan-symbol catalogue for landscape plans (BfN-Skripten 461/2, 2017): one colour per biotope-type group, no outlines. A recommendation, not law.
 
-- **Source:** Hoheisel et al. (2017), Planzeichen für die Landschaftsplanung – Planzeichenkatalog, BfN-Skripten 461/2, DOI 10.19217/skr4612, chapter 4.1.1
+- **Source:** Hoheisel et al. (2017), Planzeichen für die Landschaftsplanung: Planzeichenkatalog, BfN-Skripten 461/2, DOI 10.19217/skr4612, chapter 4.1.1
 - **Evidence:** RGB values V (research stream 02, section 7.4, pastel 'Kulisse' series). The catalogue misprints the deciduous-forest value (it repeats grassland); this theme uses the coniferous value for all forests and marks it. The tree outline follows the saturated series (RAL 140 40 50); the outline of built areas is a house choice.
 
 ## `mono` · Mono (drawing)

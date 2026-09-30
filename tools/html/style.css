@@ -1,7 +1,7 @@
 /* Theme of the HTML documentation: light paper, black-and-white drawings, three accents from the UrbanSens logo.
 
    Every colour is a palette token of the library (--ulg-<family>-<step>, injected by tools/build_html.py from
-   `ulg export tokens`) or one of the UrbanSens logo colours (--ub-*, sampled from docs/img/brand/urbansens-logo.png).
+   `ulg export tokens`) or one of the UrbanSens logo colours (--ub-*, sampled from src/ulg/data/brand/urbansens-logo.png).
    The page has the paper colour of the figures (paper.base), so the sheets and maps melt into it; the banners are
    black-and-white drawings that fade out at their edges instead of ending in a frame.
 
@@ -160,6 +160,11 @@ body {
 .icon-btn:hover { background: var(--surface-2); color: var(--heading); }
 .icon-btn svg { width: 1.25rem; height: 1.25rem; }
 #menu { display: none; }
+.lang { display: flex; flex: none; border: 1px solid var(--rule); border-radius: 999px; overflow: hidden; font: 700 .72rem/1 var(--sans); letter-spacing: .09em; }
+.lang a, .lang .on { padding: .5rem .66rem; text-decoration: none; }
+.lang a { color: var(--muted); }
+.lang a:hover { color: var(--heading); background: var(--surface-2); }
+.lang .on { color: var(--heading); background: var(--surface-2); }
 .search { position: relative; margin-left: auto; width: min(24rem, 100%); }
 .search input {
   width: 100%; height: 2.3rem; padding: 0 .8rem 0 2.15rem; font: 500 .9rem var(--sans); color: var(--heading);
@@ -212,6 +217,8 @@ body {
 .hero-lede { max-width: 38rem; margin: 0 auto; color: var(--text); font: 400 1.16rem/1.55 var(--serif); }
 .hero-lede em, .hero-lede code { font-style: normal; }
 .hero-meta { margin: 1.1rem 0 0; color: var(--faint); font: 600 .8rem/1.4 var(--sans); letter-spacing: .05em; }
+.hero-meta a { color: inherit; text-decoration: underline; text-underline-offset: .2em; }
+.hero-meta a:hover { color: var(--heading); }
 .hero-mark { display: block; height: clamp(5rem, 11.5vw, 7.8rem); width: auto; margin: 0 auto 1.5rem; }
 .hero-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: .7rem; margin: 1.9rem 0 0; }
 .btn {
@@ -240,6 +247,7 @@ body {
 }
 .sidebar li > a:hover { background: var(--surface-2); color: var(--heading); }
 .sidebar li.current > a { background: var(--surface); border-left-color: var(--accent-strong); color: var(--heading); font-weight: 700; box-shadow: 0 0 0 1px var(--rule) inset; }
+.sidebar .tag { margin-left: .45rem; padding: .08rem .3rem; border: 1px solid var(--rule); border-radius: 4px; color: var(--faint); font: 700 .58rem/1.3 var(--sans); letter-spacing: .08em; vertical-align: .1em; }
 .sidebar .num { min-width: 1.15rem; color: var(--faint); font-variant-numeric: tabular-nums; font-weight: 500; }
 .sidebar ul ul { margin: .15rem 0 .55rem 1.05rem; border-left: 1px solid var(--rule); }
 .sidebar ul ul li > a { padding: .2rem .55rem; font-size: .84rem; color: var(--muted); font-weight: 500; background: none; border-left: 0; box-shadow: none; }
@@ -268,6 +276,9 @@ article p, article ul, article ol, article dl { margin: 0 0 1.35rem; }
 article ul, article ol { padding-left: 1.5rem; }
 article li { margin: .4rem 0; padding-left: .2rem; }
 article li::marker { color: var(--hot); }
+article:lang(de) p, article:lang(de) li, article:lang(de) figcaption { -webkit-hyphens: auto; hyphens: auto; }
+article:lang(de) td p, article:lang(de) td li, article:lang(de) blockquote p { -webkit-hyphens: manual; hyphens: manual; }   /* quotations are often English */
+article code, article pre, article h1, article h2, article h3, article h4, article a[href^="http"] { -webkit-hyphens: none; hyphens: none; }
 article li > ul, article li > ol { margin: .4rem 0 .5rem; }
 article a { color: var(--link); text-decoration: underline; text-decoration-thickness: .06em; text-underline-offset: .2em; text-decoration-color: color-mix(in srgb, var(--link) 38%, transparent); }
 article a:hover { color: var(--link-hover); text-decoration-color: currentColor; }
@@ -281,7 +292,7 @@ h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, .anchor:focus { opacity: 1
 article blockquote { margin: 2.6rem 0; padding: .15rem 0 .15rem 1.6rem; border-left: 3px solid var(--accent); }
 article blockquote p { margin: 0 0 .8rem; color: var(--heading); font: italic 400 1.34rem/1.55 var(--serif); text-wrap: pretty; }
 article blockquote p.cite { margin: 0; color: var(--muted); font: 500 .84rem/1.55 var(--sans); font-style: normal; letter-spacing: .005em; }
-article blockquote p.cite::before { content: "— "; color: var(--hot-ink); font-weight: 700; }
+article blockquote p.cite::before { content: ""; display: inline-block; width: 1.5em; height: 2px; margin: 0 .6em .3em 0; background: var(--hot); vertical-align: middle; }
 article blockquote p:last-child { margin-bottom: 0; }
 
 code, kbd, samp { font: .84em var(--mono); }
@@ -344,6 +355,7 @@ figure.wide img { box-shadow: 0 0 0 1px var(--hairline), var(--shadow); }
 .band-cite { margin: 0; color: var(--muted); font: 700 .74rem/1.5 var(--sans); letter-spacing: .15em; text-transform: uppercase; }
 .band .btn { margin-top: 1.8rem; }
 .ub-logo { display: block; width: 13.5rem; height: auto; }
+.ub-link { display: block; line-height: 0; }
 
 /* ---- continue reading ---- */
 .next-band { background: var(--bg); border-top: 1px solid var(--rule); padding: 3.2rem clamp(1.1rem, 4vw, 3.5rem) 3.6rem; }
@@ -427,7 +439,9 @@ body[data-single] main { padding-top: 0; }
   article h3 { font-size: 1.3rem; }
   article blockquote { padding-left: 1.1rem; }
   article blockquote p { font-size: 1.16rem; }
-  .search { width: 100%; }
+  .search { width: 100%; min-width: 0; }
+  .topbar { gap: .55rem; padding-left: .7rem; padding-right: .7rem; }
+  .lang a, .lang .on { padding: .5rem .5rem; }
   .foot-grid { grid-template-columns: 1fr; }
   .card.next { text-align: left; }
 }

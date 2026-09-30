@@ -1,38 +1,71 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ulg · MapLibre example</title>
+  <title>ulg · MapLibre-Beispiel</title>
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css">
   <link rel="stylesheet" href="ulg/ulg.css">
   <style>
     html, body { margin: 0; height: 100%; background: var(--ulg-paper-base); font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif; }
     #map { position: absolute; inset: 0; }
-    .card { position: absolute; left: 16px; top: 16px; max-width: 280px; padding: 12px 14px; background: rgba(253,253,251,.94);
+    .card { position: absolute; left: 16px; top: 16px; max-width: 290px; padding: 12px 14px; background: rgba(253,253,251,.94);
             border: 1px solid var(--ulg-ink-200); border-radius: 6px; color: var(--ulg-ink-900); font-size: 13px; line-height: 1.4; }
     .card h1 { font-size: 15px; margin: 0 0 4px; font-weight: 600; }
     .card code { font-size: 12px; }
     .card a { color: #33637f; }
+    .card .by { margin-top: 6px; font-size: 12px; color: var(--ulg-ink-500); }
   </style>
 </head>
 <body>
 <div id="map"></div>
-<div class="card">
-  <h1>UrbanSens style in MapLibre</h1>
-  Fills, hand-drawn pattern tiles, tree crowns and streets in metres, pictograms, all generated with
-  <code>ulg export web</code>. <a href="?">Site plan</a> · <a href="?data=osm">OSM block</a> ·
-  <a href="https://urbansens.github.io/Urban-Landscape-Graphics/05-gis-and-web.html#53-maplibre-gl">Documentation</a>
-</div>
+<div class="card" id="card"></div>
 <script src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js"></script>
 <script>
+// German is the default; ?lang=en shows the English text. A position in the address (#zoom/lat/lng) is kept.
+const params = new URLSearchParams(location.search);
+const lang = params.get("lang") === "en" ? "en" : "de";
+const site = "https://urbansens.github.io/Urban-Landscape-Graphics/" + (lang === "en" ? "en/" : "");
+const TEXT = {
+  de: {
+    title: "UrbanSens-Stil in MapLibre",
+    intro: "Füllungen, handgezeichnete Musterkacheln, Baumkronen und Straßen in Metern, Piktogramme, alles erzeugt mit",
+    plan: "Lageplan", osm: "OSM-Block", docs: "Dokumentation", switchTo: "English",
+    by: "Ein Projekt von", page: "ulg · MapLibre-Beispiel"
+  },
+  en: {
+    title: "UrbanSens style in MapLibre",
+    intro: "Fills, hand-drawn pattern tiles, tree crowns and streets in metres, pictograms, all generated with",
+    plan: "Site plan", osm: "OSM block", docs: "Documentation", switchTo: "Deutsch",
+    by: "A project by", page: "ulg · MapLibre example"
+  }
+}[lang];
+const link = (extra = {}, l = lang) => {
+  const q = new URLSearchParams();
+  if (l === "en") q.set("lang", "en");
+  for (const [k, v] of Object.entries(extra)) q.set(k, v);
+  const s = q.toString();
+  return s ? "?" + s : "?";
+};
+const data = params.get("data") === "osm" ? "osm" : "park";
+document.documentElement.lang = lang;
+document.title = TEXT.page;
+document.getElementById("card").innerHTML =
+  `<h1>${TEXT.title}</h1>${TEXT.intro} <code>ulg export web</code>. ` +
+  `<a href="${link({})}">${TEXT.plan}</a> · <a href="${link({ data: "osm" })}">${TEXT.osm}</a> · ` +
+  `<a href="${site}05-gis-and-web.html#53-maplibre-gl">${TEXT.docs}</a> · ` +
+  `<a href="${link(data === "osm" ? { data } : {}, lang === "en" ? "de" : "en")}">${TEXT.switchTo}</a>` +
+  `<div class="by">${TEXT.by} <a href="https://urbansens.de/" rel="noopener">UrbanSens</a></div>`;
+
 (async () => {
-  const file = new URLSearchParams(location.search).get("data") === "osm" ? "osm.geojson" : "park.geojson";
+  const file = data + ".geojson";
+  const hasPosition = location.hash.length > 1;      // read before the map writes its own position into the address
   const layers = await (await fetch("ulg/maplibre-layers.json")).json();
   const paper = getComputedStyle(document.documentElement).getPropertyValue("--ulg-paper-base").trim() || "#F5F5F1";
   const map = new maplibregl.Map({
     container: "map",
     preserveDrawingBuffer: true,
+    hash: true,
     style: {
       version: 8,
       sprite: new URL("ulg/ulg-sprite", location.href).href,
@@ -41,13 +74,15 @@
     },
     center: [0, 0], zoom: 2
   });
-  const data = await (await fetch(file)).json();
-  const b = new maplibregl.LngLatBounds();
-  for (const f of data.features) {
-    const walk = c => typeof c[0] === "number" ? b.extend(c) : c.forEach(walk);
-    walk(f.geometry.coordinates);
+  if (!hasPosition) {                        // without a position in the address: fit the data
+    const geo = await (await fetch(file)).json();
+    const b = new maplibregl.LngLatBounds();
+    for (const f of geo.features) {
+      const walk = c => typeof c[0] === "number" ? b.extend(c) : c.forEach(walk);
+      walk(f.geometry.coordinates);
+    }
+    map.fitBounds(b, { padding: 30, duration: 0 });
   }
-  map.fitBounds(b, { padding: 30, duration: 0 });
   window.ulgMap = map;
 })();
 </script>

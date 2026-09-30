@@ -1,195 +1,205 @@
-# 1 · Origins
+# 1 · Herkunft
 
-*Where the look of this style comes from: two centuries of washed garden plans, survey sheets and plan
-symbols, and why a library is the way to carry them into GIS.*
+*Woher die Anmutung dieses Stils kommt: zwei Jahrhunderte lavierter Gartenpläne, Vermessungsblätter und
+Planzeichen, und warum eine Bibliothek der Weg ist, sie ins GIS zu übertragen.*
 
-Landscapes were drawn by hand long before they were mapped by computer. The mellow palette, the small
-tufts and crowns and the calm outlines of the UrbanSens style are not an invention; they are a
-selection from a tradition that began in the garden plans and survey offices of the early nineteenth
-century – several of them in Munich, where UrbanSens works.
+Landschaften wurden von Hand gezeichnet, lange bevor man sie am Computer kartierte. Die sanfte
+Palette, die kleinen Büschel und Kronen und die ruhigen Konturen des UrbanSens-Stils sind keine
+Erfindung; sie sind eine Auswahl aus einer Tradition, die in den Gartenplänen und Vermessungsämtern des
+frühen 19. Jahrhunderts begann, mehrere davon in München, wo UrbanSens arbeitet.
 
-![Timeline](img/timeline.png)
+![Zeitleiste](img/timeline-de.png)
 
 ---
 
-## 1.1 A park painted in green – Munich, 1789–1806
+## 1.1 Ein Park in Grün gemalt: München, 1789–1806
 
-In August 1789 Elector Karl Theodor decreed a public park along the Isar in Munich, at the initiative
-of Benjamin Thompson, later Count Rumford. Friedrich Ludwig von Sckell shaped it as a landscape garden;
-it opened in 1792 and, at 3.75 km², is one of the largest city parks in the world: the
-**Englischer Garten**. Sckell directed Munich's court gardens from 1804 until his death in 1823.
+Im August 1789 verfügte Kurfürst Karl Theodor die Anlage eines öffentlichen Parks entlang der Isar in
+München, auf Anregung von Benjamin Thompson, dem späteren Grafen Rumford. Friedrich Ludwig von Sckell
+gestaltete ihn als Landschaftsgarten; er wurde 1792 eröffnet und ist mit 3,75 km² einer der größten
+Stadtparks der Welt: der **Englische Garten**. Sckell leitete von 1804 bis zu seinem Tod 1823 die
+Münchner Hofgärten.
 
 <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Kleinhesseloher_See_Plan_1806.jpg" width="380"
-       alt="Detail of the 1806 plan of the Englischer Garten: the Kleinhesseloher See, the village of Schwabing, meadows, woods and paths in watercolour">
+       alt="Ausschnitt aus dem Plan des Englischen Gartens von 1806: der Kleinhesseloher See, das Dorf Schwabing, Wiesen, Wälder und Wege in Aquarell">
 </p>
 
-*Detail of the plan of the Englischer Garten, 1806: the Kleinhesseloher See, the village of Schwabing,
-meadows and clumps of trees. Königlich bayerische Direction des Topographischen Bureaus. Public domain,
-via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Kleinhesseloher_See_Plan_1806.jpg).*
+*Ausschnitt aus dem Plan des Englischen Gartens, 1806: der Kleinhesseloher See, das Dorf Schwabing,
+Wiesen und Baumgruppen. Königlich bayerische Direction des Topographischen Bureaus. Gemeinfrei,
+über [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Kleinhesseloher_See_Plan_1806.jpg).*
 
-Look at the colours of this sheet: pale greens for the meadows, a deeper green for woods, clear blue
-for water, brick red for roofs, all on warm paper. Two hundred and twenty years later the UrbanSens
-palette uses the same relations – light, low-chroma fills, darker marks of the same hue, saturated
-colour only where something needs attention.
+Betrachten Sie die Farben dieses Blattes: blasse Grüntöne für die Wiesen, ein tieferes Grün für die
+Wälder, klares Blau für das Wasser, Ziegelrot für die Dächer, alles auf warmem Papier.
+Zweihundertzwanzig Jahre später arbeitet die UrbanSens-Palette mit denselben Verhältnissen: helle,
+wenig gesättigte Füllungen, dunklere Zeichen im selben Farbton, gesättigte Farbe nur dort, wo etwas
+Aufmerksamkeit verlangt.
 
-![The Monopteros in the Englischer Garten, 2014](https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Monopteros_Englischer_Garten_Munich_2014_01.jpg/1280px-Monopteros_Englischer_Garten_Munich_2014_01.jpg)
+![Der Monopteros im Englischen Garten, 2014](https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Monopteros_Englischer_Garten_Munich_2014_01.jpg/1280px-Monopteros_Englischer_Garten_Munich_2014_01.jpg)
 
-*The Monopteros in the Englischer Garten, 26 October 2014. Photo: Julian Herzog,
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0), via
+*Der Monopteros im Englischen Garten, 26. Oktober 2014. Foto: Julian Herzog,
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0), über
 [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Monopteros_Englischer_Garten_Munich_2014_01.jpg).*
 
-## 1.2 Stone, ink and the survey – the Bavarian Uraufnahme, 1808–1864
+## 1.2 Stein, Tusche und Vermessung: die bayerische Uraufnahme, 1808–1864
 
-In the 1790s Alois Senefelder found that a smooth slab of Solnhofen limestone, drawn on with greasy
-ink and wetted, would print: lithography. From 1809 he served as inspector of the royal lithographic
-institute in Munich, and the Bavarian survey took up the new technique early.
+In den 1790er-Jahren entdeckte Alois Senefelder, dass sich eine glatte Platte aus Solnhofener
+Kalkstein, mit fetthaltiger Tusche beschrieben und angefeuchtet, zum Drucken eignet: die Lithografie.
+Ab 1809 war er Inspektor des königlichen lithografischen Instituts in München, und die bayerische
+Vermessung griff die neue Technik früh auf.
 
-In 1808 Bavaria began the **Uraufnahme**, the first complete survey of every parcel in the kingdom, for
-the land tax. Surveyors worked at 1:5 000, at 1:2 500 for villages and in parts of Franconia even at
-1:1 250. More than 23 000 sheets were drawn, engraved on limestone plates and printed; the stones are
-still kept by the Bavarian surveying office (LDBV).
+1808 begann Bayern mit der **Uraufnahme**, der ersten vollständigen Vermessung jedes Flurstücks im
+Königreich, für die Grundsteuer. Die Vermessung erfolgte im Maßstab 1:5000, in Dörfern 1:2500 und in
+Teilen Frankens sogar 1:1250. Mehr als 23 000 Blätter wurden gezeichnet, auf Kalksteinplatten gestochen
+und gedruckt; die Steine werden bis heute vom Bayerischen Landesamt für Digitalisierung, Breitband und
+Vermessung (LDBV) aufbewahrt.
 
-![A lithographic stone and the print made from it: a map of Munich with the Hofgarten and the Englischer Garten](https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Litography_negative_stone_and_positive_paper.jpg/1280px-Litography_negative_stone_and_positive_paper.jpg)
+![Ein Lithografiestein und der davon gezogene Abzug: eine Karte von München mit dem Hofgarten und dem Englischen Garten](https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Litography_negative_stone_and_positive_paper.jpg/1280px-Litography_negative_stone_and_positive_paper.jpg)
 
-*A lithographic stone and the print made from it: an old map of Munich with the Hofgarten and the
-Englischer Garten – mirrored on the stone, as printing requires. Photo: Chris 73,
-[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0), via
+*Ein Lithografiestein und der davon gezogene Abzug: eine alte Karte von München mit dem Hofgarten und
+dem Englischen Garten, auf dem Stein spiegelverkehrt, wie es der Druck verlangt. Foto: Chris 73,
+[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0), über
 [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Litography_negative_stone_and_positive_paper.jpg).*
 
-The surveyors did not choose their marks freely. The 1808 instruction for the tax survey prescribed
-a sign for every kind of ground – and it reads like the first draft of a texture catalog:
+Die Zeichen wurden nicht frei gewählt. Die Instruktion von 1808 für die Steuervermessung schrieb für
+jede Flächenart ein Zeichen vor, und sie liest sich wie der erste Entwurf eines Texturkatalogs:
 
 <p align="center">
   <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Legende_uraufnahme.pdf/page2-960px-Legende_uraufnahme.pdf.jpg" width="620"
-       alt="Vorschrift zur Zeichnungsart für die Pläne der Steuer-Rectifications-Vermessung: signs for fields, woods, bushes, meadows, mossy meadows, pastures, moss, gardens, vineyards, hop gardens, buildings, boundaries, roads, rivers and bridges">
+       alt="Vorschrift zur Zeichnungsart für die Pläne der Steuer-Rectifications-Vermessung: Zeichen für Äcker, Wälder, Gebüsch, Wiesen, moosige Wiesen, Weiden, Moos, Gärten, Weinberge, Hopfengärten, Gebäude, Grenzen, Straßen, Flüsse und Brücken">
 </p>
 
-*"Vorschrift zur Zeichnungsart für die Pläne der Steuer-Rectifications-Vermessung": the drawing rules
-of the Bavarian tax survey, after the instruction of 1808. Königlich Bayerisches Vermessungsamt,
-c. 1840. Public domain, via
+*„Vorschrift zur Zeichnungsart für die Pläne der Steuer-Rectifications-Vermessung“: die Zeichenregeln
+der bayerischen Steuervermessung nach der Instruktion von 1808. Königlich Bayerisches Vermessungsamt,
+um 1840. Gemeinfrei, über
 [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Legende_uraufnahme.pdf).*
 
-Deciduous and coniferous woods, bushes, meadows, mossy meadows, pastures and waste ground, moss, gardens,
-vineyards and hop gardens each have their own small mark; buildings, boundaries, paths, rivers and
-bridges their own line. Replace *Wiesen* with `meadow`, *Waldungen · Laubholz* with
-`woodland_deciduous` and *Gärten* with `garden`, and this page becomes a legend of the catalog in
-[chapter 3](03-catalog.md).
+Laub- und Nadelwälder, Gebüsch, Wiesen, moosige Wiesen, Weiden und Ödland, Moos, Gärten, Weinberge und
+Hopfengärten haben jeweils ein eigenes kleines Zeichen; Gebäude, Grenzen, Wege, Flüsse und Brücken eine
+eigene Linie. Ersetzen Sie *Wiesen* durch `meadow`, *Waldungen · Laubholz* durch `woodland_deciduous`
+und *Gärten* durch `garden`, und diese Seite wird zu einer Legende des Katalogs aus
+[Kapitel 3](03-catalog.md).
 
-## 1.3 Crowns, tufts and washes – the language of garden plans
+## 1.3 Kronen, Büschel und Lavierungen: die Sprache der Gartenpläne
 
-Landscape architects drew with the same means. In Peter Joseph Lenné's plan for the Berlin Tiergarten
-the woods are built out of thousands of small crowns, the open lawns keep the paper tone and the paths
-are left white.
+Wer Landschaften entwarf, zeichnete mit denselben Mitteln. In Peter Joseph Lennés Plan für den
+Berliner Tiergarten sind die Wälder aus Tausenden kleiner Kronen aufgebaut, die offenen Rasenflächen
+behalten den Papierton und die Wege bleiben weiß.
 
-![Lenné's plan for the Berlin Tiergarten, 1835](https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Tiergarten-Plan_von_Lenn%C3%A9%2C_1835_-03.jpg/1280px-Tiergarten-Plan_von_Lenn%C3%A9%2C_1835_-03.jpg)
+![Lennés Plan für den Berliner Tiergarten, 1835](https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Tiergarten-Plan_von_Lenn%C3%A9%2C_1835_-03.jpg/1280px-Tiergarten-Plan_von_Lenn%C3%A9%2C_1835_-03.jpg)
 
-*"Verschönerungs-Plan" for the royal Tiergarten in Berlin by Peter Joseph Lenné, drawn by Gerhard
-Koeber in quill, pencil and watercolour, 1835. Landesarchiv Berlin. Public domain, via
+*„Verschönerungs-Plan“ für den königlichen Tiergarten in Berlin von Peter Joseph Lenné, gezeichnet von
+Gerhard Koeber in Feder, Bleistift und Aquarell, 1835. Landesarchiv Berlin. Gemeinfrei, über
 [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Tiergarten-Plan_von_Lenn%C3%A9,_1835_-03.jpg).*
 
-Rural maps followed conventions every reader knew. The archive description of this manuscript map
-from Württemberg lists them: houses red, fields brown, vineyards with vine symbols, meadows green, woods
-as tree symbols, paths brown, the rivers blue – "drawn by eye and freehand".
+Ländliche Karten folgten Konventionen, die allen Lesenden vertraut waren. Die Archivbeschreibung dieser
+handgezeichneten Karte aus Württemberg nennt sie: Häuser rot, Äcker braun, Weinberge mit Rebsymbolen,
+Wiesen grün, Wälder als Baumsymbole, Wege braun, die Flüsse blau (gezeichnet „nach dem Aug und freier
+Faust“).
 
-![Manuscript plan of the Enzberg hunting district, Württemberg](https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/%22Plan_%C3%BCber_den_Enzberger_Jagddistrikt%2C_welcher_die_ganze_Enzberger_Markung%2C_auch_einen_Teil_von_der_Kieselbronner%2C_%C3%96tisheimer%2C_D%C3%BCrrmenzer_und_M%C3%BChlacke_-_LABW_-_Hauptstaatsarchiv_Stuttgart_N_3_Nr._47.jpg/1280px-thumbnail.jpg)
+![Handgezeichneter Plan des Enzberger Jagddistrikts, Württemberg](https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/%22Plan_%C3%BCber_den_Enzberger_Jagddistrikt%2C_welcher_die_ganze_Enzberger_Markung%2C_auch_einen_Teil_von_der_Kieselbronner%2C_%C3%96tisheimer%2C_D%C3%BCrrmenzer_und_M%C3%BChlacke_-_LABW_-_Hauptstaatsarchiv_Stuttgart_N_3_Nr._47.jpg/1280px-thumbnail.jpg)
 
-*Plan of the Enzberg hunting district and Markung, manuscript, undated. Landesarchiv Baden-Württemberg,
-Hauptstaatsarchiv Stuttgart N 3 Nr. 47, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0), via
-[Wikimedia Commons](https://commons.wikimedia.org/w/index.php?curid=174709525).*
+*Plan des Enzberger Jagddistrikts und der Markung, handgezeichnet, undatiert. Landesarchiv
+Baden-Württemberg, Hauptstaatsarchiv Stuttgart N 3 Nr. 47, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0),
+über [Wikimedia Commons](https://commons.wikimedia.org/w/index.php?curid=174709525).*
 
 > der nach dem Aug und freier Faust ist gezeichnet worden
 >
-> — end of the title of the Enzberg plan, Landesarchiv Baden-Württemberg, Hauptstaatsarchiv Stuttgart N 3 Nr. 47 (in English: which was drawn by eye and freehand)
+> Quelle: Ende des Titels des Enzberger Plans, Landesarchiv Baden-Württemberg, Hauptstaatsarchiv Stuttgart N 3 Nr. 47
 
-Three habits of these drawings became rules of the style: **marks are made by hand but placed with
-care** (the wobble never hides the true edge); **texture says what a surface is** (crowns for trees,
-tufts for meadow, waves for water); and **colour stays quiet** so that the plan can carry a message.
+Drei Gewohnheiten dieser Zeichnungen wurden zu Regeln des Stils: **Zeichen entstehen von Hand, werden
+aber mit Sorgfalt platziert** (das Konturwackeln verdeckt nie die wahre Kante); **Textur sagt, was eine
+Oberfläche ist** (Kronen für Bäume, Büschel für Wiese, Wellen für Wasser); und **Farbe bleibt ruhig**,
+damit der Plan eine Aussage tragen kann.
 
-## 1.4 From colour words to codes – the twentieth century
+## 1.4 Von Farbwörtern zu Schlüsseln: das 20. Jahrhundert
 
-Planning law turned conventions into rules. The German **Planzeichenverordnung** (PlanZV) first set
-federal plan symbols for land-use and zoning plans on 19 January 1965; the current version dates from
-18 December 1990 and was last amended on 12 August 2025. It names its colours only in words –
-*Grün mittel*, *Blau mittel* – and gives one of the most useful rules for vegetation symbols: an
-**open** centre marks a tree to be planted, a **filled** centre a tree to be preserved (No. 13.2).
+Das Planungsrecht machte aus Konventionen Regeln. Die **Planzeichenverordnung** (PlanZV) legte
+am 19. Januar 1965 erstmals bundeseinheitliche Planzeichen für Flächennutzungs- und Bebauungspläne
+fest; die geltende Fassung stammt vom 18. Dezember 1990 und wurde zuletzt am 12. August 2025
+geändert. Sie benennt ihre Farben nur in Worten (*Grün mittel*, *Blau mittel*) und liefert eine der
+nützlichsten Regeln für Vegetationssymbole: Ein **offenes** Zentrum kennzeichnet einen anzupflanzenden
+Baum, ein **gefülltes** Zentrum einen zu erhaltenden Baum (Nr. 13.2).
 
 > Die Planzeichen sollen in Farbton, Strichstärke und Dichte den Planunterlagen so angepaßt werden, daß deren Inhalt erkennbar bleibt.
 >
-> — Planzeichenverordnung 1990, § 2 Abs. 3 (in English: the symbols are to be adapted in hue, line weight and density to the base map so that its content stays recognisable)
+> Quelle: Planzeichenverordnung 1990, § 2 Abs. 3
 
-In 1969 Ian McHarg's *Design with Nature* laid transparent maps of soils, water, slopes and vegetation
-on top of one another to find where building would do least harm – the layered map that geographic
-information systems made routine. The international standard for landscape drawings,
-**ISO 11091** (1994), fixed how plans tell *existing* from *proposed*: thin lines for what is there,
-thick lines for what is planned. The cadastre went digital with the **ALKIS** model of the German
-surveying authorities, its object types and its signature catalogue.
+1969 schichtete Ian McHargs *Design with Nature* transparente Karten von Böden, Wasser, Hangneigungen
+und Vegetation übereinander, um herauszufinden, wo Bauen am wenigsten schadet: die Überlagerungskarte,
+die Geoinformationssysteme zur Routine machten. Die internationale Norm für Landschaftszeichnungen,
+**ISO 11091** (1994), regelte, wie Pläne *Bestand* von *Planung* unterscheiden: dünne Linien für das
+Vorhandene, dicke Linien für das Geplante. Das Liegenschaftskataster wurde digital: mit dem Modell
+**ALKIS** der deutschen Vermessungsverwaltungen, seinen Objektarten und seinem Signaturenkatalog.
 
-## 1.5 Open data and ecological targets – the twenty-first century
+## 1.5 Offene Daten und ökologische Ziele: das 21. Jahrhundert
 
-Since 2004 **OpenStreetMap** has described the surface of the world in open tags – `landuse=meadow`,
-`surface=gravel`, `natural=tree` – and its Carto style made them a common visual language. In 2017 the
-Federal Agency for Nature Conservation (BfN) published a catalogue of plan symbols for landscape
-plans: light tints without outlines for areas of low to moderate value, saturated colours with a black
-outline for areas of high value, and brown vertical dashes for fallow – a convention this style
-adopts.
+Seit 2004 beschreibt **OpenStreetMap** die Erdoberfläche in offenen Tags (`landuse=meadow`,
+`surface=gravel`, `natural=tree`), und sein Carto-Stil machte sie zu einer gemeinsamen Bildsprache. 2017
+veröffentlichte das Bundesamt für Naturschutz (BfN) einen Planzeichenkatalog für Landschaftspläne: helle
+Farbtöne ohne Kontur für Flächen von geringer bis mittlerer Wertigkeit, gesättigte Farben mit schwarzer
+Kontur für Flächen von hoher Wertigkeit und braune senkrechte Striche für Brachen. Diese Konvention
+übernimmt der Stil.
 
-In 2024 the EU **Nature Restoration Regulation** (2024/1991) made urban green space and tree canopy a
-legal target: no net loss by 2030 compared with 2024, and an increasing trend from 2031, measured with
-Copernicus data. What a map shows as green is now also what a city reports.
+2024 machte die **Verordnung (EU) 2024/1991 zur Wiederherstellung der Natur** (Nature Restoration
+Regulation, NRR) urbanes Grün und den Baumkronenanteil zu einem rechtlich verbindlichen Ziel: kein
+Nettoverlust bis 2030 gegenüber 2024 und ab 2031 ein steigender Trend, gemessen mit Copernicus-Daten.
+Was eine Karte als Grün zeigt, ist nun auch das, worüber eine Stadt berichtet.
 
-> By 31 December 2030, Member States shall ensure that there is no net loss in the total national area of urban green space and of urban tree canopy cover in urban ecosystem areas […] compared to 2024.
+> Die Mitgliedstaaten stellen bis zum 31. Dezember 2030 sicher, dass in städtischen Ökosystemgebiete[n] […] kein Nettoverlust an der nationalen Gesamtfläche städtischer Grünflächen und städtischer Baumüberschirmung gegenüber 2024 zu verzeichnen ist.
 >
-> — Regulation (EU) 2024/1991 (Nature Restoration Regulation), Article 8(1)
+> Quelle: Verordnung (EU) 2024/1991 (Verordnung zur Wiederherstellung der Natur), Artikel 8 Absatz 1
 
-## 1.6 2026 – one catalog
+## 1.6 2026: ein Katalog
 
-UrbanSens set out the visual language it wanted for its maps on one sheet: habitat types and surface
-materials in a clean, mellow, lightly hand-drawn vector style that works at every scale.
+UrbanSens hat die gewünschte Bildsprache für seine Karten auf einem Blatt festgehalten: Biotoptypen und
+Oberflächenmaterialien in einem klaren, sanften, leicht handgezeichneten Vektorstil, der in jedem
+Maßstab funktioniert.
 
-> A clean, consistent and scalable visual language to represent nature, surfaces and biodiversity in a professional, architectural style – using simple vector patterns and symbols.
+> Eine klare, einheitliche und skalierbare Bildsprache für Natur, Oberflächen und Biodiversität in einem professionellen, architektonischen Stil, mit einfachen Vektormustern und Symbolen.
 >
-> — UrbanSens, reference sheet of the Ecological Vector Style
+> Quelle: UrbanSens, Referenzblatt des Ecological Vector Style (Übersetzung)
 
 <table>
 <tr>
-<td width="50%"><img src="img/reference-sheet.jpg" alt="The UrbanSens brief"></td>
-<td width="50%"><img src="img/style-sheet.png" alt="The same sheet generated by ulg"></td>
+<td width="50%"><img src="img/reference-sheet.jpg" alt="Die UrbanSens-Vorgabe"></td>
+<td width="50%"><img src="img/style-sheet-de.png" alt="Dasselbe Blatt, von ulg erzeugt"></td>
 </tr>
 <tr>
-<td><em>The brief: the UrbanSens reference sheet for the Ecological Vector Style.</em></td>
-<td><em>The result: the same sheet, generated by <code>ulg sheet</code> from the catalog.</em></td>
+<td><em>Die Vorgabe: das UrbanSens-Referenzblatt für den Ecological Vector Style.</em></td>
+<td><em>Das Ergebnis: dasselbe Blatt, mit <code>ulg sheet</code> aus dem Katalog erzeugt.</em></td>
 </tr>
 </table>
 
-`ulg` turns that sheet into a library. It keeps the look – quiet colours, textures that say what a
-surface is, trees drawn to scale – and ties every element to the conventions this chapter traced:
-the codes of ALKIS, XPlanung, the biotope lists and OpenStreetMap, the status symbols of PlanZV and
-ISO 11091, the coefficients planners report, and the official colours of each convention when a map
-has to follow them.
+`ulg` macht aus diesem Blatt eine Bibliothek. Sie behält die Anmutung (ruhige Farben, Texturen, die
+sagen, was eine Oberfläche ist, maßstabsgerecht gezeichnete Bäume) und verknüpft jedes Element mit den
+Konventionen, die dieses Kapitel nachgezeichnet hat: den Schlüsseln aus ALKIS, XPlanung, den
+Biotoplisten und OpenStreetMap, den Bestands- und Planungssymbolen von PlanZV und ISO 11091, den
+Kennwerten, die Planende ausweisen, und den amtlichen Farben der jeweiligen Konvention, wenn eine Karte
+ihr folgen muss.
 
-![One quarter, seven conventions](img/conventions.png)
+![Ein Quartier, sieben Konventionen](img/conventions-de.png)
 
-*One quarter, seven conventions: the demo quarter in the house style and in six official or familiar
-conventions, from the same data.*
+*Ein Quartier, sieben Konventionen: das Demoquartier im Hausstil und in sechs amtlichen oder vertrauten
+Konventionen, aus denselben Daten.*
 
 ---
 
-### Image credits
+### Bildnachweise
 
-| Image | Author, date | Licence | Source |
+| Bild | Urheberschaft, Datum | Lizenz | Quelle |
 |---|---|---|---|
-| Plan of the Englischer Garten (detail) | Königlich bayerische Direction des Topographischen Bureaus, 1806 | public domain | [Commons](https://commons.wikimedia.org/wiki/File:Kleinhesseloher_See_Plan_1806.jpg) |
+| Plan des Englischen Gartens (Ausschnitt) | Königlich bayerische Direction des Topographischen Bureaus, 1806 | gemeinfrei | [Commons](https://commons.wikimedia.org/wiki/File:Kleinhesseloher_See_Plan_1806.jpg) |
 | Monopteros, Englischer Garten | Julian Herzog, 2014 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Monopteros_Englischer_Garten_Munich_2014_01.jpg) |
-| Lithographic stone and print | Chris 73, 2006 | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | [Commons](https://commons.wikimedia.org/wiki/File:Litography_negative_stone_and_positive_paper.jpg) |
-| Drawing rules of the Bavarian tax survey | Königlich Bayerisches Vermessungsamt, c. 1840 | public domain | [Commons](https://commons.wikimedia.org/wiki/File:Legende_uraufnahme.pdf) |
-| Tiergarten plan | Peter Joseph Lenné (design), Gerhard Koeber (drawing), 1835; Landesarchiv Berlin | public domain | [Commons](https://commons.wikimedia.org/wiki/File:Tiergarten-Plan_von_Lenn%C3%A9,_1835_-03.jpg) |
-| Plan of the Enzberg hunting district | unknown, undated; Landesarchiv Baden-Württemberg, HStA Stuttgart N 3 Nr. 47 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | [Commons](https://commons.wikimedia.org/w/index.php?curid=174709525) |
-| Timeline, reference sheet, style sheet, conventions | UrbanSens / generated with `ulg` | – | this repository |
+| Lithografiestein und Abzug | Chris 73, 2006 | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | [Commons](https://commons.wikimedia.org/wiki/File:Litography_negative_stone_and_positive_paper.jpg) |
+| Zeichenregeln der bayerischen Steuervermessung | Königlich Bayerisches Vermessungsamt, um 1840 | gemeinfrei | [Commons](https://commons.wikimedia.org/wiki/File:Legende_uraufnahme.pdf) |
+| Tiergarten-Plan | Peter Joseph Lenné (Entwurf), Gerhard Koeber (Zeichnung), 1835; Landesarchiv Berlin | gemeinfrei | [Commons](https://commons.wikimedia.org/wiki/File:Tiergarten-Plan_von_Lenn%C3%A9,_1835_-03.jpg) |
+| Plan des Enzberger Jagddistrikts | unbekannt, undatiert; Landesarchiv Baden-Württemberg, HStA Stuttgart N 3 Nr. 47 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | [Commons](https://commons.wikimedia.org/w/index.php?curid=174709525) |
+| Zeitleiste, Referenzblatt, Stilblatt, Konventionen | UrbanSens / mit `ulg` erzeugt | keine | dieses Repository |
 
-The historical images are linked from Wikimedia Commons, not copied into the repository; they need an
-internet connection to display.
+Die historischen Bilder sind von Wikimedia Commons verlinkt und nicht in das Repository kopiert; zur
+Anzeige brauchen sie eine Internetverbindung.
 
 ---
 
-Next: [2 · The style guide](02-style.md)
+Weiter: [2 · Der Stilleitfaden](02-style.md)

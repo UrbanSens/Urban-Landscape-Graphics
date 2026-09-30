@@ -48,7 +48,7 @@ Each entry says: data that looks like *this* is drawn as *that* element.
 | `match` | one of `code` / `match` | Several attribute conditions that must all hold. Keys use the canonical names; values are strings; `"*"` means "any non-empty value". |
 | `name` | yes | Official class name in the scheme's language. `name_de` / `name_en` optional. |
 | `element` | yes | Element id from `docs/reference/element-list.md`, or `null` for classes that are not drawn (with `fit: "none"`). |
-| `fit` | yes | `exact` – same concept · `narrower` – the element is more specific than the class · `broader` – the element is more general than the class · `nearest` – no real equivalent, closest drawing · `none` – not drawable (element `null`). |
+| `fit` | yes | `exact`: same concept · `narrower`: the element is more specific than the class · `broader`: the element is more general than the class · `nearest`: no real equivalent, closest drawing · `none`: not drawable (element `null`). |
 | `color` | no | The scheme's **own official legend colour** for the class, `#RRGGBB` upper case. Only when the research marks it as verified (V), or V\* with the reason stated in the file's `license_note` (EUNIS legend swatches). Never an invented or house colour. |
 | `evidence` | no | `V`, `V*`, `S` or `R` as in the research files, for the mapping row. |
 | `note` | no | Short remark (e.g. "use attribute age_class to pick the value"). |

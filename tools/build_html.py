@@ -1,16 +1,23 @@
-"""Build the documentation as HTML.
+"""Build the documentation as HTML, in German (the default) and in English.
 
-    python tools/build_html.py               # site + single file in docs/html/
-    python tools/build_html.py --site-only   # only the multi-page site
-    python tools/build_html.py --single-only # only docs/html/ulg-documentation.html
+    python tools/build_html.py               # sites and single files in docs/html/
+    python tools/build_html.py --site-only   # only the multi-page sites
+    python tools/build_html.py --single-only # only the two single files
     python tools/build_html.py --out DIR     # another output folder
 
-Two forms of the same content, both generated from the Markdown in the repository:
+The Markdown of the repository exists in two languages. German (``README.md``, ``docs/*.md``) is the default and is
+built into the root of the output, English (``README.en.md``, ``docs/en/*.md``) into ``en/``. The reference pages, the
+research files, the examples and the changelog are English only; both trees contain them, with the interface in the
+language of the tree (a small EN tag marks them in the German menu).
 
-* a **site** (``docs/html/index.html``): one page per chapter with sidebar navigation, search that works
-  from ``file://``, light and dark mode, zoomable figures, copy buttons on code, previous/next links;
-* a **single file** (``docs/html/ulg-documentation.html``): the guide, reference, standards report and
-  examples in one page with the figures embedded (WebP), to send by e-mail or read offline.
+Each language has two forms of the same content:
+
+* a **site** (``docs/html/index.html``, ``docs/html/en/index.html``): one page per chapter with sidebar navigation,
+  search that works from ``file://``, light and dark mode, zoomable figures, copy buttons on code, previous/next
+  links and a language switch;
+* a **single file** (``docs/html/ulg-dokumentation.html``, ``docs/html/en/ulg-documentation.html``): the guide,
+  reference, standards report and examples in one page with the figures embedded (WebP), to send by e-mail or read
+  offline.
 
 The look comes from the library itself: colours are the palette tokens, the logo (``tools/build_logo.py``) is
 drawn with catalog elements, the banners are crops of the demo map (``tools/build_docs.py banners``). The layout is
@@ -30,6 +37,7 @@ import base64
 import functools
 import html
 import io
+import json
 import mimetypes
 import os
 import re
@@ -62,7 +70,10 @@ OUT = DOCS / "html"
 ASSETS = Path(__file__).resolve().parent / "html"
 sys.path.insert(0, str(ROOT / "src"))
 
-SINGLE_NAME = "ulg-documentation.html"
+LANGS = ("de", "en")
+DEFAULT_LANG = "de"
+#: the single file of each language, relative to the output folder
+SINGLE_NAME = {"de": "ulg-dokumentation.html", "en": "en/ulg-documentation.html"}
 MARKER = ".ulg-html-docs"
 GROUPS = ["Home", "Guide", "Reference", "Research", "Project", "More"]
 #: banner image (docs/img/banners/<name>.jpg) of a page: by key, else by group
@@ -72,14 +83,18 @@ BANNER_BY_KEY = {"home": "home", "contents": "home", "01-origins": "origins", "0
 BANNER_BY_GROUP = {"Home": "home", "Guide": "style", "Reference": "catalog", "Research": "research",
                    "Project": "project", "More": "project"}
 TOP_LINKS = [("Guide", "01-origins"), ("Reference", "ref-element-list"), ("Research", "report"), ("Project", "examples")]
+REFERENCE = [("element-list", "Element list"), ("attributes", "Attributes"), ("crosswalks", "Crosswalks"),
+             ("themes", "Themes"), ("crosswalk-format", "Crosswalk format"), ("api", "API")]
 WEBP_OVER = 120_000        # PNG figures above this size (bytes) are served as WebP
 WEBP_QUALITY = 86
 LOGO_FILES = ["ulg-mark.svg", "ulg-mark-small.svg", "ulg-favicon.svg", "favicon.ico", "apple-touch-icon.png"]
-BRAND_FILES = ["urbansens-logo.png"]          # docs/img/brand: the UrbanSens logo, as supplied
+BRAND_DIR = ROOT / "src" / "ulg" / "data" / "brand"          # the UrbanSens logo as supplied (it ships with the package)
+BRAND_FILES = ["urbansens-logo.png"]
 REPO_URL = "https://github.com/UrbanSens/Urban-Landscape-Graphics"
+WEBSITE = "https://urbansens.de/"                                      # UrbanSens (the logo and "a project by" link here)
 SITE_URL = "https://urbansens.github.io/Urban-Landscape-Graphics/"     # where .github/workflows/pages.yml publishes the site
 #: The stripes of the UrbanSens logo from left to right: the mean colour of 48 columns of its skyline
-#: (docs/img/brand/urbansens-logo.png). They draw the thin line on top of the pages and above the footer.
+#: (src/ulg/data/brand/urbansens-logo.png). They draw the thin line on top of the pages and above the footer.
 UB_STRIPES = ["#acc7d4", "#87adc4", "#acc7d5", "#8fa9b9", "#74a4c3", "#b6cbd8", "#a1b6c6", "#90aebe", "#7a99ac", "#94bbd1",
               "#a3c2d6", "#78a8c6", "#e8d4cc", "#e2bcac", "#e7b4a4", "#e79683", "#e7c0b0", "#e78e7b", "#df7269", "#e49683",
               "#dc746a", "#e18978", "#b1575b", "#b4575b", "#be5a5d", "#af565a", "#e18172", "#df7269", "#e6a08c", "#df7269",
@@ -104,15 +119,103 @@ STREAM_LABELS = {
 SOURCE_LANG = {".py": "python", ".html": "html", ".js": "js", ".css": "css", ".json": "json", ".sh": "bash",
                ".md": "markdown", ".toml": "toml", ".txt": "text"}
 
+#: Everything the pages say themselves (navigation, buttons, footer). The chapters come from the Markdown.
+UI = {
+    "de": {
+        "name": "Deutsch", "locale": "de_DE",
+        "groups": {"Home": "Start", "Guide": "Leitfaden", "Reference": "Referenz", "Research": "Recherche",
+                   "Project": "Projekt", "More": "Weiteres"},
+        "overview": "Übersicht", "contents": "Inhalt",
+        "switch": "Sprache", "skip": "Zum Inhalt springen", "menu": "Menü",
+        "search_ph": "Dokumentation durchsuchen  ( / )", "search": "Suche",
+        "theme_aria": "Zwischen hell und dunkel wechseln", "theme_title": "Hell / Dunkel",
+        "sections": "Bereiche", "docs_nav": "Dokumentation",
+        "also": 'Auch als <a href="{href}">eine Datei</a> mit eingebetteten Abbildungen, für E-Mail und zum Lesen ohne Netz.',
+        "single_also": 'Version {version}. Derselbe Inhalt als <a href="{href}">Website mit mehreren Seiten</a>.',
+        "continue": "Weiterlesen", "previous": "Zurück", "next": "Weiter", "prevnext": "Vorherige und nächste Seite",
+        "chapter": "Leitfaden · Kapitel {n} von {total}",
+        "home_eyebrow": "UrbanSens · Ecological Vector Style",
+        "notes_eyebrow": "Recherche · Arbeitsnotizen", "stream_eyebrow": "Recherche · Strang {n}",
+        "example_eyebrow": "Projekt · Beispiel", "english_eyebrow": "{group} · auf Englisch",
+        "english_tag": "EN", "english_title": "Englischsprachige Seite",
+        "read_time": "{n} Min. Lesezeit",
+        "home_meta": 'Version {version} · ein Projekt von <a href="{url}" rel="noopener">UrbanSens</a>',
+        "cta_history": "Mit der Geschichte beginnen", "cta_python": "In Python nutzen",
+        "brief": ("Eine klare, einheitliche und skalierbare Bildsprache für Natur, Oberflächen und Biodiversität in einem "
+                  "professionellen, architektonischen Stil, mit einfachen Vektormustern und Symbolen."),
+        "brief_cite": "UrbanSens, Referenzblatt des Ecological Vector Style (Übersetzung)",
+        "read_style": "Stilleitfaden lesen",
+        "blurb": ("Der UrbanSens Ecological Vector Style als Bibliothek: Farben, Texturen und Symbole für Karten der "
+                  "Stadtlandschaft, nach deutschen und europäischen Standards."),
+        "version": "Version", "source": "Quelltext auf GitHub",
+        "by": ('<strong>Ein Projekt von <a href="{url}" rel="noopener">UrbanSens</a>.</strong> Der Stil begann als '
+               'einzelnes Referenzblatt für UrbanSens-Karten, diese Bibliothek macht daraus Daten, Code und Dokumentation. '
+               'MIT-Lizenz, <a href="{credit}">bitte UrbanSens nennen</a>.'),
+        "font_note": "Überschriften in Rethink Sans (SIL Open Font License), Fließtext in der Serifenschrift Ihres Systems.",
+        "generated": "Erzeugt aus <code>{src}</code> mit <code>tools/build_html.py</code>.",
+        "generated_single": "Erzeugt mit <code>tools/build_html.py</code> aus dem Markdown im Repository.",
+        "outside": "Nur in der mehrseitigen Version (docs/html/), nicht in dieser Datei",
+        "anchor": "Link zu diesem Abschnitt",
+        "copy": "Kopieren", "copied": "Kopiert", "copyAria": "Code kopieren", "close": "Schließen",
+        "nothing": "Nichts gefunden für „{q}“.",
+        "title_suffix": "Urban Landscape Graphics",
+        "single_title": "Urban Landscape Graphics {version}: Dokumentation",
+        "single_desc": "Der UrbanSens Ecological Vector Style als Bibliothek: Leitfaden, Referenz und Standards.",
+    },
+    "en": {
+        "name": "English", "locale": "en_GB",
+        "groups": {"Home": "Home", "Guide": "Guide", "Reference": "Reference", "Research": "Research",
+                   "Project": "Project", "More": "More"},
+        "overview": "Overview", "contents": "Contents",
+        "switch": "Language", "skip": "Skip to content", "menu": "Menu",
+        "search_ph": "Search the documentation  ( / )", "search": "Search",
+        "theme_aria": "Switch between light and dark", "theme_title": "Light / dark",
+        "sections": "Sections", "docs_nav": "Documentation",
+        "also": 'Also as <a href="{href}">one file</a> with the figures embedded, for e-mail and offline reading.',
+        "single_also": 'Version {version}. The same content as a <a href="{href}">multi-page site</a>.',
+        "continue": "Continue reading", "previous": "Previous", "next": "Next", "prevnext": "Previous and next page",
+        "chapter": "Guide · Chapter {n} of {total}",
+        "home_eyebrow": "UrbanSens · Ecological Vector Style",
+        "notes_eyebrow": "Research · Working notes", "stream_eyebrow": "Research · Stream {n}",
+        "example_eyebrow": "Project · Example", "english_eyebrow": "{group}",
+        "english_tag": "", "english_title": "",
+        "read_time": "{n} min read",
+        "home_meta": 'Version {version} · a project by <a href="{url}" rel="noopener">UrbanSens</a>',
+        "cta_history": "Start with the history", "cta_python": "Use it in Python",
+        "brief": ("A clean, consistent and scalable visual language to represent nature, surfaces and biodiversity in a "
+                  "professional, architectural style, using simple vector patterns and symbols."),
+        "brief_cite": "UrbanSens, reference sheet of the Ecological Vector Style",
+        "read_style": "Read the style guide",
+        "blurb": ("The UrbanSens Ecological Vector Style as a library: colours, textures and symbols for urban landscape "
+                  "maps, tied to German and European standards."),
+        "version": "Version", "source": "Source on GitHub",
+        "by": ('<strong>A project by <a href="{url}" rel="noopener">UrbanSens</a>.</strong> The style began as a single '
+               'reference sheet for UrbanSens maps; this library turns it into data, code and documentation. '
+               'MIT licence, <a href="{credit}">please credit UrbanSens</a>.'),
+        "font_note": "Headings are set in Rethink Sans (SIL Open Font License), the text in your system's serif.",
+        "generated": "Generated from <code>{src}</code> by <code>tools/build_html.py</code>.",
+        "generated_single": "Generated by <code>tools/build_html.py</code> from the Markdown in the repository.",
+        "outside": "Only in the multi-page version (docs/html/), not in this file",
+        "anchor": "Link to this section",
+        "copy": "Copy", "copied": "Copied", "copyAria": "Copy code", "close": "Close",
+        "nothing": "Nothing found for “{q}”.",
+        "title_suffix": "Urban Landscape Graphics",
+        "single_title": "Urban Landscape Graphics {version}: documentation",
+        "single_desc": "The UrbanSens Ecological Vector Style as a library: guide, reference and standards.",
+    },
+}
+
 
 # --------------------------------------------------------------------------- pages
 
 @dataclass
 class Page:
-    key: str
-    out: str                          # path of the html file relative to the site root
+    key: str                          # unique within a language tree (the file stem for chapters)
+    out: str                          # path of the html file relative to the output folder
     group: str
     src: Path                         # source file; for synthetic pages the path they pretend to have
+    lang: str = DEFAULT_LANG          # the tree this page belongs to
+    english: bool = False             # English text in the German tree (reference, research, examples, changelog)
     label: str = ""
     number: str = ""
     text: str | None = None           # markdown; None reads src
@@ -138,64 +241,78 @@ class Page:
         except ValueError:
             return self.src.as_posix()
 
+    @property
+    def content_lang(self) -> str:
+        return "en" if self.english else self.lang
 
-def collect_pages() -> list[Page]:
+
+def collect_pages(lang: str) -> list[Page]:
+    """The pages of one language tree. German sits in the root of the output, English in ``en/``."""
+    de = lang == "de"
+    docs = DOCS if de else DOCS / "en"
+    prefix = "" if de else "en/"
     pages: list[Page] = []
 
-    def add(**kw) -> Page:
-        p = Page(**kw)
+    def add(key: str, out: str, group: str, src: Path, shared: bool = False, **kw) -> Page:
+        p = Page(key=key, out=prefix + out, group=group, src=src, lang=lang, english=de and shared, **kw)
         pages.append(p)
         return p
 
-    add(key="home", out="index.html", group="Home", src=ROOT / "README.md", label="Overview", raw_html=True)
-    add(key="contents", out="contents.html", group="Home", src=DOCS / "index.md", label="Contents", raw_html=True,
-        single=False)
-    for f in sorted(DOCS.glob("[0-9][0-9]-*.md")):
-        add(key=f.stem, out=f"{f.stem}.html", group="Guide", src=f, number=str(int(f.name[:2])), raw_html=True)
-    for stem, label in (("element-list", "Element list"), ("attributes", "Attributes"), ("crosswalks", "Crosswalks"),
-                        ("themes", "Themes"), ("crosswalk-format", "Crosswalk format"), ("api", "API")):
-        add(key=f"ref-{stem}", out=f"reference/{stem}.html", group="Reference", src=DOCS / "reference" / f"{stem}.md",
-            label=label, wide=stem != "crosswalk-format", raw_html=stem == "crosswalk-format")
-    add(key="report", out="research/standards-report.html", group="Research",
-        src=DOCS / "research" / "standards-report.md", label="Standards report", wide=True)
+    add("home", "index.html", "Home", ROOT / ("README.md" if de else "README.en.md"), label=UI[lang]["overview"],
+        raw_html=True)
+    add("contents", "contents.html", "Home", docs / "index.md", label=UI[lang]["contents"], raw_html=True, single=False)
+    for f in sorted(docs.glob("[0-9][0-9]-*.md")):
+        add(f.stem, f"{f.stem}.html", "Guide", f, number=str(int(f.name[:2])), raw_html=True)
+    for stem, label in REFERENCE:
+        src, shared = DOCS / "reference" / f"{stem}.md", True
+        if de and (DOCS / "reference" / f"{stem}.de.md").exists():       # a German version exists: its title is the label
+            src, label, shared = DOCS / "reference" / f"{stem}.de.md", "", False
+        add(f"ref-{stem}", f"reference/{stem}.html", "Reference", src, shared=shared, label=label,
+            wide=stem != "crosswalk-format", raw_html=stem == "crosswalk-format")
+    add("report", "research/standards-report.html", "Research", DOCS / "research" / "standards-report.md", shared=True,
+        label="Standards report", wide=True)
     streams = DOCS / "research" / "streams"
-    add(key="streams", out="research/streams/index.html", group="Research", src=streams / "README.md",
+    add("streams", "research/streams/index.html", "Research", streams / "README.md", shared=True,
         label="Research streams", single=False, text="")
     for f in sorted(streams.glob("[0-9][0-9]_*.md")):
         n = f.name[:2]
-        add(key=f"stream-{n}", out=f"research/streams/{f.stem}.html", group="Research", src=f, number=n,
+        add(f"stream-{n}", f"research/streams/{f.stem}.html", "Research", f, shared=True, number=n,
             label=STREAM_LABELS.get(n, f.stem), parent="streams", single=False, full_text=False)
     for f in sorted((streams / "notes").glob("*.md")):
         n = f.name[:2]
-        add(key=f"notes-{n}", out=f"research/streams/notes/{f.stem}.html", group="Research", src=f,
+        add(f"notes-{n}", f"research/streams/notes/{f.stem}.html", "Research", f, shared=True,
             label=f"Working notes {n}", parent="streams", single=False, full_text=False)
 
     ex = ROOT / "examples"
-    add(key="examples", out="examples/index.html", group="Project", src=ex / "README.md", label="Examples",
-        raw_html=True)
+    add("examples", "examples/index.html", "Project", ex / "README.md", shared=True, label="Examples", raw_html=True)
     for name in ("quickstart.py", "osm_workflow.py", "indicators.py", "qgis_project.py", "themes.py"):
-        add(key=f"src-{name}", out=f"examples/{name}.html", group="Project", src=ex / name, label=name,
-            parent="examples")
-    add(key="src-web", out="examples/web/index.html", group="Project", src=ex / "web" / "README.md",
+        add(f"src-{name}", f"examples/{name}.html", "Project", ex / name, shared=True, label=name, parent="examples")
+    add("src-web", "examples/web/index.html", "Project", ex / "web" / "README.md", shared=True,
         label="web/", parent="examples", text="")
-    add(key="src-web-build", out="examples/web/build.py.html", group="Project", src=ex / "web" / "build.py",
+    add("src-web-build", "examples/web/build.py.html", "Project", ex / "web" / "build.py", shared=True,
         label="web/build.py", parent="examples")
-    add(key="src-web-index", out="examples/web/index.html.html", group="Project", src=ex / "web" / "index.html",
+    add("src-web-index", "examples/web/index.html.html", "Project", ex / "web" / "index.html", shared=True,
         label="web/index.html", parent="examples")
-    add(key="src-data", out="examples/data/make_osm_sample.py.html", group="Project",
-        src=ex / "data" / "make_osm_sample.py", label="data/make_osm_sample.py", parent="examples")
-    add(key="changelog", out="changelog.html", group="Project", src=ROOT / "CHANGELOG.md", label="Changelog",
+    add("src-data", "examples/data/make_osm_sample.py.html", "Project", ex / "data" / "make_osm_sample.py", shared=True,
+        label="data/make_osm_sample.py", parent="examples")
+    add("changelog", "changelog.html", "Project", ROOT / "CHANGELOG.md", shared=True, label="Changelog", raw_html=True)
+    add("contributing", "contributing.html", "Project", ROOT / "AGENTS.md", shared=True, label="Working on ulg",
         raw_html=True)
-    add(key="contributing", out="contributing.html", group="Project", src=ROOT / "AGENTS.md", label="Working on ulg",
-        raw_html=True)
-
-    known = {p.src.resolve() for p in pages}
-    for f in sorted(DOCS.rglob("*.md")):
-        if f.resolve() not in known and OUT not in f.parents:
-            key = "more-" + re.sub(r"[^a-z0-9]+", "-", f.relative_to(DOCS).with_suffix("").as_posix().lower())
-            add(key=key, out=f.relative_to(DOCS).with_suffix(".html").as_posix(), group="More", src=f,
-                label=f.stem)
+    add("credit", "licence-and-credit.html", "Project", docs / "licence-and-credit.md")
     return pages
+
+
+def collect_all() -> dict[str, list[Page]]:
+    trees = {lang: collect_pages(lang) for lang in LANGS}
+    known = {p.src.resolve() for pages in trees.values() for p in pages}
+    for f in sorted(DOCS.rglob("*.md")):                       # any other Markdown below docs/ goes to "More"
+        if f.resolve() in known or OUT in f.parents:
+            continue
+        stem = re.sub(r"[^a-z0-9]+", "-", f.relative_to(DOCS).with_suffix("").as_posix().lower())
+        for lang, pages in trees.items():
+            pages.append(Page(key="more-" + stem, out=("" if lang == "de" else "en/") + f.relative_to(DOCS).with_suffix(".html").as_posix(),
+                              group="More", src=f, lang=lang, english=lang == "de", label=f.stem))
+    return trees
 
 
 # --------------------------------------------------------------------------- markdown
@@ -241,7 +358,7 @@ def inline_text(tok) -> str:
 
 def strip_pager(text: str) -> str:
     """The closing 'Next: ...' line of a chapter: the pages get real previous/next buttons instead."""
-    return re.sub(r"\n---[ \t]*\n+(?:Next:|Back to)[^\n]*\n*\Z", "\n", text)
+    return re.sub(r"\n---[ \t]*\n+(?:Next:|Back to|Weiter:|Zurück zur|Zurück zum)[^\n]*\n*\Z", "\n", text)
 
 
 def longest_run(text: str, ch: str = "`") -> int:
@@ -271,15 +388,28 @@ class Target:
 class Builder:
     def __init__(self, out: Path = OUT):
         self.out = out
-        self.pages = collect_pages()
-        self.by_key = {p.key: p for p in self.pages}
-        assert len(self.by_key) == len(self.pages), "duplicate page keys"
-        self.by_path: dict[Path, Page] = {p.src.resolve(): p for p in self.pages}
+        self.trees = collect_all()
+        self.pages = [p for lang in LANGS for p in self.trees[lang]]
+        self.by_key = {lang: {p.key: p for p in pages} for lang, pages in self.trees.items()}
+        for lang in LANGS:
+            assert len(self.by_key[lang]) == len(self.trees[lang]), f"duplicate page keys in {lang}"
+        self.by_path: dict[str, dict[Path, Page]] = {}
+        self.dir_alias: dict[str, dict[Path, tuple[Page, str]]] = {}
         ex = ROOT / "examples"
-        self.by_path[ex.resolve()] = self.by_key["examples"]
-        self.by_path[(ex / "web").resolve()] = self.by_key["src-web"]
-        self.by_path[(DOCS / "research" / "streams").resolve()] = self.by_key["streams"]
-        self.dir_alias = {(DOCS / "research" / "streams" / "notes").resolve(): (self.by_key["streams"], "working-notes")}
+        for lang in LANGS:
+            paths = {p.src.resolve(): p for p in self.trees[lang]}
+            for other in LANGS:                         # a chapter of the other language leads to its sibling in this tree
+                if other != lang:
+                    for q in self.trees[other]:
+                        sibling = self.by_key[lang].get(q.key)
+                        if sibling is not None and not q.english:
+                            paths.setdefault(q.src.resolve(), sibling)
+            keys = self.by_key[lang]
+            paths[ex.resolve()] = keys["examples"]
+            paths[(ex / "web").resolve()] = keys["src-web"]
+            paths[(DOCS / "research" / "streams").resolve()] = keys["streams"]
+            self.by_path[lang] = paths
+            self.dir_alias[lang] = {(DOCS / "research" / "streams" / "notes").resolve(): (keys["streams"], "working-notes")}
         self.assets: dict[Path, str] = {}
         self.problems: list[str] = []
         self._sizes: dict[Path, tuple[int, int] | None] = {}
@@ -301,20 +431,20 @@ class Builder:
                     "*Seven detailed research files written on 2026-09-30, the evidence behind the "
                     "[standards report](../standards-report.md). Every value is marked by how it was verified.*", "",
                     "| Stream | Title |", "|---|---|"]
-            for q in self.pages:
+            for q in self.trees[p.lang]:
                 if q.parent == "streams" and q.key.startswith("stream-"):
                     title = q.src.read_text(encoding="utf-8").splitlines()[0].lstrip("# ").strip()
                     rows.append(f"| [{q.number} · {q.label}]({q.src.name}) | {title.replace('|', '/')} |")
             rows += ["", "## Working notes", "",
                      "Page-image transcriptions and scratch tables behind streams 02 and 04.", ""]
-            rows += [f"- [{q.label}](notes/{q.src.name})" for q in self.pages if q.key.startswith("notes-")]
+            rows += [f"- [{q.label}](notes/{q.src.name})" for q in self.trees[p.lang] if q.key.startswith("notes-")]
             return "\n".join(rows) + "\n"
         if p.key == "src-web":
             return ("# examples/web\n\n*A complete MapLibre page: the demo quarter and an OpenStreetMap-style block, "
                     "drawn with the exported web style.*\n\n"
                     "| File | What it does |\n|---|---|\n"
                     "| [build.py](build.py) | writes the two GeoJSON files and runs `export_web` |\n"
-                    "| [index.html](index.html) | the page; `?data=osm` switches to the OSM block |\n\n"
+                    "| [index.html](index.html) | the page; `?data=osm` switches to the OSM block, `?lang=en` to English |\n\n"
                     "Build and serve it from the repository root:\n\n"
                     "```bash\npython examples/web/build.py\n```\n\n"
                     "```bash\npython -m http.server 8765 --directory examples/web\n```\n\n"
@@ -369,14 +499,12 @@ class Builder:
             p.label = re.sub(r"^\d+ · ", "", p.title)
         body = md.renderer.render(tokens, md.options, env)
         p.desc = next((t[:220] for t in (plain(m) for m in re.findall(r"<p>(.*?)</p>", body, re.S)) if len(t) >= 40), "")
-        p.body = self.polish(body)
+        p.body = self.polish(body, p.lang)
         self.extract_hero(p)
 
     @staticmethod
     def extract_hero(p: Page) -> None:
         """The h1 and the line under it move into the banner; the article starts with the first paragraph."""
-        if p.key == "home":                                      # the logo above the README's title is in the banner already
-            p.body = re.sub(r'\A\s*<p align="center">\s*<img\b[^>]*>\s*</p>\s*', "", p.body)
         m = re.match(r'\s*<h1(?: id="([^"]*)")?[^>]*>(.*?)</h1>\s*(?:<p class="lede">(.*?)</p>)?', p.body, re.S)
         if not m:
             return
@@ -392,7 +520,7 @@ class Builder:
         p.read_min = max(1, round(words / 230)) if p.group in ("Home", "Guide") else 0
 
     @staticmethod
-    def polish(h: str) -> str:
+    def polish(h: str, lang: str = DEFAULT_LANG) -> str:
         """Link-independent clean-up of the rendered Markdown."""
         def table(m):
             block = m.group(0)
@@ -402,13 +530,13 @@ class Builder:
             return f'<div class="figs">{layout}</div>'
 
         def code(m):
-            lang = re.search(r'language-([\w+#-]+)', m.group(0))
-            label = lang.group(1) if lang and lang.group(1) != "text" else ""
+            lang_ = re.search(r'language-([\w+#-]+)', m.group(0))
+            label = lang_.group(1) if lang_ and lang_.group(1) != "text" else ""
             return f'<div class="codeblock" data-lang="{label}">{m.group(0)}</div>'
 
         def quote(m):
             inner = m.group(1)
-            cite = re.search(r"<p>\s*(?:—|–|&mdash;|&ndash;)\s*(.*?)</p>\s*\Z", inner, re.S)
+            cite = re.search(r"<p>\s*(?:Source|Quelle):\s*(.*?)</p>\s*\Z", inner, re.S)
             if not cite:
                 return m.group(0)
             return f'<blockquote class="quote">{inner[:cite.start()]}<p class="cite">{cite.group(1)}</p>\n</blockquote>'
@@ -416,9 +544,10 @@ class Builder:
         h = re.sub(r"<table>.*?</table>", table, h, flags=re.S)
         h = re.sub(r"<blockquote>(.*?)</blockquote>", quote, h, flags=re.S)
         h = re.sub(r"<pre\b.*?</pre>", code, h, flags=re.S)
+        aria = html.escape(UI[lang]["anchor"], quote=True)
         h = re.sub(r'<h([2-4]) id="([^"]+)">(.*?)</h\1>',
                    lambda m: f'<h{m[1]} id="{m[2]}">{m[3]}<a class="anchor" href="#{m[2]}" '
-                             f'aria-label="Link to this section">#</a></h{m[1]}>', h, flags=re.S)
+                             f'aria-label="{aria}">#</a></h{m[1]}>', h, flags=re.S)
         h = re.sub(r"(<h1[^>]*>.*?</h1>\s*)<p><em>(.*?)</em></p>", r'\1<p class="lede">\2</p>', h, count=1, flags=re.S)
         return h
 
@@ -432,11 +561,11 @@ class Builder:
         path, _, frag = url.partition("#")
         target = (p.src.parent / unquote(path)).resolve()
         frag = unquote(frag)
-        if target in self.dir_alias:
-            page, anchor = self.dir_alias[target]
+        if target in self.dir_alias[p.lang]:
+            page, anchor = self.dir_alias[p.lang][target]
             return Target("page", url, page, frag=anchor)
-        if target in self.by_path:
-            return Target("page", url, self.by_path[target], frag=frag)
+        if target in self.by_path[p.lang]:
+            return Target("page", url, self.by_path[p.lang][target], frag=frag)
         if self.out.resolve() in target.parents:
             return Target("out", url, path=target, frag=frag)
         if target.is_file():
@@ -489,20 +618,32 @@ class Builder:
         if t.kind == "anchor":
             return "#" + (f"{p.key}--{t.frag}" if mode == "single" and t.frag else t.frag)
         frag = f"#{t.frag}" if t.frag else ""
+        here = p.out if mode == "site" else SINGLE_NAME[p.lang]      # the file the link is written into
         if t.kind == "page":
             q = t.page
-            if t.frag and t.frag not in {h[1] for h in q.headings}:
-                self.problems.append(f"{p.rel}: {t.url}: no heading '{t.frag}' in {q.rel}")
+            anchor = self.twin_anchor(q, t.frag) if p.english else t.frag
+            frag = f"#{anchor}" if anchor else ""
+            if anchor and anchor not in {h[1] for h in q.headings}:
+                self.problems.append(f"{p.rel}: {t.url}: no heading '{anchor}' in {q.rel}")
             if mode == "single" and q.single:
-                return "#" + q.key + (f"--{t.frag}" if t.frag else "")
-            return (rel_url(q.out, p.out) if mode == "site" else q.out) + frag
+                return "#" + q.key + (f"--{anchor}" if anchor else "")
+            return rel_url(q.out, here) + frag
         if t.kind == "out":
             name = t.path.relative_to(self.out.resolve()).as_posix()
-            return (rel_url(name, p.out) if mode == "site" else name) + frag
+            return rel_url(name, here) + frag
         out_path = self.asset_path(t.path)
         if mode == "single" and is_img:
             return self.data_uri(t.path)
-        return (rel_url(out_path, p.out) if mode == "site" else out_path) + frag
+        return rel_url(out_path, here) + frag
+
+    def twin_anchor(self, q: Page, frag: str) -> str:
+        """Pages that exist in English only (changelog, reference) link to anchors of the English chapters. In the German
+        tree such a link leads to the German chapter, whose heading is the twin at the same position."""
+        en = self.by_key["en"].get(q.key)
+        if not frag or q.lang != "de" or q.english or en is None:
+            return frag
+        ids_en, ids_de = [h[1] for h in en.headings], [h[1] for h in q.headings]
+        return ids_de[ids_en.index(frag)] if len(ids_en) == len(ids_de) and frag in ids_en else frag
 
     def relabel(self, h: str, p: Page) -> str:
         """A link whose text is just the file name of another page shows that page's title instead."""
@@ -517,6 +658,8 @@ class Builder:
     def rewrite(self, h: str, p: Page, mode: str) -> str:
         """Point every link and image at its place in the output; wrap figures."""
         h = self.relabel(h, p)
+        outside_title = html.escape(UI[p.lang]["outside"], quote=True)
+
         def attrs(m):
             name, rest = m.group(1), m.group(2)
             local: Path | None = None
@@ -536,7 +679,7 @@ class Builder:
 
             rest = re.sub(r'\b(href|src)="([^"]*)"', one, rest)
             if outside and " class=" not in rest:  # a page of the multi-page version, next to this file
-                rest += ' class="outside" title="Only in the multi-page version (docs/html/), not in this file"'
+                rest += f' class="outside" title="{outside_title}"'
             if name == "img":
                 extra = ' loading="lazy" decoding="async"'
                 if local is not None:
@@ -571,14 +714,15 @@ class Builder:
 
     # ---- navigation ---------------------------------------------------------------------------
 
-    def included(self, mode: str) -> list[Page]:
-        return [p for p in self.pages if mode == "site" or p.single]
+    def included(self, lang: str, mode: str) -> list[Page]:
+        return [p for p in self.trees[lang] if mode == "site" or p.single]
 
     def href(self, p: Page, cur: Page | None, mode: str) -> str:
         return rel_url(p.out, cur.out) if mode == "site" and cur is not None else f"#{p.key}"
 
-    def nav_html(self, cur: Page | None, mode: str, with_single_link: bool = True) -> str:
-        pages = self.included(mode)
+    def nav_html(self, cur: Page | None, mode: str, lang: str) -> str:
+        ui = UI[lang]
+        pages = self.included(lang, mode)
         out = []
 
         def item(p: Page) -> str:
@@ -587,8 +731,10 @@ class Builder:
             family = here or (cur is not None and cur.parent == p.key)
             cls = ' class="current"' if here else ""
             num = f'<span class="num">{html.escape(p.number)}</span>' if p.number else ""
+            tag = (f'<span class="tag" title="{html.escape(ui["english_title"], quote=True)}">{ui["english_tag"]}</span>'
+                   if p.english and ui["english_tag"] else "")
             s = (f'<li{cls} data-page="{p.key}"><a href="{self.href(p, cur, mode)}"'
-                 f'{" aria-current=page" if here else ""}>{num}<span>{html.escape(p.label)}</span></a>')
+                 f'{" aria-current=page" if here else ""}>{num}<span>{html.escape(p.label)}</span>{tag}</a>')
             subs = [h for h in p.headings if h[0] == 2]
             if subs and (here or mode == "single"):
                 links = "".join(
@@ -602,20 +748,21 @@ class Builder:
         for group in GROUPS:
             top = [p for p in pages if p.group == group and p.parent is None]
             if top:
-                out.append(f'<h2>{html.escape(group)}</h2><ul>{"".join(item(p) for p in top)}</ul>')
-        if mode == "site" and with_single_link and cur is not None:
-            out.append(f'<p class="also">Also as <a href="{rel_url(SINGLE_NAME, cur.out)}">one file</a> with the '
-                       "figures embedded, for e-mail and offline reading.</p>")
+                out.append(f'<h2>{html.escape(ui["groups"][group])}</h2><ul>{"".join(item(p) for p in top)}</ul>')
+        if mode == "site" and cur is not None:
+            single = SINGLE_NAME[lang]
+            out.append(f'<p class="also">{ui["also"].format(href=rel_url(single, cur.out))}</p>')
         if mode == "single":
-            out.append(f'<p class="also">Version {self.version}. The same content as a '
-                       '<a href="index.html">multi-page site</a>.</p>')
+            index = "index.html" if lang == "de" else "en/index.html"
+            out.append(f'<p class="also">{ui["single_also"].format(version=self.version, href=rel_url(index, SINGLE_NAME[lang]))}</p>')
         return "".join(out)
 
     def neighbours(self, p: Page) -> tuple[Page | None, Page | None]:
+        pages = self.trees[p.lang]
         if p.parent:
-            seq = [self.by_key[p.parent]] + [q for q in self.pages if q.parent == p.parent]
+            seq = [self.by_key[p.lang][p.parent]] + [q for q in pages if q.parent == p.parent]
         else:
-            seq = [q for q in self.pages if q.parent is None]
+            seq = [q for q in pages if q.parent is None]
         i = seq.index(p)
         return (seq[i - 1] if i else None, seq[i + 1] if i + 1 < len(seq) else None)
 
@@ -625,8 +772,13 @@ class Builder:
     def article_class(p: Page) -> str:
         return ' class="wide"' if p.wide else ""
 
+    @staticmethod
+    def lang_attr(p: Page) -> str:
+        """``lang="en"`` on English content inside the German tree, so that screen readers and hyphenation follow it."""
+        return f' lang="{p.content_lang}"' if p.content_lang != p.lang else ""
+
     def logo_url(self, name: str, root: str, mode: str, folder: str = "logo") -> str:
-        path = DOCS / "img" / folder / name
+        path = (BRAND_DIR if folder == "brand" else DOCS / "img" / folder) / name
         if not path.exists():
             raise SystemExit(f"{path} is missing" + ("; run  python tools/build_logo.py" if folder == "logo" else ""))
         return self.data_uri(path) if mode == "single" else f"{root}assets/{folder}/{name}"
@@ -645,20 +797,23 @@ class Builder:
         return rel_url(self.asset_path(path), at.out)
 
     def eyebrow_text(self, p: Page) -> str:
+        ui = UI[p.lang]
+        group = ui["groups"][p.group]
         if p.group == "Home":
-            return "UrbanSens · Ecological Vector Style"
+            return ui["home_eyebrow"]
         if p.group == "Guide" and p.number:
-            return f"Guide · Chapter {p.number} of {sum(1 for q in self.pages if q.group == 'Guide')}"
+            return ui["chapter"].format(n=p.number, total=sum(1 for q in self.trees[p.lang] if q.group == "Guide"))
         if p.key.startswith("notes-"):
-            return "Research · Working notes"
+            return ui["notes_eyebrow"]
         if p.key.startswith("stream-"):
-            return f"Research · Stream {p.number}"
+            return ui["stream_eyebrow"].format(n=p.number)
         if p.key.startswith("src-"):
-            return "Project · Example"
-        return p.group
+            return ui["example_eyebrow"]
+        return ui["english_eyebrow"].format(group=group) if p.english else group
 
     def hero_html(self, p: Page, root: str, mode: str) -> str:
         """The banner: a drawing that fades into the paper, eyebrow, title, a short rule and the subtitle."""
+        ui = UI[p.lang]
         home = p.key == "home"
         banner = self.banner_url(p, p, mode) if (mode == "site" or home) else ""
         cls = "hero" + (" home" if home else "") + (" page-head" if mode == "single" else "")
@@ -674,84 +829,118 @@ class Builder:
         parts.append('<span class="hero-rule"></span>')
         if p.lede:
             parts.append(f'<p class="hero-lede">{self.rewrite(p.lede, p, mode)}</p>')
-        meta = f"Version {self.version} · a project by UrbanSens" if home else (f"{p.read_min} min read" if p.read_min else "")
+        meta = (ui["home_meta"].format(version=self.version, url=WEBSITE) if home
+                else (ui["read_time"].format(n=p.read_min) if p.read_min else ""))
         if meta:
             parts.append(f'<p class="hero-meta">{meta}</p>')
         if home:
             def go(key: str) -> str:
-                return rel_url(self.by_key[key].out, p.out) if mode == "site" else f"#{key}"
-            parts.append(f'<p class="hero-cta"><a class="btn" href="{go("01-origins")}">Start with the history</a>'
-                         f'<a class="btn ghost" href="{go("04-python")}">Use it in Python</a></p>')
-        return f'<section class="{cls}">{art}<div class="hero-in">{"".join(parts)}</div></section>\n'
+                return rel_url(self.by_key[p.lang][key].out, p.out) if mode == "site" else f"#{key}"
+            parts.append(f'<p class="hero-cta"><a class="btn" href="{go("01-origins")}">{ui["cta_history"]}</a>'
+                         f'<a class="btn ghost" href="{go("04-python")}">{ui["cta_python"]}</a></p>')
+        return f'<section class="{cls}"{self.lang_attr(p)}>{art}<div class="hero-in">{"".join(parts)}</div></section>\n'
 
-    def topnav_html(self, p: Page | None, mode: str) -> str:
+    def topnav_html(self, p: Page | None, mode: str, lang: str) -> str:
         links = []
-        for label, key in TOP_LINKS:
-            q = self.by_key[key]
+        for group, key in TOP_LINKS:
+            q = self.by_key[lang][key]
             if mode == "single" and not q.single:
                 continue
             href = rel_url(q.out, p.out) if mode == "site" and p is not None else f"#{key}"
             here = ' class="here"' if p is not None and p.group == q.group else ""
-            links.append(f'<a href="{href}"{here}>{label}</a>')
+            links.append(f'<a href="{href}"{here}>{html.escape(UI[lang]["groups"][group])}</a>')
         links.append(f'<a href="{REPO_URL}" rel="noopener">GitHub</a>')
-        return '<nav class="topnav" aria-label="Sections">' + "".join(links) + "</nav>"
+        return f'<nav class="topnav" aria-label="{UI[lang]["sections"]}">' + "".join(links) + "</nav>"
 
-    def head(self, title: str, desc: str, root: str, css: str, single: bool, page: str = "") -> str:
+    def lang_switch(self, p: Page) -> str:
+        """DE | EN: the same page in the other language (every page exists in both trees)."""
+        items = []
+        for lang in LANGS:
+            if lang == p.lang:
+                items.append(f'<span class="on" aria-current="true" lang="{lang}" title="{UI[lang]["name"]}">{lang.upper()}</span>')
+            else:
+                q = self.by_key[lang][p.key]
+                items.append(f'<a href="{rel_url(q.out, p.out)}" hreflang="{lang}" lang="{lang}" '
+                             f'title="{UI[lang]["name"]}">{lang.upper()}</a>')
+        return f'<nav class="lang" aria-label="{UI[p.lang]["switch"]}">{"".join(items)}</nav>'
+
+    @staticmethod
+    def site_url(p: Page) -> str:
+        """Public address of a page; the start pages live at the root of their tree."""
+        return SITE_URL + {"index.html": "", "en/index.html": "en/"}.get(p.out, p.out)
+
+    def i18n_script(self, lang: str) -> str:
+        ui = UI[lang]
+        data = {k: ui[k] for k in ("copy", "copied", "copyAria", "close", "nothing")}
+        return "<script>window.ULG_I18N=" + json.dumps(data, ensure_ascii=False).replace("</", "<\\/") + ";</script>\n"
+
+    def head(self, lang: str, title: str, desc: str, root: str, css: str, single: bool, p: Page | None = None) -> str:
+        ui = UI[lang]
         style = f"<style>{css}</style>" if single else f'<link rel="stylesheet" href="{root}assets/style.css">'
         mode = "single" if single else "site"
         social = ""
-        if not single:          # link previews (chat, social media): absolute URLs, the picture made by build_docs.py social
+        if p is not None:       # link previews (chat, social media) and the other language: absolute URLs
             d = html.escape(desc, quote=True)
-            page = "" if page == "index.html" else page          # the start page lives at the site's root
-            social = (f'<link rel="canonical" href="{SITE_URL}{page}">\n'
+            image = "social-preview.png" if lang == "de" else "social-preview-en.png"
+            alts = ""
+            for other in LANGS:
+                url = self.site_url(self.by_key[other][p.key])
+                alts += f'<link rel="alternate" hreflang="{other}" href="{url}">\n'
+                if other == DEFAULT_LANG:
+                    alts += f'<link rel="alternate" hreflang="x-default" href="{url}">\n'
+            social = (f'<link rel="canonical" href="{self.site_url(p)}">\n{alts}'
                       '<meta property="og:type" content="website">\n<meta property="og:site_name" content="Urban Landscape Graphics">\n'
+                      f'<meta property="og:locale" content="{ui["locale"]}">\n'
                       f'<meta property="og:title" content="{html.escape(title, quote=True)}">\n'
-                      f'<meta property="og:description" content="{d}">\n<meta property="og:url" content="{SITE_URL}{page}">\n'
-                      f'<meta property="og:image" content="{SITE_URL}assets/social-preview.png">\n'
+                      f'<meta property="og:description" content="{d}">\n<meta property="og:url" content="{self.site_url(p)}">\n'
+                      f'<meta property="og:image" content="{SITE_URL}assets/{image}">\n'
                       '<meta name="twitter:card" content="summary_large_image">\n')
         icons = f'<link rel="icon" type="image/svg+xml" href="{self.logo_url("ulg-favicon.svg", root, mode)}">\n'
         if not single:
             icons += (f'<link rel="alternate icon" href="{root}assets/logo/favicon.ico">\n'
                       f'<link rel="apple-touch-icon" href="{root}assets/logo/apple-touch-icon.png">\n')
-        return (f'<!doctype html>\n<html lang="en" data-root="{root}">\n<head>\n<meta charset="utf-8">\n'
+        return (f'<!doctype html>\n<html lang="{lang}" data-root="{root}">\n<head>\n<meta charset="utf-8">\n'
                 '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
                 f"<title>{html.escape(title)}</title>\n"
                 f'<meta name="description" content="{html.escape(desc, quote=True)}">\n'
                 '<meta name="color-scheme" content="light">\n<meta name="theme-color" content="#F5F5F1">\n'
-                f'{social}{icons}{THEME_BOOT}\n{style}\n</head>\n')
+                f'{social}{icons}{THEME_BOOT}\n{self.i18n_script(lang)}{style}\n</head>\n')
 
-    def topbar(self, p: Page | None, root: str, mode: str) -> str:
+    def topbar(self, p: Page | None, root: str, mode: str, lang: str) -> str:
+        ui = UI[lang]
         mark = self.logo_url("ulg-mark-small.svg", root, mode)
-        home = "#home" if mode == "single" else f"{root}index.html"
+        home = "#home" if mode == "single" else f"{root}{'' if lang == 'de' else 'en/'}index.html"
+        switch = self.lang_switch(p) if (mode == "site" and p is not None) else ""
         return (
-            '<a class="skip" href="#content">Skip to content</a>\n<div class="progress" aria-hidden="true"><span></span></div>\n'
+            f'<a class="skip" href="#content">{ui["skip"]}</a>\n<div class="progress" aria-hidden="true"><span></span></div>\n'
             '<header class="topbar">'
-            f'<button id="menu" class="icon-btn" type="button" aria-label="Menu" aria-expanded="false">{MENU_SVG}</button>'
+            f'<button id="menu" class="icon-btn" type="button" aria-label="{ui["menu"]}" aria-expanded="false">{MENU_SVG}</button>'
             f'<a class="brand" href="{home}"><img src="{mark}" alt="" height="26">'
             f'<span class="name">Urban Landscape Graphics</span><small>{self.version}</small></a>'
-            + self.topnav_html(p, mode) +
-            '<div class="search"><input id="q" type="search" placeholder="Search the documentation  ( / )" '
-            'autocomplete="off" spellcheck="false" aria-label="Search"><div id="results" hidden></div></div>'
-            f'<button id="theme" class="icon-btn" type="button" aria-label="Switch between light and dark" '
-            f'title="Light / dark">{THEME_SVG}</button></header>\n')
-
-    BRIEF = ("A clean, consistent and scalable visual language to represent nature, surfaces and biodiversity in a "
-             "professional, architectural style – using simple vector patterns and symbols.")
+            + self.topnav_html(p, mode, lang) +
+            f'<div class="search"><input id="q" type="search" placeholder="{html.escape(ui["search_ph"], quote=True)}" '
+            f'autocomplete="off" spellcheck="false" aria-label="{ui["search"]}"><div id="results" hidden></div></div>'
+            + switch +
+            f'<button id="theme" class="icon-btn" type="button" aria-label="{html.escape(ui["theme_aria"], quote=True)}" '
+            f'title="{html.escape(ui["theme_title"], quote=True)}">{THEME_SVG}</button></header>\n')
 
     def statement_band(self, p: Page, root: str, mode: str) -> str:
         """The brief that started the style, signed with the UrbanSens logo (home page only)."""
         if p.key != "home":
             return ""
-        go = rel_url(self.by_key["02-style"].out, p.out) if mode == "site" else "#02-style"
+        ui = UI[p.lang]
+        go = rel_url(self.by_key[p.lang]["02-style"].out, p.out) if mode == "site" else "#02-style"
         logo = self.logo_url("urbansens-logo.png", root, mode, "brand")
         return ('<section class="band"><div class="band-in"><div>'
-                f'<p class="band-quote">{html.escape(self.BRIEF)}</p>'
-                '<p class="band-cite">UrbanSens · reference sheet of the Ecological Vector Style</p>'
-                f'<a class="btn" href="{go}">Read the style guide</a></div>'
-                f'<img class="ub-logo" src="{logo}" alt="UrbanSens – Let\'s be part of the change." width="389" height="321">'
+                f'<p class="band-quote">{html.escape(ui["brief"])}</p>'
+                f'<p class="band-cite">{html.escape(ui["brief_cite"])}</p>'
+                f'<a class="btn" href="{go}">{ui["read_style"]}</a></div>'
+                f'<a class="ub-link" href="{WEBSITE}" rel="noopener"><img class="ub-logo" src="{logo}" '
+                'alt="UrbanSens, Let\'s be part of the change." width="389" height="321"></a>'
                 '</div></section>\n')
 
     def next_band(self, p: Page) -> str:
+        ui = UI[p.lang]
         prev, nxt = self.neighbours(p)
         if not (prev or nxt):
             return ""
@@ -760,14 +949,16 @@ class Builder:
             num = f"{q.number} · " if q.number and q.group == "Guide" else ""
             banner = self.banner_url(q, p, "site")
             art = f'<div class="card-art" style="background-image:url(\'{banner}\')"></div>' if banner else ""
-            return (f'<a class="card {cls}" href="{rel_url(q.out, p.out)}">{art}<div class="card-text"><small>{label}</small>'
-                    f"<b>{html.escape(num + q.label)}</b></div></a>")
+            return (f'<a class="card {cls}" href="{rel_url(q.out, p.out)}"{self.lang_attr(q) if q.english else ""}>{art}'
+                    f'<div class="card-text"><small>{label}</small><b>{html.escape(num + q.label)}</b></div></a>')
 
-        cards = (card(prev, "prev", "Previous") if prev else "") + (card(nxt, "next", "Next") if nxt else "")
-        return f'<section class="next-band" aria-label="Previous and next page"><h2>Continue reading</h2><div class="next-cards">{cards}</div></section>\n'
+        cards = (card(prev, "prev", ui["previous"]) if prev else "") + (card(nxt, "next", ui["next"]) if nxt else "")
+        return (f'<section class="next-band" aria-label="{ui["prevnext"]}"><h2>{ui["continue"]}</h2>'
+                f'<div class="next-cards">{cards}</div></section>\n')
 
-    def footer_html(self, p: Page | None, root: str, mode: str, note: str) -> str:
-        pages = self.included(mode)
+    def footer_html(self, p: Page | None, lang: str, root: str, mode: str, note: str) -> str:
+        ui = UI[lang]
+        pages = self.included(lang, mode)
 
         def link(q: Page) -> str:
             href = rel_url(q.out, p.out) if mode == "site" and p is not None else f"#{q.key}"
@@ -775,59 +966,59 @@ class Builder:
             return f'<li><a href="{href}">{html.escape(num + q.label)}</a></li>'
 
         cols = "".join(
-            f'<div class="foot-col"><h3>{group}</h3><ul>{"".join(link(q) for q in pages if q.group == group and q.parent is None)}</ul></div>'
+            f'<div class="foot-col"><h3>{html.escape(ui["groups"][group])}</h3>'
+            f'<ul>{"".join(link(q) for q in pages if q.group == group and q.parent is None)}</ul></div>'
             for group in ("Guide", "Reference", "Research", "Project"))
         mark = self.logo_url("ulg-mark-small.svg", root, mode)
         ub = self.logo_url("urbansens-logo.png", root, mode, "brand")
+        credit = self.by_key[lang]["credit"]
+        credit_href = rel_url(credit.out, p.out) if mode == "site" and p is not None else f"#{credit.key}"
         return (f'<footer class="site-footer"><div class="foot-grid"><div class="foot-brand"><img src="{mark}" alt="">'
-                '<p class="name">Urban Landscape Graphics</p>'
-                "<p>The UrbanSens Ecological Vector Style as a library: colours, textures and symbols for urban landscape "
-                f'maps, tied to German and European standards.</p><p>Version {self.version} · <a href="{REPO_URL}" '
-                f'rel="noopener">Source on GitHub</a></p></div>{cols}</div>'
-                f'<div class="foot-by"><img class="ub-logo" src="{ub}" alt="UrbanSens – Let\'s be part of the change." '
-                'width="389" height="321"><p><strong>A project by UrbanSens.</strong> The style began as a single reference '
-                "sheet for UrbanSens maps; this library turns it into data, code and documentation.</p></div>"
-                f'<p class="foot-note">{note} Headings are set in Rethink Sans (SIL Open Font License), the text in your '
-                "system's serif.</p></footer>\n")
+                f'<p class="name">Urban Landscape Graphics</p><p>{ui["blurb"]}</p>'
+                f'<p>{ui["version"]} {self.version} · <a href="{REPO_URL}" rel="noopener">{ui["source"]}</a></p></div>{cols}</div>'
+                f'<div class="foot-by"><a class="ub-link" href="{WEBSITE}" rel="noopener"><img class="ub-logo" src="{ub}" '
+                'alt="UrbanSens, Let\'s be part of the change." width="389" height="321"></a>'
+                f'<p>{ui["by"].format(url=WEBSITE, credit=credit_href)}</p></div>'
+                f'<p class="foot-note">{note} {ui["font_note"]}</p></footer>\n')
 
     def page_html(self, p: Page) -> str:
+        ui = UI[p.lang]
         root = "../" * p.out.count("/")
         body = self.render_body(p, "site")
-        page_title = p.title if p.group == "Home" else f"{p.title} · Urban Landscape Graphics"
-        note = f"Generated from <code>{html.escape(p.rel)}</code> by <code>tools/build_html.py</code>."
+        page_title = p.title if p.group == "Home" else f"{p.title} · {ui['title_suffix']}"
+        note = ui["generated"].format(src=html.escape(p.rel))
         return (
-            self.head(page_title, p.desc, root, "", False, p.out) + "<body>\n" + self.topbar(p, root, "site")
+            self.head(p.lang, page_title, p.desc, root, "", False, p) + "<body>\n" + self.topbar(p, root, "site", p.lang)
             + self.hero_html(p, root, "site")
-            + '<div class="layout">\n<nav class="sidebar" aria-label="Documentation">'
-            + self.nav_html(p, "site") + '</nav>\n<div class="backdrop"></div>\n'
-            + f'<main id="content"><article{self.article_class(p)}>' + body + "</article></main>\n</div>\n"
-            + self.statement_band(p, root, "site") + self.next_band(p) + self.footer_html(p, root, "site", note)
-            + f'<script defer src="{root}assets/search-index.js"></script>\n'
+            + f'<div class="layout">\n<nav class="sidebar" aria-label="{ui["docs_nav"]}">'
+            + self.nav_html(p, "site", p.lang) + '</nav>\n<div class="backdrop"></div>\n'
+            + f'<main id="content"{self.lang_attr(p)}><article{self.article_class(p)}>' + body + "</article></main>\n</div>\n"
+            + self.statement_band(p, root, "site") + self.next_band(p) + self.footer_html(p, p.lang, root, "site", note)
+            + f'<script defer src="{root}assets/search-index.{p.lang}.js"></script>\n'
               f'<script defer src="{root}assets/site.js"></script>\n</body>\n</html>\n')
 
-    def single_html(self, css: str, js: str) -> str:
-        pages = self.included("single")
+    def single_html(self, lang: str, css: str, js: str) -> str:
+        ui = UI[lang]
+        pages = self.included(lang, "single")
         sections = []
         for p in pages:
-            sections.append(f'<section class="page" id="{p.key}">{self.hero_html(p, "", "single")}'
+            sections.append(f'<section class="page" id="{p.key}"{self.lang_attr(p)}>{self.hero_html(p, "", "single")}'
                             f'<article{self.article_class(p)}>{self.render_body(p, "single")}</article></section>')
-        title = f"Urban Landscape Graphics {self.version} — documentation"
-        note = "Generated by <code>tools/build_html.py</code> from the Markdown in the repository."
+        title = ui["single_title"].format(version=self.version)
         return (
-            self.head(title, "The UrbanSens Ecological Vector Style as a library: guide, reference and standards.", "",
-                      css, True)
-            + "<body data-single>\n" + self.topbar(None, "", "single")
-            + '<div class="layout">\n<nav class="sidebar" aria-label="Documentation">' + self.nav_html(None, "single")
+            self.head(lang, title, ui["single_desc"], "", css, True)
+            + "<body data-single>\n" + self.topbar(None, "", "single", lang)
+            + f'<div class="layout">\n<nav class="sidebar" aria-label="{ui["docs_nav"]}">' + self.nav_html(None, "single", lang)
             + '</nav>\n<div class="backdrop"></div>\n<main id="content">' + "\n".join(sections)
-            + "</main>\n</div>\n" + self.footer_html(None, "", "single", note)
-            + f"<script>{self.search_js('single')}</script>\n<script>{js}</script>\n</body>\n</html>\n")
+            + "</main>\n</div>\n" + self.footer_html(None, lang, "", "single", ui["generated_single"])
+            + f"<script>{self.search_js(lang, 'single')}</script>\n<script>{js}</script>\n</body>\n</html>\n")
 
     # ---- search -------------------------------------------------------------------------------
 
-    def search_rows(self, mode: str) -> list[list[str]]:
+    def search_rows(self, lang: str, mode: str) -> list[list[str]]:
         rows = []
-        for p in self.included(mode):
-            display = f"{p.group} — {p.number + ' ' if p.number else ''}{p.label}"
+        for p in self.included(lang, mode):
+            display = f"{UI[lang]['groups'][p.group]} · {p.number + ' ' if p.number else ''}{p.label}"
             cap = 1100 if p.full_text else 0
             for level, hid, title, text in p.sections:
                 if mode == "site":
@@ -837,9 +1028,9 @@ class Builder:
                 rows.append([url, display, title, text[:cap]])
         return rows
 
-    def search_js(self, mode: str) -> str:
-        import json
-        return "window.ULG_INDEX=" + json.dumps(self.search_rows(mode), ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/") + ";"
+    def search_js(self, lang: str, mode: str) -> str:
+        return ("window.ULG_INDEX=" + json.dumps(self.search_rows(lang, mode), ensure_ascii=False,
+                                                 separators=(",", ":")).replace("</", "<\\/") + ";")
 
     # ---- output -------------------------------------------------------------------------------
 
@@ -880,16 +1071,22 @@ class Builder:
                 shutil.copyfile(DOCS / "img" / "logo" / name, self.out / "assets" / "logo" / name)
             (self.out / "assets" / "brand").mkdir()
             for name in BRAND_FILES:
-                shutil.copyfile(DOCS / "img" / "brand" / name, self.out / "assets" / "brand" / name)
-            shutil.copyfile(DOCS / "img" / "social-preview.png", self.out / "assets" / "social-preview.png")
-            (self.out / "assets" / "search-index.js").write_text(self.search_js("site"), encoding="utf-8")
-            for p in self.pages:
-                dest = self.out / p.out
-                dest.parent.mkdir(parents=True, exist_ok=True)
-                dest.write_text(self.page_html(p), encoding="utf-8")
+                shutil.copyfile(BRAND_DIR / name, self.out / "assets" / "brand" / name)
+            for name in ("social-preview.png", "social-preview-en.png"):
+                if (DOCS / "img" / name).exists():
+                    shutil.copyfile(DOCS / "img" / name, self.out / "assets" / name)
+            for lang in LANGS:
+                (self.out / "assets" / f"search-index.{lang}.js").write_text(self.search_js(lang, "site"), encoding="utf-8")
+                for p in self.trees[lang]:
+                    dest = self.out / p.out
+                    dest.parent.mkdir(parents=True, exist_ok=True)
+                    dest.write_text(self.page_html(p), encoding="utf-8")
         if single:
-            text = self.single_html(self.css(), (ASSETS / "site.js").read_text(encoding="utf-8"))
-            (self.out / SINGLE_NAME).write_text(text, encoding="utf-8")
+            js = (ASSETS / "site.js").read_text(encoding="utf-8")
+            for lang in LANGS:
+                dest = self.out / SINGLE_NAME[lang]
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                dest.write_text(self.single_html(lang, self.css(), js), encoding="utf-8")
         self.write_assets()
         self.problems += check_output(self.out)
         return self.problems
@@ -964,15 +1161,16 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--out", default=str(OUT), help=f"output folder (default: {OUT.relative_to(ROOT)})")
     group = ap.add_mutually_exclusive_group()
-    group.add_argument("--site-only", action="store_true", help="only the multi-page site")
-    group.add_argument("--single-only", action="store_true", help=f"only {SINGLE_NAME}")
+    group.add_argument("--site-only", action="store_true", help="only the multi-page sites")
+    group.add_argument("--single-only", action="store_true", help="only the two single files")
     args = ap.parse_args(argv)
     builder = Builder(Path(args.out).resolve())
     problems = builder.build(site=not args.single_only, single=not args.site_only)
     out = builder.out
-    pages = len(builder.pages) if not args.single_only else 0
-    print(f"{out}: {pages} pages" + (f", {SINGLE_NAME} ({(out / SINGLE_NAME).stat().st_size / 1e6:.1f} MB)"
-                                       if not args.site_only else ""))
+    for lang in LANGS:
+        pages = len(builder.trees[lang]) if not args.single_only else 0
+        single = (f", {SINGLE_NAME[lang]} ({(out / SINGLE_NAME[lang]).stat().st_size / 1e6:.1f} MB)" if not args.site_only else "")
+        print(f"{out}: {lang}: {pages} pages{single}")
     for problem in problems:
         print("  problem:", problem)
     return 1 if problems else 0

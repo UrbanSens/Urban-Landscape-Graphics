@@ -11,6 +11,9 @@
     }
   };
   var ROOT = root.getAttribute("data-root") || "";
+  /* texts of the interface come from the page (window.ULG_I18N), so the script serves every language */
+  var T = window.ULG_I18N || {};
+  function tr(key, fallback) { return T[key] || fallback; }
 
   /* smooth scrolling for in-page clicks, but not for deep links or the 190 000 px single file */
   window.addEventListener("load", function () {
@@ -67,11 +70,11 @@
   }
   $$(".codeblock").forEach(function (block) {
     var b = doc.createElement("button");
-    b.type = "button"; b.className = "copy"; b.textContent = "Copy"; b.setAttribute("aria-label", "Copy code");
+    b.type = "button"; b.className = "copy"; b.textContent = tr("copy", "Copy"); b.setAttribute("aria-label", tr("copyAria", "Copy code"));
     b.addEventListener("click", function () {
       var code = $("pre", block);
       copyText(code ? code.innerText.replace(/\n$/, "") : "", function () {
-        b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1400);
+        b.textContent = tr("copied", "Copied"); setTimeout(function () { b.textContent = tr("copy", "Copy"); }, 1400);
       });
     });
     block.appendChild(b);
@@ -84,7 +87,7 @@
     closeBox();
     box = doc.createElement("div"); box.className = "lightbox"; box.setAttribute("role", "dialog");
     var img = doc.createElement("img"); img.src = src; img.alt = alt || "";
-    var x = doc.createElement("button"); x.className = "x"; x.type = "button"; x.setAttribute("aria-label", "Close"); x.textContent = "×";
+    var x = doc.createElement("button"); x.className = "x"; x.type = "button"; x.setAttribute("aria-label", tr("close", "Close")); x.textContent = "×";
     box.appendChild(img); box.appendChild(x);
     box.addEventListener("click", function (e) {
       if (e.target === img) { box.classList.toggle("full"); } else { closeBox(); }
@@ -175,7 +178,7 @@
       var url = (r[0].charAt(0) === "#" ? "" : ROOT) + r[0];
       return '<a href="' + esc(url) + '" data-i="' + i + '"><span class="r-page">' + esc(r[1]) + '</span><span class="r-title">' +
         esc(r[2]) + '</span>' + (r[3] ? '<span class="r-text">' + hit(r[3], ws) + "</span>" : "") + "</a>";
-    }).join("") : '<div class="none">Nothing found for “' + esc(q) + "”.</div>";
+    }).join("") : '<div class="none">' + tr("nothing", "Nothing found for “{q}”.").replace("{q}", esc(q)) + "</div>";
     out.hidden = false;
   }
   function mark(i) {
