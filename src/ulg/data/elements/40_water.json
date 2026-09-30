@@ -1,0 +1,350 @@
+{
+  "title": "Water",
+  "elements": {
+    "water": {
+      "group": "water",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 30,
+      "label": {
+        "en": "Water body",
+        "de": "Gewässer"
+      },
+      "description": {
+        "en": "Standing water: pond, lake, basin. Calm water texture, blue-grey tone.",
+        "de": "Stehendes Gewässer: Teich, Weiher, See. Ruhige Wassertextur, blaugrauer Ton."
+      },
+      "fill": "water.300",
+      "textures": [
+        {
+          "motif": "waves",
+          "ink": "water.500"
+        }
+      ],
+      "attributes": {
+        "vegetated": false,
+        "water": true,
+        "bff": 0.5,
+        "runoff_cs": 1.0,
+        "runoff_cm": 1.0,
+        "albedo": 0.06,
+        "emissivity": 0.99,
+        "nrr_urban_green": true,
+        "note": "BFF for rain-fed ponds (+0.1 with vegetation). Runoff: permanently ponded water (DWA-A 138-1).",
+        "layer": "ground",
+        "family": "water"
+      },
+      "aliases": [
+        "Teich",
+        "Weiher",
+        "See",
+        "Stillgewässer",
+        "stehendes Gewässer",
+        "Wasserfläche",
+        "Tümpel",
+        "pond",
+        "lake",
+        "standing water"
+      ]
+    },
+    "watercourse": {
+      "group": "water",
+      "geometry": [
+        "polygon",
+        "line"
+      ],
+      "z": 30,
+      "label": {
+        "en": "Watercourse",
+        "de": "Fließgewässer"
+      },
+      "description": {
+        "en": "River, stream or canal. Longer flow marks than standing water.",
+        "de": "Fluss, Bach oder Kanal. Längere Fließmarken als beim Stillgewässer."
+      },
+      "fill": "water.300",
+      "textures": [
+        {
+          "motif": "waves",
+          "ink": "water.500",
+          "keep": 0.6,
+          "aspect": 0.5,
+          "lod": {
+            "1": {
+              "length": 2.2
+            },
+            "2": {
+              "length": 3.8
+            },
+            "3": {
+              "length": 5.4
+            }
+          }
+        }
+      ],
+      "line": {
+        "color": "water.500",
+        "width_m": 2.0,
+        "width_min": 0.5,
+        "width_max": 4.0
+      },
+      "attributes": {
+        "vegetated": false,
+        "water": true,
+        "bff": 0.5,
+        "runoff_cs": 1.0,
+        "runoff_cm": 1.0,
+        "albedo": 0.06,
+        "emissivity": 0.99,
+        "nrr_urban_green": true,
+        "layer": "ground",
+        "family": "water"
+      },
+      "aliases": [
+        "Bach",
+        "Fluss",
+        "Kanal",
+        "Flusslauf",
+        "Bachlauf",
+        "river",
+        "stream",
+        "canal",
+        "running water"
+      ]
+    },
+    "ditch": {
+      "group": "water",
+      "geometry": [
+        "line"
+      ],
+      "z": 31,
+      "label": {
+        "en": "Ditch",
+        "de": "Graben"
+      },
+      "description": {
+        "en": "Drainage ditch, often dry for part of the year: dashed blue line.",
+        "de": "Entwässerungsgraben, zeitweise trocken: gestrichelte blaue Linie."
+      },
+      "fill": "water.500",
+      "line": {
+        "color": "water.600",
+        "width": 0.35,
+        "dash": [
+          2.6,
+          1.0
+        ]
+      },
+      "attributes": {
+        "water": true
+      },
+      "aliases": [
+        "Entwässerungsgraben",
+        "Wassergraben",
+        "Straßengraben",
+        "drain",
+        "drainage ditch"
+      ]
+    },
+    "water_intermittent": {
+      "group": "water",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 30,
+      "label": {
+        "en": "Temporary water",
+        "de": "Temporäres Gewässer"
+      },
+      "description": {
+        "en": "Water that dries out seasonally. Valuable for amphibians.",
+        "de": "Zeitweise austrocknendes Gewässer. Wertvoll für Amphibien."
+      },
+      "fill": "water.100",
+      "outline": "water.500",
+      "outline_dash": [
+        1.6,
+        0.9
+      ],
+      "textures": [
+        {
+          "motif": "waves",
+          "ink": "water.400",
+          "keep": 0.3
+        }
+      ],
+      "attributes": {
+        "vegetated": false,
+        "water": true,
+        "bff": 0.5,
+        "albedo": 0.06,
+        "emissivity": 0.99,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Tümpel",
+        "temporäres Kleingewässer",
+        "Blänke",
+        "ephemeres Gewässer",
+        "ephemeral pond",
+        "seasonal pool"
+      ]
+    },
+    "mudflat": {
+      "group": "water",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 31,
+      "label": {
+        "en": "Mudflat",
+        "de": "Watt / Schlickfläche"
+      },
+      "description": {
+        "en": "Bare mud or sand flats that fall dry at low tide or low water: tidal flats, exposed pond and river beds.",
+        "de": "Vegetationsfreie Schlick- oder Sandflächen, die bei Ebbe oder Niedrigwasser trockenfallen: Watt, trockenfallende Teich- und Flussufer."
+      },
+      "fill": "granite.200",
+      "textures": [
+        {
+          "motif": "stipple",
+          "ink": "granite.700",
+          "keep": 0.75
+        },
+        {
+          "motif": "waves",
+          "ink": "water.500",
+          "keep": 0.25
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": false,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Watt",
+        "Wattfläche",
+        "Schlickfläche",
+        "Schlammfläche",
+        "Schlammbank",
+        "Wattenmeer",
+        "tidal flat",
+        "intertidal flat",
+        "intertidal flats",
+        "mud flat",
+        "mud"
+      ]
+    },
+    "pool": {
+      "group": "water",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 30,
+      "label": {
+        "en": "Pool / basin",
+        "de": "Wasserbecken"
+      },
+      "description": {
+        "en": "Built, sealed water basin: swimming pool, ornamental basin, paddling pool.",
+        "de": "Gebautes, abgedichtetes Becken: Schwimmbecken, Zierbecken, Planschbecken."
+      },
+      "fill": "aqua.300",
+      "outline": "stone.600",
+      "textures": [
+        {
+          "motif": "waves",
+          "ink": "aqua.500",
+          "keep": 0.35
+        }
+      ],
+      "attributes": {
+        "sealing": "sealed",
+        "vegetated": false,
+        "water": true,
+        "bdla_class": 4,
+        "runoff_cs": 1.0,
+        "runoff_cm": 1.0,
+        "albedo": 0.06,
+        "emissivity": 0.99,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Schwimmbecken",
+        "Zierbecken",
+        "Planschbecken",
+        "Becken",
+        "swimming pool",
+        "ornamental pool"
+      ]
+    },
+    "fountain": {
+      "group": "water",
+      "geometry": [
+        "point"
+      ],
+      "z": 74,
+      "label": {
+        "en": "Fountain",
+        "de": "Brunnen"
+      },
+      "description": {
+        "en": "Fountain, water feature or drinking fountain.",
+        "de": "Brunnen, Wasserspiel oder Trinkbrunnen."
+      },
+      "fill": "aqua.300",
+      "symbol": {
+        "kind": "fountain",
+        "r": 0.9,
+        "color": "aqua.200",
+        "ink": "water.700"
+      },
+      "aliases": [
+        "Wasserspiel",
+        "Trinkbrunnen",
+        "Springbrunnen",
+        "water feature",
+        "drinking fountain"
+      ],
+      "attributes": {}
+    },
+    "spring": {
+      "group": "water",
+      "geometry": [
+        "point"
+      ],
+      "z": 74,
+      "label": {
+        "en": "Spring",
+        "de": "Quelle"
+      },
+      "description": {
+        "en": "Natural spring or seep. Near-natural springs are legally protected habitats.",
+        "de": "Natürliche Quelle oder Sickerquelle. Naturnahe Quellbereiche sind gesetzlich geschützte Biotope."
+      },
+      "fill": "water.200",
+      "symbol": {
+        "kind": "spring",
+        "r": 0.8,
+        "color": "water.200",
+        "ink": "water.700"
+      },
+      "aliases": [
+        "Quellbereich",
+        "Quellaustritt",
+        "Sickerquelle",
+        "spring",
+        "source"
+      ],
+      "attributes": {
+        "water": true,
+        "biodiversity": 5
+      }
+    }
+  }
+}

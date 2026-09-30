@@ -1,0 +1,281 @@
+{
+  "title": "OpenStreetMap Carto",
+  "description": "Colours of the default OpenStreetMap map style (openstreetmap-carto v6.1.0). For apps that combine the library with OSM data and want the familiar look.",
+  "source": "https://github.com/gravitystorm/openstreetmap-carto/tree/master/style (landcover.mss, water.mss, buildings.mss, roads.mss), v6.1.0",
+  "evidence": "Fill hex values V (research stream 04, section 2: OSM Carto v6.1.0). Outlines are house choices, darkened from the fills; Carto draws most land cover without outlines. Elements that OSM Carto does not style (planted beds, surfaces by material) take the colour of the nearest styled tag.",
+  "handdrawn": 0.0,
+  "textures": "none",
+  "background": "#F2EFE9",
+  "default": {
+    "fill": "#F2EFE9",
+    "outline": "#B9B9B9"
+  },
+  "groups": {
+    "vegetation.grass": {
+      "fill": "#CDEBB0",
+      "outline": "#B5CF9B"
+    },
+    "vegetation.planting": {
+      "fill": "#CDEBB0",
+      "outline": "#B5CF9B"
+    },
+    "vegetation.greenspace": {
+      "fill": "#C8FACC",
+      "outline": "#A6D9AA"
+    },
+    "vegetation.woody": {
+      "fill": "#ADD19E",
+      "outline": "#90B983"
+    },
+    "vegetation.agri": {
+      "fill": "#EEF0D5",
+      "outline": "#C7C9AE"
+    },
+    "vegetation.wetland": {
+      "fill": "#CDEBB0",
+      "outline": "#B5CF9B"
+    },
+    "vegetation.roof": {
+      "fill": "#CDEBB0",
+      "outline": "#B9A99C"
+    },
+    "blue_green": {
+      "fill": "#CDEBB0",
+      "outline": "#AAD3DF"
+    },
+    "trees": {
+      "fill": "#90C17B",
+      "outline": "#6B8D5E"
+    },
+    "water": {
+      "fill": "#AAD3DF",
+      "outline": "#89B8C6"
+    },
+    "ground": {
+      "fill": "#EEE5DC",
+      "outline": "#D5CBC1"
+    },
+    "surface": {
+      "fill": "#DDDDE8",
+      "outline": "#999999"
+    },
+    "landuse": {
+      "fill": "#E0DFDF",
+      "outline": "#B9B9B9"
+    },
+    "built": {
+      "fill": "#D9D0C9",
+      "outline": "#B9A99C"
+    },
+    "boundary": {
+      "fill": null,
+      "outline": "#7A7A7A"
+    },
+    "context": {
+      "fill": "#F2EFE9",
+      "outline": "#D9D0C9"
+    }
+  },
+  "elements": {
+    "lawn": {
+      "fill": "#CDEBB0",
+      "evidence": "V (landuse=grass)"
+    },
+    "meadow": {
+      "fill": "#CDEBB0",
+      "evidence": "V (landuse=meadow)"
+    },
+    "green_space": {
+      "fill": "#C8FACC",
+      "evidence": "V (leisure=park)"
+    },
+    "garden": {
+      "fill": "#CDEBB0",
+      "evidence": "V (leisure=garden)"
+    },
+    "allotment": {
+      "fill": "#C9E1BF",
+      "evidence": "V (landuse=allotments)"
+    },
+    "cemetery": {
+      "fill": "#AACBAF",
+      "evidence": "V (landuse=cemetery)"
+    },
+    "playground": {
+      "fill": "#DFFCE2",
+      "evidence": "D (lighten(@park,5%))"
+    },
+    "recreation_area": {
+      "fill": "#DFFCE2",
+      "evidence": "D (@leisure)"
+    },
+    "sports_ground": {
+      "fill": "#DFFCE2",
+      "evidence": "D (@stadium = @leisure)"
+    },
+    "sports_turf": {
+      "fill": "#88E0BE",
+      "evidence": "V (leisure=pitch)"
+    },
+    "artificial_turf": {
+      "fill": "#88E0BE"
+    },
+    "synthetic_track": {
+      "fill": "#88E0BE",
+      "evidence": "V (leisure=track)"
+    },
+    "clay_court": {
+      "fill": "#88E0BE"
+    },
+    "shrubs": {
+      "fill": "#C8D7AB",
+      "evidence": "V (natural=scrub)"
+    },
+    "hedge": {
+      "fill": "#ADD19E",
+      "outline": "#ADD19E",
+      "evidence": "V (@hedge = @forest)"
+    },
+    "heath": {
+      "fill": "#D6D99F",
+      "evidence": "V (natural=heath)"
+    },
+    "bog": {
+      "fill": "#D6D99F",
+      "evidence": "V (base of wetland=bog)"
+    },
+    "sedge_marsh": {
+      "fill": "#CDEBB0",
+      "evidence": "V (base of wetland=marsh)"
+    },
+    "reed": {
+      "fill": "#CDEBB0",
+      "evidence": "V (base of wetland=reedbed)"
+    },
+    "orchard": {
+      "fill": "#AEDFA3",
+      "evidence": "V (landuse=orchard)"
+    },
+    "orchard_meadow": {
+      "fill": "#AEDFA3"
+    },
+    "vineyard": {
+      "fill": "#AEDFA3",
+      "evidence": "V (landuse=vineyard)"
+    },
+    "horticulture": {
+      "fill": "#EEF0D5",
+      "evidence": "V (greenhouse_horticulture)"
+    },
+    "arable": {
+      "fill": "#EEF0D5",
+      "evidence": "V (landuse=farmland)"
+    },
+    "ruderal": {
+      "fill": "#C7C7B4",
+      "evidence": "V (landuse=brownfield)"
+    },
+    "construction_site": {
+      "fill": "#C7C7B4",
+      "evidence": "V (landuse=construction)"
+    },
+    "sand": {
+      "fill": "#F5E9C6",
+      "evidence": "V (natural=sand)"
+    },
+    "rock": {
+      "fill": "#EEE5DC",
+      "evidence": "V (natural=bare_rock)"
+    },
+    "gravel": {
+      "fill": "#EEE5DC",
+      "evidence": "V (natural=shingle)"
+    },
+    "bare_soil": {
+      "fill": "#E6DCD1",
+      "evidence": "V (natural=mud over land)"
+    },
+    "pool": {
+      "fill": "#AAD3DF",
+      "evidence": "V (leisure=swimming_pool)"
+    },
+    "parking": {
+      "fill": "#EEEEEE",
+      "evidence": "V (amenity=parking)"
+    },
+    "plaza": {
+      "fill": "#DDDDE8",
+      "evidence": "V (@pedestrian-fill)"
+    },
+    "footway": {
+      "fill": "#DDDDE8",
+      "evidence": "V (@pedestrian-fill)"
+    },
+    "road": {
+      "fill": "#FFFFFF",
+      "evidence": "V (@residential-fill)"
+    },
+    "residential_area": {
+      "fill": "#E0DFDF",
+      "evidence": "V (landuse=residential)"
+    },
+    "commercial_area": {
+      "fill": "#F2DAD9",
+      "evidence": "V (landuse=commercial)"
+    },
+    "public_facility_area": {
+      "fill": "#FFFFE5",
+      "evidence": "V (@societal_amenities)"
+    },
+    "mixed_use_area": {
+      "fill": "#F2DAD9",
+      "fit": "nearest (commercial)"
+    },
+    "quarry": {
+      "fill": "#C5C3C3",
+      "evidence": "V (landuse=quarry)"
+    },
+    "landfill": {
+      "fill": "#B6B592",
+      "evidence": "V (landuse=landfill)"
+    },
+    "rail_area": {
+      "fill": "#EBDBE8",
+      "evidence": "V (landuse=railway)"
+    },
+    "building": {
+      "fill": "#D9D0C9",
+      "outline": "#B9A99C",
+      "evidence": "V (@building-fill)"
+    },
+    "building_context": {
+      "fill": "#D9D0C9",
+      "outline": "#B9A99C"
+    },
+    "bridge": {
+      "fill": "#B8B8B8",
+      "evidence": "V"
+    },
+    "road_context": {
+      "fill": "#FFFFFF"
+    },
+    "green_context": {
+      "fill": "#CDEBB0"
+    },
+    "water_context": {
+      "fill": "#AAD3DF"
+    },
+    "tree_canopy": {
+      "fill": null,
+      "outline": "#6B8D5E"
+    },
+    "salt_marsh": {
+      "fill": "#CDEBB0",
+      "evidence": "V (wetland=saltmarsh)"
+    },
+    "golf_course": {
+      "fill": "#DEF6C0",
+      "evidence": "V (leisure=golf_course)"
+    }
+  }
+}

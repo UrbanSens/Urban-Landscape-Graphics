@@ -1,0 +1,331 @@
+{
+  "title": "ALKIS Liegenschaftskarte",
+  "description": "Area colours of the official German cadastral map (AdV ALKIS-Signaturenkatalog 2.1, colour output 2.1.0): very pale tints, white traffic areas, dark-green vegetation symbols. For maps that have to look like the Liegenschaftskarte.",
+  "source": "AdV, AAA-Signaturenkatalog 2.1 ALKIS Farbausgabe 2.1.0 (Stand 01.10.2024), https://sg.geodatenzentrum.de/web_public/adv/sk/v2.1/alkis/docAlkisFB/SymbologyCatalog.html",
+  "evidence": "Area fills and line colours V (research stream 01, section 4.1). Values for elements without an ALKIS object of their own are the fill of the ALKIS class they belong to (marked 'nearest'). Building fill is not in the research and is a neutral grey from the ALKIS colour table (marked R).",
+  "handdrawn": 0.0,
+  "textures": "none",
+  "background": "#FFFFFF",
+  "default": {
+    "fill": "#FFFFFF",
+    "outline": "#B3B3B3"
+  },
+  "groups": {
+    "vegetation.grass": {
+      "fill": "#F3F5CC",
+      "outline": "#B3B3B3"
+    },
+    "vegetation.planting": {
+      "fill": "#DCE6C2",
+      "outline": "#B3B3B3"
+    },
+    "vegetation.greenspace": {
+      "fill": "#DCE6C2",
+      "outline": "#B3B3B3"
+    },
+    "vegetation.woody": {
+      "fill": "#CFE8D9",
+      "outline": "#008230"
+    },
+    "vegetation.agri": {
+      "fill": "#F3F5CC",
+      "outline": "#B3B3B3"
+    },
+    "vegetation.wetland": {
+      "fill": "#F3E3CA",
+      "outline": "#B3B3B3"
+    },
+    "vegetation.roof": {
+      "fill": "#DCE6C2",
+      "outline": "#000000"
+    },
+    "blue_green": {
+      "fill": "#F3F5CC",
+      "outline": "#B3B3B3"
+    },
+    "trees": {
+      "fill": "#CFE8D9",
+      "outline": "#008230"
+    },
+    "water": {
+      "fill": "#C0E8FA",
+      "outline": "#0068A1"
+    },
+    "ground": {
+      "fill": "#FFFFFF",
+      "outline": "#B3B3B3"
+    },
+    "surface": {
+      "fill": "#FFFFFF",
+      "outline": "#B3B3B3"
+    },
+    "landuse": {
+      "fill": "#FDE1E1",
+      "outline": "#B3B3B3"
+    },
+    "built": {
+      "fill": "#CCCCCC",
+      "outline": "#000000"
+    },
+    "furniture": {
+      "fill": "#FFFFFF",
+      "outline": "#000000"
+    },
+    "ecology": {
+      "fill": "#FFFFFF",
+      "outline": "#008230"
+    },
+    "boundary": {
+      "fill": null,
+      "outline": "#000000"
+    },
+    "relief": {
+      "fill": null,
+      "outline": "#805C3A"
+    },
+    "context": {
+      "fill": "#FFFFFF",
+      "outline": "#B3B3B3"
+    }
+  },
+  "elements": {
+    "green_space": {
+      "fill": "#DCE6C2",
+      "evidence": "V (41008 Grünanlage)"
+    },
+    "garden": {
+      "fill": "#DCE6C2",
+      "evidence": "V (41008 Garten)"
+    },
+    "allotment": {
+      "fill": "#DCE6C2",
+      "evidence": "V (41008 Kleingarten)"
+    },
+    "cemetery": {
+      "fill": "#DCE6C2",
+      "evidence": "V (41009 Friedhof)"
+    },
+    "playground": {
+      "fill": "#DCE6C2",
+      "evidence": "V (41008 Spielplatz)"
+    },
+    "lawn": {
+      "fill": "#DCE6C2",
+      "fit": "nearest"
+    },
+    "lawn_extensive": {
+      "fill": "#F3F5CC",
+      "fit": "nearest (Begleitfläche)"
+    },
+    "flower_lawn": {
+      "fill": "#DCE6C2",
+      "fit": "nearest"
+    },
+    "sports_turf": {
+      "fill": "#CFE8D9",
+      "outline": "#805C3A",
+      "evidence": "V (51006 Rasenplatz)"
+    },
+    "sports_ground": {
+      "fill": "#DCE6C2",
+      "evidence": "V (41008 Sportanlage)"
+    },
+    "recreation_area": {
+      "fill": "#DCE6C2",
+      "evidence": "V (41008)"
+    },
+    "arable": {
+      "fill": "#FFF8DC",
+      "evidence": "V (43001 Ackerland)"
+    },
+    "grassland_fallow": {
+      "fill": "#F3E3CA",
+      "evidence": "V (43001 Brachland)"
+    },
+    "ruderal": {
+      "fill": "#F3F5CC",
+      "fit": "nearest (43007 Naturnahe Fläche)"
+    },
+    "succession": {
+      "fill": "#F3F5CC",
+      "evidence": "V (43007 Sukzessionsfläche)"
+    },
+    "heath": {
+      "fill": "#F3E3CA",
+      "evidence": "V (43004 Heide)"
+    },
+    "bog": {
+      "fill": "#F3E3CA",
+      "evidence": "V (43005 Moor)"
+    },
+    "sedge_marsh": {
+      "fill": "#F3E3CA",
+      "evidence": "V (43006 Sumpf)"
+    },
+    "reed": {
+      "fill": "#F3E3CA",
+      "outline": "#008230",
+      "fit": "nearest (Sumpf; 54001 Röhricht is an outline overlay)"
+    },
+    "riparian_strip": {
+      "fill": "#F3F5CC",
+      "evidence": "V (43007 Gewässerbegleitfläche)"
+    },
+    "swale": {
+      "fill": "#F3F5CC"
+    },
+    "rain_garden": {
+      "fill": "#DCE6C2"
+    },
+    "retention_basin": {
+      "fill": "#C0E8FA",
+      "outline": "#0068A1"
+    },
+    "pool": {
+      "fill": "#C0E8FA",
+      "outline": "#0068A1",
+      "evidence": "V (51006 Schwimmbecken)"
+    },
+    "fountain": {
+      "fill": "#C0E8FA",
+      "outline": "#0068A1",
+      "evidence": "V (51009 Brunnen)"
+    },
+    "orchard_meadow": {
+      "fill": "#F3F5CC",
+      "evidence": "V (43001 Streuobstwiese)"
+    },
+    "orchard": {
+      "fill": "#F3F5CC",
+      "evidence": "V (43001 Obstplantage)"
+    },
+    "vineyard": {
+      "fill": "#F3F5CC",
+      "evidence": "V (43001 Rebfläche)"
+    },
+    "horticulture": {
+      "fill": "#F3F5CC",
+      "evidence": "V (43001 Gartenbauland)"
+    },
+    "vegetable_garden": {
+      "fill": "#DCE6C2",
+      "fit": "nearest (Garten)"
+    },
+    "sand": {
+      "fill": "#FFFFFF",
+      "outline": "#D7B351",
+      "evidence": "V (43007 Sand: symbol colour Ocker2)"
+    },
+    "rock": {
+      "fill": "#FFFFFF",
+      "outline": "#B3B3B3",
+      "evidence": "V (43007 Fels)"
+    },
+    "gravel": {
+      "fill": "#FFFFFF",
+      "outline": "#B3B3B3"
+    },
+    "bare_soil": {
+      "fill": "#FFFFFF",
+      "outline": "#B3B3B3",
+      "evidence": "V (43007 vegetationslose Fläche)"
+    },
+    "plaza": {
+      "fill": "#FFFFFF",
+      "evidence": "V (42009 Platz: no fill)"
+    },
+    "footway": {
+      "fill": "#FFFFFF"
+    },
+    "road": {
+      "fill": "#FFFFFF",
+      "evidence": "V (42001: no fill)"
+    },
+    "residential_area": {
+      "fill": "#FDE1E1",
+      "evidence": "V (41001)"
+    },
+    "mixed_use_area": {
+      "fill": "#FDE1E1",
+      "evidence": "V (41006)"
+    },
+    "public_facility_area": {
+      "fill": "#FDE1E1",
+      "evidence": "V (41007)"
+    },
+    "commercial_area": {
+      "fill": "#F5F5F5",
+      "evidence": "V (41002)"
+    },
+    "quarry": {
+      "fill": "#F5F5F5",
+      "evidence": "V (41005)"
+    },
+    "landfill": {
+      "fill": "#F5F5F5",
+      "evidence": "V (41003 Halde)"
+    },
+    "construction_site": {
+      "fill": "#FFFFFF"
+    },
+    "building": {
+      "fill": "#CCCCCC",
+      "outline": "#000000",
+      "evidence": "R"
+    },
+    "building_context": {
+      "fill": "#E6E6E6",
+      "outline": "#B3B3B3",
+      "evidence": "R"
+    },
+    "green_context": {
+      "fill": "#DCE6C2"
+    },
+    "water_context": {
+      "fill": "#C0E8FA",
+      "outline": "#0068A1"
+    },
+    "road_context": {
+      "fill": "#FFFFFF"
+    },
+    "stairs": {
+      "fill": "#E6E6E6",
+      "outline": "#000000",
+      "evidence": "V (51009 Treppe: Grau3)"
+    },
+    "wall": {
+      "outline": "#000000"
+    },
+    "retaining_wall": {
+      "outline": "#000000"
+    },
+    "fence": {
+      "outline": "#000000",
+      "evidence": "V (51009 Zaun: black)"
+    },
+    "embankment": {
+      "outline": "#805C3A",
+      "evidence": "V (61001: Braun4)"
+    },
+    "tree_canopy": {
+      "fill": null,
+      "outline": "#008230"
+    },
+    "unknown": {
+      "fill": "#FFFFFF",
+      "outline": "#B3B3B3"
+    },
+    "golf_course": {
+      "fill": "#DCE6C2",
+      "evidence": "V (41008 Golf)"
+    },
+    "airport": {
+      "fill": "#F3F5CC",
+      "evidence": "V (42015 Flugverkehr)"
+    },
+    "salt_marsh": {
+      "fill": "#F3F5CC",
+      "evidence": "V (43001 Salzweide)"
+    }
+  }
+}

@@ -1,0 +1,1723 @@
+{
+  "title": "Woody vegetation, agriculture, wetlands, blue-green infrastructure and greened buildings",
+  "elements": {
+    "shrubs": {
+      "group": "vegetation.woody",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Shrubs",
+        "de": "Sträucher"
+      },
+      "description": {
+        "en": "Grouped shrub planting or scrub. Olive green tone. Medium biodiversity, high if native.",
+        "de": "Flächige Strauchpflanzung oder Gebüsch. Olivgrüner Ton. Mittlere Biodiversität, bei heimischen Arten hoch."
+      },
+      "fill": "leaf.200",
+      "textures": [
+        {
+          "motif": "canopy",
+          "ink": "leaf.600",
+          "branch": "leaf.800",
+          "tones": [
+            "leaf.300",
+            "leaf.400",
+            "leaf.200",
+            "leaf.300"
+          ],
+          "crown_m": 2.4,
+          "depth": 0.17,
+          "lobes": 8,
+          "pack": 1.5,
+          "lod": {
+            "1": {
+              "crown_min": 1.6,
+              "crown_max": 2.4
+            },
+            "2": {
+              "crown_min": 3.0,
+              "crown_max": 5.0
+            },
+            "3": {
+              "crown_min": 4.0,
+              "crown_max": 12.0
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 3,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.25,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Strauchpflanzung",
+        "Gebüsch",
+        "Gehölzpflanzung",
+        "Ziersträucher",
+        "Strauchfläche",
+        "scrub",
+        "shrubbery",
+        "introduced shrub",
+        "mixed scrub",
+        "Gehölzfläche"
+      ]
+    },
+    "hedge": {
+      "group": "vegetation.woody",
+      "geometry": [
+        "line",
+        "polygon"
+      ],
+      "z": 50,
+      "label": {
+        "en": "Hedge",
+        "de": "Hecke"
+      },
+      "description": {
+        "en": "Free-growing hedge or hedgerow of native shrubs. High value as a corridor.",
+        "de": "Freiwachsende Hecke aus heimischen Sträuchern. Hoher Wert als Verbundelement."
+      },
+      "fill": "leaf.400",
+      "textures": [
+        {
+          "motif": "canopy",
+          "ink": "leaf.700",
+          "branch": "leaf.800",
+          "tones": [
+            "leaf.400",
+            "leaf.500",
+            "leaf.300"
+          ],
+          "crown_m": 1.6,
+          "depth": 0.16,
+          "lobes": 7,
+          "pack": 1.25,
+          "star": false,
+          "width": 0.15,
+          "lod": {
+            "1": {
+              "crown_min": 1.2,
+              "crown_max": 1.6
+            },
+            "2": {
+              "crown_min": 1.6,
+              "crown_max": 3.0
+            },
+            "3": {
+              "crown_min": 2.4,
+              "crown_max": 8.0
+            }
+          }
+        }
+      ],
+      "line": {
+        "color": null,
+        "marks": {
+          "kind": "crowns",
+          "crown_m": 1.8,
+          "crown_min": 1.3,
+          "crown_max": 6.0,
+          "pack": 0.62,
+          "tones": [
+            "leaf.400",
+            "leaf.500",
+            "leaf.300"
+          ],
+          "ink": "leaf.700",
+          "depth": 0.16,
+          "lobes": 7,
+          "star": false,
+          "width": 0.15
+        }
+      },
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 4,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.25,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Feldhecke",
+        "freiwachsende Hecke",
+        "Wildhecke",
+        "Strauchhecke",
+        "hedgerow",
+        "native hedge"
+      ]
+    },
+    "hedge_clipped": {
+      "group": "vegetation.woody",
+      "geometry": [
+        "line",
+        "polygon"
+      ],
+      "z": 50,
+      "label": {
+        "en": "Clipped hedge",
+        "de": "Schnitthecke"
+      },
+      "description": {
+        "en": "Formally clipped hedge. Crisp edge, dense texture. Low to medium biodiversity.",
+        "de": "Formhecke mit regelmäßigem Schnitt. Klare Kante, dichte Textur. Geringe bis mittlere Biodiversität."
+      },
+      "fill": "leaf.500",
+      "outline": "leaf.700",
+      "textures": [
+        {
+          "motif": "stipple",
+          "ink": "leaf.700",
+          "spacing": 1.0,
+          "r_min": 0.06,
+          "r_max": 0.12,
+          "keep": 0.85
+        }
+      ],
+      "line": {
+        "color": "leaf.500",
+        "width_m": 0.8,
+        "width_min": 0.6,
+        "width_max": 3.0,
+        "casing": "leaf.700",
+        "casing_width": 0.13,
+        "cap": "butt"
+      },
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 2,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.25,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Formhecke",
+        "geschnittene Hecke",
+        "Hainbuchenhecke",
+        "Ligusterhecke",
+        "formal hedge",
+        "trimmed hedge"
+      ]
+    },
+    "woodland": {
+      "group": "vegetation.woody",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Woodland",
+        "de": "Wald / Gehölz"
+      },
+      "description": {
+        "en": "Closed tree cover of unspecified type. Canopy symbols of varying size. Darker green tone.",
+        "de": "Geschlossener Baumbestand ohne Angabe des Typs. Kronensymbole wechselnder Größe. Dunklerer Grünton."
+      },
+      "fill": "leaf.500",
+      "textures": [
+        {
+          "motif": "canopy",
+          "ink": "leaf.800",
+          "branch": "leaf.900",
+          "tones": [
+            "leaf.500",
+            "leaf.600",
+            "leaf.700",
+            "leaf.400"
+          ],
+          "crown_m": 8.0,
+          "depth": 0.09,
+          "lobes": 11,
+          "pack": 1.35
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 4,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "albedo": 0.18,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground",
+        "canopy": true,
+        "family": "woodland"
+      },
+      "aliases": [
+        "Wald",
+        "Gehölz",
+        "Baumbestand",
+        "Forst",
+        "Waldfläche",
+        "forest",
+        "wood",
+        "tree cover",
+        "woods"
+      ]
+    },
+    "woodland_deciduous": {
+      "group": "vegetation.woody",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Deciduous woodland",
+        "de": "Laubwald"
+      },
+      "description": {
+        "en": "Broadleaved woodland. High biodiversity when old and structured.",
+        "de": "Laubwald. Bei Alter und Strukturreichtum hohe Biodiversität."
+      },
+      "fill": "leaf.500",
+      "textures": [
+        {
+          "motif": "canopy",
+          "ink": "leaf.800",
+          "branch": "leaf.900",
+          "tones": [
+            "leaf.500",
+            "leaf.600",
+            "leaf.700",
+            "leaf.400"
+          ],
+          "crown_m": 9.0,
+          "depth": 0.1,
+          "lobes": 11,
+          "pack": 1.35
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 5,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "albedo": 0.17,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground",
+        "canopy": true,
+        "family": "woodland"
+      },
+      "aliases": [
+        "Laubholz",
+        "Laubmischwald",
+        "Buchenwald",
+        "Eichenwald",
+        "broadleaved woodland",
+        "broad-leaved forest"
+      ]
+    },
+    "woodland_coniferous": {
+      "group": "vegetation.woody",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Coniferous woodland",
+        "de": "Nadelwald"
+      },
+      "description": {
+        "en": "Conifer woodland or plantation. Pointed crown symbols, blue-green tone.",
+        "de": "Nadelwald oder Nadelholzforst. Gezackte Kronensymbole, blaugrüner Ton."
+      },
+      "fill": "pine.400",
+      "textures": [
+        {
+          "motif": "canopy",
+          "ink": "pine.800",
+          "branch": "pine.800",
+          "tones": [
+            "pine.400",
+            "pine.600",
+            "pine.200"
+          ],
+          "crown_m": 6.0,
+          "depth": 0.22,
+          "lobes": 11,
+          "pack": 1.3,
+          "spiky": true
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 3,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "albedo": 0.14,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground",
+        "canopy": true
+      },
+      "aliases": [
+        "Nadelholz",
+        "Fichtenforst",
+        "Kiefernwald",
+        "coniferous forest",
+        "conifer plantation"
+      ]
+    },
+    "woodland_mixed": {
+      "group": "vegetation.woody",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Mixed woodland",
+        "de": "Mischwald"
+      },
+      "description": {
+        "en": "Woodland of broadleaves and conifers mixed.",
+        "de": "Wald aus Laub- und Nadelbäumen."
+      },
+      "fill": "leaf.500",
+      "textures": [
+        {
+          "motif": "canopy",
+          "ink": "leaf.800",
+          "branch": "leaf.900",
+          "tones": [
+            "leaf.500",
+            "leaf.600",
+            "leaf.700",
+            "leaf.400"
+          ],
+          "crown_m": 8.5,
+          "depth": 0.1,
+          "lobes": 11,
+          "pack": 1.35,
+          "keep": 0.62
+        },
+        {
+          "motif": "canopy",
+          "ink": "pine.800",
+          "branch": "pine.800",
+          "tones": [
+            "pine.400",
+            "pine.600"
+          ],
+          "crown_m": 6.0,
+          "depth": 0.22,
+          "lobes": 11,
+          "pack": 1.9,
+          "keep": 0.55,
+          "spiky": true,
+          "salt": 63
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 4,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "albedo": 0.18,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground",
+        "canopy": true,
+        "family": "woodland"
+      },
+      "aliases": [
+        "Laub- und Nadelholz",
+        "Laub-Nadel-Mischwald",
+        "mixed forest"
+      ]
+    },
+    "grove": {
+      "group": "vegetation.woody",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Grove",
+        "de": "Feldgehölz"
+      },
+      "description": {
+        "en": "Small stand of trees and shrubs in open land or a park. High value as a stepping stone.",
+        "de": "Kleiner Bestand aus Bäumen und Sträuchern in der Flur oder im Park. Hoher Wert als Trittstein."
+      },
+      "fill": "leaf.400",
+      "textures": [
+        {
+          "motif": "canopy",
+          "ink": "leaf.700",
+          "branch": "leaf.900",
+          "tones": [
+            "leaf.300",
+            "leaf.400",
+            "leaf.500"
+          ],
+          "crown_m": 5.5,
+          "depth": 0.12,
+          "lobes": 10,
+          "pack": 1.4
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 4,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "albedo": 0.17,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground",
+        "canopy": true
+      },
+      "aliases": [
+        "Gehölz",
+        "Baumgruppe",
+        "Gehölzgruppe",
+        "Gehölzinsel",
+        "copse",
+        "tree group",
+        "spinney"
+      ]
+    },
+    "riparian_woodland": {
+      "group": "vegetation.woody",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Riparian woodland",
+        "de": "Auwald / Ufergehölz"
+      },
+      "description": {
+        "en": "Alder, willow and ash along water, periodically wet. Very high biodiversity, protected.",
+        "de": "Erlen, Weiden und Eschen am Gewässer, zeitweise überflutet. Sehr hohe Biodiversität, geschützt."
+      },
+      "fill": "reed.300",
+      "textures": [
+        {
+          "motif": "canopy",
+          "ink": "reed.900",
+          "branch": "reed.900",
+          "tones": [
+            "leaf.400",
+            "pine.200",
+            "leaf.300",
+            "reed.500"
+          ],
+          "crown_m": 7.0,
+          "depth": 0.11,
+          "lobes": 10,
+          "pack": 1.35
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 5,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "albedo": 0.17,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground",
+        "canopy": true
+      },
+      "aliases": [
+        "Auwald",
+        "Ufergehölz",
+        "Uferwald",
+        "Erlenbruch",
+        "Weichholzaue",
+        "Bruchwald",
+        "wet woodland",
+        "alluvial forest",
+        "gallery woodland"
+      ]
+    },
+    "orchard_meadow": {
+      "group": "vegetation.woody",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Orchard meadow",
+        "de": "Streuobstwiese"
+      },
+      "description": {
+        "en": "Scattered tall fruit trees over meadow. Very high biodiversity, protected in Germany.",
+        "de": "Hochstämmige Obstbäume in lockerem Stand auf Wiese. Sehr hohe Biodiversität, gesetzlich geschützt."
+      },
+      "fill": "grass.400",
+      "textures": [
+        {
+          "motif": "grass_tufts",
+          "ink": "grass.700",
+          "ink2": "grass.600",
+          "keep": 0.55
+        },
+        {
+          "motif": "canopy",
+          "ink": "grass.800",
+          "branch": "leaf.900",
+          "tones": [
+            "grass.500",
+            "grass.600",
+            "leaf.300"
+          ],
+          "crown_m": 7.0,
+          "depth": 0.09,
+          "lobes": 10,
+          "pack": 2.5,
+          "jitter": 0.2,
+          "keep": 0.85,
+          "inset": 0.6,
+          "dots": 4,
+          "ink2": "bloom.white"
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 5,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.18,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Streuobst",
+        "Streuobstbestand",
+        "Obstwiese",
+        "Obstbaumwiese",
+        "traditional orchard"
+      ]
+    },
+    "wood_pasture": {
+      "group": "vegetation.woody",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Wood pasture",
+        "de": "Hutewald / Weide mit Bäumen"
+      },
+      "description": {
+        "en": "Grazed grassland with scattered old trees (wood pasture, parkland). Very high biodiversity.",
+        "de": "Beweidetes Grünland mit locker stehenden alten Bäumen (Hutewald, Hutung). Sehr hohe Biodiversität."
+      },
+      "fill": "fallow.200",
+      "textures": [
+        {
+          "motif": "grass_tufts",
+          "ink": "fallow.700",
+          "ink2": "grass.700",
+          "keep": 0.45,
+          "ticks": false
+        },
+        {
+          "motif": "canopy",
+          "ink": "leaf.800",
+          "branch": "leaf.900",
+          "tones": [
+            "leaf.400",
+            "leaf.500",
+            "leaf.300"
+          ],
+          "crown_m": 12.0,
+          "depth": 0.08,
+          "lobes": 12,
+          "pack": 3.4,
+          "jitter": 0.3,
+          "keep": 0.7,
+          "inset": 0.5
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 5,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.18,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Hutewald",
+        "Hudewald",
+        "Hutung",
+        "Waldweide",
+        "Weide mit Einzelbäumen",
+        "Wytweide",
+        "wood pasture",
+        "wooded pasture",
+        "parkland",
+        "pasture woodland"
+      ]
+    },
+    "orchard": {
+      "group": "vegetation.agri",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Orchard",
+        "de": "Obstanlage"
+      },
+      "description": {
+        "en": "Intensive fruit growing in regular rows.",
+        "de": "Intensivobstbau in regelmäßigen Reihen."
+      },
+      "fill": "grass.300",
+      "textures": [
+        {
+          "motif": "grass_ticks",
+          "ink": "grass.600",
+          "keep": 0.6
+        },
+        {
+          "motif": "canopy",
+          "ink": "grass.800",
+          "branch": "leaf.900",
+          "tones": [
+            "grass.500",
+            "grass.600"
+          ],
+          "crown_m": 3.0,
+          "depth": 0.1,
+          "lobes": 9,
+          "pack": 1.9,
+          "jitter": 0.05,
+          "stagger": false,
+          "inset": 0.6,
+          "star": false
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 2,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "albedo": 0.17,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground",
+        "canopy": true
+      },
+      "aliases": [
+        "Obstplantage",
+        "Obstbaumplantage",
+        "Intensivobst",
+        "fruit plantation",
+        "fruit trees"
+      ]
+    },
+    "heath": {
+      "group": "vegetation.woody",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Heath",
+        "de": "Heide"
+      },
+      "description": {
+        "en": "Dwarf-shrub heath on poor sandy soil. High biodiversity, protected.",
+        "de": "Zwergstrauchheide auf nährstoffarmen Sandböden. Hohe Biodiversität, geschützt."
+      },
+      "fill": "heather.200",
+      "textures": [
+        {
+          "motif": "grass_tufts",
+          "ink": "heather.700",
+          "ink2": "heather.500",
+          "keep": 0.7,
+          "ticks": false,
+          "lod": {
+            "1": {
+              "height": 0.7
+            },
+            "2": {
+              "height": 1.1
+            },
+            "3": {
+              "height": 1.6
+            }
+          }
+        },
+        {
+          "motif": "flowers",
+          "ink": "grass.800",
+          "stem": "grass.700",
+          "accents": [
+            "bloom.violet",
+            "bloom.pink"
+          ],
+          "kinds": [
+            "disc"
+          ],
+          "lod": {
+            "1": {
+              "height": 0,
+              "head": 0.22,
+              "spacing": 2.9
+            },
+            "2": {
+              "height": 0,
+              "head": 0.3,
+              "spacing": 3.3
+            },
+            "3": {
+              "height": 0.9,
+              "head": 0.4,
+              "spacing": 4.2
+            }
+          },
+          "keep": 0.8
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 5,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "albedo": 0.23,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Zwergstrauchheide",
+        "Calluna-Heide",
+        "Sandheide",
+        "heathland",
+        "moor and heathland"
+      ]
+    },
+    "arable": {
+      "group": "vegetation.agri",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Arable land",
+        "de": "Acker"
+      },
+      "description": {
+        "en": "Cropland under the plough. Low biodiversity unless managed extensively.",
+        "de": "Ackerfläche. Geringe Biodiversität, sofern nicht extensiv bewirtschaftet."
+      },
+      "fill": "straw.100",
+      "textures": [
+        {
+          "motif": "rows",
+          "ink": "straw.500",
+          "row_m": 3.0,
+          "dots": false,
+          "lod": {
+            "1": {
+              "row_min": 1.0,
+              "row_max": 1.4
+            },
+            "2": {
+              "row_min": 1.4,
+              "row_max": 2.2
+            },
+            "3": {
+              "row_min": 1.8,
+              "row_max": 3.6
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 1,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "albedo": 0.19,
+        "emissivity": 0.95,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Ackerland",
+        "Ackerfläche",
+        "Feld",
+        "cropland",
+        "non-irrigated arable land",
+        "farmland"
+      ]
+    },
+    "vineyard": {
+      "group": "vegetation.agri",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Vineyard",
+        "de": "Rebfläche"
+      },
+      "description": {
+        "en": "Vines in rows. Steep dry-stone terraces can be of high ecological value.",
+        "de": "Rebzeilen. Steillagen mit Trockenmauern können ökologisch hochwertig sein."
+      },
+      "fill": "straw.200",
+      "textures": [
+        {
+          "motif": "rows",
+          "ink": "grass.700",
+          "ink2": "grass.900",
+          "row_m": 2.0,
+          "dot": 0.26,
+          "lod": {
+            "1": {
+              "row_min": 1.0,
+              "row_max": 1.4
+            },
+            "2": {
+              "row_min": 1.5,
+              "row_max": 2.4
+            },
+            "3": {
+              "row_min": 2.0,
+              "row_max": 5.0
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 2,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "albedo": 0.19,
+        "emissivity": 0.95,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Weinberg",
+        "Weingarten",
+        "Rebland",
+        "Weinbau",
+        "vines"
+      ]
+    },
+    "horticulture": {
+      "group": "vegetation.agri",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Horticulture",
+        "de": "Gartenbau"
+      },
+      "description": {
+        "en": "Market gardening, field vegetables and nurseries.",
+        "de": "Erwerbsgartenbau, Feldgemüse und Baumschulen."
+      },
+      "fill": "earth.100",
+      "textures": [
+        {
+          "motif": "rows",
+          "ink": "earth.500",
+          "ink2": "grass.700",
+          "row_m": 1.2,
+          "dot": 0.3,
+          "lod": {
+            "1": {
+              "row_min": 1.0,
+              "row_max": 1.4
+            },
+            "2": {
+              "row_min": 1.5,
+              "row_max": 2.4
+            },
+            "3": {
+              "row_min": 2.0,
+              "row_max": 4.5
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 1,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "albedo": 0.19,
+        "emissivity": 0.95,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Gartenbaufläche",
+        "Gemüsebau",
+        "Baumschule",
+        "Sonderkultur",
+        "market garden",
+        "plant nursery",
+        "tree nursery"
+      ]
+    },
+    "reed": {
+      "group": "vegetation.wetland",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 32,
+      "label": {
+        "en": "Reed / wetland",
+        "de": "Röhricht / Feuchtfläche"
+      },
+      "description": {
+        "en": "Water-loving vegetation: reed, cattail, rushes. Blue-green tone. High biodiversity, protected.",
+        "de": "Wasserliebende Vegetation: Schilf, Rohrkolben, Binsen. Blaugrüner Ton. Hohe Biodiversität, geschützt."
+      },
+      "fill": "reed.200",
+      "wash": true,
+      "textures": [
+        {
+          "motif": "reeds",
+          "ink": "reed.700",
+          "ink2": "reed.900"
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 5,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "albedo": 0.18,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Röhricht",
+        "Schilf",
+        "Schilfröhricht",
+        "Schilfgürtel",
+        "Landröhricht",
+        "reedbed",
+        "reed bed",
+        "wetland",
+        "Verlandungszone"
+      ]
+    },
+    "sedge_marsh": {
+      "group": "vegetation.wetland",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 32,
+      "label": {
+        "en": "Sedge marsh",
+        "de": "Seggenried / Sumpf"
+      },
+      "description": {
+        "en": "Tall-sedge swamp and marsh on permanently wet ground. High biodiversity, protected.",
+        "de": "Großseggenried und Sumpf auf dauerhaft nassem Standort. Hohe Biodiversität, geschützt."
+      },
+      "fill": "marsh.300",
+      "wash": true,
+      "textures": [
+        {
+          "motif": "reeds",
+          "ink": "marsh.700",
+          "ink2": "reed.900",
+          "heads": 0.0,
+          "keep": 0.95,
+          "lod": {
+            "1": {
+              "height": 0.9
+            },
+            "2": {
+              "height": 1.6,
+              "spread": 16
+            },
+            "3": {
+              "height": 2.4,
+              "spread": 16
+            }
+          }
+        },
+        {
+          "motif": "waves",
+          "ink": "water.500",
+          "keep": 0.22
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 5,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "albedo": 0.18,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Großseggenried",
+        "Sumpf",
+        "Nassstandort",
+        "Kleinseggenried",
+        "Niedermoor",
+        "marsh",
+        "swamp",
+        "fen"
+      ]
+    },
+    "bog": {
+      "group": "vegetation.wetland",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 32,
+      "label": {
+        "en": "Bog",
+        "de": "Moor"
+      },
+      "description": {
+        "en": "Peatland: raised bog or transitional mire. Very high biodiversity, protected.",
+        "de": "Hochmoor oder Übergangsmoor. Sehr hohe Biodiversität, geschützt."
+      },
+      "fill": "heather.100",
+      "textures": [
+        {
+          "motif": "grass_tufts",
+          "ink": "earth.700",
+          "ink2": "earth.600",
+          "keep": 0.6,
+          "ticks": false,
+          "lod": {
+            "1": {
+              "height": 0.7
+            },
+            "2": {
+              "height": 1.0
+            },
+            "3": {
+              "height": 1.5
+            }
+          }
+        },
+        {
+          "motif": "waves",
+          "ink": "earth.500",
+          "keep": 0.3
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 5,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "albedo": 0.18,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Hochmoor",
+        "Übergangsmoor",
+        "Torfmoor",
+        "peat bog",
+        "raised bog",
+        "mire",
+        "peatland"
+      ]
+    },
+    "salt_marsh": {
+      "group": "vegetation.wetland",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 32,
+      "label": {
+        "en": "Salt marsh",
+        "de": "Salzwiese"
+      },
+      "description": {
+        "en": "Salt meadow and salt marsh on the coast or at inland salt springs, flooded now and then by salt water. Very high biodiversity, protected.",
+        "de": "Salzwiese und Salzrasen an der Küste oder an Binnensalzstellen, zeitweise von Salzwasser überflutet. Sehr hohe Biodiversität, geschützt."
+      },
+      "fill": "lichen.200",
+      "wash": true,
+      "textures": [
+        {
+          "motif": "grass_tufts",
+          "ink": "lichen.900",
+          "ink2": "aqua.700",
+          "keep": 0.6,
+          "ticks": false,
+          "lod": {
+            "1": {
+              "height": 0.7
+            },
+            "2": {
+              "height": 1.1
+            },
+            "3": {
+              "height": 1.6
+            }
+          }
+        },
+        {
+          "motif": "waves",
+          "ink": "aqua.500",
+          "keep": 0.2
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 5,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "albedo": 0.18,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Salzwiese",
+        "Salzrasen",
+        "Salzmarsch",
+        "Andelrasen",
+        "Quellerwatt",
+        "Binnensalzstelle",
+        "salt meadow",
+        "saltmarsh",
+        "coastal saltmarsh",
+        "salt marshes"
+      ]
+    },
+    "aquatic_vegetation": {
+      "group": "vegetation.wetland",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 32,
+      "label": {
+        "en": "Floating-leaf vegetation",
+        "de": "Schwimmblatt- und Unterwasservegetation"
+      },
+      "description": {
+        "en": "Water lilies, pondweeds and other floating or submerged plants in still or slow water. High biodiversity.",
+        "de": "Seerosen, Laichkräuter und andere schwimmende oder untergetauchte Wasserpflanzen in stehenden oder langsam fließenden Gewässern. Hohe Biodiversität."
+      },
+      "fill": "water.300",
+      "textures": [
+        {
+          "motif": "waves",
+          "ink": "water.500",
+          "keep": 0.45
+        },
+        {
+          "motif": "pebbles",
+          "ink": "marsh.700",
+          "fill": "marsh.300",
+          "keep": 0.55,
+          "lod": {
+            "1": {
+              "spacing": 1.6,
+              "size": 0.6
+            },
+            "2": {
+              "spacing": 2.3,
+              "size": 1.0
+            },
+            "3": {
+              "spacing": 3.1,
+              "size": 1.5
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "vegetated": true,
+        "water": true,
+        "biodiversity": 4,
+        "runoff_cs": 1.0,
+        "runoff_cm": 1.0,
+        "albedo": 0.06,
+        "emissivity": 0.99,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Schwimmblattzone",
+        "Schwimmblattgesellschaft",
+        "Schwimmblattvegetation",
+        "Seerosen",
+        "Laichkrautgesellschaft",
+        "Unterwasservegetation",
+        "Wasserpflanzen",
+        "floating vegetation",
+        "water lilies",
+        "submerged vegetation",
+        "aquatic vegetation"
+      ]
+    },
+    "riparian_strip": {
+      "group": "vegetation.wetland",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Riparian strip",
+        "de": "Gewässerrandstreifen"
+      },
+      "description": {
+        "en": "Unmown bank vegetation between water and land use. High value as buffer and corridor.",
+        "de": "Ungemähter Ufersaum zwischen Gewässer und Nutzung. Hoher Wert als Puffer und Verbundachse."
+      },
+      "fill": "marsh.200",
+      "textures": [
+        {
+          "motif": "reeds",
+          "ink": "reed.700",
+          "ink2": "reed.900",
+          "keep": 0.55,
+          "lod": {
+            "1": {
+              "height": 1.0
+            },
+            "2": {
+              "height": 1.8
+            },
+            "3": {
+              "height": 2.8
+            }
+          }
+        },
+        {
+          "motif": "flowers",
+          "ink": "grass.800",
+          "stem": "grass.800",
+          "center": "bloom.gold",
+          "accents": [
+            "bloom.white",
+            "bloom.pink"
+          ],
+          "kinds": [
+            "umbel",
+            "spike"
+          ],
+          "keep": 0.5
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 4,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "albedo": 0.18,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Ufersaum",
+        "Uferstreifen",
+        "Uferrandstreifen",
+        "Ufervegetation",
+        "bank vegetation",
+        "buffer strip"
+      ]
+    },
+    "swale": {
+      "group": "blue_green",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Infiltration swale",
+        "de": "Versickerungsmulde"
+      },
+      "description": {
+        "en": "Grassed hollow that collects and infiltrates rainwater.",
+        "de": "Begrünte Mulde, die Regenwasser sammelt und versickert."
+      },
+      "fill": "marsh.100",
+      "textures": [
+        {
+          "motif": "grass_ticks",
+          "ink": "marsh.700",
+          "keep": 0.8
+        },
+        {
+          "motif": "waves",
+          "ink": "water.600",
+          "keep": 0.22
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 3,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.25,
+        "emissivity": 0.95,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Mulde",
+        "Sickermulde",
+        "Rasenmulde",
+        "Mulden-Rigolen-System",
+        "Retentionsmulde",
+        "bioswale",
+        "SuDS swale",
+        "infiltration basin"
+      ]
+    },
+    "rain_garden": {
+      "group": "blue_green",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Rain garden",
+        "de": "Regengarten"
+      },
+      "description": {
+        "en": "Planted depression fed by runoff from roofs and paving. Medium to high biodiversity.",
+        "de": "Bepflanzte Vertiefung, gespeist vom Abfluss von Dächern und Belägen. Mittlere bis hohe Biodiversität."
+      },
+      "fill": "marsh.200",
+      "textures": [
+        {
+          "motif": "rosettes",
+          "ink": "marsh.700",
+          "accents": [
+            "bloom.violet",
+            "bloom.white",
+            "bloom.blue"
+          ]
+        },
+        {
+          "motif": "waves",
+          "ink": "water.600",
+          "keep": 0.16
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 4,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.18,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Tiefbeet",
+        "Versickerungsbeet",
+        "Retentionsbeet",
+        "Baumrigole",
+        "bioretention",
+        "SuDS planter"
+      ]
+    },
+    "retention_basin": {
+      "group": "blue_green",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 30,
+      "label": {
+        "en": "Retention basin",
+        "de": "Regenrückhaltebecken"
+      },
+      "description": {
+        "en": "Engineered basin that stores stormwater; dry or with permanent water.",
+        "de": "Technisches Becken zur Rückhaltung von Niederschlagswasser, trocken oder mit Dauerstau."
+      },
+      "fill": "water.200",
+      "outline": "water.700",
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "water.500",
+          "spacing": 2.0,
+          "angle": 45
+        }
+      ],
+      "attributes": {
+        "vegetated": false,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "RRB",
+        "Rückhaltebecken",
+        "Regenbecken",
+        "Retentionsbecken",
+        "detention basin",
+        "attenuation pond"
+      ]
+    },
+    "green_roof_extensive": {
+      "group": "vegetation.roof",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 61,
+      "label": {
+        "en": "Green roof (extensive)",
+        "de": "Dachbegrünung (extensiv)"
+      },
+      "description": {
+        "en": "Thin substrate with sedum, moss and herbs. Medium biodiversity; retains rain, cools the roof.",
+        "de": "Dünnschichtiger Aufbau mit Sedum, Moos und Kräutern. Mittlere Biodiversität; hält Regen zurück, kühlt."
+      },
+      "fill": "lichen.200",
+      "outline": "stone.700",
+      "textures": [
+        {
+          "motif": "stipple",
+          "ink": "grass.700",
+          "ink2": "clay.500",
+          "ink2_share": 0.35,
+          "spacing": 1.1,
+          "r_min": 0.08,
+          "r_max": 0.16,
+          "keep": 0.8,
+          "clump": 0.4
+        },
+        {
+          "motif": "rosettes",
+          "ink": "grass.600",
+          "accents": [
+            "bloom.yellow",
+            "bloom.pink"
+          ],
+          "bloom": 0.25,
+          "keep": 0.35,
+          "lod": {
+            "1": {
+              "spacing": 2.2,
+              "size": 0.3,
+              "arms": 0
+            },
+            "2": {
+              "spacing": 2.8,
+              "size": 0.45,
+              "arms": 0
+            },
+            "3": {
+              "spacing": 3.4,
+              "size": 0.6,
+              "arms": 3
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "built",
+        "vegetated": true,
+        "biodiversity": 3,
+        "bdla_class": 5,
+        "bff": 0.5,
+        "bff_1990": 0.7,
+        "runoff_cs": 0.5,
+        "runoff_cm": 0.3,
+        "nrr_urban_green": false,
+        "note": "Runoff 0.5/0.3 for build-ups up to 10 cm, 0.4/0.2 from 10 cm, 0.7/0.4 on slopes over 5 degrees. BFF +0.1 with a water-retention system.",
+        "layer": "roof"
+      },
+      "aliases": [
+        "Extensivbegrünung",
+        "Sedumdach",
+        "Gründach",
+        "Extensivdach",
+        "sedum roof",
+        "extensive green roof",
+        "biodiverse green roof"
+      ]
+    },
+    "green_roof_intensive": {
+      "group": "vegetation.roof",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 61,
+      "label": {
+        "en": "Green roof (intensive)",
+        "de": "Dachbegrünung (intensiv)"
+      },
+      "description": {
+        "en": "Roof garden with deep substrate: lawn, perennials, shrubs.",
+        "de": "Dachgarten mit hohem Aufbau: Rasen, Stauden, Gehölze."
+      },
+      "fill": "grass.300",
+      "outline": "stone.700",
+      "textures": [
+        {
+          "motif": "grass_ticks",
+          "ink": "grass.600",
+          "keep": 0.6
+        },
+        {
+          "motif": "rosettes",
+          "ink": "grass.800",
+          "accents": [
+            "bloom.violet",
+            "bloom.yellow"
+          ],
+          "keep": 0.5
+        }
+      ],
+      "attributes": {
+        "sealing": "built",
+        "vegetated": true,
+        "biodiversity": 3,
+        "bdla_class": 5,
+        "bff": 0.8,
+        "bff_1990": 0.7,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "nrr_urban_green": false,
+        "note": "BFF 0.8 for substrate over 50 cm; semi-intensive (15–50 cm) 0.7. Runoff for build-ups from 30 cm.",
+        "layer": "roof"
+      },
+      "aliases": [
+        "Intensivbegrünung",
+        "Dachgarten",
+        "Tiefgaragenbegrünung",
+        "roof garden",
+        "intensive green roof"
+      ]
+    },
+    "green_facade": {
+      "group": "vegetation.roof",
+      "geometry": [
+        "line"
+      ],
+      "z": 63,
+      "label": {
+        "en": "Green façade",
+        "de": "Fassadenbegrünung"
+      },
+      "description": {
+        "en": "Climbers or living-wall systems on a façade, drawn along the wall line.",
+        "de": "Kletterpflanzen oder wandgebundene Begrünung, entlang der Fassadenlinie dargestellt."
+      },
+      "fill": "leaf.500",
+      "line": {
+        "color": "leaf.500",
+        "width": 0.5,
+        "marks": {
+          "kind": "dots",
+          "step": 1.5,
+          "r": 0.34,
+          "color": "leaf.700"
+        }
+      },
+      "attributes": {
+        "vegetated": true,
+        "biodiversity": 2,
+        "bff": 0.5,
+        "bff_1990": 0.5,
+        "nrr_urban_green": false,
+        "note": "BFF 0.5 for climbers rooted in soil, 0.7 for wall-bound living walls; credited per wall area."
+      },
+      "aliases": [
+        "Vertikalbegrünung",
+        "Wandbegrünung",
+        "Kletterpflanzen",
+        "living wall",
+        "green wall",
+        "vertical greening"
+      ]
+    }
+  }
+}

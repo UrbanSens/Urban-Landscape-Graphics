@@ -1,0 +1,186 @@
+{
+  "name": "UrbanSens Ecological Vector Style",
+  "theme": "mellow",
+  "version": "0.1.0",
+  "note": "Primitive colours. Sampled from the UrbanSens reference sheet and extended in the same tonal range (high lightness, low chroma). Elements refer to these as 'family.step'; do not hard-code hex values in element files.",
+  "colors": {
+    "paper": {
+      "base": "#F5F5F1",
+      "warm": "#F7F3EA",
+      "white": "#FDFDFB",
+      "shade": "#ECECE6"
+    },
+    "ink": {
+      "900": "#112D36",
+      "700": "#293941",
+      "500": "#505B61",
+      "400": "#6B7375",
+      "300": "#9AA1A1",
+      "200": "#C6CACA"
+    },
+    "grass": {
+      "100": "#E6E9D0",
+      "200": "#DADDBC",
+      "300": "#CDD2A9",
+      "400": "#C5CB9D",
+      "500": "#B8BD94",
+      "600": "#A7AF82",
+      "700": "#8E9B77",
+      "800": "#6D7E51",
+      "900": "#5A704A"
+    },
+    "fallow": {
+      "100": "#E8E6CF",
+      "200": "#DEDBBE",
+      "300": "#D3CFAE",
+      "500": "#BDB78F",
+      "700": "#98916A"
+    },
+    "leaf": {
+      "100": "#DDE0C3",
+      "200": "#C9CFB6",
+      "300": "#B9C0A4",
+      "400": "#A8B190",
+      "500": "#98A585",
+      "600": "#889575",
+      "700": "#7A8968",
+      "800": "#627151",
+      "900": "#444D32"
+    },
+    "pine": {
+      "200": "#BFCBB8",
+      "400": "#9DAE9A",
+      "600": "#7C907F",
+      "800": "#566B5E"
+    },
+    "reed": {
+      "100": "#DCEBE6",
+      "200": "#C9DCD8",
+      "300": "#B7CDCA",
+      "500": "#94ABA6",
+      "700": "#728B86",
+      "900": "#516964"
+    },
+    "marsh": {
+      "100": "#DDE8D3",
+      "200": "#CFDDC4",
+      "300": "#C0D1B6",
+      "500": "#9DB596",
+      "700": "#74907A"
+    },
+    "water": {
+      "100": "#DCE7EA",
+      "200": "#CBDCE4",
+      "300": "#BED2DD",
+      "400": "#ADC6D3",
+      "500": "#99B8C9",
+      "600": "#86A6B9",
+      "700": "#607B8B",
+      "900": "#3F5868"
+    },
+    "aqua": {
+      "100": "#DCEFEE",
+      "200": "#CDE7E7",
+      "300": "#BDDEDF",
+      "500": "#8FC2C6",
+      "700": "#5F979D"
+    },
+    "earth": {
+      "100": "#EADCC8",
+      "200": "#DFCFB8",
+      "300": "#D3C1A9",
+      "400": "#C8B59B",
+      "500": "#BFAD96",
+      "600": "#B09C82",
+      "700": "#9A876D",
+      "800": "#7D6C57",
+      "900": "#5F5243"
+    },
+    "sand": {
+      "100": "#F8EFDF",
+      "200": "#F4E6D0",
+      "300": "#EDDFC9",
+      "400": "#E3D0B7",
+      "500": "#D6C2A6",
+      "700": "#B5A184"
+    },
+    "wood": {
+      "200": "#DFCDB4",
+      "300": "#D7C3A8",
+      "400": "#D0BBA0",
+      "600": "#B5A085",
+      "800": "#8F7A60"
+    },
+    "stone": {
+      "50": "#EFEEEA",
+      "100": "#E6E5E1",
+      "200": "#DDDCD9",
+      "300": "#CFCECB",
+      "400": "#C2C1BE",
+      "500": "#AFAFAC",
+      "600": "#9A9A98",
+      "700": "#878786",
+      "800": "#747473",
+      "900": "#5B5B5B"
+    },
+    "granite": {
+      "100": "#E5E2DC",
+      "200": "#DAD6CF",
+      "300": "#CDC8C0",
+      "500": "#ADA79E",
+      "700": "#8A847B"
+    },
+    "lichen": {
+      "100": "#DFE4DA",
+      "200": "#CDD4C8",
+      "300": "#BDC6B9",
+      "500": "#ADB5AE",
+      "700": "#9CABA3",
+      "900": "#7C8C85"
+    },
+    "clay": {
+      "100": "#F0DDD2",
+      "200": "#E6CBBC",
+      "300": "#DDB9A7",
+      "500": "#CFA08A",
+      "700": "#B58470",
+      "900": "#8E6553"
+    },
+    "straw": {
+      "100": "#F3ECC9",
+      "200": "#EDE3B4",
+      "300": "#E5D89C",
+      "500": "#D9C77E",
+      "700": "#BCA85F"
+    },
+    "heather": {
+      "100": "#E7DFE6",
+      "200": "#D9CCD9",
+      "300": "#CBBACD",
+      "500": "#B09BB6",
+      "700": "#8E7A97"
+    },
+    "bloom": {
+      "yellow": "#E8CB5C",
+      "gold": "#DDA94A",
+      "violet": "#9F8CC2",
+      "blue": "#6F88B5",
+      "white": "#FBFAF2",
+      "pink": "#DDA0A8",
+      "red": "#D0786A"
+    },
+    "signal": {
+      "highlight": "#F4A658",
+      "highlight-soft": "#FAD9B5",
+      "planned": "#D9766A",
+      "planned-soft": "#F1CFC8",
+      "remove": "#E9CF5F",
+      "remove-ink": "#BFA23C",
+      "remove-soft": "#F6EDC0",
+      "protect": "#6FA58C",
+      "protect-soft": "#CFE3D8",
+      "info": "#5E8FB0",
+      "info-soft": "#CCDDE8"
+    }
+  }
+}

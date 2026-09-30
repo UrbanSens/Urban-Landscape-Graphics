@@ -1,0 +1,452 @@
+{
+  "title": "Site furniture, ecological structures and survey points",
+  "elements": {
+    "bench": {
+      "group": "furniture",
+      "geometry": [
+        "point"
+      ],
+      "z": 75,
+      "label": {
+        "en": "Bench",
+        "de": "Bank"
+      },
+      "description": {
+        "en": "Seat or bench.",
+        "de": "Sitzbank oder Sitzgelegenheit."
+      },
+      "fill": "wood.600",
+      "symbol": {
+        "kind": "bench",
+        "r": 0.55,
+        "color": "wood.300",
+        "ink": "wood.800"
+      },
+      "aliases": [
+        "Sitzbank",
+        "Parkbank",
+        "Sitzgelegenheit",
+        "seat"
+      ],
+      "attributes": {}
+    },
+    "litter_bin": {
+      "group": "furniture",
+      "geometry": [
+        "point"
+      ],
+      "z": 75,
+      "label": {
+        "en": "Litter bin",
+        "de": "Abfallbehälter"
+      },
+      "description": {
+        "en": "Litter or recycling bin.",
+        "de": "Abfall- oder Wertstoffbehälter."
+      },
+      "fill": "stone.600",
+      "symbol": {
+        "kind": "bin",
+        "r": 0.5,
+        "color": "stone.400",
+        "ink": "stone.800"
+      },
+      "aliases": [
+        "Mülleimer",
+        "Papierkorb",
+        "Abfalleimer",
+        "waste basket",
+        "rubbish bin"
+      ],
+      "attributes": {}
+    },
+    "lamp": {
+      "group": "furniture",
+      "geometry": [
+        "point"
+      ],
+      "z": 75,
+      "label": {
+        "en": "Lamp",
+        "de": "Leuchte"
+      },
+      "description": {
+        "en": "Street or path light (ISO 11091 luminaire: circle with a diagonal cross).",
+        "de": "Straßen- oder Wegeleuchte (ISO 11091: Kreis mit Diagonalkreuz)."
+      },
+      "fill": "straw.300",
+      "symbol": {
+        "kind": "lamp",
+        "r": 0.55,
+        "color": "straw.200",
+        "ink": "ink.700"
+      },
+      "aliases": [
+        "Laterne",
+        "Straßenlaterne",
+        "Mastleuchte",
+        "Beleuchtung",
+        "street light",
+        "lamp post"
+      ],
+      "attributes": {}
+    },
+    "bike_rack": {
+      "group": "furniture",
+      "geometry": [
+        "point"
+      ],
+      "z": 75,
+      "label": {
+        "en": "Bicycle stand",
+        "de": "Fahrradständer"
+      },
+      "description": {
+        "en": "Bicycle parking stand.",
+        "de": "Fahrradabstellanlage."
+      },
+      "fill": "stone.500",
+      "symbol": {
+        "kind": "rack",
+        "r": 0.6,
+        "color": "stone.500",
+        "ink": "ink.500"
+      },
+      "aliases": [
+        "Fahrradbügel",
+        "Radständer",
+        "Fahrradabstellanlage",
+        "bicycle parking",
+        "cycle stand"
+      ],
+      "attributes": {}
+    },
+    "play_equipment": {
+      "group": "furniture",
+      "geometry": [
+        "point"
+      ],
+      "z": 75,
+      "label": {
+        "en": "Play equipment",
+        "de": "Spielgerät"
+      },
+      "description": {
+        "en": "Swing, slide, climbing frame.",
+        "de": "Schaukel, Rutsche, Klettergerät."
+      },
+      "fill": "bloom.red",
+      "symbol": {
+        "kind": "star",
+        "r": 0.6,
+        "color": "bloom.red",
+        "ink": "clay.900"
+      },
+      "aliases": [
+        "Schaukel",
+        "Rutsche",
+        "Klettergerüst",
+        "Spielgeräte",
+        "swing",
+        "slide"
+      ],
+      "attributes": {}
+    },
+    "sign": {
+      "group": "furniture",
+      "geometry": [
+        "point"
+      ],
+      "z": 75,
+      "label": {
+        "en": "Sign / information board",
+        "de": "Schild / Infotafel"
+      },
+      "description": {
+        "en": "Sign, information or interpretation board.",
+        "de": "Schild, Informations- oder Lehrtafel."
+      },
+      "fill": "signal.info",
+      "symbol": {
+        "kind": "sign",
+        "r": 0.55,
+        "color": "signal.info-soft",
+        "ink": "signal.info"
+      },
+      "aliases": [
+        "Infotafel",
+        "Hinweisschild",
+        "Lehrtafel",
+        "Beschilderung",
+        "information board"
+      ],
+      "attributes": {}
+    },
+    "artwork": {
+      "group": "furniture",
+      "geometry": [
+        "point"
+      ],
+      "z": 75,
+      "label": {
+        "en": "Artwork",
+        "de": "Kunstobjekt"
+      },
+      "description": {
+        "en": "Sculpture, memorial or art object.",
+        "de": "Skulptur, Denkmal oder Kunstobjekt."
+      },
+      "fill": "heather.500",
+      "symbol": {
+        "kind": "diamond",
+        "r": 0.55,
+        "color": "heather.300",
+        "ink": "heather.700"
+      },
+      "aliases": [
+        "Skulptur",
+        "Denkmal",
+        "Plastik",
+        "sculpture",
+        "monument"
+      ],
+      "attributes": {}
+    },
+    "deadwood": {
+      "group": "ecology",
+      "geometry": [
+        "point"
+      ],
+      "z": 76,
+      "label": {
+        "en": "Deadwood",
+        "de": "Totholz"
+      },
+      "description": {
+        "en": "Lying or standing deadwood, log pile, brash heap. Key habitat for insects and fungi.",
+        "de": "Liegendes oder stehendes Totholz, Holzstapel, Reisighaufen. Schlüsselhabitat für Insekten und Pilze."
+      },
+      "fill": "earth.700",
+      "symbol": {
+        "kind": "log",
+        "r": 0.6,
+        "color": "earth.600",
+        "ink": "earth.900"
+      },
+      "attributes": {
+        "biodiversity": 5
+      },
+      "aliases": [
+        "Totholzhaufen",
+        "Benjeshecke",
+        "Reisighaufen",
+        "Baumstubben",
+        "Käferbank",
+        "log pile",
+        "dead wood"
+      ]
+    },
+    "stone_pile": {
+      "group": "ecology",
+      "geometry": [
+        "point"
+      ],
+      "z": 76,
+      "label": {
+        "en": "Stone pile",
+        "de": "Steinhaufen"
+      },
+      "description": {
+        "en": "Stone heap or dry-stone structure: shelter for reptiles and insects.",
+        "de": "Lesesteinhaufen oder Trockenmauerelement: Unterschlupf für Reptilien und Insekten."
+      },
+      "fill": "granite.500",
+      "symbol": {
+        "kind": "pile",
+        "r": 0.6,
+        "color": "granite.300",
+        "ink": "granite.700"
+      },
+      "attributes": {
+        "biodiversity": 4
+      },
+      "aliases": [
+        "Lesesteinhaufen",
+        "Steinriegel",
+        "Eidechsenburg",
+        "Steinlinse",
+        "stone heap",
+        "rock pile"
+      ]
+    },
+    "nesting_aid": {
+      "group": "ecology",
+      "geometry": [
+        "point"
+      ],
+      "z": 76,
+      "label": {
+        "en": "Nesting aid",
+        "de": "Nisthilfe"
+      },
+      "description": {
+        "en": "Bird or bat box, insect hotel, swift brick.",
+        "de": "Vogel- oder Fledermauskasten, Insektenhotel, Mauerseglerstein."
+      },
+      "fill": "signal.protect",
+      "symbol": {
+        "kind": "box",
+        "r": 0.6,
+        "color": "signal.protect-soft",
+        "ink": "signal.protect"
+      },
+      "attributes": {
+        "biodiversity": 3
+      },
+      "aliases": [
+        "Nistkasten",
+        "Insektenhotel",
+        "Fledermauskasten",
+        "Wildbienenhotel",
+        "bird box",
+        "bat box",
+        "insect hotel"
+      ]
+    },
+    "sensor": {
+      "group": "analysis",
+      "geometry": [
+        "point"
+      ],
+      "z": 98,
+      "label": {
+        "en": "Sensor / station",
+        "de": "Sensor / Messstation"
+      },
+      "description": {
+        "en": "Measuring point of a sensor network: climate, soil moisture, acoustics.",
+        "de": "Messpunkt eines Sensornetzes: Klima, Bodenfeuchte, Akustik."
+      },
+      "fill": "signal.highlight",
+      "symbol": {
+        "kind": "dot",
+        "r": 0.8,
+        "color": "signal.highlight",
+        "halo": "paper.white",
+        "halo_width": 0.35
+      },
+      "aliases": [
+        "Messpunkt",
+        "Messstelle",
+        "Klimastation",
+        "Wetterstation",
+        "Logger",
+        "monitoring station",
+        "weather station"
+      ],
+      "attributes": {
+        "layer": "overlay"
+      }
+    },
+    "sample_point": {
+      "group": "analysis",
+      "geometry": [
+        "point"
+      ],
+      "z": 98,
+      "label": {
+        "en": "Survey point",
+        "de": "Aufnahmepunkt"
+      },
+      "description": {
+        "en": "Survey plot, sampling or observation point.",
+        "de": "Aufnahmefläche, Probe- oder Beobachtungspunkt."
+      },
+      "fill": "ink.700",
+      "symbol": {
+        "kind": "cross",
+        "r": 0.8,
+        "color": "ink.700",
+        "width": 0.25
+      },
+      "aliases": [
+        "Probepunkt",
+        "Probefläche",
+        "Kartierpunkt",
+        "Fundpunkt",
+        "Beobachtungspunkt",
+        "sampling point",
+        "observation"
+      ],
+      "attributes": {
+        "layer": "overlay"
+      }
+    },
+    "planter": {
+      "group": "furniture",
+      "geometry": [
+        "point"
+      ],
+      "z": 75,
+      "label": {
+        "en": "Planter",
+        "de": "Pflanzkübel"
+      },
+      "description": {
+        "en": "Movable planting container or raised planter.",
+        "de": "Mobiler Pflanzkübel oder Hochbeet-Einfassung."
+      },
+      "fill": "stone.300",
+      "symbol": {
+        "kind": "planter",
+        "r": 0.55,
+        "color": "stone.200",
+        "ink": "stone.700",
+        "accent": "leaf.500"
+      },
+      "aliases": [
+        "Pflanzkübel",
+        "Pflanzgefäß",
+        "Pflanztrog",
+        "Kübel",
+        "Hochbeet",
+        "planter",
+        "plant container",
+        "raised bed"
+      ],
+      "attributes": {}
+    },
+    "bollard": {
+      "group": "furniture",
+      "geometry": [
+        "point"
+      ],
+      "z": 75,
+      "label": {
+        "en": "Bollard",
+        "de": "Poller"
+      },
+      "description": {
+        "en": "Bollard or post that keeps vehicles out.",
+        "de": "Poller oder Pfosten als Durchfahrtsperre."
+      },
+      "fill": "ink.500",
+      "symbol": {
+        "kind": "dot",
+        "r": 0.3,
+        "color": "ink.500",
+        "halo": "paper.white",
+        "halo_width": 0.15
+      },
+      "aliases": [
+        "Poller",
+        "Absperrpfosten",
+        "Sperrpfosten",
+        "Pfosten",
+        "bollard",
+        "post"
+      ],
+      "attributes": {}
+    }
+  }
+}

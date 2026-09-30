@@ -1,0 +1,328 @@
+{
+  "title": "basemap.de Web",
+  "description": "Colours of the official German web basemap (AdV/BKG basemap.de Web Vektor, style bm_web_col 5.0.3): pastel land cover, white traffic areas. For web maps that sit on or next to basemap.de.",
+  "source": "https://sgx.geodatenzentrum.de/gdz_basemapde_vektor/styles/bm_web_col.json (style-version 5.0.3, read 2026-09-30)",
+  "evidence": "Fill colours V (research stream 01, section 4.3). Woodland uses the colour at high zoom. Elements without a basemap.de class take the colour of the class they belong to.",
+  "handdrawn": 0.0,
+  "textures": "none",
+  "background": "#FFFDEE",
+  "default": {
+    "fill": "#FFFFFF",
+    "outline": "#CCCCCC"
+  },
+  "groups": {
+    "vegetation.grass": {
+      "fill": "#DFF0B6",
+      "outline": "#C6D9A0"
+    },
+    "vegetation.planting": {
+      "fill": "#E6F7D2",
+      "outline": "#C6D9A0"
+    },
+    "vegetation.greenspace": {
+      "fill": "#E6F7D2",
+      "outline": "#C6D9A0"
+    },
+    "vegetation.woody": {
+      "fill": "#9AB66D",
+      "outline": "#7F9A57"
+    },
+    "vegetation.agri": {
+      "fill": "#FFFDEE",
+      "outline": "#DDD8B8"
+    },
+    "vegetation.wetland": {
+      "fill": "#CACB86",
+      "outline": "#AEAF6E"
+    },
+    "vegetation.roof": {
+      "fill": "#E6F7D2",
+      "outline": "#A8A8A8"
+    },
+    "blue_green": {
+      "fill": "#E6F7D2",
+      "outline": "#AACCFF"
+    },
+    "trees": {
+      "fill": "#9AB66D",
+      "outline": "#738D00"
+    },
+    "water": {
+      "fill": "#D2E8FA",
+      "outline": "#AACCFF"
+    },
+    "ground": {
+      "fill": "#EEEEEE",
+      "outline": "#D6D6D6"
+    },
+    "surface": {
+      "fill": "#FFFFFF",
+      "outline": "#999999"
+    },
+    "landuse": {
+      "fill": "#F2ECF9",
+      "outline": "#D6D2DB"
+    },
+    "built": {
+      "fill": "#A8A8A8",
+      "outline": "#8C8C8C"
+    },
+    "boundary": {
+      "fill": null,
+      "outline": "#666666"
+    },
+    "relief": {
+      "fill": null,
+      "outline": "#966F39"
+    },
+    "context": {
+      "fill": "#FFFFFF",
+      "outline": "#DDDDDD"
+    }
+  },
+  "elements": {
+    "green_space": {
+      "fill": "#E6F7D2",
+      "evidence": "V (Grünanlage, Park)"
+    },
+    "garden": {
+      "fill": "#E6F7D2",
+      "evidence": "V (Garten)"
+    },
+    "allotment": {
+      "fill": "#E6F7D2",
+      "evidence": "V (Kleingarten)"
+    },
+    "playground": {
+      "fill": "#E6F7D2",
+      "evidence": "V (Spielplatz, Bolzplatz)"
+    },
+    "cemetery": {
+      "fill": "#DFF0B6",
+      "evidence": "V (Friedhof)"
+    },
+    "sports_ground": {
+      "fill": "#E6F7D2",
+      "evidence": "V (Sportanlage)"
+    },
+    "recreation_area": {
+      "fill": "#E6F7D2",
+      "evidence": "V"
+    },
+    "sports_turf": {
+      "fill": "#F8EFC5",
+      "evidence": "V (Spielfeld)"
+    },
+    "lawn": {
+      "fill": "#E6F7D2",
+      "fit": "nearest (Siedlungsgrünfläche)"
+    },
+    "grassland_intensive": {
+      "fill": "#DFF0B6",
+      "evidence": "V (Grünland)"
+    },
+    "orchard_meadow": {
+      "fill": "#DFF0B6",
+      "evidence": "V (Streuobstwiese)"
+    },
+    "horticulture": {
+      "fill": "#C9F5D8",
+      "evidence": "V (Gartenbauland)"
+    },
+    "arable": {
+      "fill": "#FFFDEE",
+      "evidence": "V (Ackerland)"
+    },
+    "vineyard": {
+      "fill": "#FFFDEE",
+      "evidence": "V (Rebfläche)"
+    },
+    "orchard": {
+      "fill": "#FFFDEE",
+      "evidence": "V (Obstplantage)"
+    },
+    "grassland_fallow": {
+      "fill": "#FFFDEE",
+      "evidence": "V (Brachland)"
+    },
+    "heath": {
+      "fill": "#EEDDEE",
+      "evidence": "V (Heide)"
+    },
+    "bog": {
+      "fill": "#CACB86",
+      "evidence": "V (Moor)"
+    },
+    "sedge_marsh": {
+      "fill": "#CACB86",
+      "evidence": "V (Sumpf)"
+    },
+    "reed": {
+      "fill": "#CACB86",
+      "fit": "nearest"
+    },
+    "sand": {
+      "fill": "#FFF2E0",
+      "evidence": "V (Sand)"
+    },
+    "rock": {
+      "fill": "#EEEEEE",
+      "evidence": "V (Fels)"
+    },
+    "gravel": {
+      "fill": "#EEEEEE",
+      "evidence": "V (Steine, Schotter)"
+    },
+    "plaza": {
+      "fill": "#FFFFFF",
+      "evidence": "V (Platz)"
+    },
+    "parking": {
+      "fill": "#FFFFFF",
+      "evidence": "V (Parkplatz)"
+    },
+    "footway": {
+      "fill": "#B6DFD2",
+      "fit": "nearest (Fußgängerzone)"
+    },
+    "rail_area": {
+      "fill": "#D6D2DB",
+      "evidence": "V (Bahnverkehr)"
+    },
+    "rail_ballast": {
+      "fill": "#D6D2DB"
+    },
+    "pool": {
+      "fill": "#D2E8FA",
+      "outline": "#AACCFF",
+      "evidence": "V (Schwimmbecken)"
+    },
+    "retention_basin": {
+      "fill": "#D2E8FA",
+      "outline": "#AACCFF",
+      "evidence": "V (Rückhaltebecken)"
+    },
+    "fountain": {
+      "fill": "#AACCFF",
+      "evidence": "V (Brunnen)"
+    },
+    "spring": {
+      "fill": "#AACCFF",
+      "evidence": "V (Quelle)"
+    },
+    "residential_area": {
+      "fill": "#F2ECF9",
+      "evidence": "V (Wohnbaufläche)"
+    },
+    "mixed_use_area": {
+      "fill": "#F2ECF9",
+      "evidence": "V"
+    },
+    "public_facility_area": {
+      "fill": "#F2ECF9",
+      "evidence": "V"
+    },
+    "commercial_area": {
+      "fill": "#D6D2DB",
+      "evidence": "V (Industrie und Gewerbe)"
+    },
+    "quarry": {
+      "fill": "#D6D2DB",
+      "evidence": "V"
+    },
+    "landfill": {
+      "fill": "#D6D2DB",
+      "evidence": "V (Halde)"
+    },
+    "building": {
+      "fill": "#A8A8A8",
+      "evidence": "V (Gebäude nicht öffentlich)"
+    },
+    "building_minor": {
+      "fill": "#A8A8A8"
+    },
+    "greenhouse": {
+      "fill": "#FFFFFF",
+      "outline": "#8AD56E",
+      "evidence": "V (Treibhaus)"
+    },
+    "building_context": {
+      "fill": "#A8A8A8"
+    },
+    "road_context": {
+      "fill": "#FFFFFF"
+    },
+    "green_context": {
+      "fill": "#E6F7D2"
+    },
+    "water_context": {
+      "fill": "#D2E8FA",
+      "outline": "#AACCFF"
+    },
+    "hedge": {
+      "fill": "#93D965",
+      "outline": "#93D965",
+      "evidence": "V (Hecke)"
+    },
+    "tree_row": {
+      "fill": "#DFF0B6",
+      "outline": "#738D00",
+      "evidence": "V (Baumreihe)"
+    },
+    "wall": {
+      "outline": "#B49B88",
+      "evidence": "V (Mauer)"
+    },
+    "fence": {
+      "outline": "#B49B88",
+      "evidence": "V (Zaun)"
+    },
+    "retaining_wall": {
+      "outline": "#999999",
+      "evidence": "V (Stützmauer)"
+    },
+    "protection_zone": {
+      "outline": "#6FC135",
+      "evidence": "V (Schutzgebiete)"
+    },
+    "watercourse": {
+      "fill": "#D2E8FA",
+      "outline": "#AACCFF"
+    },
+    "ditch": {
+      "outline": "#AACCFF"
+    },
+    "tree_canopy": {
+      "fill": null,
+      "outline": "#738D00"
+    },
+    "golf_course": {
+      "fill": "#E6F7D2",
+      "evidence": "V (Golf)"
+    },
+    "salt_marsh": {
+      "fill": "#FFFDEE",
+      "evidence": "V (Salzweide)"
+    },
+    "dune": {
+      "fill": "#FFF2E0",
+      "evidence": "V (Düne)"
+    },
+    "snow_ice": {
+      "fill": "#B1FCF7",
+      "evidence": "V (Eis, Firn)"
+    },
+    "mudflat": {
+      "fill": "#DBE0F0",
+      "evidence": "V (Watt)"
+    },
+    "airport": {
+      "fill": "#E6F7D2",
+      "evidence": "V (Flugverkehr)"
+    },
+    "port": {
+      "fill": "#D6D2DB",
+      "evidence": "V (Schiffsverkehr)"
+    }
+  }
+}

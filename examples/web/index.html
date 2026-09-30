@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ulg · MapLibre example</title>
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css">
+  <link rel="stylesheet" href="ulg/ulg.css">
+  <style>
+    html, body { margin: 0; height: 100%; background: var(--ulg-paper-base); font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif; }
+    #map { position: absolute; inset: 0; }
+    .card { position: absolute; left: 16px; top: 16px; max-width: 280px; padding: 12px 14px; background: rgba(253,253,251,.94);
+            border: 1px solid var(--ulg-ink-200); border-radius: 6px; color: var(--ulg-ink-900); font-size: 13px; line-height: 1.4; }
+    .card h1 { font-size: 15px; margin: 0 0 4px; font-weight: 600; }
+    .card code { font-size: 12px; }
+    .card a { color: #33637f; }
+  </style>
+</head>
+<body>
+<div id="map"></div>
+<div class="card">
+  <h1>UrbanSens style in MapLibre</h1>
+  Fills, hand-drawn pattern tiles, tree crowns and streets in metres, pictograms, all generated with
+  <code>ulg export web</code>. <a href="?">Site plan</a> · <a href="?data=osm">OSM block</a> ·
+  <a href="https://urbansens.github.io/Urban-Landscape-Graphics/05-gis-and-web.html#53-maplibre-gl">Documentation</a>
+</div>
+<script src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js"></script>
+<script>
+(async () => {
+  const file = new URLSearchParams(location.search).get("data") === "osm" ? "osm.geojson" : "park.geojson";
+  const layers = await (await fetch("ulg/maplibre-layers.json")).json();
+  const paper = getComputedStyle(document.documentElement).getPropertyValue("--ulg-paper-base").trim() || "#F5F5F1";
+  const map = new maplibregl.Map({
+    container: "map",
+    preserveDrawingBuffer: true,
+    style: {
+      version: 8,
+      sprite: new URL("ulg/ulg-sprite", location.href).href,
+      sources: { ulg: { type: "geojson", data: file } },
+      layers: [{ id: "paper", type: "background", paint: { "background-color": paper } }, ...layers]
+    },
+    center: [0, 0], zoom: 2
+  });
+  const data = await (await fetch(file)).json();
+  const b = new maplibregl.LngLatBounds();
+  for (const f of data.features) {
+    const walk = c => typeof c[0] === "number" ? b.extend(c) : c.forEach(walk);
+    walk(f.geometry.coordinates);
+  }
+  map.fitBounds(b, { padding: 30, duration: 0 });
+  window.ulgMap = map;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,541 @@
+{
+  "outline_darken": 0.1,
+  "line_weights": {
+    "note": "ISO 128 line-width series (mm). Line elements use these; texture marks are drawn finer on purpose.",
+    "hair": 0.13,
+    "fine": 0.18,
+    "regular": 0.25,
+    "medium": 0.35,
+    "bold": 0.5,
+    "heavy": 0.7,
+    "extra": 1.0
+  },
+  "lod_breaks": [
+    750,
+    2500,
+    10000
+  ],
+  "centreline_widths_m": {
+    "note": "Widths in metres for area elements (roads, paths, surfaces) that arrive as centre lines, e.g. OSM highways. Order of use: the feature's own width (width, width_m, breite, est_width), lanes x lane_m, the OSM highway class below, the element id below, then default. House defaults for drawing, typical of German street cross-sections; not a standard.",
+    "lane_m": 3.0,
+    "default": 2.0,
+    "highway": {
+      "motorway": 12.0,
+      "trunk": 10.0,
+      "primary": 9.0,
+      "secondary": 8.0,
+      "tertiary": 7.0,
+      "unclassified": 5.5,
+      "residential": 6.0,
+      "living_street": 5.0,
+      "service": 4.0,
+      "pedestrian": 5.0,
+      "track": 3.0,
+      "busway": 3.5,
+      "cycleway": 2.0,
+      "footway": 2.0,
+      "bridleway": 2.0,
+      "path": 1.5,
+      "steps": 2.0,
+      "motorway_link": 6.0,
+      "trunk_link": 6.0,
+      "primary_link": 6.0,
+      "secondary_link": 6.0,
+      "tertiary_link": 6.0
+    },
+    "element": {
+      "road": 6.0,
+      "footway": 2.0,
+      "cycleway": 2.0,
+      "plaza": 5.0,
+      "parking": 5.0,
+      "stairs": 2.0,
+      "rail_ballast": 3.0,
+      "rail_area": 3.0,
+      "green_track": 3.0
+    }
+  },
+  "ramps": {
+    "heat": {
+      "label": {
+        "en": "Heat / thermal load",
+        "de": "Wärmebelastung"
+      },
+      "kind": "sequential",
+      "colors": [
+        "#F7F1DC",
+        "#F6DDB0",
+        "#F4BE84",
+        "#EA9A6A",
+        "#D6775C",
+        "#B5574F"
+      ]
+    },
+    "cool": {
+      "label": {
+        "en": "Cooling / shade / moisture",
+        "de": "Kühlung / Schatten / Feuchte"
+      },
+      "kind": "sequential",
+      "colors": [
+        "#F1F5EE",
+        "#D5E6E3",
+        "#B4D2D6",
+        "#8FB9C6",
+        "#6C9BB3",
+        "#4F7C97"
+      ]
+    },
+    "vitality": {
+      "label": {
+        "en": "Vegetation vitality / greenness",
+        "de": "Vegetationsvitalität"
+      },
+      "kind": "sequential",
+      "colors": [
+        "#E9DCC6",
+        "#E6E2BD",
+        "#CBD3A2",
+        "#A9BD86",
+        "#84A070",
+        "#5E8059"
+      ]
+    },
+    "biodiversity": {
+      "label": {
+        "en": "Biodiversity value",
+        "de": "Biodiversitätswert"
+      },
+      "kind": "sequential",
+      "colors": [
+        "#EDEADB",
+        "#D8DFBE",
+        "#B9CB9C",
+        "#93B184",
+        "#6B9572",
+        "#4A7866"
+      ]
+    },
+    "sealing": {
+      "label": {
+        "en": "Degree of sealing",
+        "de": "Versiegelungsgrad"
+      },
+      "kind": "sequential",
+      "colors": [
+        "#CFD8AE",
+        "#DAD9C4",
+        "#D5D2CB",
+        "#B9B7B3",
+        "#959493",
+        "#6F6F70"
+      ]
+    },
+    "diverging": {
+      "label": {
+        "en": "Change / anomaly",
+        "de": "Veränderung / Abweichung"
+      },
+      "kind": "diverging",
+      "colors": [
+        "#5E8FB0",
+        "#9DBBD0",
+        "#D8E4E6",
+        "#F5F2E8",
+        "#F6DDB0",
+        "#F0B273",
+        "#D9844F"
+      ]
+    }
+  },
+  "attributes": {
+    "sealing": {
+      "values": [
+        "sealed",
+        "partly",
+        "unsealed",
+        "built"
+      ],
+      "meaning": "Degree of sealing in the wording of the Umweltbundesamt: full, partial (loosely laid paving, water-bound surfaces), none; 'built' = covered by a building.",
+      "source": "Umweltbundesamt, Bodenversiegelung (page of 26.03.2026)",
+      "evidence": "V"
+    },
+    "bdla_class": {
+      "values": {
+        "1": "vegetation on natural soil",
+        "2": "vegetation over structures",
+        "3": "partly sealed, permeable",
+        "4": "fully sealed, impermeable",
+        "5": "built over (with or without green roof)"
+      },
+      "source": "bdla, Der qualifizierte Freiflächengestaltungsplan (Stand Juli 2022)",
+      "evidence": "V",
+      "note": "Standard paving laid in sand is put in class 3 here (UBA: partial sealing); some offices put it in class 4."
+    },
+    "bff": {
+      "meaning": "Weighting factor of the Berlin Biotopflächenfaktor (0–1), current list with 16 surface types.",
+      "source": "SenUVK Berlin, Der Biotopflächenfaktor als ökologisches Planungsinstrument (brochure, February 2021)",
+      "evidence": "V"
+    },
+    "bff_1990": {
+      "meaning": "Factor of the original 1990 list, still the basis of older BFF landscape plans.",
+      "source": "BFF Gutachten 1990",
+      "evidence": "V"
+    },
+    "runoff_cs": {
+      "meaning": "Peak runoff coefficient Cs (pipe sizing, flood check).",
+      "source": "DIN 1986-100:2016-12, Tabelle 9 (via a municipal reproduction)",
+      "evidence": "S"
+    },
+    "runoff_cm": {
+      "meaning": "Mean runoff coefficient Cm (retention and infiltration volumes, T = 2 a).",
+      "source": "DIN 1986-100:2016-12, Tabelle 9 (via a municipal reproduction)",
+      "evidence": "S"
+    },
+    "albedo": {
+      "meaning": "Broadband albedo at 60 degrees solar zenith angle.",
+      "source": "PALM model system 6.0 lookup tables (Gehrke et al. 2021)",
+      "evidence": "V",
+      "note": "PALM uses one placeholder (0.17) for most pavements; treat material differences with care."
+    },
+    "emissivity": {
+      "source": "PALM model system 6.0 lookup tables",
+      "evidence": "V"
+    },
+    "belagsklasse": {
+      "values": {
+        "1": "extreme impact (asphalt, concrete, sealed joints, plastics)",
+        "2": "high (slabs, interlocking, clinker, large setts)",
+        "3": "medium (small and mosaic setts)",
+        "4": "low (grass pavers, water-bound, gravel, gravel turf)"
+      },
+      "source": "Berlin Umweltatlas 01.02 Versiegelung (2017), Tab. 1",
+      "evidence": "V"
+    },
+    "nrr_urban_green": {
+      "meaning": "Counts as urban green space under Regulation (EU) 2024/1991 Art. 3(20) as measured in the Copernicus baseline: CLC+ Backbone classes 2, 3, 4, 5, 6, 8 and 10 (trees, bushes and shrubs including vines, permanent herbaceous vegetation, lichens and mosses, water). Arable land, sealed and bare ground, railway tracks and green roofs do not count there. Built pools are excluded here as sealed technical basins (house reading of 'ponds and watercourses').",
+      "source": "Regulation (EU) 2024/1991; Commission/EEA note on the urban ecosystem indicators",
+      "evidence": "V"
+    },
+    "layer": {
+      "values": [
+        "ground",
+        "roof",
+        "overlay"
+      ],
+      "meaning": "ground = land cover that tiles the plot; roof = lies on a building (green roofs, PV); overlay = drawn over other features and never counted as land cover."
+    },
+    "biodiversity": {
+      "meaning": "Rough house heuristic 1–5 for quick maps and legend order. Not a valuation: use the BKompV or BayKompV values from the crosswalks for that.",
+      "evidence": "house"
+    },
+    "is_complex": {
+      "meaning": "The element stands for a whole complex (park, garden, residential area) rather than one surface."
+    }
+  },
+  "categories": {
+    "klimatop": {
+      "label": {
+        "en": "Climatopes (VDI 3787 Blatt 1 vocabulary)",
+        "de": "Klimatope (Begriffe nach VDI 3787 Blatt 1)"
+      },
+      "note": "Class names follow VDI 3787 Blatt 1; the colours are the UrbanSens house version of the usual hue order (water blue, open land pale mint, green, apricot, orange, light red, red, magenta/dark red). No numeric VDI colour standard exists until VDI 3787 Blatt 12 (planned 2027).",
+      "classes": [
+        {
+          "id": "gewaesser",
+          "label": {
+            "en": "Water climatope",
+            "de": "Gewässer-Klimatop"
+          },
+          "color": "#99B8C9"
+        },
+        {
+          "id": "freiland",
+          "label": {
+            "en": "Open-land climatope",
+            "de": "Freiland-Klimatop"
+          },
+          "color": "#D8ECDF"
+        },
+        {
+          "id": "wald",
+          "label": {
+            "en": "Forest climatope",
+            "de": "Wald-Klimatop"
+          },
+          "color": "#8FAE7E"
+        },
+        {
+          "id": "gruenanlage",
+          "label": {
+            "en": "Park climatope",
+            "de": "Grünanlagen-Klimatop"
+          },
+          "color": "#C6D9A0"
+        },
+        {
+          "id": "gartenstadt",
+          "label": {
+            "en": "Garden-city climatope",
+            "de": "Gartenstadt-Klimatop"
+          },
+          "color": "#F4DAB2"
+        },
+        {
+          "id": "stadtrand",
+          "label": {
+            "en": "Suburban climatope",
+            "de": "Stadtrand-Klimatop"
+          },
+          "color": "#EFBA82"
+        },
+        {
+          "id": "stadt",
+          "label": {
+            "en": "Urban climatope",
+            "de": "Stadt-Klimatop"
+          },
+          "color": "#E39A88"
+        },
+        {
+          "id": "innenstadt",
+          "label": {
+            "en": "City-centre climatope",
+            "de": "Innenstadt-Klimatop"
+          },
+          "color": "#CB6E68"
+        },
+        {
+          "id": "gewerbe",
+          "label": {
+            "en": "Commercial climatope",
+            "de": "Gewerbe-Klimatop"
+          },
+          "color": "#C58CB3"
+        },
+        {
+          "id": "industrie",
+          "label": {
+            "en": "Industrial climatope",
+            "de": "Industrie-Klimatop"
+          },
+          "color": "#9A5C73"
+        },
+        {
+          "id": "bahn",
+          "label": {
+            "en": "Railway climatope",
+            "de": "Bahnanlagen-Klimatop"
+          },
+          "color": "#BDA37F"
+        }
+      ]
+    },
+    "utci": {
+      "label": {
+        "en": "UTCI thermal stress",
+        "de": "UTCI Wärme- und Kältebelastung"
+      },
+      "unit": "°C",
+      "note": "Class limits V (thermofeel documentation; Copernicus/EEA climate-adapt). No standard colour scale exists; colours use the library's cool and heat ramps.",
+      "classes": [
+        {
+          "id": "extreme_cold",
+          "max": -40,
+          "label": {
+            "en": "extreme cold stress",
+            "de": "extreme Kältebelastung"
+          },
+          "color": "#4F7C97"
+        },
+        {
+          "id": "very_strong_cold",
+          "min": -40,
+          "max": -27,
+          "label": {
+            "en": "very strong cold stress",
+            "de": "sehr starke Kältebelastung"
+          },
+          "color": "#6C9BB3"
+        },
+        {
+          "id": "strong_cold",
+          "min": -27,
+          "max": -13,
+          "label": {
+            "en": "strong cold stress",
+            "de": "starke Kältebelastung"
+          },
+          "color": "#8FB9C6"
+        },
+        {
+          "id": "moderate_cold",
+          "min": -13,
+          "max": 0,
+          "label": {
+            "en": "moderate cold stress",
+            "de": "mäßige Kältebelastung"
+          },
+          "color": "#B4D2D6"
+        },
+        {
+          "id": "slight_cold",
+          "min": 0,
+          "max": 9,
+          "label": {
+            "en": "slight cold stress",
+            "de": "schwache Kältebelastung"
+          },
+          "color": "#D5E6E3"
+        },
+        {
+          "id": "no_stress",
+          "min": 9,
+          "max": 26,
+          "label": {
+            "en": "no thermal stress",
+            "de": "keine thermische Belastung"
+          },
+          "color": "#EEF1E4"
+        },
+        {
+          "id": "moderate_heat",
+          "min": 26,
+          "max": 32,
+          "label": {
+            "en": "moderate heat stress",
+            "de": "mäßige Wärmebelastung"
+          },
+          "color": "#F6DDB0"
+        },
+        {
+          "id": "strong_heat",
+          "min": 32,
+          "max": 38,
+          "label": {
+            "en": "strong heat stress",
+            "de": "starke Wärmebelastung"
+          },
+          "color": "#F0B273"
+        },
+        {
+          "id": "very_strong_heat",
+          "min": 38,
+          "max": 46,
+          "label": {
+            "en": "very strong heat stress",
+            "de": "sehr starke Wärmebelastung"
+          },
+          "color": "#D9844F"
+        },
+        {
+          "id": "extreme_heat",
+          "min": 46,
+          "label": {
+            "en": "extreme heat stress",
+            "de": "extreme Wärmebelastung"
+          },
+          "color": "#B5574F"
+        }
+      ]
+    },
+    "pet": {
+      "label": {
+        "en": "PET thermal perception",
+        "de": "PET thermisches Empfinden"
+      },
+      "unit": "°C",
+      "note": "Class limits 4/8/13/18/23/29/35/41 °C (Matzarakis & Mayer 1996, used in VDI 3787 Blatt 2) from secondary sources (S). House colours.",
+      "classes": [
+        {
+          "id": "extreme_cold",
+          "max": 4,
+          "label": {
+            "en": "extreme cold stress",
+            "de": "extreme Kältebelastung"
+          },
+          "color": "#4F7C97"
+        },
+        {
+          "id": "strong_cold",
+          "min": 4,
+          "max": 8,
+          "label": {
+            "en": "strong cold stress",
+            "de": "starke Kältebelastung"
+          },
+          "color": "#8FB9C6"
+        },
+        {
+          "id": "moderate_cold",
+          "min": 8,
+          "max": 13,
+          "label": {
+            "en": "moderate cold stress",
+            "de": "mäßige Kältebelastung"
+          },
+          "color": "#B4D2D6"
+        },
+        {
+          "id": "slight_cold",
+          "min": 13,
+          "max": 18,
+          "label": {
+            "en": "slight cold stress",
+            "de": "schwache Kältebelastung"
+          },
+          "color": "#D5E6E3"
+        },
+        {
+          "id": "no_stress",
+          "min": 18,
+          "max": 23,
+          "label": {
+            "en": "no thermal stress",
+            "de": "keine thermische Belastung"
+          },
+          "color": "#EEF1E4"
+        },
+        {
+          "id": "slight_heat",
+          "min": 23,
+          "max": 29,
+          "label": {
+            "en": "slight heat stress",
+            "de": "schwache Wärmebelastung"
+          },
+          "color": "#F6DDB0"
+        },
+        {
+          "id": "moderate_heat",
+          "min": 29,
+          "max": 35,
+          "label": {
+            "en": "moderate heat stress",
+            "de": "mäßige Wärmebelastung"
+          },
+          "color": "#F0B273"
+        },
+        {
+          "id": "strong_heat",
+          "min": 35,
+          "max": 41,
+          "label": {
+            "en": "strong heat stress",
+            "de": "starke Wärmebelastung"
+          },
+          "color": "#D9844F"
+        },
+        {
+          "id": "extreme_heat",
+          "min": 41,
+          "label": {
+            "en": "extreme heat stress",
+            "de": "extreme Wärmebelastung"
+          },
+          "color": "#B5574F"
+        }
+      ]
+    }
+  }
+}

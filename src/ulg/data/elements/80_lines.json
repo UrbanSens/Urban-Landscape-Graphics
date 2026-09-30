@@ -1,0 +1,378 @@
+{
+  "title": "Boundaries, relief and protective zones",
+  "elements": {
+    "site_boundary": {
+      "group": "boundary",
+      "geometry": [
+        "line",
+        "polygon"
+      ],
+      "z": 95,
+      "label": {
+        "en": "Site boundary",
+        "de": "Grundstücksgrenze"
+      },
+      "description": {
+        "en": "Boundary of the site or project area: one firm line.",
+        "de": "Grenze des Grundstücks oder Bearbeitungsgebiets: eine klare Linie."
+      },
+      "fill": null,
+      "outline": "ink.500",
+      "outline_width": 0.35,
+      "line": {
+        "color": "ink.500",
+        "width": 0.35
+      },
+      "aliases": [
+        "Projektgrenze",
+        "Bearbeitungsgrenze",
+        "Planungsgebiet",
+        "Untersuchungsgebiet",
+        "Grundstück",
+        "red line boundary",
+        "project boundary",
+        "study area"
+      ],
+      "attributes": {
+        "layer": "overlay"
+      }
+    },
+    "parcel_boundary": {
+      "group": "boundary",
+      "geometry": [
+        "line",
+        "polygon"
+      ],
+      "z": 93,
+      "label": {
+        "en": "Parcel boundary",
+        "de": "Flurstücksgrenze"
+      },
+      "description": {
+        "en": "Cadastral parcel boundary: fine neutral line.",
+        "de": "Flurstücksgrenze des Liegenschaftskatasters: feine neutrale Linie."
+      },
+      "fill": null,
+      "outline": "ink.300",
+      "outline_width": 0.18,
+      "line": {
+        "color": "ink.300",
+        "width": 0.18
+      },
+      "aliases": [
+        "Flurstück",
+        "Katastergrenze",
+        "Parzellengrenze",
+        "Liegenschaftsgrenze",
+        "cadastral boundary",
+        "lot line"
+      ],
+      "attributes": {
+        "layer": "overlay"
+      }
+    },
+    "planning_boundary": {
+      "group": "boundary",
+      "geometry": [
+        "line",
+        "polygon"
+      ],
+      "z": 96,
+      "label": {
+        "en": "Plan area boundary",
+        "de": "Geltungsbereich"
+      },
+      "description": {
+        "en": "Limit of the area a statutory plan applies to: heavy broken line.",
+        "de": "Grenze des räumlichen Geltungsbereichs eines Bauleitplans: kräftige unterbrochene Linie."
+      },
+      "fill": null,
+      "outline": "ink.900",
+      "outline_width": 0.7,
+      "outline_dash": [
+        3.2,
+        1.3
+      ],
+      "line": {
+        "color": "ink.900",
+        "width": 0.7,
+        "dash": [
+          3.2,
+          1.3
+        ]
+      },
+      "aliases": [
+        "Grenze des räumlichen Geltungsbereichs",
+        "Plangebiet",
+        "Bebauungsplangrenze",
+        "Plangebietsgrenze",
+        "plan boundary"
+      ],
+      "attributes": {
+        "layer": "overlay"
+      }
+    },
+    "fence": {
+      "group": "boundary",
+      "geometry": [
+        "line"
+      ],
+      "z": 85,
+      "label": {
+        "en": "Fence",
+        "de": "Zaun"
+      },
+      "description": {
+        "en": "Fence: fine line with regular posts.",
+        "de": "Zaun: feine Linie mit regelmäßigen Pfosten."
+      },
+      "fill": null,
+      "outline": "ink.400",
+      "line": {
+        "color": "ink.400",
+        "width": 0.18,
+        "marks": {
+          "kind": "ticks",
+          "step": 2.4,
+          "length": 0.8,
+          "width": 0.18,
+          "color": "ink.400"
+        }
+      },
+      "aliases": [
+        "Einfriedung",
+        "Einzäunung",
+        "Maschendrahtzaun",
+        "Stabgitterzaun",
+        "Holzzaun",
+        "fencing",
+        "railing"
+      ],
+      "attributes": {
+        "layer": "overlay"
+      }
+    },
+    "kerb": {
+      "group": "boundary",
+      "geometry": [
+        "line"
+      ],
+      "z": 84,
+      "label": {
+        "en": "Kerb",
+        "de": "Bordstein"
+      },
+      "description": {
+        "en": "Kerb or edging between surfaces.",
+        "de": "Bordstein oder Einfassung zwischen Belägen."
+      },
+      "fill": null,
+      "outline": "stone.600",
+      "line": {
+        "color": "stone.600",
+        "width": 0.25,
+        "cap": "butt"
+      },
+      "aliases": [
+        "Bordsteinkante",
+        "Einfassung",
+        "Randstein",
+        "Kantenstein",
+        "Rasenkante",
+        "curb",
+        "edging"
+      ],
+      "attributes": {
+        "layer": "overlay"
+      }
+    },
+    "protection_zone": {
+      "group": "boundary",
+      "geometry": [
+        "line",
+        "polygon"
+      ],
+      "z": 94,
+      "label": {
+        "en": "Protected area boundary",
+        "de": "Schutzgebietsgrenze"
+      },
+      "description": {
+        "en": "Boundary of a protected area: nature reserve, landscape protection area, Natura 2000 site.",
+        "de": "Grenze eines Schutzgebiets: Naturschutzgebiet, Landschaftsschutzgebiet, Natura-2000-Gebiet."
+      },
+      "fill": null,
+      "outline": "signal.protect",
+      "outline_width": 0.5,
+      "outline_dash": [
+        2.4,
+        0.8,
+        0.5,
+        0.8
+      ],
+      "line": {
+        "color": "signal.protect",
+        "width": 0.5,
+        "dash": [
+          2.4,
+          0.8,
+          0.5,
+          0.8
+        ]
+      },
+      "aliases": [
+        "Naturschutzgebiet",
+        "NSG",
+        "Landschaftsschutzgebiet",
+        "LSG",
+        "FFH-Gebiet",
+        "Natura 2000",
+        "Vogelschutzgebiet",
+        "nature reserve",
+        "protected area"
+      ],
+      "attributes": {
+        "layer": "overlay"
+      }
+    },
+    "root_protection_zone": {
+      "group": "boundary",
+      "geometry": [
+        "polygon",
+        "line"
+      ],
+      "z": 67,
+      "label": {
+        "en": "Root protection area",
+        "de": "Wurzelschutzbereich"
+      },
+      "description": {
+        "en": "Area around a tree that must stay free of excavation, storage and traffic during works (DIN 18920); chain line as for protection in ISO 11091.",
+        "de": "Bereich um einen Baum, der während der Bauzeit von Abgrabung, Lagerung und Befahren freizuhalten ist (DIN 18920); Strichpunktlinie wie für Schutz nach ISO 11091."
+      },
+      "fill": "signal.protect-soft",
+      "outline": "signal.protect",
+      "fill_opacity": 0.35,
+      "outline_width": 0.25,
+      "outline_dash": [
+        2.4,
+        0.7,
+        0.4,
+        0.7
+      ],
+      "line": {
+        "color": "signal.protect",
+        "width": 0.25,
+        "dash": [
+          1.5,
+          0.8
+        ]
+      },
+      "attributes": {
+        "status": "retain",
+        "layer": "overlay"
+      },
+      "aliases": [
+        "Wurzelbereich",
+        "Kronentraufbereich",
+        "Baumschutzbereich",
+        "Baumschutzzaun",
+        "RPA",
+        "root protection zone",
+        "tree protection zone"
+      ]
+    },
+    "contour": {
+      "group": "relief",
+      "geometry": [
+        "line"
+      ],
+      "z": 88,
+      "label": {
+        "en": "Contour line",
+        "de": "Höhenlinie"
+      },
+      "description": {
+        "en": "Contour line: hair line in earth tone.",
+        "de": "Höhenlinie: Haarlinie im Erdton."
+      },
+      "fill": null,
+      "outline": "earth.500",
+      "line": {
+        "color": "earth.500",
+        "width": 0.13
+      },
+      "aliases": [
+        "Höhenschichtlinie",
+        "Isohypse",
+        "contour"
+      ],
+      "attributes": {}
+    },
+    "contour_index": {
+      "group": "relief",
+      "geometry": [
+        "line"
+      ],
+      "z": 88,
+      "label": {
+        "en": "Index contour",
+        "de": "Zähllinie"
+      },
+      "description": {
+        "en": "Every fifth or tenth contour, drawn stronger.",
+        "de": "Jede fünfte oder zehnte Höhenlinie, kräftiger gezeichnet."
+      },
+      "fill": null,
+      "outline": "earth.600",
+      "line": {
+        "color": "earth.600",
+        "width": 0.25
+      },
+      "aliases": [
+        "Haupthöhenlinie",
+        "index contour"
+      ],
+      "attributes": {}
+    },
+    "embankment": {
+      "group": "relief",
+      "geometry": [
+        "line"
+      ],
+      "z": 87,
+      "label": {
+        "en": "Embankment",
+        "de": "Böschung"
+      },
+      "description": {
+        "en": "Top edge of a slope; alternating long and short ticks point downhill (draw the line with the fall on its right).",
+        "de": "Böschungsoberkante; abwechselnd lange und kurze Striche zeigen hangabwärts (Linie so digitalisieren, dass das Gefälle rechts liegt)."
+      },
+      "fill": null,
+      "outline": "earth.600",
+      "line": {
+        "color": "earth.600",
+        "width": 0.18,
+        "marks": {
+          "kind": "hachure",
+          "step": 1.5,
+          "length": 2.0,
+          "width": 0.13,
+          "color": "earth.600"
+        }
+      },
+      "aliases": [
+        "Böschungskante",
+        "Böschungsschraffe",
+        "Hang",
+        "Geländekante",
+        "Damm",
+        "slope",
+        "bank",
+        "scarp"
+      ],
+      "attributes": {}
+    }
+  }
+}

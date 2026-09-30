@@ -1,0 +1,347 @@
+{
+  "title": "Bare ground",
+  "elements": {
+    "bare_soil": {
+      "group": "ground",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Soil / bare ground",
+        "de": "Offener Boden"
+      },
+      "description": {
+        "en": "Earth texture with scattered dots. Brown tone. Open ground matters for ground-nesting bees.",
+        "de": "Erdtextur mit gestreuten Punkten. Brauner Ton. Offenboden ist wichtig für bodennistende Wildbienen."
+      },
+      "fill": "earth.300",
+      "wash": true,
+      "textures": [
+        {
+          "motif": "stipple",
+          "ink": "earth.700",
+          "ink2": "earth.800",
+          "ink2_share": 0.3,
+          "keep": 0.92,
+          "lod": {
+            "1": {
+              "spacing": 1.0
+            },
+            "2": {
+              "spacing": 1.25,
+              "r_max": 0.26
+            },
+            "3": {
+              "spacing": 1.6,
+              "r_max": 0.36
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": false,
+        "albedo": 0.08,
+        "emissivity": 0.94,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Rohboden",
+        "Offenboden",
+        "vegetationsfreie Fläche",
+        "unbefestigte Fläche",
+        "Erde",
+        "bare earth",
+        "bare ground",
+        "unsealed ground",
+        "dirt"
+      ]
+    },
+    "sand": {
+      "group": "ground",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Sand",
+        "de": "Sand"
+      },
+      "description": {
+        "en": "Fine, sandy texture. Warm ochre tone. Play sand, beach, open sand habitat.",
+        "de": "Feine Sandtextur. Warmer Ockerton. Spielsand, Strand, offene Sandfläche."
+      },
+      "fill": "sand.200",
+      "textures": [
+        {
+          "motif": "stipple",
+          "ink": "sand.700",
+          "spacing": 1.0,
+          "r_max": 0.15,
+          "r_min": 0.07,
+          "keep": 0.9,
+          "lod": {
+            "1": {
+              "spacing": 0.85,
+              "r_max": 0.11
+            },
+            "3": {
+              "spacing": 1.3,
+              "r_max": 0.2,
+              "r_min": 0.08
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": false,
+        "bff": 0.2,
+        "bff_1990": 0.3,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Sandfläche",
+        "Spielsand",
+        "Sandkasten",
+        "Strand",
+        "Fallschutzsand",
+        "beach",
+        "sandpit"
+      ]
+    },
+    "dune": {
+      "group": "ground",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Dune",
+        "de": "Düne"
+      },
+      "description": {
+        "en": "Wind-blown sand with sparse grasses: coastal and inland dunes. High biodiversity, often protected.",
+        "de": "Vom Wind aufgewehter Sand mit lückigem Gras: Küsten- und Binnendünen. Hohe Biodiversität, oft geschützt."
+      },
+      "fill": "sand.300",
+      "textures": [
+        {
+          "motif": "stipple",
+          "ink": "sand.700",
+          "keep": 0.7
+        },
+        {
+          "motif": "grass_tufts",
+          "ink": "fallow.700",
+          "ink2": "grass.700",
+          "keep": 0.3,
+          "ticks": false
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 4,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Düne",
+        "Binnendüne",
+        "Küstendüne",
+        "Sanddüne",
+        "Weißdüne",
+        "Graudüne",
+        "dune",
+        "sand dune",
+        "dunes"
+      ]
+    },
+    "rock": {
+      "group": "ground",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Rock / boulders",
+        "de": "Fels / Steinschüttung"
+      },
+      "description": {
+        "en": "Bedrock, boulders, riprap or gabion fill.",
+        "de": "Anstehender Fels, Blöcke, Steinschüttung oder Gabionenfüllung."
+      },
+      "fill": "stone.300",
+      "textures": [
+        {
+          "motif": "pebbles",
+          "ink": "stone.600",
+          "fill": "stone.200",
+          "lod": {
+            "1": {
+              "spacing": 2.0,
+              "size": 1.3
+            },
+            "2": {
+              "spacing": 3.0,
+              "size": 2.3
+            },
+            "3": {
+              "spacing": 4.2,
+              "size": 3.4
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": false,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Felsen",
+        "Steinschüttung",
+        "Blocksteine",
+        "Findlinge",
+        "Wasserbausteine",
+        "Gabione",
+        "riprap",
+        "boulders",
+        "bare rock"
+      ]
+    },
+    "mulch": {
+      "group": "ground",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Bark mulch",
+        "de": "Rindenmulch"
+      },
+      "description": {
+        "en": "Organic mulch on planting beds and under play equipment.",
+        "de": "Organische Mulchschicht auf Pflanzflächen und unter Spielgeräten."
+      },
+      "fill": "earth.400",
+      "textures": [
+        {
+          "motif": "chips",
+          "ink": "earth.700",
+          "ink2": "earth.800"
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": false,
+        "albedo": 0.17,
+        "emissivity": 0.97,
+        "nrr_urban_green": false,
+        "layer": "ground",
+        "family": "mulch"
+      },
+      "aliases": [
+        "Mulch",
+        "Mulchfläche",
+        "Rindenhäcksel",
+        "bark",
+        "mulched bed"
+      ]
+    },
+    "construction_site": {
+      "group": "ground",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Construction site",
+        "de": "Baustelle"
+      },
+      "description": {
+        "en": "Ground under construction; final surface unknown.",
+        "de": "Fläche im Bau; endgültiger Belag unbekannt."
+      },
+      "fill": "earth.200",
+      "outline": "earth.700",
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "earth.600",
+          "spacing": 2.4,
+          "angle": 45
+        }
+      ],
+      "attributes": {
+        "vegetated": false,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Baufeld",
+        "Baufläche",
+        "im Bau",
+        "construction",
+        "building site"
+      ]
+    },
+    "snow_ice": {
+      "group": "ground",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Snow and ice",
+        "de": "Schnee und Eis"
+      },
+      "description": {
+        "en": "Permanent snow fields and glaciers.",
+        "de": "Dauerhafte Schneefelder und Gletscher."
+      },
+      "fill": "paper.white",
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "water.400",
+          "angle": 30,
+          "width": 0.13,
+          "amp": 0.05,
+          "lod": {
+            "1": {
+              "spacing": 1.6
+            },
+            "2": {
+              "spacing": 2.2
+            },
+            "3": {
+              "spacing": 3.0
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": false,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Gletscher",
+        "Firn",
+        "Firnfeld",
+        "Schneefeld",
+        "Eis",
+        "glacier",
+        "permanent snow",
+        "snowfield",
+        "ice"
+      ]
+    }
+  }
+}

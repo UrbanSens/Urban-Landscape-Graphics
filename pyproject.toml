@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "urban-landscape-graphics"
+version = "0.1.0"
+description = "UrbanSens Ecological Vector Style: a standards-aware catalog of colours, textures and symbols for urban landscape maps, with renderers and GIS/web exporters."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "UrbanSens" }]
+keywords = ["gis", "cartography", "landscape", "urban ecology", "symbology", "qgis", "design tokens"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Topic :: Scientific/Engineering :: Visualization",
+]
+dependencies = [
+    "numpy>=1.24",
+    "shapely>=2.1",      # make_valid(method="structure") keeps holes when the demo quarter is repaired
+]
+
+[project.optional-dependencies]
+geo = ["geopandas>=0.14"]
+plot = ["matplotlib>=3.7"]
+docs = ["markdown-it-py[linkify]>=2.2", "pygments>=2.15", "pillow>=10", "fonttools[woff]>=4.40"]
+all = ["geopandas>=0.14", "matplotlib>=3.7"]
+dev = ["pytest>=7", "geopandas>=0.14", "matplotlib>=3.7", "markdown-it-py[linkify]>=2.2", "pygments>=2.15", "pillow>=10", "fonttools[woff]>=4.40"]
+
+[project.urls]
+Homepage = "https://urbansens.github.io/Urban-Landscape-Graphics/"
+Documentation = "https://urbansens.github.io/Urban-Landscape-Graphics/"
+Repository = "https://github.com/UrbanSens/Urban-Landscape-Graphics"
+Issues = "https://github.com/UrbanSens/Urban-Landscape-Graphics/issues"
+Changelog = "https://github.com/UrbanSens/Urban-Landscape-Graphics/blob/main/CHANGELOG.md"
+
+[project.scripts]
+ulg = "ulg.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ulg = ["data/*.json", "data/**/*.json", "data/*.md", "data/**/*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = ["slow: sprite rasterising and the HTML documentation build (deselect with -m 'not slow')"]

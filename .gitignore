@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# tools
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# generated output of the examples
+examples/output/
+
+# generated documentation: GitHub builds and publishes it (.github/workflows/pages.yml); locally
+# `python tools/build_html.py` writes docs/html/
+docs/html/
+_site/
+
+# generated MapLibre demo data (python examples/web/build.py)
+examples/web/ulg/
+examples/web/park.geojson
+examples/web/osm.geojson
+
+# editors and OS
+.DS_Store
+.idea/
+.vscode/
+
+# local Claude Code state (preview server settings and the like)
+.claude/

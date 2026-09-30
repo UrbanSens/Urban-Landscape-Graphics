@@ -1,0 +1,465 @@
+{
+  "title": "Buildings and structures",
+  "elements": {
+    "building": {
+      "group": "built",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 60,
+      "label": {
+        "en": "Building",
+        "de": "Gebäude"
+      },
+      "description": {
+        "en": "Building footprint in the area of interest. Flat grey, firm outline.",
+        "de": "Gebäudegrundriss im Bearbeitungsgebiet. Flächiges Grau, klare Kontur."
+      },
+      "fill": "stone.300",
+      "outline": "stone.700",
+      "outline_width": 0.25,
+      "attributes": {
+        "sealing": "built",
+        "vegetated": false,
+        "bdla_class": 5,
+        "bff": 0.0,
+        "bff_1990": 0.0,
+        "runoff_cs": 1.0,
+        "runoff_cm": 0.9,
+        "albedo": 0.07,
+        "nrr_urban_green": false,
+        "note": "Runoff for flat and pitched hard roofs; albedo = PALM 'standard roof'.",
+        "layer": "ground",
+        "family": "building"
+      },
+      "aliases": [
+        "Bestandsgebäude",
+        "Hauptgebäude",
+        "Wohngebäude",
+        "Bauwerk",
+        "Haus",
+        "house",
+        "structure"
+      ]
+    },
+    "building_minor": {
+      "group": "built",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 60,
+      "label": {
+        "en": "Outbuilding",
+        "de": "Nebengebäude"
+      },
+      "description": {
+        "en": "Garage, shed, carport, shelter.",
+        "de": "Garage, Schuppen, Carport, Unterstand."
+      },
+      "fill": "stone.200",
+      "outline": "stone.600",
+      "attributes": {
+        "sealing": "built",
+        "vegetated": false,
+        "bdla_class": 5,
+        "bff": 0.0,
+        "bff_1990": 0.0,
+        "runoff_cs": 1.0,
+        "runoff_cm": 0.9,
+        "albedo": 0.07,
+        "nrr_urban_green": false,
+        "layer": "ground",
+        "family": "building"
+      },
+      "aliases": [
+        "Garage",
+        "Schuppen",
+        "Carport",
+        "Laube",
+        "Gartenhaus",
+        "Nebenanlage",
+        "shed",
+        "outbuilding"
+      ]
+    },
+    "building_planned": {
+      "group": "built",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 60,
+      "label": {
+        "en": "Building (planned)",
+        "de": "Gebäude (geplant)"
+      },
+      "description": {
+        "en": "Proposed building: soft red fill and dashed red outline, the German convention for new works.",
+        "de": "Geplantes Gebäude: zartrote Fläche und gestrichelte rote Kontur nach der Konvention für Neuplanung."
+      },
+      "fill": "signal.planned-soft",
+      "outline": "signal.planned",
+      "outline_width": 0.35,
+      "outline_dash": [
+        2.2,
+        0.9
+      ],
+      "attributes": {
+        "sealing": "built",
+        "vegetated": false,
+        "status": "planned",
+        "bdla_class": 5,
+        "bff": 0.0,
+        "bff_1990": 0.0,
+        "runoff_cs": 1.0,
+        "runoff_cm": 0.9,
+        "albedo": 0.07,
+        "nrr_urban_green": false,
+        "layer": "ground",
+        "family": "building"
+      },
+      "aliases": [
+        "Neubau",
+        "geplantes Gebäude",
+        "Planung",
+        "proposed building",
+        "new building"
+      ]
+    },
+    "greenhouse": {
+      "group": "built",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 60,
+      "label": {
+        "en": "Greenhouse",
+        "de": "Gewächshaus"
+      },
+      "description": {
+        "en": "Glasshouse or polytunnel: glassy pale tone with a fine grid.",
+        "de": "Gewächshaus oder Folientunnel: glasiger heller Ton mit feinem Raster."
+      },
+      "fill": "aqua.100",
+      "outline": "stone.600",
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "aqua.500",
+          "spacing": 1.8,
+          "angle": 45,
+          "cross": true,
+          "amp": 0.03
+        }
+      ],
+      "attributes": {
+        "sealing": "built",
+        "vegetated": false,
+        "bdla_class": 5,
+        "bff": 0.0,
+        "bff_1990": 0.0,
+        "runoff_cs": 1.0,
+        "runoff_cm": 0.9,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Glashaus",
+        "Treibhaus",
+        "Folientunnel",
+        "glasshouse",
+        "polytunnel"
+      ]
+    },
+    "roof_pv": {
+      "group": "built",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 62,
+      "label": {
+        "en": "Solar panels",
+        "de": "Photovoltaik"
+      },
+      "description": {
+        "en": "Photovoltaic or solar-thermal modules on roofs or on the ground.",
+        "de": "Photovoltaik- oder Solarthermiemodule auf Dächern oder Freiflächen."
+      },
+      "fill": "water.700",
+      "outline": "water.900",
+      "textures": [
+        {
+          "motif": "bond",
+          "ink": "water.400",
+          "course_m": 1.0,
+          "unit_m": 1.7,
+          "offset": 0.0,
+          "jitter": 0.0,
+          "amp": 0.02,
+          "trim": 0.0,
+          "lod": {
+            "1": {
+              "course_min": 0.9,
+              "course_max": 1.2
+            },
+            "2": {
+              "course_min": 1.2,
+              "course_max": 2.2
+            },
+            "3": {
+              "course_min": 1.6,
+              "course_max": 5.0
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "built",
+        "vegetated": false,
+        "bdla_class": 5,
+        "runoff_cs": 1.0,
+        "runoff_cm": 0.9,
+        "nrr_urban_green": false,
+        "layer": "roof"
+      },
+      "aliases": [
+        "PV-Anlage",
+        "Solaranlage",
+        "Solardach",
+        "Solarmodule",
+        "Freiflächen-PV",
+        "photovoltaics",
+        "solar roof",
+        "PV"
+      ]
+    },
+    "underground_structure": {
+      "group": "built",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 59,
+      "label": {
+        "en": "Underground structure",
+        "de": "Unterbauung"
+      },
+      "description": {
+        "en": "Outline of an underground car park or basement beneath open space: dashed, no fill.",
+        "de": "Umriss einer Tiefgarage oder Unterkellerung unter Freiflächen: gestrichelt, ohne Füllung."
+      },
+      "fill": null,
+      "outline": "stone.600",
+      "outline_width": 0.25,
+      "outline_dash": [
+        2.0,
+        1.0
+      ],
+      "attributes": {
+        "status": "below_ground",
+        "layer": "overlay"
+      },
+      "aliases": [
+        "Tiefgarage",
+        "unterbaute Fläche",
+        "Unterkellerung",
+        "Tiefgaragenumriss",
+        "underground car park",
+        "basement outline"
+      ]
+    },
+    "stairs": {
+      "group": "built",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 58,
+      "label": {
+        "en": "Steps",
+        "de": "Treppe"
+      },
+      "description": {
+        "en": "Outdoor steps; tread lines run across the direction of travel.",
+        "de": "Außentreppe; Stufenlinien quer zur Laufrichtung."
+      },
+      "fill": "stone.200",
+      "outline": "stone.600",
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "stone.500",
+          "spacing": 0.9,
+          "angle": "auto",
+          "angle_offset": 90,
+          "amp": 0.02
+        }
+      ],
+      "attributes": {
+        "sealing": "sealed",
+        "vegetated": false,
+        "bdla_class": 4,
+        "bff": 0.0,
+        "bff_1990": 0.0,
+        "runoff_cs": 1.0,
+        "runoff_cm": 0.9,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Außentreppe",
+        "Stufen",
+        "Freitreppe",
+        "Sitzstufen",
+        "stairs",
+        "steps"
+      ]
+    },
+    "bridge": {
+      "group": "built",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 58,
+      "label": {
+        "en": "Bridge",
+        "de": "Brücke"
+      },
+      "description": {
+        "en": "Bridge or culvert deck; use Wood (decking) for timber footbridges.",
+        "de": "Brücke oder Durchlass; für Holzstege Holzdeck verwenden."
+      },
+      "fill": "stone.100",
+      "outline": "stone.700",
+      "outline_width": 0.35,
+      "attributes": {
+        "sealing": "sealed",
+        "vegetated": false,
+        "bdla_class": 4,
+        "bff": 0.0,
+        "bff_1990": 0.0,
+        "runoff_cs": 1.0,
+        "runoff_cm": 0.9,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Steg",
+        "Überführung",
+        "Fußgängerbrücke",
+        "Durchlass",
+        "footbridge",
+        "culvert"
+      ]
+    },
+    "wall": {
+      "group": "built",
+      "geometry": [
+        "line"
+      ],
+      "z": 66,
+      "label": {
+        "en": "Wall",
+        "de": "Mauer"
+      },
+      "description": {
+        "en": "Free-standing wall.",
+        "de": "Freistehende Mauer."
+      },
+      "fill": "stone.600",
+      "line": {
+        "color": "stone.700",
+        "width_m": 0.3,
+        "width_min": 0.5,
+        "width_max": 2.0,
+        "cap": "butt"
+      },
+      "aliases": [
+        "Gartenmauer",
+        "Einfriedungsmauer",
+        "Trockenmauer",
+        "garden wall",
+        "dry stone wall"
+      ],
+      "attributes": {}
+    },
+    "retaining_wall": {
+      "group": "built",
+      "geometry": [
+        "line"
+      ],
+      "z": 66,
+      "label": {
+        "en": "Retaining wall",
+        "de": "Stützmauer"
+      },
+      "description": {
+        "en": "Wall holding back higher ground; ticks point to the low side.",
+        "de": "Mauer zur Abfangung eines Geländesprungs; Striche zeigen zur tieferen Seite."
+      },
+      "fill": "stone.600",
+      "line": {
+        "color": "stone.700",
+        "width_m": 0.35,
+        "width_min": 0.5,
+        "width_max": 2.0,
+        "cap": "butt",
+        "marks": {
+          "kind": "ticks",
+          "side": "right",
+          "step": 1.8,
+          "length": 0.9,
+          "width": 0.18,
+          "color": "stone.700"
+        }
+      },
+      "aliases": [
+        "Stützwand",
+        "Hangsicherung",
+        "Geländesprung",
+        "Gabionenwand",
+        "retaining structure"
+      ],
+      "attributes": {}
+    },
+    "dry_stone_wall": {
+      "group": "built",
+      "geometry": [
+        "line"
+      ],
+      "z": 66,
+      "label": {
+        "en": "Dry-stone wall",
+        "de": "Trockenmauer"
+      },
+      "description": {
+        "en": "Wall of unmortared natural stone. Habitat for reptiles, insects and wall plants; legally protected in Germany.",
+        "de": "Mauer aus unvermörtelten Natursteinen. Lebensraum für Reptilien, Insekten und Mauerpflanzen; gesetzlich geschützt."
+      },
+      "fill": "granite.300",
+      "line": {
+        "color": "granite.300",
+        "width_m": 0.5,
+        "width_min": 0.7,
+        "width_max": 2.5,
+        "casing": "granite.700",
+        "casing_width": 0.12,
+        "cap": "butt",
+        "marks": {
+          "kind": "dots",
+          "step": 0.85,
+          "r": 0.2,
+          "color": "granite.700"
+        }
+      },
+      "aliases": [
+        "Natursteinmauer",
+        "Lesesteinmauer",
+        "Weinbergsmauer",
+        "Steinriegel",
+        "dry stone wall",
+        "drystone wall"
+      ],
+      "attributes": {
+        "biodiversity": 5
+      }
+    }
+  }
+}

@@ -1,0 +1,463 @@
+{
+  "title": "Land use tints for overview maps",
+  "elements": {
+    "residential_area": {
+      "group": "landuse",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Residential area",
+        "de": "Wohnbaufläche"
+      },
+      "description": {
+        "en": "Land used mainly for housing, with its gardens and yards. For overview maps; draw buildings and open spaces separately where they are known.",
+        "de": "Überwiegend dem Wohnen dienende Fläche mit Gärten und Höfen. Für Übersichtskarten; Gebäude und Freiflächen wo bekannt einzeln darstellen."
+      },
+      "fill": "clay.100",
+      "aliases": [
+        "Wohngebiet",
+        "Wohnbebauung",
+        "Wohnfläche",
+        "residential",
+        "housing",
+        "urban fabric",
+        "continuous urban fabric",
+        "discontinuous urban fabric"
+      ],
+      "attributes": {
+        "is_complex": true,
+        "layer": "ground"
+      },
+      "textures": [
+        {
+          "motif": "stipple",
+          "ink": "clay.300",
+          "spacing": 2.4,
+          "keep": 0.55,
+          "r_min": 0.08,
+          "r_max": 0.14
+        }
+      ]
+    },
+    "mixed_use_area": {
+      "group": "landuse",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Mixed-use area",
+        "de": "Gemischte Baufläche"
+      },
+      "description": {
+        "en": "Housing mixed with trade, services and small businesses; village and town-centre areas.",
+        "de": "Wohnen gemischt mit Handel, Dienstleistung und Gewerbe; Dorf-, Misch- und Kerngebiete."
+      },
+      "fill": "earth.100",
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "earth.300",
+          "spacing": 3.4,
+          "angle": 45,
+          "amp": 0.05
+        }
+      ],
+      "aliases": [
+        "Mischgebiet",
+        "Kerngebiet",
+        "Dorfgebiet",
+        "urbanes Gebiet",
+        "Fläche gemischter Nutzung",
+        "mixed use",
+        "town centre"
+      ],
+      "attributes": {
+        "is_complex": true,
+        "layer": "ground"
+      }
+    },
+    "commercial_area": {
+      "group": "landuse",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Commercial / industrial area",
+        "de": "Gewerbe- und Industriefläche"
+      },
+      "description": {
+        "en": "Industry, trade, logistics and utilities, including their yards and parking.",
+        "de": "Industrie, Gewerbe, Logistik und Versorgungsanlagen einschließlich Höfen und Stellplätzen."
+      },
+      "fill": "granite.100",
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "granite.300",
+          "spacing": 3.4,
+          "angle": 135,
+          "amp": 0.05
+        }
+      ],
+      "aliases": [
+        "Gewerbegebiet",
+        "Industriegebiet",
+        "Gewerbefläche",
+        "Industriefläche",
+        "industrial",
+        "commercial",
+        "retail",
+        "industrial or commercial units"
+      ],
+      "attributes": {
+        "is_complex": true,
+        "layer": "ground"
+      }
+    },
+    "public_facility_area": {
+      "group": "landuse",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Public facilities",
+        "de": "Gemeinbedarfsfläche"
+      },
+      "description": {
+        "en": "Schools, hospitals, administration, culture and religion, with their grounds.",
+        "de": "Schulen, Krankenhäuser, Verwaltung, Kultur und Religion einschließlich ihrer Freiflächen."
+      },
+      "fill": "heather.100",
+      "aliases": [
+        "Gemeinbedarf",
+        "Fläche besonderer funktionaler Prägung",
+        "öffentliche Einrichtung",
+        "Schule",
+        "Krankenhaus",
+        "public facility",
+        "institutional",
+        "civic"
+      ],
+      "attributes": {
+        "is_complex": true,
+        "layer": "ground"
+      },
+      "textures": [
+        {
+          "motif": "cells",
+          "ink": "heather.300",
+          "cell_m": 6.0,
+          "fill_ratio": 0.18,
+          "lod": {
+            "1": {
+              "cell_min": 1.6,
+              "cell_max": 2.0
+            },
+            "2": {
+              "cell_min": 2.0,
+              "cell_max": 3.0
+            },
+            "3": {
+              "cell_min": 2.6,
+              "cell_max": 5.0
+            }
+          }
+        }
+      ]
+    },
+    "sports_ground": {
+      "group": "landuse",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Sports ground",
+        "de": "Sportanlage"
+      },
+      "description": {
+        "en": "Sports facility whose surfaces are not mapped individually; pale pitch lines on green.",
+        "de": "Sportanlage ohne einzeln kartierte Beläge; helle Spielfeldlinien auf Grün."
+      },
+      "fill": "grass.200",
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "paper.white",
+          "spacing": 5.5,
+          "angle": 0,
+          "cross": true,
+          "width": 0.26,
+          "amp": 0.03,
+          "opacity": 0.9
+        }
+      ],
+      "aliases": [
+        "Sportplatz",
+        "Sportgelände",
+        "Sportfläche",
+        "Stadion",
+        "Bezirkssportanlage",
+        "sports centre",
+        "sports facility",
+        "sport and leisure facilities"
+      ],
+      "attributes": {
+        "is_complex": true,
+        "layer": "ground"
+      }
+    },
+    "recreation_area": {
+      "group": "landuse",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Recreation area",
+        "de": "Freizeit- und Erholungsfläche"
+      },
+      "description": {
+        "en": "Leisure grounds such as camp sites, open-air pools, zoos and leisure parks, when their parts are not mapped.",
+        "de": "Freizeitgelände wie Campingplätze, Freibäder, Zoos und Freizeitparks, wenn die Teilflächen nicht kartiert sind."
+      },
+      "fill": "grass.100",
+      "textures": [
+        {
+          "motif": "rosettes",
+          "ink": "grass.600",
+          "arms": 0,
+          "keep": 0.35,
+          "lod": {
+            "1": {
+              "spacing": 2.6,
+              "size": 0.3
+            },
+            "2": {
+              "spacing": 3.4,
+              "arms": 0,
+              "size": 0.4
+            },
+            "3": {
+              "spacing": 4.4,
+              "arms": 0,
+              "size": 0.55
+            }
+          }
+        }
+      ],
+      "aliases": [
+        "Erholungsfläche",
+        "Freizeitanlage",
+        "Campingplatz",
+        "Freibad",
+        "Zoo",
+        "Freizeitpark",
+        "leisure",
+        "camp site",
+        "recreation ground"
+      ],
+      "attributes": {
+        "is_complex": true,
+        "layer": "ground"
+      }
+    },
+    "quarry": {
+      "group": "landuse",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Quarry / extraction site",
+        "de": "Abbaufläche"
+      },
+      "description": {
+        "en": "Open-cast mining: quarries, gravel and sand pits.",
+        "de": "Tagebau, Steinbruch, Kies- und Sandgrube."
+      },
+      "fill": "stone.100",
+      "textures": [
+        {
+          "motif": "pebbles",
+          "ink": "stone.600",
+          "fill": "stone.50",
+          "keep": 0.35,
+          "lod": {
+            "1": {
+              "spacing": 1.6,
+              "size": 0.9
+            },
+            "2": {
+              "spacing": 2.2,
+              "size": 1.4
+            },
+            "3": {
+              "spacing": 3.0,
+              "size": 2.0
+            }
+          }
+        },
+        {
+          "motif": "stipple",
+          "ink": "stone.600",
+          "spacing": 1.6,
+          "keep": 0.5,
+          "r_min": 0.05,
+          "r_max": 0.12
+        }
+      ],
+      "aliases": [
+        "Tagebau",
+        "Grube",
+        "Steinbruch",
+        "Kiesgrube",
+        "Sandgrube",
+        "Abbaugebiet",
+        "mineral extraction site",
+        "quarry",
+        "gravel pit"
+      ],
+      "attributes": {
+        "is_complex": true,
+        "layer": "ground"
+      }
+    },
+    "landfill": {
+      "group": "landuse",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Landfill / spoil heap",
+        "de": "Deponie / Halde"
+      },
+      "description": {
+        "en": "Waste disposal site, spoil or slag heap.",
+        "de": "Abfalldeponie, Abraum- oder Schlackenhalde."
+      },
+      "fill": "earth.200",
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "earth.500",
+          "spacing": 2.8,
+          "angle": 135,
+          "amp": 0.06
+        },
+        {
+          "motif": "stipple",
+          "ink": "earth.700",
+          "spacing": 1.8,
+          "keep": 0.4,
+          "r_min": 0.05,
+          "r_max": 0.12
+        }
+      ],
+      "aliases": [
+        "Deponie",
+        "Halde",
+        "Abraumhalde",
+        "Aufschüttung",
+        "dump site",
+        "landfill",
+        "spoil heap"
+      ],
+      "attributes": {
+        "is_complex": true,
+        "layer": "ground"
+      }
+    },
+    "airport": {
+      "group": "landuse",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Airport / airfield",
+        "de": "Flughafen / Flugplatz"
+      },
+      "description": {
+        "en": "Airport or airfield with runways, aprons and grass strips, when its parts are not mapped.",
+        "de": "Flughafen oder Flugplatz mit Start- und Landebahnen, Vorfeldern und Grasflächen, wenn die Teilflächen nicht kartiert sind."
+      },
+      "fill": "stone.100",
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "water.400",
+          "spacing": 5.0,
+          "angle": 90,
+          "width": 0.18,
+          "amp": 0.04
+        }
+      ],
+      "attributes": {
+        "is_complex": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Flughafen",
+        "Flugplatz",
+        "Verkehrslandeplatz",
+        "Segelfluggelände",
+        "Landeplatz",
+        "Flugverkehr",
+        "airport",
+        "airfield",
+        "aerodrome",
+        "airports"
+      ]
+    },
+    "port": {
+      "group": "landuse",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Port area",
+        "de": "Hafengebiet"
+      },
+      "description": {
+        "en": "Port and harbour land: quays, docks, container and cargo areas.",
+        "de": "Hafenflächen: Kais, Docks, Container- und Umschlagflächen."
+      },
+      "fill": "granite.200",
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "water.600",
+          "spacing": 3.2,
+          "angle": 0,
+          "width": 0.16,
+          "amp": 0.04
+        }
+      ],
+      "attributes": {
+        "is_complex": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Hafen",
+        "Hafengebiet",
+        "Hafenanlage",
+        "Binnenhafen",
+        "Kai",
+        "Schiffsverkehr",
+        "port",
+        "harbour",
+        "harbor",
+        "docks",
+        "port areas"
+      ]
+    }
+  }
+}

@@ -1,0 +1,639 @@
+{
+  "title": "Planning status, analysis overlays, context and fallback",
+  "elements": {
+    "status_planned": {
+      "group": "planning",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 97,
+      "label": {
+        "en": "Planned (new)",
+        "de": "Planung (neu)"
+      },
+      "description": {
+        "en": "Overlay for anything proposed: soft red with a cross-hatch, as the Bavarian Bauvorlagenverordnung draws new works.",
+        "de": "Überlagerung für Geplantes: zartes Rot mit Kreuzschraffur, wie die BauVorlV Bayern Neubau darstellt."
+      },
+      "fill": "signal.planned-soft",
+      "outline": "signal.planned",
+      "fill_opacity": 0.4,
+      "outline_width": 0.35,
+      "outline_dash": [
+        2.2,
+        0.9
+      ],
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "signal.planned",
+          "spacing": 2.4,
+          "angle": 45,
+          "cross": true,
+          "opacity": 0.8
+        }
+      ],
+      "attributes": {
+        "status": "planned",
+        "layer": "overlay"
+      },
+      "aliases": [
+        "Neuplanung",
+        "geplant",
+        "Neubau",
+        "Maßnahme",
+        "proposed",
+        "new works"
+      ]
+    },
+    "status_removal": {
+      "group": "planning",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 97,
+      "label": {
+        "en": "Removal",
+        "de": "Abbruch / Rückbau"
+      },
+      "description": {
+        "en": "Overlay for demolition, clearance or unsealing: soft yellow (Bavarian Bauvorlagenverordnung) with a thin dashed hatch (ISO 11091 removal).",
+        "de": "Überlagerung für Abbruch, Rodung oder Entsiegelung: zartes Gelb (BauVorlV Bayern) mit feiner gestrichelter Schraffur (ISO 11091 Beseitigung)."
+      },
+      "fill": "signal.remove-soft",
+      "outline": "signal.remove-ink",
+      "fill_opacity": 0.55,
+      "outline_width": 0.35,
+      "outline_dash": [
+        2.2,
+        0.9
+      ],
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "signal.remove-ink",
+          "spacing": 2.0,
+          "angle": 45,
+          "width": 0.14,
+          "dash": [
+            1.2,
+            0.8
+          ],
+          "opacity": 0.9
+        }
+      ],
+      "attributes": {
+        "status": "remove",
+        "layer": "overlay"
+      },
+      "aliases": [
+        "Abbruch",
+        "Rückbau",
+        "Rodung",
+        "Entsiegelung",
+        "zu beseitigen",
+        "demolition",
+        "clearance"
+      ]
+    },
+    "protected_biotope": {
+      "group": "planning",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 96,
+      "label": {
+        "en": "Protected habitat",
+        "de": "Geschütztes Biotop"
+      },
+      "description": {
+        "en": "Overlay for legally protected habitats (§ 30 BNatSchG, Art. 23 BayNatSchG): green hatch over the habitat.",
+        "de": "Überlagerung für gesetzlich geschützte Biotope (§ 30 BNatSchG, Art. 23 BayNatSchG): grüne Schraffur."
+      },
+      "fill": null,
+      "outline": "signal.protect",
+      "outline_width": 0.35,
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "signal.protect",
+          "spacing": 2.6,
+          "angle": 45,
+          "opacity": 0.85
+        }
+      ],
+      "attributes": {
+        "status": "protected",
+        "layer": "overlay"
+      },
+      "aliases": [
+        "§ 30 Biotop",
+        "gesetzlich geschütztes Biotop",
+        "Biotop",
+        "FFH-Lebensraumtyp",
+        "protected biotope",
+        "priority habitat"
+      ]
+    },
+    "compensation_area": {
+      "group": "planning",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 96,
+      "label": {
+        "en": "Nature measures area",
+        "de": "Maßnahmenfläche Natur (SPE)"
+      },
+      "description": {
+        "en": "Area for measures to protect, maintain and develop nature and landscape, including compensation and offset sites. T-shaped ticks point inwards, after PlanZV 13.1.",
+        "de": "Fläche für Maßnahmen zum Schutz, zur Pflege und zur Entwicklung von Natur und Landschaft, auch Ausgleichs- und Ökokontoflächen. T-Striche nach innen nach PlanZV 13.1."
+      },
+      "fill": "signal.protect-soft",
+      "outline": "signal.protect",
+      "fill_opacity": 0.35,
+      "outline_width": 0.3,
+      "textures": [
+        {
+          "motif": "stipple",
+          "ink": "signal.protect",
+          "spacing": 2.2,
+          "r_min": 0.16,
+          "r_max": 0.18,
+          "keep": 1.0
+        }
+      ],
+      "attributes": {
+        "status": "compensation",
+        "layer": "overlay"
+      },
+      "aliases": [
+        "Ausgleichs- und Ersatzfläche",
+        "Ausgleichsfläche",
+        "Kompensationsfläche",
+        "Maßnahmenfläche",
+        "SPE-Fläche",
+        "compensation area",
+        "mitigation area",
+        "offset area",
+        "Ökokontofläche"
+      ],
+      "border": {
+        "kind": "tees",
+        "step": 2.6,
+        "length": 0.9,
+        "width": 0.2,
+        "color": "signal.protect"
+      }
+    },
+    "planting_area": {
+      "group": "planning",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 96,
+      "label": {
+        "en": "Planting area (to plant)",
+        "de": "Fläche zum Anpflanzen"
+      },
+      "description": {
+        "en": "Area where trees, shrubs or other planting are to be planted. Border of open circles, after PlanZV 13.2.1 (open = to plant).",
+        "de": "Fläche zum Anpflanzen von Bäumen, Sträuchern und sonstigen Bepflanzungen. Rand aus offenen Kreisen nach PlanZV 13.2.1 (offen = anpflanzen)."
+      },
+      "fill": null,
+      "outline": "leaf.800",
+      "outline_width": 0.25,
+      "border": {
+        "kind": "rings",
+        "step": 2.2,
+        "r": 0.42,
+        "offset": 0.75,
+        "width": 0.2,
+        "color": "leaf.800"
+      },
+      "aliases": [
+        "Anpflanzfläche",
+        "Pflanzgebot",
+        "Pflanzbindung",
+        "Anpflanzung",
+        "§ 9 Abs. 1 Nr. 25a",
+        "planting obligation"
+      ],
+      "attributes": {
+        "status": "planned",
+        "layer": "overlay"
+      }
+    },
+    "preservation_area": {
+      "group": "planning",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 96,
+      "label": {
+        "en": "Preservation area (to keep)",
+        "de": "Fläche mit Erhaltungsbindung"
+      },
+      "description": {
+        "en": "Area whose trees, shrubs, planting or waters are to be kept. Border of filled dots, after PlanZV 13.2.2 (filled = to preserve).",
+        "de": "Fläche mit Bindungen für Bepflanzungen und für die Erhaltung von Bäumen, Sträuchern und Gewässern. Rand aus gefüllten Punkten nach PlanZV 13.2.2 (gefüllt = erhalten)."
+      },
+      "fill": null,
+      "outline": "leaf.800",
+      "outline_width": 0.25,
+      "border": {
+        "kind": "dots",
+        "step": 2.2,
+        "r": 0.34,
+        "offset": 0.75,
+        "color": "leaf.800"
+      },
+      "aliases": [
+        "Erhaltungsgebot",
+        "Bindung für Erhaltung",
+        "Erhaltungsfläche",
+        "§ 9 Abs. 1 Nr. 25b",
+        "preservation order"
+      ],
+      "attributes": {
+        "status": "retain",
+        "layer": "overlay"
+      }
+    },
+    "habitat_corridor": {
+      "group": "planning",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 95,
+      "label": {
+        "en": "Habitat corridor",
+        "de": "Biotopverbund"
+      },
+      "description": {
+        "en": "Core areas, corridors and stepping stones of a habitat network.",
+        "de": "Kernflächen, Verbindungsflächen und Trittsteine eines Biotopverbunds."
+      },
+      "fill": "signal.protect-soft",
+      "fill_opacity": 0.3,
+      "outline": "signal.protect",
+      "outline_width": 0.25,
+      "outline_dash": [
+        0.6,
+        0.9
+      ],
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "signal.protect",
+          "spacing": 3.2,
+          "angle": 45,
+          "amp": 0.04,
+          "dash": [
+            1.6,
+            1.0
+          ],
+          "opacity": 0.7
+        }
+      ],
+      "aliases": [
+        "Biotopvernetzung",
+        "Verbundachse",
+        "Trittstein",
+        "Trittsteinbiotop",
+        "Wildtierkorridor",
+        "Grünverbindung",
+        "ecological corridor",
+        "green corridor",
+        "stepping stone"
+      ],
+      "attributes": {
+        "status": "planned",
+        "layer": "overlay"
+      }
+    },
+    "flood_zone": {
+      "group": "planning",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 96,
+      "label": {
+        "en": "Flood zone",
+        "de": "Überschwemmungsgebiet"
+      },
+      "description": {
+        "en": "Designated flood area or modelled heavy-rain inundation.",
+        "de": "Festgesetztes Überschwemmungsgebiet oder modellierte Starkregenüberflutung."
+      },
+      "fill": "signal.info-soft",
+      "outline": "signal.info",
+      "fill_opacity": 0.35,
+      "outline_width": 0.25,
+      "outline_dash": [
+        2.2,
+        0.9
+      ],
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "signal.info",
+          "spacing": 2.2,
+          "angle": 0,
+          "opacity": 0.7
+        }
+      ],
+      "aliases": [
+        "HQ100",
+        "Hochwasserschutz",
+        "Starkregen",
+        "Überflutungsfläche",
+        "Retentionsraum",
+        "floodplain",
+        "inundation"
+      ],
+      "attributes": {
+        "layer": "overlay"
+      }
+    },
+    "highlight": {
+      "group": "analysis",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 98,
+      "label": {
+        "en": "Highlight",
+        "de": "Hervorhebung"
+      },
+      "description": {
+        "en": "The one accent of the palette: marks a finding, a selection, a focus area.",
+        "de": "Der einzige Akzent der Palette: markiert Befund, Auswahl oder Fokusbereich."
+      },
+      "fill": "signal.highlight-soft",
+      "outline": "signal.highlight",
+      "fill_opacity": 0.5,
+      "outline_width": 0.5,
+      "aliases": [
+        "Markierung",
+        "Auswahl",
+        "Fokus",
+        "Analyse",
+        "selection",
+        "focus",
+        "area of interest"
+      ],
+      "attributes": {
+        "layer": "overlay"
+      }
+    },
+    "heat_hotspot": {
+      "group": "analysis",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 98,
+      "label": {
+        "en": "Heat hotspot",
+        "de": "Hitze-Hotspot"
+      },
+      "description": {
+        "en": "Area of high thermal load.",
+        "de": "Bereich hoher Wärmebelastung."
+      },
+      "fill": "clay.300",
+      "outline": "signal.planned",
+      "fill_opacity": 0.5,
+      "outline_width": 0.35,
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "clay.700",
+          "spacing": 2.0,
+          "angle": 135,
+          "opacity": 0.6
+        }
+      ],
+      "aliases": [
+        "Hitzeinsel",
+        "Wärmeinsel",
+        "Überwärmung",
+        "thermische Belastung",
+        "urban heat island",
+        "hot spot"
+      ],
+      "attributes": {
+        "layer": "overlay"
+      }
+    },
+    "cool_spot": {
+      "group": "analysis",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 98,
+      "label": {
+        "en": "Cool spot",
+        "de": "Kühlinsel"
+      },
+      "description": {
+        "en": "Cool, shaded or evaporating area that relieves heat.",
+        "de": "Kühler, beschatteter oder verdunstungsaktiver Entlastungsraum."
+      },
+      "fill": "water.200",
+      "outline": "signal.info",
+      "fill_opacity": 0.55,
+      "outline_width": 0.35,
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "water.600",
+          "spacing": 2.0,
+          "angle": 45,
+          "opacity": 0.6
+        }
+      ],
+      "aliases": [
+        "Kühloase",
+        "Entlastungsfläche",
+        "Kaltluftentstehungsgebiet",
+        "Kaltluft",
+        "cool island",
+        "cold air area"
+      ],
+      "attributes": {
+        "layer": "overlay"
+      }
+    },
+    "no_data": {
+      "group": "analysis",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 2,
+      "label": {
+        "en": "No data",
+        "de": "Keine Daten"
+      },
+      "description": {
+        "en": "Area without information.",
+        "de": "Fläche ohne Information."
+      },
+      "fill": "paper.shade",
+      "outline": "ink.200",
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "ink.200",
+          "spacing": 2.6,
+          "angle": 135
+        }
+      ],
+      "aliases": [
+        "keine Angabe",
+        "unbekannt",
+        "nicht kartiert",
+        "not surveyed",
+        "missing"
+      ],
+      "attributes": {
+        "layer": "overlay"
+      }
+    },
+    "unknown": {
+      "group": "other",
+      "geometry": [
+        "polygon",
+        "line",
+        "point"
+      ],
+      "z": 1,
+      "label": {
+        "en": "Unclassified",
+        "de": "Nicht klassifiziert"
+      },
+      "description": {
+        "en": "Fallback for classes the catalog does not know. Check the data or add a mapping.",
+        "de": "Rückfallebene für Klassen, die der Katalog nicht kennt. Daten prüfen oder Zuordnung ergänzen."
+      },
+      "fill": "stone.50",
+      "outline": "stone.400",
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "stone.300",
+          "spacing": 2.2,
+          "angle": 45
+        }
+      ],
+      "aliases": [
+        "sonstige",
+        "other",
+        "unclassified",
+        "fallback"
+      ],
+      "attributes": {
+        "layer": "ground"
+      }
+    },
+    "building_context": {
+      "group": "context",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 5,
+      "label": {
+        "en": "Building (context)",
+        "de": "Gebäude (Umgebung)"
+      },
+      "description": {
+        "en": "Buildings outside the area of interest: pale, so they frame without competing.",
+        "de": "Gebäude außerhalb des Bearbeitungsgebiets: hell, damit sie rahmen, ohne zu konkurrieren."
+      },
+      "fill": "stone.100",
+      "outline": "stone.300",
+      "aliases": [
+        "Umgebungsbebauung",
+        "Nachbarbebauung",
+        "surrounding buildings",
+        "context buildings"
+      ],
+      "attributes": {
+        "layer": "ground"
+      }
+    },
+    "road_context": {
+      "group": "context",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 4,
+      "label": {
+        "en": "Road (context)",
+        "de": "Straße (Umgebung)"
+      },
+      "description": {
+        "en": "Street space outside the area of interest: near white.",
+        "de": "Straßenraum außerhalb des Bearbeitungsgebiets: nahezu weiß."
+      },
+      "fill": "paper.white",
+      "outline": "stone.200",
+      "aliases": [
+        "Umgebungsstraße",
+        "Straßenraum",
+        "surrounding streets"
+      ],
+      "attributes": {
+        "layer": "ground"
+      }
+    },
+    "green_context": {
+      "group": "context",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 3,
+      "label": {
+        "en": "Green (context)",
+        "de": "Grün (Umgebung)"
+      },
+      "description": {
+        "en": "Green space outside the area of interest: a faint green without texture.",
+        "de": "Grünfläche außerhalb des Bearbeitungsgebiets: zartes Grün ohne Textur."
+      },
+      "fill": "grass.100",
+      "outline": null,
+      "aliases": [
+        "Umgebungsgrün",
+        "surrounding green"
+      ],
+      "attributes": {
+        "layer": "ground"
+      }
+    },
+    "water_context": {
+      "group": "context",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 3,
+      "label": {
+        "en": "Water (context)",
+        "de": "Gewässer (Umgebung)"
+      },
+      "description": {
+        "en": "Water outside the area of interest: pale blue without texture.",
+        "de": "Gewässer außerhalb des Bearbeitungsgebiets: helles Blau ohne Textur."
+      },
+      "fill": "water.100",
+      "outline": "water.300",
+      "aliases": [
+        "Umgebungsgewässer",
+        "surrounding water"
+      ],
+      "attributes": {
+        "layer": "ground"
+      }
+    }
+  }
+}

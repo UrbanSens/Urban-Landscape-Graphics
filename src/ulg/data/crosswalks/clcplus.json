@@ -1,0 +1,26 @@
+{
+  "title": "CLC+ Backbone raster, 11 land-cover classes",
+  "publisher": "European Environment Agency (EEA), Copernicus Land Monitoring Service",
+  "version": "CLC+ Backbone 2018, 2021 and 2023 (identical coding and palette); biennial from 2023",
+  "source": "https://library.land.copernicus.eu/products/CLCplus_Backbone_2023_PUM_v1.html",
+  "license_note": "Codes and names from the raster coding of the CLC+ Backbone Product User Manuals 2021 and 2023; colours from the colour-palette tables in their annexes. nrr_urban_green follows the Commission/EEA note 'Methodological support on datasets to be used under Article 8 of the Nature Restoration Regulation', version 2.0 (07/07/2026).",
+  "key": "code",
+  "fields": {"code": ["value", "clcplus", "clcplus_bb", "dn", "gridcode", "grid_code"]},
+  "note": "10 m pixel land cover (EAGLE land-cover components), no land use: a lawn, a meadow and a reed bed are all class 6, a green roof is class 1. nrr_urban_green = true marks the classes that count as urban green space under Art. 8 of Regulation (EU) 2024/1991 (trees 2, 3, 4; shrubs 5; permanent herbaceous 6; lichens and mosses 8; water 10); the CLC+ Backbone 2023 is the baseline dataset. Urban tree canopy cover is measured with the HRL Tree Cover Density, not with this product. The attribute table of the delivered rasters names the code field Value.",
+  "entries": [
+    {"code": "1", "name": "Sealed", "element": "sealed", "fit": "exact", "color": "#FF0000", "evidence": "V", "nrr_urban_green": false, "eagle": "LCC 1.1.1 Sealed Artificial Surfaces and Constructions", "note": "Buildings and all impervious surfaces; also vegetated roofs, railway tracks, greenhouses and solar parks."},
+    {"code": "2", "name": "Woody needle leaved trees", "element": "woodland_coniferous", "fit": "exact", "color": "#228B22", "evidence": "V", "nrr_urban_green": true, "eagle": "LCC 2.1.1, LCH 3.1.1", "note": "Pixel land cover: in towns also street and garden trees whose crowns dominate the pixel."},
+    {"code": "3", "name": "Woody broadleaved deciduous trees", "element": "woodland_deciduous", "fit": "exact", "color": "#80FF00", "evidence": "V", "nrr_urban_green": true, "eagle": "LCC 2.1.1, LCH 3.2.2", "note": "Pixel land cover: in towns also street and garden trees whose crowns dominate the pixel."},
+    {"code": "4", "name": "Woody broadleaved evergreen trees", "element": "woodland", "fit": "nearest", "color": "#00FF08", "evidence": "V", "nrr_urban_green": true, "eagle": "LCC 2.1.1, LCH 3.2.1", "note": "No broadleaved-evergreen woodland element; includes palms."},
+    {"code": "5", "name": "Low-growing woody plants", "element": "shrubs", "fit": "narrower", "color": "#804000", "evidence": "V", "nrr_urban_green": true, "eagle": "LCC 2.1.2 Bushes, Shrubs", "note": "Also dwarf shrubs (heath), vines and hops."},
+    {"code": "6", "name": "Permanent herbaceous", "element": "meadow", "fit": "narrower", "color": "#CCF24D", "evidence": "V", "nrr_urban_green": true, "eagle": "LCC 2.2 Herbaceous Vegetation", "note": "Any permanent grass or herb cover: lawn, meadow, pasture and reed all fall here."},
+    {"code": "7", "name": "Periodically herbaceous", "element": "arable", "fit": "nearest", "color": "#FFFF80", "evidence": "V", "nrr_urban_green": false, "eagle": "LCC 2.2 Herbaceous Vegetation", "note": "Herbaceous cover with a bare-soil phase; in practice mostly arable land."},
+    {"code": "8", "name": "Lichens and mosses", "element": "dry_grassland", "fit": "nearest", "color": "#FF80FF", "evidence": "V", "nrr_urban_green": true, "eagle": "LCC 2.4 Lichens, Mosses, Algae", "note": "Essentially a northern tundra class; no moss or lichen element."},
+    {"code": "9", "name": "Non and sparsely vegetated", "element": "bare_soil", "fit": "narrower", "color": "#BFBFBF", "evidence": "V", "nrr_urban_green": false, "eagle": "LCC 1.2 Natural Material Surfaces; LCC 1.1.2 Non-Sealed Artificial Surfaces", "note": "Rock, scree, sand, gravel, bare soil, quarries and non-sealed artificial surfaces (grass pavers, permeable paving, non-vegetated sports fields)."},
+    {"code": "10", "name": "Water", "element": "water", "fit": "narrower", "color": "#0080FF", "evidence": "V", "nrr_urban_green": true, "eagle": "LCC 3.1 Liquid Water Bodies", "note": "Running and standing inland water; rivers -> watercourse."},
+    {"code": "11", "name": "Snow and ice", "element": "snow_ice", "fit": "exact", "color": "#00FFFF", "evidence": "V", "nrr_urban_green": false, "eagle": "LCC 3.2 Solid Waters"},
+    {"code": "253", "name": "Coastal seawater buffer", "element": null, "fit": "none", "color": "#BFDFFF", "evidence": "V", "nrr_urban_green": false, "note": "Technical class (since 2021): sea water along the coast, kept apart from inland water statistics."},
+    {"code": "254", "name": "Outside area", "element": null, "fit": "none", "color": "#E6E6E6", "evidence": "V", "nrr_urban_green": false, "note": "Technical class."},
+    {"code": "255", "name": "No data", "element": null, "fit": "none", "color": "#000000", "evidence": "V", "nrr_urban_green": false, "note": "Technical class."}
+  ]
+}

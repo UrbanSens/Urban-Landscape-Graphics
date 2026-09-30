@@ -1,0 +1,23 @@
+{
+  "title": "ESA WorldCover, 11 land-cover classes",
+  "publisher": "European Space Agency (ESA)",
+  "version": "WorldCover 2020 (v100) and 2021 (v200); Product User Manual v2.0 (2022-10-24)",
+  "source": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/docs/WorldCover_PUM_V2.0.pdf",
+  "license_note": "Codes, class names and RGB colours from Table 3 'Coding of the Map layer and definition of the classes' of the Product User Manual v2.0; hex values converted from the RGB triples.",
+  "key": "code",
+  "fields": {"code": ["map", "value", "worldcover", "dn", "gridcode", "grid_code"]},
+  "note": "10 m global land cover from Sentinel-1 and Sentinel-2, classes defined with the FAO Land Cover Classification System. Land cover only: built-up excludes urban green, which falls into tree cover or grassland; lawn, meadow and pasture all fall into grassland. Codes are the byte values of the Map layer. Successor products after v200 were not checked.",
+  "entries": [
+    {"code": "10", "name": "Tree cover", "element": "woodland", "fit": "exact", "color": "#006400", "evidence": "V", "note": "Tree cover of 10 % or more, incl. plantations and tree crops (e.g. olive trees); other covers may lie below the canopy."},
+    {"code": "20", "name": "Shrubland", "element": "shrubs", "fit": "exact", "color": "#FFBB22", "evidence": "V", "note": "Natural shrubs below 5 m, cover 10 % or more."},
+    {"code": "30", "name": "Grassland", "element": "meadow", "fit": "narrower", "color": "#FFFF4C", "evidence": "V", "note": "Any natural herbaceous cover incl. pastures; lawns fall here too."},
+    {"code": "40", "name": "Cropland", "element": "arable", "fit": "exact", "color": "#F096FF", "evidence": "V", "note": "Annual cropland; perennial woody crops are tree cover or shrubland, greenhouses are built-up."},
+    {"code": "50", "name": "Built-up", "element": "sealed", "fit": "exact", "color": "#FA0000", "evidence": "V", "note": "Buildings, roads, railways and other structures; urban green (parks, sport facilities) is not included."},
+    {"code": "60", "name": "Bare / sparse vegetation", "element": "bare_soil", "fit": "narrower", "color": "#B4B4B4", "evidence": "V", "note": "Exposed soil, sand or rock with never more than 10 % vegetation; also waste dumps and extraction sites."},
+    {"code": "70", "name": "Snow and ice", "element": "snow_ice", "fit": "exact", "color": "#F0F0F0", "evidence": "V"},
+    {"code": "80", "name": "Permanent water bodies", "element": "water", "fit": "narrower", "color": "#0064C8", "evidence": "V", "note": "Lakes, reservoirs and rivers; rivers -> watercourse."},
+    {"code": "90", "name": "Herbaceous wetland", "element": "reed", "fit": "exact", "color": "#0096A0", "evidence": "V", "note": "Herbaceous vegetation permanently or regularly flooded; excludes swamp forest (tree cover)."},
+    {"code": "95", "name": "Mangroves", "element": "riparian_woodland", "fit": "nearest", "color": "#00CF75", "evidence": "V", "note": "Tropical intertidal woody vegetation; nearest drawing is wet woodland."},
+    {"code": "100", "name": "Moss and lichen", "element": "dry_grassland", "fit": "nearest", "color": "#FAE6A0", "evidence": "V", "note": "No moss or lichen element."}
+  ]
+}

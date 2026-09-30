@@ -1,0 +1,200 @@
+{
+  "title": "BfN Landscape planning",
+  "description": "Pastel backdrop series of the federal plan-symbol catalogue for landscape plans (BfN-Skripten 461/2, 2017): one colour per biotope-type group, no outlines. A recommendation, not law.",
+  "source": "Hoheisel et al. (2017), Planzeichen für die Landschaftsplanung – Planzeichenkatalog, BfN-Skripten 461/2, DOI 10.19217/skr4612, chapter 4.1.1",
+  "evidence": "RGB values V (research stream 02, section 7.4, pastel 'Kulisse' series). The catalogue misprints the deciduous-forest value (it repeats grassland); this theme uses the coniferous value for all forests and marks it. The tree outline follows the saturated series (RAL 140 40 50); the outline of built areas is a house choice.",
+  "handdrawn": 0.0,
+  "textures": "none",
+  "background": "#FFFFFF",
+  "default": {
+    "fill": "#FFFFFF",
+    "outline": null
+  },
+  "groups": {
+    "vegetation.grass": {
+      "fill": "#D2F098"
+    },
+    "vegetation.planting": {
+      "fill": "#ABF6B4"
+    },
+    "vegetation.greenspace": {
+      "fill": "#ABF6B4"
+    },
+    "vegetation.woody": {
+      "fill": "#BEF583"
+    },
+    "vegetation.agri": {
+      "fill": "#F2DFB0"
+    },
+    "vegetation.wetland": {
+      "fill": "#FFAF5E"
+    },
+    "vegetation.roof": {
+      "fill": "#ABF6B4"
+    },
+    "blue_green": {
+      "fill": "#ABF6B4"
+    },
+    "trees": {
+      "fill": "#BEF583",
+      "outline": "#669F2B"
+    },
+    "water": {
+      "fill": "#C5E9FF",
+      "outline": "#162551"
+    },
+    "ground": {
+      "fill": "#E2E2E2"
+    },
+    "surface": {
+      "fill": "#E6CEC5"
+    },
+    "landuse": {
+      "fill": "#EBC1B0"
+    },
+    "built": {
+      "fill": "#EBC1B0",
+      "outline": "#B38F82"
+    },
+    "boundary": {
+      "fill": null,
+      "outline": "#000000"
+    },
+    "relief": {
+      "fill": null,
+      "outline": "#7A7770"
+    },
+    "context": {
+      "fill": "#FFFFFF",
+      "outline": "#CCCCCC"
+    }
+  },
+  "elements": {
+    "dry_grassland": {
+      "fill": "#FFFFA1",
+      "evidence": "V (Trockenrasen)"
+    },
+    "tall_forbs": {
+      "fill": "#DDC0EC",
+      "evidence": "V (Säume und Staudenfluren)"
+    },
+    "ruderal": {
+      "fill": "#DDC0EC",
+      "evidence": "V (group 39)"
+    },
+    "grassland_fallow": {
+      "fill": "#D2F098",
+      "evidence": "V (Grünlandbrache; the catalogue adds brown vertical dashes)"
+    },
+    "heath": {
+      "fill": "#FFB5C2",
+      "evidence": "V (Zwergstrauchheiden)"
+    },
+    "bog": {
+      "fill": "#D1CB94",
+      "evidence": "V (Moore)"
+    },
+    "reed": {
+      "fill": "#FFAF5E",
+      "evidence": "V (Großseggenried und Röhricht)"
+    },
+    "sedge_marsh": {
+      "fill": "#FFAF5E",
+      "evidence": "V"
+    },
+    "meadow_wet": {
+      "fill": "#D2F098",
+      "evidence": "V (+ blue dashes in the catalogue)"
+    },
+    "woodland": {
+      "fill": "#87BA78",
+      "evidence": "V for coniferous; used for all forests (misprint)"
+    },
+    "woodland_deciduous": {
+      "fill": "#87BA78",
+      "evidence": "misprint in catalogue; coniferous value used"
+    },
+    "woodland_coniferous": {
+      "fill": "#87BA78",
+      "evidence": "V"
+    },
+    "woodland_mixed": {
+      "fill": "#87BA78"
+    },
+    "riparian_woodland": {
+      "fill": "#87BA78"
+    },
+    "arable": {
+      "fill": "#F2DFB0",
+      "evidence": "V (Acker)"
+    },
+    "vineyard": {
+      "fill": "#F2DFB0",
+      "evidence": "V (Rebkultur; dot grid in catalogue)"
+    },
+    "orchard": {
+      "fill": "#F2DFB0",
+      "evidence": "V"
+    },
+    "orchard_meadow": {
+      "fill": "#D2F098",
+      "evidence": "V (Obstkultur auf Grünland)"
+    },
+    "grassland_intensive": {
+      "fill": "#D2F098",
+      "evidence": "V (Grünland)"
+    },
+    "residential_area": {
+      "fill": "#EBC1B0",
+      "evidence": "V (Siedlungsflächen)"
+    },
+    "mixed_use_area": {
+      "fill": "#EBC1B0"
+    },
+    "public_facility_area": {
+      "fill": "#EBC1B0"
+    },
+    "commercial_area": {
+      "fill": "#E6CEC5",
+      "evidence": "V (Industrie-/Gewerbeflächen)"
+    },
+    "quarry": {
+      "fill": "#7A7770",
+      "evidence": "V (Abbaubereiche)"
+    },
+    "landfill": {
+      "fill": "#E6CEC5",
+      "evidence": "V (Deponien)"
+    },
+    "rock": {
+      "fill": "#E2E2E2",
+      "evidence": "V"
+    },
+    "sand": {
+      "fill": "#E2E2E2",
+      "fit": "nearest (vegetationsarme Flächen)"
+    },
+    "bare_soil": {
+      "fill": "#E2E2E2",
+      "evidence": "V"
+    },
+    "water": {
+      "fill": "#C5E9FF",
+      "outline": "#162551",
+      "evidence": "V (Stehende Gewässer)"
+    },
+    "watercourse": {
+      "fill": "#C5E9FF",
+      "outline": "#162551",
+      "evidence": "V"
+    },
+    "green_space": {
+      "fill": "#ABF6B4",
+      "evidence": "V (Grünflächen im Siedlungsraum)"
+    },
+    "tree": {
+      "fill": "#BEF583",
+      "outline": "#669F2B"
+    }
+  }
+}

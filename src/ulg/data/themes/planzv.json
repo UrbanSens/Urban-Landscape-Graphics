@@ -1,0 +1,194 @@
+{
+  "title": "PlanZV Bauleitplan",
+  "description": "Planning-law colours of German land-use and zoning plans (Planzeichenverordnung 1990, Anlage) in the numeric form of the open XPlanung reference implementation xPlanBox. PlanZV names colours only in words; the hex values are the de-facto convention.",
+  "source": "PlanZV Anlage https://www.gesetze-im-internet.de/planzv_90/anlage.html ; xPlanBox default styles https://gitlab.opencode.de/diplanung/ozgxplanung",
+  "evidence": "Colour words V (PlanZV); hex values V from xPlanBox (research stream 01, sections 1.5 and 2.6). Elements that have no Planzeichen of their own take the colour of the plan category they belong to.",
+  "handdrawn": 0.0,
+  "textures": "none",
+  "background": "#FFFFFF",
+  "default": {
+    "fill": "#FFFFFF",
+    "outline": "#000000"
+  },
+  "groups": {
+    "vegetation.grass": {
+      "fill": "#7FC643",
+      "outline": "#000000"
+    },
+    "vegetation.planting": {
+      "fill": "#7FC643",
+      "outline": "#000000"
+    },
+    "vegetation.greenspace": {
+      "fill": "#7FC643",
+      "outline": "#000000"
+    },
+    "vegetation.woody": {
+      "fill": "#34AB8F",
+      "outline": "#000000"
+    },
+    "vegetation.agri": {
+      "fill": "#CCE968",
+      "outline": "#000000"
+    },
+    "vegetation.wetland": {
+      "fill": "#99D9E8",
+      "outline": "#000000",
+      "evidence": "house: the PlanZV has no sign for wetland; drawn in the water colour"
+    },
+    "vegetation.roof": {
+      "fill": "#7FC643",
+      "outline": "#000000"
+    },
+    "blue_green": {
+      "fill": "#99D9E8",
+      "outline": "#007BCE"
+    },
+    "trees": {
+      "fill": "#4DAE38",
+      "outline": "#000000"
+    },
+    "water": {
+      "fill": "#99D9E8",
+      "outline": "#007BCE"
+    },
+    "ground": {
+      "fill": "#FFFFFF",
+      "outline": "#000000"
+    },
+    "surface": {
+      "fill": "#FFD92F",
+      "outline": "#000000"
+    },
+    "landuse": {
+      "fill": "#CF9377",
+      "outline": "#000000"
+    },
+    "built": {
+      "fill": "#FFFFFF",
+      "outline": "#000000"
+    },
+    "planning": {
+      "fill": null,
+      "outline": "#4DAE38"
+    },
+    "boundary": {
+      "fill": null,
+      "outline": "#000000"
+    },
+    "context": {
+      "fill": "#FFFFFF",
+      "outline": "#B3B3B3"
+    }
+  },
+  "elements": {
+    "green_space": {
+      "fill": "#80E41B",
+      "evidence": "V (FP_Gruen öffentlich)"
+    },
+    "arable": {
+      "fill": "#CCE968",
+      "evidence": "V (Landwirtschaft 12.1)"
+    },
+    "grassland_intensive": {
+      "fill": "#CCE968",
+      "evidence": "V (Landwirtschaft)"
+    },
+    "meadow": {
+      "fill": "#CCE968",
+      "fit": "nearest (Landwirtschaft)"
+    },
+    "woodland": {
+      "fill": "#34AB8F",
+      "evidence": "V (Wald 12.2)"
+    },
+    "woodland_deciduous": {
+      "fill": "#34AB8F"
+    },
+    "woodland_coniferous": {
+      "fill": "#34AB8F"
+    },
+    "woodland_mixed": {
+      "fill": "#34AB8F"
+    },
+    "water": {
+      "fill": "#99D9E8",
+      "evidence": "V (SO_Gewaesser, 10.1)"
+    },
+    "residential_area": {
+      "fill": "#CF9377",
+      "evidence": "V (Wohnbauflächen 1.1)"
+    },
+    "mixed_use_area": {
+      "fill": "#D5A744",
+      "evidence": "V (Gemischte Bauflächen 1.2)"
+    },
+    "commercial_area": {
+      "fill": "#A6A596",
+      "evidence": "V (Gewerbliche Bauflächen 1.3)"
+    },
+    "public_facility_area": {
+      "fill": "#E94EA5",
+      "evidence": "V (Gemeinbedarf 4.1)"
+    },
+    "sports_ground": {
+      "fill": "#7FC643",
+      "evidence": "V (Grünfläche Sportplatz)"
+    },
+    "road": {
+      "fill": "#FFD92F",
+      "evidence": "V (Straßenverkehrsflächen 6.1)"
+    },
+    "parking": {
+      "fill": "#FFEC8B",
+      "evidence": "V (ruhender Verkehr)"
+    },
+    "planning_boundary": {
+      "outline": "#80847A",
+      "evidence": "V (Geltungsbereich 15.13)"
+    },
+    "compensation_area": {
+      "outline": "#4DAE38",
+      "evidence": "V (SPE 13.1)"
+    },
+    "planting_area": {
+      "outline": "#4DAE38",
+      "evidence": "V (13.2.1)"
+    },
+    "preservation_area": {
+      "outline": "#4DAE38",
+      "evidence": "V (13.2.2)"
+    },
+    "protection_zone": {
+      "outline": "#4DAE38",
+      "evidence": "V (13.3)"
+    },
+    "flood_zone": {
+      "fill": null,
+      "outline": "#007BCE",
+      "evidence": "V (10.2)"
+    },
+    "tree_planned": {
+      "fill": "#4DAE38",
+      "outline": "#000000",
+      "evidence": "V (13.2 Anpflanzen)"
+    },
+    "tree_protected": {
+      "fill": "#4DAE38",
+      "outline": "#000000",
+      "evidence": "V (13.2 Erhaltung)"
+    },
+    "building": {
+      "fill": "#FFFFFF",
+      "outline": "#000000"
+    },
+    "building_context": {
+      "fill": "#FFFFFF",
+      "outline": "#8C8C8C"
+    },
+    "unknown": {
+      "fill": "#FFFFFF",
+      "outline": "#B3B3B3"
+    }
+  }
+}

@@ -1,0 +1,1515 @@
+{
+  "title": "Grass, herbaceous vegetation, plantings and green spaces",
+  "elements": {
+    "lawn": {
+      "group": "vegetation.grass",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Lawn",
+        "de": "Rasen"
+      },
+      "description": {
+        "en": "Short, even grass, mown often. Low biodiversity.",
+        "de": "Kurzer, gleichmäßiger Rasen, häufig gemäht. Geringe Biodiversität."
+      },
+      "fill": "grass.300",
+      "textures": [
+        {
+          "motif": "grass_ticks",
+          "ink": "grass.600"
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 1,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.25,
+        "emissivity": 0.95,
+        "nrr_urban_green": true,
+        "note": "BFF may be reduced to 0.5 for pure ornamental lawn (Berlin 2021).",
+        "layer": "ground"
+      },
+      "aliases": [
+        "Gebrauchsrasen",
+        "Zierrasen",
+        "Scherrasen",
+        "Parkrasen",
+        "Trittrasen",
+        "Rasenfläche",
+        "turf",
+        "amenity grass",
+        "mown grass",
+        "amenity grassland"
+      ]
+    },
+    "lawn_extensive": {
+      "group": "vegetation.grass",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Extensive lawn",
+        "de": "Landschaftsrasen"
+      },
+      "description": {
+        "en": "Grass on banks and margins, mown a few times a year. Low to medium biodiversity.",
+        "de": "Rasen an Böschungen und Rändern, wenige Schnitte im Jahr. Geringe bis mittlere Biodiversität."
+      },
+      "fill": "grass.300",
+      "textures": [
+        {
+          "motif": "grass_ticks",
+          "ink": "grass.600",
+          "keep": 0.7
+        },
+        {
+          "motif": "grass_tufts",
+          "ink": "grass.700",
+          "ink2": "grass.600",
+          "keep": 0.3,
+          "ticks": false,
+          "lod": {
+            "1": {
+              "height": 0.7
+            },
+            "2": {
+              "height": 1.1
+            },
+            "3": {
+              "height": 1.7
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 2,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.25,
+        "emissivity": 0.95,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Extensivrasen",
+        "Landschaftsrasen",
+        "Langgras",
+        "rough grass",
+        "extensive turf",
+        "Straßenbegleitgrün"
+      ]
+    },
+    "flower_lawn": {
+      "group": "vegetation.grass",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Flower lawn",
+        "de": "Blumenrasen"
+      },
+      "description": {
+        "en": "Low herb-rich turf that still takes footfall. Medium biodiversity.",
+        "de": "Niedriger, kräuterreicher Rasen, betretbar. Mittlere Biodiversität."
+      },
+      "fill": "grass.300",
+      "textures": [
+        {
+          "motif": "grass_ticks",
+          "ink": "grass.600"
+        },
+        {
+          "motif": "flowers",
+          "ink": "grass.800",
+          "stem": "grass.700",
+          "accents": [
+            "bloom.white",
+            "bloom.yellow"
+          ],
+          "kinds": [
+            "disc"
+          ],
+          "lod": {
+            "1": {
+              "height": 0,
+              "head": 0.22,
+              "spacing": 2.9
+            },
+            "2": {
+              "height": 0,
+              "head": 0.3,
+              "spacing": 3.3
+            },
+            "3": {
+              "height": 0.9,
+              "head": 0.4,
+              "spacing": 4.2
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 3,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.25,
+        "emissivity": 0.95,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Kräuterrasen",
+        "Blumenkräuterrasen",
+        "herb lawn",
+        "flowering lawn"
+      ]
+    },
+    "meadow": {
+      "group": "vegetation.grass",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Meadow",
+        "de": "Wiese"
+      },
+      "description": {
+        "en": "Taller, more diverse grass, mown once or twice a year. Medium biodiversity.",
+        "de": "Höherer, vielfältigerer Bewuchs, ein- bis zweischürig. Mittlere Biodiversität."
+      },
+      "fill": "grass.400",
+      "wash": true,
+      "textures": [
+        {
+          "motif": "grass_tufts",
+          "ink": "grass.700",
+          "ink2": "grass.600"
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 3,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.18,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Mähwiese",
+        "Extensivwiese",
+        "Extensivgrünland",
+        "Langgraswiese",
+        "hay meadow",
+        "grassland",
+        "other neutral grassland",
+        "Fettwiese"
+      ]
+    },
+    "wildflower_meadow": {
+      "group": "vegetation.grass",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Wildflower meadow",
+        "de": "Blumenwiese"
+      },
+      "description": {
+        "en": "Species-rich grassland with many flowering herbs. High biodiversity.",
+        "de": "Artenreiches Grünland mit vielen Blütenpflanzen. Hohe Biodiversität."
+      },
+      "fill": "grass.200",
+      "wash": true,
+      "textures": [
+        {
+          "motif": "grass_tufts",
+          "ink": "grass.700",
+          "ink2": "grass.600",
+          "keep": 0.7
+        },
+        {
+          "motif": "flowers",
+          "ink": "grass.800",
+          "stem": "grass.800",
+          "center": "bloom.gold",
+          "accents": [
+            "bloom.yellow",
+            "bloom.violet",
+            "bloom.blue",
+            "bloom.white",
+            "bloom.yellow"
+          ],
+          "kinds": [
+            "disc",
+            "spike",
+            "cluster",
+            "umbel",
+            "disc"
+          ]
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 5,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.18,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "artenreiche Wiese",
+        "Blühwiese",
+        "artenreiches Extensivgrünland",
+        "Magerwiese",
+        "Glatthaferwiese",
+        "Flachland-Mähwiese",
+        "species-rich grassland",
+        "flower meadow",
+        "wild flower meadow"
+      ]
+    },
+    "flower_strip": {
+      "group": "vegetation.grass",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Flower strip",
+        "de": "Blühstreifen"
+      },
+      "description": {
+        "en": "Sown annual or perennial flower mix along edges and fields. High value for pollinators.",
+        "de": "Angesäte ein- oder mehrjährige Blühmischung an Rändern und Äckern. Hoher Wert für Bestäuber."
+      },
+      "fill": "grass.200",
+      "textures": [
+        {
+          "motif": "flowers",
+          "ink": "grass.800",
+          "stem": "grass.800",
+          "center": "bloom.gold",
+          "accents": [
+            "bloom.red",
+            "bloom.yellow",
+            "bloom.blue",
+            "bloom.white",
+            "bloom.violet"
+          ],
+          "kinds": [
+            "disc",
+            "disc",
+            "cluster",
+            "umbel",
+            "spike"
+          ],
+          "keep": 1.0,
+          "lod": {
+            "1": {
+              "spacing": 2.2
+            },
+            "2": {
+              "spacing": 2.9
+            },
+            "3": {
+              "spacing": 3.8
+            }
+          }
+        },
+        {
+          "motif": "grass_tufts",
+          "ink": "grass.700",
+          "ink2": "grass.600",
+          "keep": 0.35,
+          "ticks": false
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 4,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.18,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Blühfläche",
+        "Blühmischung",
+        "Saum",
+        "Ackerrandstreifen",
+        "pollinator strip",
+        "flower margin"
+      ]
+    },
+    "dry_grassland": {
+      "group": "vegetation.grass",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Dry grassland",
+        "de": "Magerrasen"
+      },
+      "description": {
+        "en": "Sparse, nutrient-poor grassland on dry, sandy or chalky ground. Very high biodiversity, often protected.",
+        "de": "Lückiger Rasen auf trockenen, nährstoffarmen Standorten. Sehr hohe Biodiversität, oft gesetzlich geschützt."
+      },
+      "fill": "straw.200",
+      "textures": [
+        {
+          "motif": "grass_tufts",
+          "ink": "fallow.700",
+          "ink2": "fallow.500",
+          "keep": 0.55,
+          "ticks": false,
+          "lod": {
+            "1": {
+              "height": 0.7
+            },
+            "2": {
+              "height": 1.1
+            },
+            "3": {
+              "height": 1.7
+            }
+          }
+        },
+        {
+          "motif": "flowers",
+          "ink": "grass.800",
+          "stem": "grass.700",
+          "accents": [
+            "bloom.pink",
+            "bloom.violet",
+            "bloom.yellow"
+          ],
+          "kinds": [
+            "disc"
+          ],
+          "lod": {
+            "1": {
+              "height": 0,
+              "head": 0.22,
+              "spacing": 2.9
+            },
+            "2": {
+              "height": 0,
+              "head": 0.3,
+              "spacing": 3.3
+            },
+            "3": {
+              "height": 0.9,
+              "head": 0.4,
+              "spacing": 4.2
+            }
+          },
+          "keep": 0.6
+        },
+        {
+          "motif": "stipple",
+          "ink": "fallow.700",
+          "keep": 0.35,
+          "spacing": 2.2
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 5,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.18,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Trockenrasen",
+        "Halbtrockenrasen",
+        "Sandmagerrasen",
+        "Kalkmagerrasen",
+        "calcareous grassland",
+        "nutrient-poor grassland",
+        "xeric grassland"
+      ]
+    },
+    "meadow_wet": {
+      "group": "vegetation.grass",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Wet meadow",
+        "de": "Feuchtwiese"
+      },
+      "description": {
+        "en": "Meadow on wet ground with rushes and sedges. High biodiversity, often protected.",
+        "de": "Wiese auf feuchtem bis nassem Standort mit Binsen und Seggen. Hohe Biodiversität, oft geschützt."
+      },
+      "fill": "marsh.200",
+      "wash": true,
+      "textures": [
+        {
+          "motif": "grass_tufts",
+          "ink": "reed.700",
+          "ink2": "marsh.500"
+        },
+        {
+          "motif": "waves",
+          "ink": "water.500",
+          "keep": 0.16
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 5,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "albedo": 0.18,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Nasswiese",
+        "Feuchtgrünland",
+        "Streuwiese",
+        "Pfeifengraswiese",
+        "wet grassland",
+        "marshy grassland"
+      ]
+    },
+    "grassland_intensive": {
+      "group": "vegetation.grass",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Intensive grassland",
+        "de": "Intensivgrünland"
+      },
+      "description": {
+        "en": "Fertilised, species-poor grassland cut or grazed often. Low biodiversity.",
+        "de": "Gedüngtes, artenarmes Grünland mit häufiger Mahd oder Beweidung. Geringe Biodiversität."
+      },
+      "fill": "grass.400",
+      "textures": [
+        {
+          "motif": "grass_ticks",
+          "ink": "grass.700",
+          "clump": 0.0,
+          "keep": 1.0,
+          "blades": 2,
+          "lod": {
+            "1": {
+              "spacing": 1.7
+            },
+            "2": {
+              "spacing": 2.0
+            },
+            "3": {
+              "spacing": 2.5
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 2,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.25,
+        "emissivity": 0.95,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Wirtschaftsgrünland",
+        "Fettweide",
+        "Weide",
+        "Mähweide",
+        "Grünland",
+        "pasture",
+        "improved grassland",
+        "modified grassland"
+      ]
+    },
+    "tall_forbs": {
+      "group": "vegetation.grass",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Tall herb vegetation",
+        "de": "Hochstaudenflur"
+      },
+      "description": {
+        "en": "Tall perennial herbs along edges, banks and damp ground. High biodiversity.",
+        "de": "Hochwüchsige Stauden an Säumen, Ufern und feuchten Standorten. Hohe Biodiversität."
+      },
+      "fill": "grass.500",
+      "wash": true,
+      "textures": [
+        {
+          "motif": "grass_tufts",
+          "ink": "grass.900",
+          "ink2": "grass.700",
+          "keep": 0.6
+        },
+        {
+          "motif": "flowers",
+          "ink": "grass.800",
+          "stem": "grass.800",
+          "center": "bloom.gold",
+          "accents": [
+            "bloom.white",
+            "bloom.pink",
+            "bloom.violet"
+          ],
+          "kinds": [
+            "umbel",
+            "spike",
+            "umbel"
+          ],
+          "lod": {
+            "2": {
+              "height": 2.1
+            },
+            "3": {
+              "height": 3.5
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 4,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.18,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Staudenflur",
+        "Saum",
+        "Krautsaum",
+        "Uferstaudenflur",
+        "tall forb community",
+        "fringe"
+      ]
+    },
+    "ruderal": {
+      "group": "vegetation.grass",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Ruderal vegetation",
+        "de": "Ruderalflur"
+      },
+      "description": {
+        "en": "Spontaneous vegetation on disturbed or abandoned ground. Medium to high biodiversity in cities.",
+        "de": "Spontanvegetation auf gestörten oder brachgefallenen Flächen. In Städten mittlere bis hohe Biodiversität."
+      },
+      "fill": "fallow.200",
+      "textures": [
+        {
+          "motif": "grass_tufts",
+          "ink": "fallow.700",
+          "ink2": "fallow.500",
+          "keep": 0.5,
+          "ticks": false
+        },
+        {
+          "motif": "stipple",
+          "ink": "earth.700",
+          "keep": 0.4,
+          "spacing": 1.9
+        },
+        {
+          "motif": "flowers",
+          "ink": "grass.800",
+          "stem": "grass.700",
+          "accents": [
+            "bloom.yellow",
+            "bloom.white"
+          ],
+          "kinds": [
+            "disc"
+          ],
+          "lod": {
+            "1": {
+              "height": 0,
+              "head": 0.22,
+              "spacing": 2.9
+            },
+            "2": {
+              "height": 0,
+              "head": 0.3,
+              "spacing": 3.3
+            },
+            "3": {
+              "height": 0.9,
+              "head": 0.4,
+              "spacing": 4.2
+            }
+          },
+          "keep": 0.4
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 4,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.18,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Ruderalvegetation",
+        "Spontanvegetation",
+        "Brache",
+        "Stadtbrache",
+        "Krautflur",
+        "wasteland vegetation",
+        "brownfield",
+        "ruderal/ephemeral",
+        "open mosaic habitat"
+      ]
+    },
+    "grassland_fallow": {
+      "group": "vegetation.grass",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Grassland fallow",
+        "de": "Grünlandbrache / Altgras"
+      },
+      "description": {
+        "en": "Unmown grassland left for two years or more: old grass, litter, first young shrubs. Brown vertical dashes follow the landscape-planning convention for fallow.",
+        "de": "Seit mindestens zwei Jahren ungenutztes Grünland mit Altgras, Streu und ersten Jungsträuchern. Braune senkrechte Striche nach der Planzeichen-Konvention für Brache."
+      },
+      "fill": "fallow.200",
+      "textures": [
+        {
+          "motif": "grass_tufts",
+          "ink": "fallow.700",
+          "ink2": "fallow.500",
+          "keep": 0.75,
+          "ticks": false,
+          "lod": {
+            "1": {
+              "height": 1.0
+            },
+            "2": {
+              "height": 1.8
+            },
+            "3": {
+              "height": 2.8
+            }
+          }
+        },
+        {
+          "motif": "hatch",
+          "ink": "earth.500",
+          "spacing": 3.4,
+          "angle": 90,
+          "amp": 0.05,
+          "dash": [
+            1.1,
+            1.3
+          ],
+          "opacity": 0.8
+        }
+      ],
+      "aliases": [
+        "Grünlandbrache",
+        "Altgrasstreifen",
+        "Altgras",
+        "Brache",
+        "Brachland",
+        "Ackerbrache",
+        "Wiesenbrache",
+        "fallow",
+        "old grass",
+        "rough grassland"
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 4,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.18,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      }
+    },
+    "succession": {
+      "group": "vegetation.grass",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Succession area",
+        "de": "Sukzessionsfläche"
+      },
+      "description": {
+        "en": "Fallow ground turning to scrub and young trees. High structural diversity.",
+        "de": "Brachfläche mit aufkommenden Sträuchern und Jungbäumen. Hohe Strukturvielfalt."
+      },
+      "fill": "fallow.300",
+      "textures": [
+        {
+          "motif": "grass_tufts",
+          "ink": "fallow.700",
+          "ink2": "fallow.500",
+          "keep": 0.55,
+          "ticks": false
+        },
+        {
+          "motif": "canopy",
+          "ink": "leaf.600",
+          "branch": "leaf.800",
+          "tones": [
+            "leaf.300",
+            "leaf.400"
+          ],
+          "crown_m": 2.2,
+          "keep": 0.22,
+          "depth": 0.17,
+          "lobes": 8,
+          "pack": 1.9,
+          "star": false
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 4,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.25,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Gehölzsukzession",
+        "Vorwald",
+        "Verbuschung",
+        "Brache mit Gehölzaufwuchs",
+        "scrub succession"
+      ]
+    },
+    "perennials": {
+      "group": "vegetation.planting",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Perennial planting",
+        "de": "Staudenpflanzung"
+      },
+      "description": {
+        "en": "Designed beds of perennials and grasses. Medium biodiversity, high if native and varied.",
+        "de": "Gestaltete Beete mit Stauden und Gräsern. Mittlere Biodiversität, bei heimischen Arten hoch."
+      },
+      "fill": "leaf.100",
+      "textures": [
+        {
+          "motif": "rosettes",
+          "ink": "grass.800",
+          "accents": [
+            "bloom.violet",
+            "bloom.pink",
+            "bloom.yellow",
+            "bloom.white"
+          ]
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 3,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.18,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Staudenbeet",
+        "Staudenmischpflanzung",
+        "Staudenfläche",
+        "herbaceous border",
+        "flower bed",
+        "planting bed"
+      ]
+    },
+    "bedding": {
+      "group": "vegetation.planting",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Seasonal bedding",
+        "de": "Wechselflor"
+      },
+      "description": {
+        "en": "Annual display planting, replaced each season. Low biodiversity.",
+        "de": "Saisonale Schmuckpflanzung, wird mehrmals im Jahr ersetzt. Geringe Biodiversität."
+      },
+      "fill": "straw.100",
+      "textures": [
+        {
+          "motif": "rosettes",
+          "ink": "grass.700",
+          "accents": [
+            "bloom.red",
+            "bloom.yellow",
+            "bloom.violet",
+            "bloom.white"
+          ],
+          "bloom": 0.95,
+          "lod": {
+            "1": {
+              "spacing": 1.5
+            },
+            "2": {
+              "spacing": 2.0,
+              "arms": 0,
+              "size": 0.5
+            },
+            "3": {
+              "spacing": 2.6,
+              "arms": 3,
+              "size": 0.7
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 1,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.18,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Sommerblumen",
+        "Schmuckbeet",
+        "Wechselbepflanzung",
+        "annual bedding",
+        "ornamental bed"
+      ]
+    },
+    "groundcover": {
+      "group": "vegetation.planting",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Ground cover",
+        "de": "Bodendecker"
+      },
+      "description": {
+        "en": "Low woody or perennial cover under trees and on slopes. Low to medium biodiversity.",
+        "de": "Niedrige, flächige Bepflanzung unter Bäumen und an Böschungen. Geringe bis mittlere Biodiversität."
+      },
+      "fill": "leaf.300",
+      "textures": [
+        {
+          "motif": "canopy",
+          "ink": "leaf.600",
+          "branch": "leaf.800",
+          "tones": [
+            "leaf.300",
+            "leaf.400",
+            "leaf.200"
+          ],
+          "crown_m": 0.7,
+          "depth": 0.2,
+          "lobes": 6,
+          "pack": 1.5,
+          "star": false,
+          "width": 0.13,
+          "lod": {
+            "1": {
+              "crown_min": 1.1,
+              "crown_max": 1.4
+            },
+            "2": {
+              "crown_min": 1.4,
+              "crown_max": 2.0
+            },
+            "3": {
+              "crown_min": 2.0,
+              "crown_max": 3.2
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 2,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.25,
+        "emissivity": 0.97,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Bodendeckende Gehölze",
+        "Bodendeckerpflanzung",
+        "Efeu",
+        "ground-cover planting"
+      ]
+    },
+    "vegetable_garden": {
+      "group": "vegetation.planting",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Vegetable garden",
+        "de": "Nutzgarten"
+      },
+      "description": {
+        "en": "Beds for vegetables and herbs, including raised beds and community gardens.",
+        "de": "Beete für Gemüse und Kräuter, auch Hochbeete und Gemeinschaftsgärten."
+      },
+      "fill": "earth.200",
+      "textures": [
+        {
+          "motif": "rows",
+          "ink": "earth.600",
+          "ink2": "grass.800",
+          "row_m": 0.6,
+          "dot": 0.28,
+          "lod": {
+            "1": {
+              "row_min": 1.0,
+              "row_max": 1.4
+            },
+            "2": {
+              "row_min": 1.5,
+              "row_max": 2.4
+            },
+            "3": {
+              "row_min": 2.0,
+              "row_max": 4.0
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 2,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.19,
+        "emissivity": 0.95,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Gemüsebeet",
+        "Gemüsegarten",
+        "Grabeland",
+        "Hochbeet",
+        "Gemeinschaftsgarten",
+        "urban gardening",
+        "kitchen garden",
+        "community garden"
+      ]
+    },
+    "green_space": {
+      "group": "vegetation.greenspace",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Green space",
+        "de": "Grünanlage"
+      },
+      "description": {
+        "en": "Public green or park whose internal land cover is not mapped. Use specific elements where known.",
+        "de": "Öffentliche Grünfläche oder Park ohne kartierte Binnengliederung. Wo bekannt, spezifische Elemente verwenden."
+      },
+      "fill": "grass.300",
+      "textures": [
+        {
+          "motif": "grass_ticks",
+          "ink": "grass.600",
+          "keep": 0.7
+        },
+        {
+          "motif": "canopy",
+          "ink": "leaf.700",
+          "branch": "leaf.900",
+          "tones": [
+            "leaf.400",
+            "leaf.500",
+            "leaf.300"
+          ],
+          "crown_m": 7.0,
+          "keep": 0.12,
+          "pack": 1.7,
+          "depth": 0.06,
+          "lobes": 12
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 2,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "nrr_urban_green": true,
+        "layer": "ground",
+        "is_complex": true
+      },
+      "aliases": [
+        "Park",
+        "Parkanlage",
+        "Grünfläche",
+        "öffentliche Grünfläche",
+        "green urban area",
+        "urban green",
+        "park"
+      ]
+    },
+    "garden": {
+      "group": "vegetation.greenspace",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Garden",
+        "de": "Garten"
+      },
+      "description": {
+        "en": "Private or residential garden with mixed lawn, beds and shrubs.",
+        "de": "Haus- oder Wohngarten mit Rasen, Beeten und Sträuchern im Wechsel."
+      },
+      "fill": "grass.200",
+      "textures": [
+        {
+          "motif": "rosettes",
+          "ink": "grass.700",
+          "accents": [
+            "bloom.pink",
+            "bloom.yellow"
+          ],
+          "keep": 0.45,
+          "lod": {
+            "1": {
+              "spacing": 2.6
+            },
+            "2": {
+              "spacing": 3.6
+            },
+            "3": {
+              "spacing": 4.6
+            }
+          }
+        },
+        {
+          "motif": "canopy",
+          "ink": "leaf.600",
+          "branch": "leaf.800",
+          "tones": [
+            "leaf.300",
+            "leaf.400"
+          ],
+          "crown_m": 3.0,
+          "keep": 0.16,
+          "pack": 1.8,
+          "depth": 0.15,
+          "lobes": 8,
+          "star": false
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 2,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "nrr_urban_green": true,
+        "layer": "ground",
+        "is_complex": true
+      },
+      "aliases": [
+        "Hausgarten",
+        "Privatgarten",
+        "Vorgarten",
+        "Ziergarten",
+        "Wohngrün",
+        "Abstandsgrün",
+        "residential garden",
+        "vegetated garden",
+        "domestic garden"
+      ]
+    },
+    "allotment": {
+      "group": "vegetation.greenspace",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Allotment gardens",
+        "de": "Kleingarten"
+      },
+      "description": {
+        "en": "Allotment site with small cultivated plots, huts and hedges. Medium biodiversity.",
+        "de": "Kleingartenanlage mit Parzellen, Lauben und Hecken. Mittlere Biodiversität."
+      },
+      "fill": "grass.200",
+      "textures": [
+        {
+          "motif": "rows",
+          "ink": "grass.600",
+          "ink2": "grass.800",
+          "row_m": 3.0,
+          "dot": 0.3,
+          "lod": {
+            "1": {
+              "row_min": 1.4,
+              "row_max": 2.0
+            },
+            "2": {
+              "row_min": 2.0,
+              "row_max": 3.2
+            },
+            "3": {
+              "row_min": 2.8,
+              "row_max": 7.0
+            }
+          }
+        },
+        {
+          "motif": "rosettes",
+          "ink": "grass.700",
+          "accents": [
+            "bloom.pink",
+            "bloom.yellow",
+            "bloom.white"
+          ],
+          "keep": 0.35
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 3,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "nrr_urban_green": true,
+        "layer": "ground",
+        "is_complex": true
+      },
+      "aliases": [
+        "Kleingartenanlage",
+        "Dauerkleingarten",
+        "Schrebergarten",
+        "Gartenland",
+        "allotments"
+      ]
+    },
+    "cemetery": {
+      "group": "vegetation.greenspace",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Cemetery",
+        "de": "Friedhof"
+      },
+      "description": {
+        "en": "Burial ground: graves, lawns and old trees. Often high biodiversity in cities.",
+        "de": "Friedhof mit Grabfeldern, Rasen und altem Baumbestand. In Städten oft hohe Biodiversität."
+      },
+      "fill": "grass.300",
+      "textures": [
+        {
+          "motif": "cells",
+          "ink": "stone.500",
+          "cell_m": 2.4,
+          "fill_ratio": 0.3,
+          "lod": {
+            "1": {
+              "cell_min": 1.3,
+              "cell_max": 1.6
+            },
+            "2": {
+              "cell_min": 1.8,
+              "cell_max": 2.6
+            },
+            "3": {
+              "cell_min": 2.4,
+              "cell_max": 6.0
+            }
+          }
+        },
+        {
+          "motif": "canopy",
+          "ink": "leaf.700",
+          "branch": "leaf.900",
+          "tones": [
+            "leaf.400",
+            "leaf.500"
+          ],
+          "crown_m": 6.0,
+          "keep": 0.12,
+          "pack": 1.8,
+          "depth": 0.06,
+          "lobes": 12
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 3,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "nrr_urban_green": true,
+        "layer": "ground",
+        "is_complex": true
+      },
+      "aliases": [
+        "Friedhofsfläche",
+        "Grabfeld",
+        "graveyard",
+        "burial ground"
+      ]
+    },
+    "playground": {
+      "group": "vegetation.greenspace",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Playground",
+        "de": "Spielplatz"
+      },
+      "description": {
+        "en": "Play area whose surfaces are not mapped individually.",
+        "de": "Spielfläche ohne einzeln kartierte Beläge."
+      },
+      "fill": "sand.200",
+      "textures": [
+        {
+          "motif": "stipple",
+          "ink": "sand.700",
+          "spacing": 1.2,
+          "r_min": 0.06,
+          "r_max": 0.13,
+          "keep": 0.8
+        },
+        {
+          "motif": "flowers",
+          "ink": "sand.700",
+          "accents": [
+            "bloom.red",
+            "bloom.blue",
+            "bloom.yellow"
+          ],
+          "kinds": [
+            "disc"
+          ],
+          "keep": 0.5,
+          "lod": {
+            "1": {
+              "height": 0,
+              "head": 0.3,
+              "spacing": 3.4
+            },
+            "2": {
+              "height": 0,
+              "head": 0.42,
+              "spacing": 4.4
+            },
+            "3": {
+              "height": 0,
+              "head": 0.55,
+              "spacing": 5.6
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "vegetated": false,
+        "nrr_urban_green": false,
+        "layer": "ground",
+        "is_complex": true
+      },
+      "aliases": [
+        "Spielfläche",
+        "Kinderspielplatz",
+        "Bolzplatz",
+        "play area"
+      ]
+    },
+    "golf_course": {
+      "group": "vegetation.greenspace",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Golf course",
+        "de": "Golfplatz"
+      },
+      "description": {
+        "en": "Golf course with fairways, greens, roughs and bunkers, when its parts are not mapped.",
+        "de": "Golfplatz mit Spielbahnen, Grüns, Roughs und Bunkern, wenn die Teilflächen nicht kartiert sind."
+      },
+      "fill": "marsh.100",
+      "textures": [
+        {
+          "motif": "grass_ticks",
+          "ink": "marsh.500",
+          "keep": 0.45
+        },
+        {
+          "motif": "pebbles",
+          "ink": "sand.700",
+          "fill": "sand.200",
+          "keep": 0.25,
+          "lod": {
+            "1": {
+              "spacing": 4.5,
+              "size": 1.2
+            },
+            "2": {
+              "spacing": 6.5,
+              "size": 2.0
+            },
+            "3": {
+              "spacing": 9.0,
+              "size": 3.0
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "is_complex": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Golfanlage",
+        "Golfplatz",
+        "Golfgelände",
+        "golf course",
+        "golf links"
+      ]
+    }
+  }
+}

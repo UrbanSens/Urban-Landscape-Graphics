@@ -1,0 +1,1708 @@
+{
+  "title": "Surfaces and pavings",
+  "elements": {
+    "asphalt": {
+      "group": "surface.sealed",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Asphalt",
+        "de": "Asphalt"
+      },
+      "description": {
+        "en": "Fine grain texture. Dark grey tone. Fully sealed.",
+        "de": "Feinkörnige Textur. Dunkelgrauer Ton. Vollversiegelt."
+      },
+      "fill": "stone.700",
+      "textures": [
+        {
+          "motif": "stipple",
+          "ink": "stone.400",
+          "ink2": "stone.900",
+          "ink2_share": 0.45,
+          "spacing": 1.3,
+          "r_min": 0.05,
+          "r_max": 0.13,
+          "lod": {
+            "1": {
+              "spacing": 1.1,
+              "r_max": 0.1
+            },
+            "3": {
+              "spacing": 1.6,
+              "r_max": 0.18
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "sealed",
+        "vegetated": false,
+        "bdla_class": 4,
+        "bff": 0.0,
+        "bff_1990": 0.0,
+        "runoff_cs": 1.0,
+        "runoff_cm": 0.9,
+        "albedo": 0.17,
+        "emissivity": 0.94,
+        "belagsklasse": 1,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Asphaltdecke",
+        "Bitumen",
+        "Schwarzdecke",
+        "Asphaltfläche",
+        "tarmac",
+        "bituminous surface"
+      ]
+    },
+    "concrete": {
+      "group": "surface.sealed",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Concrete",
+        "de": "Beton"
+      },
+      "description": {
+        "en": "Subtle grain texture. Cool grey tone. Fully sealed.",
+        "de": "Zurückhaltende Körnung. Kühler Grauton. Vollversiegelt."
+      },
+      "fill": "stone.200",
+      "textures": [
+        {
+          "motif": "stipple",
+          "ink": "stone.500",
+          "ink2": "stone.800",
+          "ink2_share": 0.25,
+          "spacing": 2.2,
+          "keep": 0.6,
+          "r_min": 0.06,
+          "r_max": 0.2,
+          "lod": {
+            "1": {
+              "spacing": 1.8,
+              "r_max": 0.14
+            },
+            "3": {
+              "spacing": 2.8,
+              "r_max": 0.28
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "sealed",
+        "vegetated": false,
+        "bdla_class": 4,
+        "bff": 0.0,
+        "bff_1990": 0.0,
+        "runoff_cs": 1.0,
+        "runoff_cm": 0.9,
+        "albedo": 0.3,
+        "emissivity": 0.98,
+        "belagsklasse": 1,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Ortbeton",
+        "Betondecke",
+        "Betonfläche",
+        "Betonplatte",
+        "in-situ concrete",
+        "cement"
+      ]
+    },
+    "sealed": {
+      "group": "surface.sealed",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Sealed surface",
+        "de": "Versiegelte Fläche"
+      },
+      "description": {
+        "en": "Impervious surface of unknown material.",
+        "de": "Versiegelte Fläche ohne Angabe des Materials."
+      },
+      "fill": "stone.400",
+      "outline": "stone.600",
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "stone.600",
+          "spacing": 3.0,
+          "angle": 45
+        }
+      ],
+      "attributes": {
+        "sealing": "sealed",
+        "vegetated": false,
+        "bdla_class": 4,
+        "bff": 0.0,
+        "bff_1990": 0.0,
+        "runoff_cs": 1.0,
+        "runoff_cm": 0.9,
+        "belagsklasse": 1,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "versiegelt",
+        "vollversiegelt",
+        "befestigte Fläche",
+        "impervious surface",
+        "sealed surface",
+        "hardstanding",
+        "developed land sealed surface"
+      ]
+    },
+    "paving_light": {
+      "group": "surface.paved",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Paving (light)",
+        "de": "Pflaster (hell)"
+      },
+      "description": {
+        "en": "Subtle herringbone pattern for light paving stones.",
+        "de": "Zurückhaltendes Fischgrätmuster für helles Pflaster."
+      },
+      "fill": "stone.200",
+      "textures": [
+        {
+          "motif": "herringbone",
+          "ink": "stone.400"
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": false,
+        "bdla_class": 3,
+        "bff": 0.1,
+        "bff_1990": 0.3,
+        "runoff_cs": 0.9,
+        "runoff_cm": 0.7,
+        "albedo": 0.17,
+        "emissivity": 0.97,
+        "belagsklasse": 2,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Pflaster",
+        "Betonpflaster hell",
+        "Pflasterfläche",
+        "Pflasterbelag",
+        "paving stones",
+        "block paving",
+        "pavers"
+      ]
+    },
+    "paving_dark": {
+      "group": "surface.paved",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Paving (dark)",
+        "de": "Pflaster (dunkel)"
+      },
+      "description": {
+        "en": "Darker tone, same family of pattern, different contrast.",
+        "de": "Dunklerer Ton, gleiche Musterfamilie, anderer Kontrast."
+      },
+      "fill": "stone.600",
+      "textures": [
+        {
+          "motif": "bond",
+          "ink": "stone.800",
+          "unit_m": 0.17,
+          "offset": "random",
+          "merge": 0.22,
+          "jitter": 0.2
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": false,
+        "bdla_class": 3,
+        "bff": 0.1,
+        "bff_1990": 0.3,
+        "runoff_cs": 0.9,
+        "runoff_cm": 0.7,
+        "albedo": 0.17,
+        "emissivity": 0.97,
+        "belagsklasse": 2,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Betonpflaster dunkel",
+        "Basaltpflaster",
+        "anthrazit",
+        "dark pavers"
+      ]
+    },
+    "concrete_pavers": {
+      "group": "surface.paved",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Concrete block paving",
+        "de": "Betonsteinpflaster"
+      },
+      "description": {
+        "en": "Rectangular concrete blocks in running bond, tight joints.",
+        "de": "Rechteckpflaster aus Beton im Läuferverband, enge Fugen."
+      },
+      "fill": "stone.300",
+      "textures": [
+        {
+          "motif": "bond",
+          "ink": "stone.500",
+          "course_m": 0.1,
+          "unit_m": 0.2,
+          "offset": 0.5
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": false,
+        "bdla_class": 3,
+        "bff": 0.1,
+        "bff_1990": 0.3,
+        "runoff_cs": 0.9,
+        "runoff_cm": 0.7,
+        "albedo": 0.17,
+        "emissivity": 0.97,
+        "belagsklasse": 2,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Betonpflaster",
+        "Rechteckpflaster",
+        "Verbundpflaster",
+        "Läuferverband",
+        "Betonstein",
+        "concrete pavers",
+        "interlocking pavers"
+      ]
+    },
+    "slabs": {
+      "group": "surface.paved",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Slab paving",
+        "de": "Plattenbelag"
+      },
+      "description": {
+        "en": "Large slabs laid with aligned joints.",
+        "de": "Großformatige Platten mit Kreuzfuge."
+      },
+      "fill": "stone.200",
+      "textures": [
+        {
+          "motif": "bond",
+          "ink": "stone.400",
+          "course_m": 0.4,
+          "unit_m": 0.4,
+          "offset": 0.0,
+          "jitter": 0.02,
+          "lod": {
+            "1": {
+              "course_min": 1.1,
+              "course_max": 1.5
+            },
+            "2": {
+              "course_min": 1.6,
+              "course_max": 2.6
+            },
+            "3": {
+              "course_min": 2.2,
+              "course_max": 5.0
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": false,
+        "bdla_class": 3,
+        "bff": 0.1,
+        "bff_1990": 0.3,
+        "runoff_cs": 0.9,
+        "runoff_cm": 0.7,
+        "albedo": 0.17,
+        "emissivity": 0.97,
+        "belagsklasse": 2,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Gehwegplatten",
+        "Betonplatten",
+        "Natursteinplatten",
+        "Platten",
+        "Kreuzfuge",
+        "flagstones",
+        "paving slabs"
+      ]
+    },
+    "natural_stone_paving": {
+      "group": "surface.paved",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Natural stone setts",
+        "de": "Natursteinpflaster"
+      },
+      "description": {
+        "en": "Small granite or basalt setts with irregular joints. Warm grey tone.",
+        "de": "Kleinpflaster aus Granit oder Basalt mit unregelmäßigen Fugen. Warmer Grauton."
+      },
+      "fill": "granite.300",
+      "textures": [
+        {
+          "motif": "bond",
+          "ink": "granite.700",
+          "course_m": 0.09,
+          "unit_m": 0.1,
+          "offset": "random",
+          "jitter": 0.22,
+          "merge": 0.05,
+          "amp": 0.1
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": false,
+        "bdla_class": 3,
+        "bff": 0.1,
+        "bff_1990": 0.3,
+        "runoff_cs": 0.7,
+        "runoff_cm": 0.6,
+        "albedo": 0.17,
+        "emissivity": 0.93,
+        "belagsklasse": 3,
+        "nrr_urban_green": false,
+        "note": "Runoff row for paving with more than 15 % joints (e.g. 10 x 10 cm setts).",
+        "layer": "ground"
+      },
+      "aliases": [
+        "Kleinpflaster",
+        "Granitpflaster",
+        "Mosaikpflaster",
+        "Naturstein",
+        "Kleinsteinpflaster",
+        "setts",
+        "sett paving",
+        "granite setts"
+      ]
+    },
+    "cobblestone": {
+      "group": "surface.paved",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Cobblestones",
+        "de": "Großpflaster"
+      },
+      "description": {
+        "en": "Large historic setts or rounded cobbles, wide joints.",
+        "de": "Historisches Großpflaster oder Kopfsteinpflaster, breite Fugen."
+      },
+      "fill": "granite.300",
+      "textures": [
+        {
+          "motif": "bond",
+          "ink": "granite.700",
+          "course_m": 0.16,
+          "unit_m": 0.19,
+          "offset": "random",
+          "jitter": 0.25,
+          "merge": 0.0,
+          "amp": 0.14,
+          "width": 0.18
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": false,
+        "bdla_class": 3,
+        "bff": 0.1,
+        "bff_1990": 0.3,
+        "runoff_cs": 0.7,
+        "runoff_cm": 0.6,
+        "albedo": 0.17,
+        "emissivity": 0.97,
+        "belagsklasse": 2,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Kopfsteinpflaster",
+        "Katzenkopfpflaster",
+        "Großsteinpflaster",
+        "cobbles",
+        "cobblestone",
+        "unhewn cobblestone"
+      ]
+    },
+    "clinker": {
+      "group": "surface.paved",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Clinker paving",
+        "de": "Klinkerpflaster"
+      },
+      "description": {
+        "en": "Fired clay pavers in herringbone. Mellow brick-red tone.",
+        "de": "Pflasterklinker im Fischgrätverband. Gedämpfter Ziegelton."
+      },
+      "fill": "clay.300",
+      "textures": [
+        {
+          "motif": "herringbone",
+          "ink": "clay.700",
+          "angle": 0
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": false,
+        "bdla_class": 3,
+        "bff": 0.1,
+        "bff_1990": 0.3,
+        "runoff_cs": 0.9,
+        "runoff_cm": 0.7,
+        "albedo": 0.17,
+        "emissivity": 0.97,
+        "belagsklasse": 2,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Pflasterklinker",
+        "Ziegelpflaster",
+        "Backsteinpflaster",
+        "brick paving",
+        "clay pavers"
+      ]
+    },
+    "wood_deck": {
+      "group": "surface.paved",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 33,
+      "label": {
+        "en": "Wood (decking)",
+        "de": "Holzdeck"
+      },
+      "description": {
+        "en": "Linear wood texture. Warm brown tone. Decks, boardwalks, jetties.",
+        "de": "Lineare Holztextur. Warmer Braunton. Holzdecks, Stege, Bohlenwege."
+      },
+      "fill": "wood.400",
+      "textures": [
+        {
+          "motif": "bond",
+          "ink": "wood.600",
+          "course_m": 0.14,
+          "unit_m": 2.2,
+          "offset": "random",
+          "jitter": 0.35,
+          "grain": true,
+          "lod": {
+            "1": {
+              "course_min": 0.8,
+              "course_max": 1.1
+            },
+            "2": {
+              "course_min": 1.2,
+              "course_max": 2.0
+            },
+            "3": {
+              "course_min": 1.6,
+              "course_max": 3.6
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": false,
+        "bdla_class": 3,
+        "bff": 0.1,
+        "bff_1990": 0.3,
+        "albedo": 0.17,
+        "emissivity": 0.94,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Holzbelag",
+        "Holzterrasse",
+        "Holzsteg",
+        "Bohlenweg",
+        "Holzdielen",
+        "decking",
+        "boardwalk",
+        "timber deck"
+      ]
+    },
+    "permeable_paving": {
+      "group": "surface.permeable",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Permeable paving",
+        "de": "Sickerpflaster"
+      },
+      "description": {
+        "en": "Paving with open or porous joints that lets rain soak in. Partly sealed.",
+        "de": "Pflaster mit Sickerfugen oder haufwerksporigen Steinen. Teilversiegelt."
+      },
+      "fill": "stone.200",
+      "textures": [
+        {
+          "motif": "bond",
+          "ink": "stone.500",
+          "course_m": 0.1,
+          "unit_m": 0.2,
+          "offset": 0.5,
+          "width": 0.24
+        },
+        {
+          "motif": "stipple",
+          "ink": "stone.500",
+          "spacing": 2.0,
+          "keep": 0.45,
+          "r_min": 0.06,
+          "r_max": 0.12
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": false,
+        "bdla_class": 3,
+        "bff": 0.2,
+        "bff_1990": 0.3,
+        "runoff_cs": 0.4,
+        "runoff_cm": 0.25,
+        "albedo": 0.17,
+        "emissivity": 0.97,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Drainpflaster",
+        "Dränpflaster",
+        "Ökopflaster",
+        "Pflaster mit offenen Fugen",
+        "Porenpflaster",
+        "versickerungsfähiges Pflaster",
+        "pervious pavers",
+        "porous paving"
+      ]
+    },
+    "grass_joint_paving": {
+      "group": "surface.permeable",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Grass-joint paving",
+        "de": "Rasenfugenpflaster"
+      },
+      "description": {
+        "en": "Pavers with wide joints sown with grass. Partly sealed, green joints.",
+        "de": "Pflaster mit breiten, begrünten Fugen. Teilversiegelt, grüne Fugen."
+      },
+      "fill": "stone.200",
+      "textures": [
+        {
+          "motif": "bond",
+          "ink": "grass.700",
+          "course_m": 0.12,
+          "unit_m": 0.18,
+          "offset": 0.5,
+          "width": 0.3,
+          "trim": 0.0
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": true,
+        "biodiversity": 1,
+        "bdla_class": 3,
+        "bff": 0.4,
+        "bff_1990": 0.5,
+        "runoff_cs": 0.4,
+        "runoff_cm": 0.2,
+        "nrr_urban_green": false,
+        "note": "Runoff taken from the grass-paver row (no own DIN row).",
+        "layer": "ground"
+      },
+      "aliases": [
+        "Rasenfuge",
+        "Rasenfugenstein",
+        "Rasenliner",
+        "grass joint",
+        "green-joint paving"
+      ]
+    },
+    "grass_pavers": {
+      "group": "surface.permeable",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Grass pavers",
+        "de": "Rasengittersteine"
+      },
+      "description": {
+        "en": "Concrete grid with grass-filled cells. Partly sealed.",
+        "de": "Betongitter mit begrünten Kammern. Teilversiegelt."
+      },
+      "fill": "stone.300",
+      "textures": [
+        {
+          "motif": "cells",
+          "ink": "grass.500",
+          "cell_m": 0.12,
+          "fill_ratio": 0.55
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": true,
+        "biodiversity": 1,
+        "bdla_class": 3,
+        "bff": 0.4,
+        "bff_1990": 0.5,
+        "runoff_cs": 0.4,
+        "runoff_cm": 0.2,
+        "belagsklasse": 4,
+        "nrr_urban_green": false,
+        "note": "Runoff 0.4/0.2 with frequent traffic (parking); 0.2/0.1 without (fire lanes). BFF 0.1 under high use intensity.",
+        "layer": "ground"
+      },
+      "aliases": [
+        "Rasengitter",
+        "Rasengitterplatten",
+        "Rasenwaben",
+        "Rasenkammerstein",
+        "grasscrete",
+        "grass paver",
+        "turf pavers"
+      ]
+    },
+    "gravel_turf": {
+      "group": "surface.permeable",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Gravel turf",
+        "de": "Schotterrasen"
+      },
+      "description": {
+        "en": "Compacted gravel-soil mix sown with grass; carries occasional traffic. Mostly unsealed.",
+        "de": "Verdichtetes Schotter-Boden-Gemisch mit Raseneinsaat, gelegentlich befahrbar. Überwiegend unversiegelt."
+      },
+      "fill": "lichen.200",
+      "textures": [
+        {
+          "motif": "pebbles",
+          "ink": "stone.600",
+          "keep": 0.4
+        },
+        {
+          "motif": "grass_ticks",
+          "ink": "grass.700",
+          "keep": 0.7
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": true,
+        "biodiversity": 2,
+        "bdla_class": 3,
+        "bff": 0.4,
+        "bff_1990": 0.5,
+        "runoff_cs": 0.3,
+        "runoff_cm": 0.2,
+        "belagsklasse": 4,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Schotterrasenfläche",
+        "begrünbarer Belag",
+        "gravel lawn",
+        "reinforced grass"
+      ]
+    },
+    "waterbound": {
+      "group": "surface.loose",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Water-bound surface",
+        "de": "Wassergebundene Decke"
+      },
+      "description": {
+        "en": "Compacted fine mineral surface for paths and squares. Warm sand tone, water-permeable.",
+        "de": "Verdichtete Deckschicht ohne Bindemittel für Wege und Plätze. Warmer Sandton, wasserdurchlässig."
+      },
+      "fill": "sand.300",
+      "textures": [
+        {
+          "motif": "stipple",
+          "ink": "sand.700",
+          "spacing": 1.5,
+          "keep": 0.65,
+          "r_min": 0.05,
+          "r_max": 0.11
+        },
+        {
+          "motif": "pebbles",
+          "ink": "sand.700",
+          "fill": "sand.200",
+          "keep": 0.12,
+          "lod": {
+            "1": {
+              "spacing": 1.6,
+              "size": 0.45
+            },
+            "2": {
+              "spacing": 2.0,
+              "size": 0.6
+            },
+            "3": {
+              "spacing": 2.6,
+              "size": 0.8
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": false,
+        "bdla_class": 3,
+        "bff": 0.1,
+        "bff_1990": 0.3,
+        "runoff_cs": 0.9,
+        "runoff_cm": 0.7,
+        "belagsklasse": 4,
+        "nrr_urban_green": false,
+        "note": "Water-bound surfaces: BFF counts them as partly sealed (0.1) while runoff is high (0.9/0.7). Do not derive one from the other.",
+        "layer": "ground"
+      },
+      "aliases": [
+        "wassergebundene Wegedecke",
+        "Tennenweg",
+        "Splittdecke",
+        "Parkweg",
+        "Mineralgemisch",
+        "hoggin",
+        "compacted gravel path",
+        "unbound surface",
+        "fine gravel"
+      ]
+    },
+    "gravel": {
+      "group": "surface.loose",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Gravel",
+        "de": "Kies"
+      },
+      "description": {
+        "en": "Irregular dot texture. Beige-grey tone. Loose gravel or chippings.",
+        "de": "Unregelmäßige Punkttextur. Beige-grauer Ton. Loser Kies oder Splitt."
+      },
+      "fill": "paper.warm",
+      "textures": [
+        {
+          "motif": "pebbles",
+          "ink": "earth.600",
+          "fill": "sand.300"
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": false,
+        "bdla_class": 3,
+        "bff": 0.2,
+        "bff_1990": 0.3,
+        "runoff_cs": 0.3,
+        "runoff_cm": 0.2,
+        "albedo": 0.17,
+        "emissivity": 0.98,
+        "belagsklasse": 4,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Kiesfläche",
+        "Splitt",
+        "Schotter",
+        "Schotterfläche",
+        "Kiesweg",
+        "Zierkies",
+        "Schottergarten",
+        "chippings",
+        "pebbles",
+        "shingle"
+      ]
+    },
+    "wood_chips": {
+      "group": "surface.loose",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Wood chips",
+        "de": "Holzhäcksel"
+      },
+      "description": {
+        "en": "Loose wood-chip surface on paths and play areas.",
+        "de": "Lose Holzhackschnitzel auf Wegen und Spielflächen."
+      },
+      "fill": "wood.200",
+      "textures": [
+        {
+          "motif": "chips",
+          "ink": "wood.600",
+          "ink2": "wood.800"
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": false,
+        "albedo": 0.17,
+        "emissivity": 0.97,
+        "nrr_urban_green": false,
+        "layer": "ground",
+        "family": "mulch"
+      },
+      "aliases": [
+        "Hackschnitzel",
+        "Holzschnitzel",
+        "Holzhackschnitzel",
+        "Fallschutz Holz",
+        "woodchip",
+        "bark chips"
+      ]
+    },
+    "sports_turf": {
+      "group": "surface.sport",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Sports turf",
+        "de": "Sportrasen"
+      },
+      "description": {
+        "en": "Hard-wearing turf of pitches, shown with mowing stripes. Low biodiversity.",
+        "de": "Strapazierfähiger Rasen von Sportplätzen, mit Mähstreifen dargestellt. Geringe Biodiversität."
+      },
+      "fill": "grass.400",
+      "textures": [
+        {
+          "motif": "stripes",
+          "ink": "grass.300",
+          "band_m": 5.0,
+          "opacity": 0.8
+        },
+        {
+          "motif": "grass_ticks",
+          "ink": "grass.700",
+          "keep": 0.7
+        }
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": true,
+        "biodiversity": 1,
+        "bdla_class": 1,
+        "bff": 1.0,
+        "bff_1990": 1.0,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "albedo": 0.25,
+        "emissivity": 0.95,
+        "nrr_urban_green": true,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Strapazierrasen",
+        "Rasenspielfeld",
+        "Rasensportplatz",
+        "Spielfeld",
+        "Fußballplatz",
+        "pitch",
+        "playing field",
+        "sports field"
+      ]
+    },
+    "artificial_turf": {
+      "group": "surface.sport",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Artificial turf",
+        "de": "Kunststoffrasen"
+      },
+      "description": {
+        "en": "Synthetic turf. Cooler, bluer green and a regular fine texture. Partly sealed (drained base), heats up strongly.",
+        "de": "Kunstrasen. Kühleres, bläuliches Grün und regelmäßige feine Textur. Teilversiegelt (drainierter Unterbau), heizt sich stark auf."
+      },
+      "fill": "pine.200",
+      "textures": [
+        {
+          "motif": "stipple",
+          "ink": "pine.600",
+          "spacing": 0.95,
+          "r_min": 0.06,
+          "r_max": 0.09,
+          "keep": 1.0
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": false,
+        "bdla_class": 3,
+        "bff": 0.1,
+        "bff_1990": 0.3,
+        "runoff_cs": 0.6,
+        "runoff_cm": 0.5,
+        "albedo": 0.17,
+        "emissivity": 0.94,
+        "nrr_urban_green": false,
+        "note": "Runoff for drained synthetic sports surfaces (DIN 1986-100); DWA-A 138-1 prints different values.",
+        "layer": "ground"
+      },
+      "aliases": [
+        "Kunstrasen",
+        "Kunstrasenplatz",
+        "synthetic turf",
+        "astroturf"
+      ]
+    },
+    "synthetic_track": {
+      "group": "surface.sport",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Synthetic sports surface",
+        "de": "Kunststoffbelag"
+      },
+      "description": {
+        "en": "Polyurethane track and court surface. Mellow red tone.",
+        "de": "Kunststoffbelag für Laufbahnen und Spielfelder. Gedämpfter Rotton."
+      },
+      "fill": "clay.300",
+      "textures": [
+        {
+          "motif": "stipple",
+          "ink": "clay.700",
+          "spacing": 1.0,
+          "r_min": 0.05,
+          "r_max": 0.09,
+          "keep": 0.9
+        },
+        {
+          "motif": "hatch",
+          "ink": "paper.white",
+          "angle": "auto",
+          "width": 0.2,
+          "amp": 0.03,
+          "opacity": 0.85,
+          "lod": {
+            "1": {
+              "spacing": 1.0
+            },
+            "2": {
+              "spacing": 1.2
+            },
+            "3": {
+              "spacing": 2.4
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": false,
+        "bdla_class": 3,
+        "bff": 0.1,
+        "bff_1990": 0.3,
+        "runoff_cs": 0.6,
+        "runoff_cm": 0.5,
+        "albedo": 0.17,
+        "emissivity": 0.97,
+        "belagsklasse": 1,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Tartanbahn",
+        "Tartan",
+        "Kunststofflaufbahn",
+        "Laufbahn",
+        "Multifunktionsfeld",
+        "running track",
+        "tartan track"
+      ]
+    },
+    "clay_court": {
+      "group": "surface.sport",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Clay surface",
+        "de": "Tennenbelag"
+      },
+      "description": {
+        "en": "Red mineral surface of tennis courts and older pitches. Water-permeable.",
+        "de": "Roter mineralischer Belag von Tennisplätzen und Hartplätzen. Wasserdurchlässig."
+      },
+      "fill": "clay.500",
+      "textures": [
+        {
+          "motif": "stipple",
+          "ink": "clay.900",
+          "spacing": 1.6,
+          "r_min": 0.05,
+          "r_max": 0.1,
+          "keep": 0.6
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": false,
+        "bdla_class": 3,
+        "bff": 0.1,
+        "bff_1990": 0.3,
+        "runoff_cs": 0.3,
+        "runoff_cm": 0.2,
+        "albedo": 0.17,
+        "emissivity": 0.98,
+        "belagsklasse": 4,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Tenne",
+        "Tennenfläche",
+        "Tennisplatz",
+        "Ascheplatz",
+        "Hartplatz",
+        "Rotgrand",
+        "clay court",
+        "cinder pitch"
+      ]
+    },
+    "safety_surface": {
+      "group": "surface.sport",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Safety surfacing",
+        "de": "Fallschutzbelag"
+      },
+      "description": {
+        "en": "Poured rubber surface under play equipment. Partly sealed (water-permeable).",
+        "de": "Gegossener Gummibelag unter Spielgeräten. Teilversiegelt (wasserdurchlässig)."
+      },
+      "fill": "heather.200",
+      "textures": [
+        {
+          "motif": "stipple",
+          "ink": "heather.500",
+          "spacing": 1.1,
+          "r_min": 0.07,
+          "r_max": 0.1,
+          "keep": 1.0
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": false,
+        "bdla_class": 3,
+        "bff": 0.1,
+        "bff_1990": 0.3,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Fallschutz",
+        "EPDM",
+        "Fallschutzplatten",
+        "Gummibelag",
+        "wet pour",
+        "rubber surfacing"
+      ]
+    },
+    "rail_ballast": {
+      "group": "surface.rail",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Track ballast",
+        "de": "Gleisschotter"
+      },
+      "description": {
+        "en": "Ballasted railway track. Dry, stony habitat of its own.",
+        "de": "Schotterbett von Gleisanlagen. Eigener trocken-steiniger Lebensraum."
+      },
+      "fill": "stone.400",
+      "textures": [
+        {
+          "motif": "pebbles",
+          "ink": "stone.700",
+          "fill": "stone.300",
+          "keep": 0.95,
+          "lod": {
+            "1": {
+              "spacing": 1.0,
+              "size": 0.5
+            },
+            "2": {
+              "spacing": 1.3,
+              "size": 0.8
+            },
+            "3": {
+              "spacing": 1.8,
+              "size": 1.2
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": false,
+        "bdla_class": 3,
+        "bff": 0.2,
+        "bff_1990": 0.3,
+        "runoff_cs": 0.2,
+        "runoff_cm": 0.1,
+        "nrr_urban_green": false,
+        "note": "Runoff for ballasted track on permeable subgrade (DWA-A 138-1, secondary source).",
+        "layer": "ground"
+      },
+      "aliases": [
+        "Gleisbett",
+        "Schottergleis",
+        "Bahnschotter",
+        "Gleisanlage",
+        "railway ballast",
+        "rail track"
+      ]
+    },
+    "green_track": {
+      "group": "surface.rail",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Green track",
+        "de": "Rasengleis"
+      },
+      "description": {
+        "en": "Tram track bedded in grass or sedum.",
+        "de": "Straßenbahngleis mit Rasen- oder Sedumeindeckung."
+      },
+      "fill": "grass.300",
+      "textures": [
+        {
+          "motif": "grass_ticks",
+          "ink": "grass.600",
+          "keep": 0.8
+        },
+        {
+          "motif": "hatch",
+          "ink": "stone.600",
+          "spacing": 2.6,
+          "angle": "auto",
+          "angle_offset": 90,
+          "amp": 0.03
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": true,
+        "biodiversity": 2,
+        "bdla_class": 3,
+        "bff": 0.4,
+        "bff_1990": 0.5,
+        "albedo": 0.25,
+        "emissivity": 0.95,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Grüngleis",
+        "begrüntes Gleis",
+        "Sedumgleis",
+        "grass track",
+        "green tramway"
+      ]
+    },
+    "road": {
+      "group": "surface.function",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Road",
+        "de": "Fahrbahn"
+      },
+      "description": {
+        "en": "Carriageway when the surface material is not mapped. Kept pale so roads do not dominate the plan.",
+        "de": "Fahrbahn ohne kartiertes Material. Bewusst hell, damit Straßen den Plan nicht dominieren."
+      },
+      "fill": "paper.white",
+      "outline": "stone.400",
+      "attributes": {
+        "sealing": "sealed",
+        "vegetated": false,
+        "bdla_class": 4,
+        "nrr_urban_green": false,
+        "layer": "ground",
+        "family": "traffic"
+      },
+      "aliases": [
+        "Straße",
+        "Straßenfläche",
+        "Straßenverkehr",
+        "Verkehrsfläche",
+        "street",
+        "carriageway",
+        "roadway"
+      ]
+    },
+    "footway": {
+      "group": "surface.function",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Footway",
+        "de": "Gehweg"
+      },
+      "description": {
+        "en": "Pavement, sidewalk or pedestrian area when the material is not mapped.",
+        "de": "Gehweg oder Fußgängerbereich ohne kartiertes Material."
+      },
+      "fill": "stone.50",
+      "outline": "stone.300",
+      "textures": [
+        {
+          "motif": "bond",
+          "ink": "stone.200",
+          "course_m": 0.5,
+          "unit_m": 0.5,
+          "offset": 0.5,
+          "jitter": 0.02,
+          "lod": {
+            "1": {
+              "course_min": 1.2,
+              "course_max": 1.6
+            },
+            "2": {
+              "course_min": 1.7,
+              "course_max": 2.8
+            },
+            "3": {
+              "course_min": 2.4,
+              "course_max": 5.0
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "sealed",
+        "vegetated": false,
+        "bdla_class": 4,
+        "nrr_urban_green": false,
+        "layer": "ground",
+        "family": "traffic"
+      },
+      "aliases": [
+        "Bürgersteig",
+        "Fußweg",
+        "Gehsteig",
+        "Fußgängerzone",
+        "Trottoir",
+        "sidewalk",
+        "pavement",
+        "pedestrian area"
+      ]
+    },
+    "cycleway": {
+      "group": "surface.function",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Cycleway",
+        "de": "Radweg"
+      },
+      "description": {
+        "en": "Cycle path, in the muted red that German cycle paths are often paved in.",
+        "de": "Radweg, im gedämpften Rot, in dem Radwege häufig gepflastert sind."
+      },
+      "fill": "clay.200",
+      "outline": "clay.500",
+      "attributes": {
+        "sealing": "sealed",
+        "vegetated": false,
+        "bdla_class": 4,
+        "nrr_urban_green": false,
+        "layer": "ground",
+        "family": "traffic"
+      },
+      "aliases": [
+        "Fahrradweg",
+        "Radverkehrsanlage",
+        "Radfahrstreifen",
+        "cycle path",
+        "bike lane",
+        "cycle track"
+      ],
+      "textures": [
+        {
+          "motif": "stipple",
+          "ink": "clay.500",
+          "ink2": "clay.700",
+          "ink2_share": 0.3,
+          "spacing": 1.3,
+          "r_min": 0.05,
+          "r_max": 0.11,
+          "keep": 0.8
+        }
+      ]
+    },
+    "parking": {
+      "group": "surface.function",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Parking area",
+        "de": "Parkplatz"
+      },
+      "description": {
+        "en": "Car park or parking bays when the material is not mapped; white bay lines.",
+        "de": "Parkplatz oder Stellplätze ohne kartiertes Material; weiße Stellplatzmarkierung."
+      },
+      "fill": "stone.200",
+      "outline": "stone.500",
+      "textures": [
+        {
+          "motif": "bond",
+          "ink": "paper.white",
+          "course_m": 5.0,
+          "unit_m": 2.5,
+          "offset": 0.0,
+          "jitter": 0.0,
+          "width": 0.3,
+          "amp": 0.03,
+          "trim": 0.0,
+          "lod": {
+            "1": {
+              "course_min": 2.2,
+              "course_max": 3.0
+            },
+            "2": {
+              "course_min": 3.0,
+              "course_max": 8.0
+            },
+            "3": {
+              "course_min": 4.0,
+              "course_max": 20.0
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "sealed",
+        "vegetated": false,
+        "bdla_class": 4,
+        "nrr_urban_green": false,
+        "layer": "ground",
+        "family": "traffic"
+      },
+      "aliases": [
+        "Stellplatz",
+        "Stellplätze",
+        "Parkfläche",
+        "Parkstand",
+        "car park",
+        "parking lot",
+        "parking bays"
+      ]
+    },
+    "plaza": {
+      "group": "surface.function",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Square",
+        "de": "Platz"
+      },
+      "description": {
+        "en": "Public square or forecourt when the material is not mapped.",
+        "de": "Stadtplatz oder Vorplatz ohne kartiertes Material."
+      },
+      "fill": "stone.100",
+      "outline": "stone.400",
+      "textures": [
+        {
+          "motif": "bond",
+          "ink": "stone.300",
+          "course_m": 0.8,
+          "unit_m": 0.8,
+          "offset": 0.5,
+          "jitter": 0.02,
+          "lod": {
+            "1": {
+              "course_min": 1.4,
+              "course_max": 1.9
+            },
+            "2": {
+              "course_min": 2.0,
+              "course_max": 3.4
+            },
+            "3": {
+              "course_min": 2.8,
+              "course_max": 6.0
+            }
+          }
+        }
+      ],
+      "attributes": {
+        "sealing": "sealed",
+        "vegetated": false,
+        "bdla_class": 4,
+        "nrr_urban_green": false,
+        "layer": "ground",
+        "family": "traffic"
+      },
+      "aliases": [
+        "Stadtplatz",
+        "Vorplatz",
+        "Marktplatz",
+        "Hoffläche",
+        "Hof",
+        "square",
+        "forecourt",
+        "courtyard"
+      ]
+    },
+    "path": {
+      "group": "surface.function",
+      "geometry": [
+        "polygon",
+        "line"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Path",
+        "de": "Weg"
+      },
+      "description": {
+        "en": "Path of unknown surface; as a line it is drawn at its real width.",
+        "de": "Weg ohne Angabe des Belags; als Linie in seiner tatsächlichen Breite gezeichnet."
+      },
+      "fill": "sand.300",
+      "line": {
+        "color": "sand.300",
+        "width_m": 2.0,
+        "width_min": 0.6,
+        "width_max": 5.0,
+        "casing": "sand.500",
+        "casing_width": 0.13
+      },
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": false,
+        "bdla_class": 3,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Fußweg",
+        "Parkweg",
+        "Wirtschaftsweg",
+        "Feldweg",
+        "Pfad",
+        "track",
+        "footpath",
+        "trail"
+      ]
+    },
+    "path_unpaved": {
+      "group": "surface.function",
+      "geometry": [
+        "polygon",
+        "line"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Unpaved path",
+        "de": "Unbefestigter Weg"
+      },
+      "description": {
+        "en": "Earth or grass path, desire line, trail. Unsealed and often species-rich at the edges.",
+        "de": "Erd- oder Graspfad, Trampelpfad. Unversiegelt, an den Rändern oft artenreich."
+      },
+      "fill": "earth.200",
+      "textures": [
+        {
+          "motif": "stipple",
+          "ink": "earth.600",
+          "spacing": 1.6,
+          "keep": 0.55,
+          "r_min": 0.05,
+          "r_max": 0.12
+        },
+        {
+          "motif": "grass_ticks",
+          "ink": "grass.700",
+          "keep": 0.3
+        }
+      ],
+      "line": {
+        "color": "earth.200",
+        "width_m": 1.5,
+        "width_min": 0.5,
+        "width_max": 4.0,
+        "casing": "earth.400",
+        "casing_width": 0.12,
+        "dash": null
+      },
+      "aliases": [
+        "Trampelpfad",
+        "Erdweg",
+        "Graspfad",
+        "Feldweg",
+        "Pfad",
+        "Waldweg",
+        "dirt path",
+        "earth path",
+        "trail",
+        "desire line",
+        "track"
+      ],
+      "attributes": {
+        "sealing": "unsealed",
+        "vegetated": false,
+        "albedo": 0.08,
+        "emissivity": 0.94,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      }
+    },
+    "rail_area": {
+      "group": "surface.function",
+      "geometry": [
+        "polygon"
+      ],
+      "z": 20,
+      "label": {
+        "en": "Railway land",
+        "de": "Bahnfläche"
+      },
+      "description": {
+        "en": "Railway land whose surfaces are not mapped individually.",
+        "de": "Bahngelände ohne einzeln kartierte Beläge."
+      },
+      "fill": "stone.300",
+      "outline": "stone.500",
+      "textures": [
+        {
+          "motif": "hatch",
+          "ink": "stone.500",
+          "spacing": 2.2,
+          "angle": 0
+        }
+      ],
+      "attributes": {
+        "sealing": "partly",
+        "vegetated": false,
+        "nrr_urban_green": false,
+        "layer": "ground"
+      },
+      "aliases": [
+        "Bahnverkehr",
+        "Bahngelände",
+        "Gleisfeld",
+        "Bahnanlage",
+        "railway",
+        "rail yard"
+      ]
+    }
+  }
+}
