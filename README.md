@@ -33,14 +33,14 @@ QGIS, GeoServer, MapLibre and design tools.
 ```python
 import ulg
 
-ulg.element("wildflower_meadow").fill          # '#DADDBC' – look colours up, never invent them
-ulg.resolve("osm", landuse="meadow", meadow="wildflower")   # 'wildflower_meadow'
-ulg.resolve("alkis", objart="41008", funktion="4420")        # 'green_space'
+ulg.element("wildflower_meadow").fill        # '#DADDBC' – look colours up, never invent them
+ulg.resolve("osm", landuse="meadow", meadow="wildflower")    # 'wildflower_meadow'
+ulg.resolve("alkis", objart="41008", funktion="4420")         # 'green_space'
 
-gdf["element"] = ulg.classify(gdf, "osm")      # OSM, ALKIS, XPlanung, CORINE, BKompV … → elements
-ulg.render_svg(gdf, scale=500, path="plan.svg")          # print-ready SVG, true to scale
-ulg.render_svg(gdf, scale=1500, theme="planzv")          # the same data as a Bauleitplan
-ulg.indicators(ulg.flatten(gdf))               # sealing, biotope area factor, runoff, green space, canopy
+gdf["element"] = ulg.classify(gdf, "osm")     # OSM, ALKIS, XPlanung, CORINE … → elements
+ulg.render_svg(gdf, scale=500, path="plan.svg")         # print-ready SVG, true to scale
+ulg.render_svg(gdf, scale=1500, theme="planzv")         # the same data as a Bauleitplan
+ulg.indicators(ulg.flatten(gdf))              # sealing, biotope area factor, runoff, canopy
 ```
 
 ## What it is
@@ -68,7 +68,7 @@ ulg.indicators(ulg.flatten(gdf))               # sealing, biotope area factor, r
 ## Install
 
 ```bash
-pip install "urban-landscape-graphics[all] @ git+https://github.com/UrbanSens/Urban-Landscape-Graphics.git"
+pip install "urban-landscape-graphics[all] @ git+https://github.com/UrbanSens/Urban-Landscape-Graphics"
 ```
 
 Python 3.10+. Core dependencies are NumPy and Shapely; `[all]` adds GeoPandas and Matplotlib. PNG

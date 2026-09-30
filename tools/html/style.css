@@ -212,7 +212,7 @@ body {
 .hero-lede { max-width: 38rem; margin: 0 auto; color: var(--text); font: 400 1.16rem/1.55 var(--serif); }
 .hero-lede em, .hero-lede code { font-style: normal; }
 .hero-meta { margin: 1.1rem 0 0; color: var(--faint); font: 600 .8rem/1.4 var(--sans); letter-spacing: .05em; }
-.hero-mark { display: block; height: clamp(4.4rem, 10vw, 6.6rem); width: auto; margin: 0 auto 1.5rem; }
+.hero-mark { display: block; height: clamp(5rem, 11.5vw, 7.8rem); width: auto; margin: 0 auto 1.5rem; }
 .hero-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: .7rem; margin: 1.9rem 0 0; }
 .btn {
   display: inline-block; padding: .72rem 1.35rem; border-radius: 999px; background: var(--btn-bg); color: var(--btn-ink);

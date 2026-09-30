@@ -157,3 +157,15 @@ def test_wobble_stays_within_half_the_outline_width():
     shift_mm = np.hypot(*(moved - dense).T) / ctx.u
     assert shift_mm.max() <= 0.09 + 1e-9          # the ink of a 0.18 mm line always covers the true edge
     assert shift_mm.mean() > 0.02                 # and the line does wobble
+
+
+def test_main_angle_is_finite_and_quiet_for_degenerate_polygons():
+    import warnings
+
+    shapes = [Polygon(), Polygon([(0, 0), (5, 0), (10, 0), (0, 0)]), Polygon([(0, 0), (10, 0), (10, 1e-12)]),
+              Polygon([(1, 1), (1, 1), (1, 1)])]
+    with warnings.catch_warnings():
+        warnings.simplefilter("error")                       # a RuntimeWarning from GEOS would fail the test
+        for shape in shapes:
+            assert 0.0 <= G.main_angle(shape) < 180.0
+    assert abs(G.main_angle(box(0, 0, 10, 2)) - 0.0) < 1e-9 and abs(G.main_angle(box(0, 0, 2, 10)) - 90.0) < 1e-9

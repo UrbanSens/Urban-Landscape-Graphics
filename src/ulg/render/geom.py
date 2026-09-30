@@ -145,15 +145,17 @@ def rotate(xy: np.ndarray, angle_deg: float) -> np.ndarray:
 
 
 def main_angle(poly: BaseGeometry) -> float:
-    """Direction (degrees, 0..180) of the long side of the minimum rotated rectangle."""
+    """Direction (degrees, 0..180) of the long side of the minimum rotated rectangle; 0 for degenerate shapes."""
     try:
-        rect = poly.minimum_rotated_rectangle
+        with np.errstate(divide="ignore", invalid="ignore"):    # GEOS reports slivers as float events, not as errors
+            rect = poly.minimum_rotated_rectangle
         c = np.asarray(rect.exterior.coords)
+        e1, e2 = c[1] - c[0], c[2] - c[1]
     except Exception:
         return 0.0
-    e1, e2 = c[1] - c[0], c[2] - c[1]
     e = e1 if np.hypot(*e1) >= np.hypot(*e2) else e2
-    return math.degrees(math.atan2(e[1], e[0])) % 180.0
+    angle = math.degrees(math.atan2(e[1], e[0])) % 180.0
+    return angle if math.isfinite(angle) else 0.0
 
 
 # --------------------------------------------------------------------------- hand-drawn line
