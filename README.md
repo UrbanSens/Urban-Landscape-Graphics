@@ -43,7 +43,7 @@ ulg.resolve("alkis", objart="41008", funktion="4420")         # 'green_space'
 gdf["element"] = ulg.classify(gdf, "osm")     # OSM, ALKIS, XPlanung, CORINE … → Elemente
 ulg.render_svg(gdf, scale=500, path="plan.svg")         # druckfertiges SVG, maßstabsgetreu
 ulg.render_svg(gdf, scale=1500, theme="planzv")         # dieselben Daten als Bauleitplan
-ulg.indicators(ulg.flatten(gdf))              # Versiegelung, Biotopflächenfaktor, Abfluss, Baumkronenanteil
+ulg.indicators(ulg.flatten(gdf))              # Versiegelung, BFF, Abfluss, Baumkronen
 ```
 
 ## Was es ist
